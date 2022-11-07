@@ -1517,7 +1517,7 @@ msgstr "인터넷에 연결함"
 msgid ""
 "This software is subject to license terms included with its documentation. "
 "Some is proprietary."
-msgstr "이 소프트웨어는 문서에 포함된 라이선스 조항을 적용받습니다. 일부는 독점적입니다."
+msgstr "이 소프트웨어들은 포함된 라이선스 조항을 적용받습니다. 일부는 독점적입니다."
 
 #. Type: text
 #. Description
@@ -1525,7 +1525,7 @@ msgstr "이 소프트웨어는 문서에 포함된 라이선스 조항을 적용
 msgid ""
 "Install third-party software for graphics and Wi-Fi hardware and additional "
 "media formats"
-msgstr "그래픽과 Wi-Fi 하드웨어 그리고 추가 미디어 포맷을 위한 서드파티 소프트웨어 설치"
+msgstr "멀디미디어 코덱, 비주얼 스튜디오 코드, 줌, 슬랙, 크롬, 알약 등 서드파티 소프트웨어 설치"
 
 #. Type: text
 #. Description
