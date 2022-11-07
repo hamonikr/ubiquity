@@ -1,0 +1,3 @@
+deb-src http://archive.ubuntu.com/ubuntu focal main
+deb-src http://archive.ubuntu.com/ubuntu focal-updates main
+deb-src http://archive.ubuntu.com/ubuntu focal-proposed main
