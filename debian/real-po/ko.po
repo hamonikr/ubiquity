@@ -1525,7 +1525,7 @@ msgstr "이 소프트웨어들은 포함된 라이선스 조항을 적용받습�
 msgid ""
 "Install third-party software for graphics and Wi-Fi hardware and additional "
 "media formats"
-msgstr "멀디미디어 코덱, 비주얼 스튜디오 코드, 줌, 슬랙, 크롬, 알약 등 서드파티 소프트웨어 설치"
+msgstr "멀디미디어 코덱, 비주얼 스튜디오 코드, 줌, 슬랙, 크롬, 알약, 루트리스 등 서드파티 소프트웨어 설치"
 
 #. Type: text
 #. Description
