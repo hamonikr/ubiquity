@@ -1,3 +1,19 @@
+ubiquity (20.04.15.19+hamonikr5) focal; urgency=medium
+
+  [Kevin Kim]
+  * Adjust language select treeview width
+   - set property width_request 120
+
+ -- HamoniKR <pkg@hamonikr.org>  Tue, 08 Nov 2022 23:07:37 +0900
+
+ubiquity (20.04.15.19+hamonikr4) focal; urgency=medium
+
+  [Kevin Kim]
+  * Removed language
+   - Only few language left
+
+ -- HamoniKR <pkg@hamonikr.org>  Tue, 08 Nov 2022 22:25:49 +0900
+
 ubiquity (20.04.15.19+hamonikr3) focal; urgency=medium
 
   [Kevin Kim]
