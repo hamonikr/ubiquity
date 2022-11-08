@@ -1,3 +1,10 @@
+ubiquity (20.04.15.19+hamonikr6) focal; urgency=medium
+
+  [Kevin Kim]
+  * Update missing Korean translation
+
+ -- HamoniKR <pkg@hamonikr.org>  Wed, 09 Nov 2022 00:22:36 +0900
+
 ubiquity (20.04.15.19+hamonikr5) focal; urgency=medium
 
   [Kevin Kim]
