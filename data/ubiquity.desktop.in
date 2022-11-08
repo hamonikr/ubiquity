@@ -2,7 +2,8 @@
 Type=Application
 Version=1.0
 # Do not translate the word "RELEASE".  It is used as a marker by casper.
-_Name=Install RELEASE
+_Name=Install HamoniKR
+_Name[ko]=하모니카 설치
 _Comment=Install this system permanently to your hard disk
 _Keywords=ubiquity;
 #use sh because pkexec is broken under xfce/lxce http://pad.lv/1193526

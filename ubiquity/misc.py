@@ -455,7 +455,8 @@ def find_in_os_prober(device, with_version=False):
         ret = utf8(ret, errors='replace')
         ver = utf8(osvers.get(device, ''), errors='replace')
         if with_version:
-            return ret, ver
+            # return ret, ver
+            return ret
         else:
             return ret
     except (KeyboardInterrupt, SystemExit):
