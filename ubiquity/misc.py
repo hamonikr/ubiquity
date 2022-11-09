@@ -453,13 +453,11 @@ def find_in_os_prober(device, with_version=False):
             syslog.syslog('Device %s not found in os-prober output' % device)
             ret = ''
         ret = utf8(ret, errors='replace')
-        # ver = utf8(osvers.get(device, ''), errors='replace')
-        # if with_version:
-        #     # return ret, ver
-        #     return ret
-        # else:
-        #     return ret
-        return ret
+        ver = utf8(osvers.get(device, ''), errors='replace')
+        if with_version:
+            return ret, ver
+        else:
+            return ret
     except (KeyboardInterrupt, SystemExit):
         pass
     except Exception:
