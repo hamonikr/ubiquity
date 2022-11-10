@@ -432,10 +432,10 @@ class Wizard(BaseFrontend):
                 import apt
                 syslog.syslog(syslog.LOG_INFO, "Trying to update apt indexes "
                               "to run ubuntu-drivers against fresh data.")
-                cache = apt.cache.Cache()
-                cache.update()
-                cache.open()
-                self.have_apt_updated = True
+                # cache = apt.cache.Cache()
+                # cache.update()
+                # cache.open()
+                # self.have_apt_updated = True
             except apt.cache.FetchFailedException:
                 syslog.syslog(syslog.LOG_INFO,
                               "Failed to update apt indexes; offline? "
