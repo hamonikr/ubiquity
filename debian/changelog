@@ -1,3 +1,15 @@
+ubiquity (20.04.15.19+hamonikr9) taebaek; urgency=medium
+
+  [Kevin Kim]
+  * Merge from linuxmint version
+   - compare with ubiquity_20.04.15+linuxmint17
+   - Modified apt-cdrom install
+   - Removed mirror, local, security... setting
+   - Update test process
+   - Changed display name as HamoniKR
+
+ -- HamoniKR <pkg@hamonikr.org>  Thu, 10 Nov 2022 12:22:27 +0900
+
 ubiquity (20.04.15.19+hamonikr8) focal; urgency=medium
 
   [Kevin Kim]
