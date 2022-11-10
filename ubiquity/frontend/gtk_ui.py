@@ -255,7 +255,7 @@ class Wizard(BaseFrontend):
         self.screen_reader = False
         self.orca_process = None
         self.a11y_settings = None
-        self.have_apt_updated = False
+        # self.have_apt_updated = False
 
         # To get a "busy mouse":
         self.watch = Gdk.Cursor.new(Gdk.CursorType.WATCH)

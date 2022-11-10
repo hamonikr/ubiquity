@@ -475,6 +475,3 @@ class BaseFrontend:
 
     def set_online_state(self, state):
         pass
-
-    def save_oem_metapackages_list(self, wait_finished=False):
-        pass
