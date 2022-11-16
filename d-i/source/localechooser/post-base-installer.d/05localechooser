@@ -99,6 +99,7 @@ if [ -e $DESTFILE ]; then
 			echo "LANGUAGE=\"$LANGLIST\"" >> $DESTFILE
 		fi
 	fi
+	sed -s 's/\"//g' $DESTFILE	
 fi
 # Fallback in case the file wasn't provided by locales, or the format
 # changed.
@@ -108,6 +109,7 @@ if [ ! -e "$DESTFILE" ] || ! grep -q '^LANG=' $DESTFILE; then
 	if echo "$LANGLIST" | grep -q ":"; then
 		echo "LANGUAGE=\"$LANGLIST\"" >> $DESTFILE
 	fi
+	sed -s 's/\"//g' $DESTFILE	
 fi
 
 if [ "$LOCALE_TRANSLATIONS" != "$LOCALE" ]; then

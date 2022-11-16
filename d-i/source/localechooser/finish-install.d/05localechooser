@@ -24,6 +24,14 @@ if [ "$LOCALE" != "C" ] && [ "$LOCALE" != "C.UTF-8" ]; then
 		# RTL languages (Arabic, Hebrew, Farsi)
 		apt-install libfribidi0 || true
 		;;
+	    ja)
+		# japanese		
+		apt-install nimf-anthy fonts-takao-pgothic language-pack-gnome-ja-base language-pack-ja-base || true		
+		;;
+	    zh_CN|zh_TW)
+		# chineses		
+		apt-install nimf-rime language-pack-gnome-zh-hans language-pack-gnome-zh-hant language-pack-zh-hans language-pack-zh-hant || true		
+		;;		
 	esac
 fi
 
