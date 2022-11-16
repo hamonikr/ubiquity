@@ -1,3 +1,10 @@
+ubiquity (20.04.15.19+hamonikr13) taebaek; urgency=medium
+
+  [Kevin Kim]
+  * Update greeter screen
+
+ -- HamoniKR <pkg@hamonikr.org>  Wed, 16 Nov 2022 15:28:52 +0900
+
 ubiquity (20.04.15.19+hamonikr12) taebaek; urgency=medium
 
   [Kevin Kim]
