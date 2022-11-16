@@ -421,7 +421,7 @@ EndSection
             visual_a11y = 'access=v' in proc_cmdline
 
             background_image = None
-            for background in ('/usr/share/backgrounds/linuxmint/default_background.jpg'):
+            for background in ('/usr/share/backgrounds/hamonikr/default_background.jpg'):
                 exists = os.access(background, os.R_OK)
                 if exists:
                     background_image = background

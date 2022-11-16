@@ -1,3 +1,18 @@
+ubiquity (20.04.15.19+hamonikr12) taebaek; urgency=medium
+
+  [Kevin Kim]
+  * Update backgroung image as hamonikr
+
+ -- HamoniKR <pkg@hamonikr.org>  Wed, 16 Nov 2022 13:58:26 +0900
+
+ubiquity (20.04.15.19+hamonikr11) taebaek; urgency=medium
+
+  [Kevin Kim]
+  * Update Languagelist 
+   - Add LC_TIME in localechoose
+
+ -- HamoniKR <pkg@hamonikr.org>  Wed, 16 Nov 2022 11:30:33 +0900
+
 ubiquity (20.04.15.19+hamonikr10) taebaek; urgency=medium
 
   [Kevin Kim]

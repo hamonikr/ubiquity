@@ -215,18 +215,18 @@ distuninstallcheck_listfiles = find . -type f -print
 am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) \
   | sed 's|^\./|$(prefix)/|' | grep -v '$(infodir)/dir$$'
 distcleancheck_listfiles = find . -type f -print
-ACLOCAL = ${SHELL} /home/hamonikr/workspaces/tmp/ubiquity/build/missing aclocal-1.16
+ACLOCAL = ${SHELL} /home/hamonikr/work/ubiquity/build/missing aclocal-1.16
 ALL_LINGUAS = 
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 1
 AR = ar
-AUTOCONF = ${SHELL} /home/hamonikr/workspaces/tmp/ubiquity/build/missing autoconf
-AUTOHEADER = ${SHELL} /home/hamonikr/workspaces/tmp/ubiquity/build/missing autoheader
-AUTOMAKE = ${SHELL} /home/hamonikr/workspaces/tmp/ubiquity/build/missing automake-1.16
+AUTOCONF = ${SHELL} /home/hamonikr/work/ubiquity/build/missing autoconf
+AUTOHEADER = ${SHELL} /home/hamonikr/work/ubiquity/build/missing autoheader
+AUTOMAKE = ${SHELL} /home/hamonikr/work/ubiquity/build/missing automake-1.16
 AWK = gawk
 CC = gcc
 CCDEPMODE = depmode=none
-CFLAGS = -g -O2 -fdebug-prefix-map=/home/hamonikr/workspaces/tmp/ubiquity-hamonikr=. -fstack-protector-strong -Wformat -Werror=format-security
+CFLAGS = -g -O2 -fdebug-prefix-map=/home/hamonikr/work/ubiquity=. -fstack-protector-strong -Wformat -Werror=format-security
 CPP = gcc -E
 CPPFLAGS = -Wdate-time -D_FORTIFY_SOURCE=2
 CYGPATH_W = echo
@@ -284,7 +284,7 @@ LTLIBINTL =
 LTLIBOBJS = 
 LT_SYS_LIBRARY_PATH = 
 MAINT = #
-MAKEINFO = ${SHELL} /home/hamonikr/workspaces/tmp/ubiquity/build/missing makeinfo
+MAKEINFO = ${SHELL} /home/hamonikr/work/ubiquity/build/missing makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /usr/bin/mkdir -p
 MOCK_RESOLVER_CFLAGS = -pthread -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
@@ -324,10 +324,10 @@ XGETTEXT_015 = /usr/bin/xgettext
 XGETTEXT_EXTRA_OPTIONS = 
 _GI_EXP_DATADIR = /usr/share
 _GI_EXP_LIBDIR = /usr/lib/x86_64-linux-gnu
-abs_builddir = /home/hamonikr/workspaces/tmp/ubiquity
-abs_srcdir = /home/hamonikr/workspaces/tmp/ubiquity
-abs_top_builddir = /home/hamonikr/workspaces/tmp/ubiquity
-abs_top_srcdir = /home/hamonikr/workspaces/tmp/ubiquity
+abs_builddir = /home/hamonikr/work/ubiquity
+abs_srcdir = /home/hamonikr/work/ubiquity
+abs_top_builddir = /home/hamonikr/work/ubiquity
+abs_top_srcdir = /home/hamonikr/work/ubiquity
 ac_ct_AR = ar
 ac_ct_CC = gcc
 ac_ct_DUMPBIN = 
@@ -356,7 +356,7 @@ host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${prefix}/share/info
-install_sh = ${SHELL} /home/hamonikr/workspaces/tmp/ubiquity/build/install-sh
+install_sh = ${SHELL} /home/hamonikr/work/ubiquity/build/install-sh
 intltool__v_merge_options_ = $(intltool__v_merge_options_$(AM_DEFAULT_VERBOSITY))
 intltool__v_merge_options_0 = -q
 libdir = ${prefix}/lib/x86_64-linux-gnu

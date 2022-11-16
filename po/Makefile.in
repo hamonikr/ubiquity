@@ -35,7 +35,7 @@ datarootdir = ${prefix}/share
 libdir = ${prefix}/lib/x86_64-linux-gnu
 localedir = ${datarootdir}/locale
 subdir = po
-install_sh = ${SHELL} /home/hamonikr/workspaces/tmp/ubiquity/build/install-sh
+install_sh = ${SHELL} /home/hamonikr/work/ubiquity/build/install-sh
 # Automake >= 1.8 provides /usr/bin/mkdir -p.
 # Until it can be supposed, use the safe fallback:
 mkdir_p = $(install_sh) -d
