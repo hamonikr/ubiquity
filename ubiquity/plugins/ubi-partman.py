@@ -110,9 +110,6 @@ class PageBase(plugin.PluginUI):
     def get_crypto_keys(self):
         pass
 
-    def get_recovery_keys(self):
-        pass
-
 
 class PageGtk(PageBase):
     plugin_title = 'ubiquity/text/part_auto_heading_label'
@@ -148,7 +145,7 @@ class PageGtk(PageBase):
         for wdg in all_widgets:
             setattr(self, wdg, builder.get_object(wdg))
 
-        # Crypto page, used for both primary and recovery keys
+        # Crypto page
         self.password_strength_pages = {
             'empty': 0,
             'too_short': 1,
@@ -169,7 +166,7 @@ class PageGtk(PageBase):
         self.resize_max_size = None
         self.resize_pref_size = None
         self.resize_path = ''
-        self.auto_colors = ['3465a4', '73d216', 'f57900']
+        self.auto_colors = ['0d95bc', '9ab87c', 'ebcb38', 'f36f13', 'c13018', '063951']
         self.extra_options = {}
 
         self.partition_mount_combo.get_child().set_activates_default(True)
@@ -212,14 +209,6 @@ class PageGtk(PageBase):
 
         # Define a list to save grub imformation
         self.grub_options = []
-
-        default_recovery_key_location = os.path.join(misc.get_live_user_home(), 'recovery.key')
-        self.recovery_key_location.set_text(default_recovery_key_location)
-        self.recovery_key.set_visibility(False)
-        self.recovery_key.set_icon_from_icon_name(Gtk.EntryIconPosition.SECONDARY, 'view-reveal-symbolic')
-        self.verified_recovery_key.set_visibility(False)
-        self.recovery_key_location_warning.set_visible(False)
-        self.enable_recovery_key(False)
 
     def on_link_clicked(self, widget, uri):
         misc.launch_uri(uri)
@@ -286,13 +275,7 @@ class PageGtk(PageBase):
             return
         crypto_widgets += [
             ('verified_crypto_label', 'crypto_label', 'bottom', 1, 1),
-            ('recovery_key_enable', 'verified_crypto_label', 'bottom', 1, 1),
-            ('recovery_key_warning', 'recovery_key_enable', 'right', 1, 1),
-            ('recovery_grid', 'recovery_key_warning', 'bottom', 1, 3),
-            ('recovery_key_label', 'recovery_grid', 'left', 1, 1),
-            ('verified_recovery_key_label', 'recovery_key_label', 'bottom', 1, 1),
-            ('recovery_key_location_label', 'verified_recovery_key_label', 'bottom', 1, 1),
-            ('crypto_warning', 'recovery_key_location_label', 'bottom', 2, 1),
+            ('crypto_warning', 'verified_crypto_label', 'bottom', 2, 1),
             ('crypto_extra_label', 'crypto_warning', 'bottom', 1, 1),
             ('crypto_overwrite_space', 'crypto_extra_label', 'right', 1, 1),
             ('crypto_extra_time', 'crypto_overwrite_space', 'bottom', 1, 1)]
@@ -307,22 +290,6 @@ class PageGtk(PageBase):
             new_parent.attach_next_to(widget, sibling, direction,
                                       width, height)
             widget.show()
-
-    def on_password_toggle_visibility(self, widget, icon_pos, event):
-        from gi.repository import Gtk
-        visibility = self.password.get_visibility()
-        self.password.set_visibility(not visibility)
-        self.verified_password.set_visibility(not visibility)
-        self.password.set_icon_from_icon_name(
-            Gtk.EntryIconPosition.SECONDARY, ('view-conceal-symbolic', 'view-reveal-symbolic')[visibility])
-
-    def generate_recovery_key(self):
-        if not self.recovery_key_enable.get_active():
-            return
-        from secrets import randbelow
-        key = str(randbelow(10**48)).zfill(48)
-        self.recovery_key.set_text(key)
-        self.verified_recovery_key.set_text(key)
 
     def on_advanced_features_clicked(self, widget):
         from gi.repository import Gtk
@@ -362,77 +329,6 @@ class PageGtk(PageBase):
                 selected.set_active(True)
             self.use_crypto.set_active(crypto_selected)
 
-    def on_recovery_key_button_clicked(self, widget):
-        from gi.repository import Gtk
-        label = self.controller.get_string('recovery_key_filename')
-
-        # Set HOME to the live session user's home directory so the
-        # filechooser dialog opens at the right location.
-        orig_home = os.getenv('HOME')
-        live_user_home = misc.get_live_user_home()
-        if live_user_home:
-            os.environ['HOME'] = live_user_home
-        save_recovery_dialog = Gtk.FileChooserDialog(label, widget.get_toplevel(),
-                                                     Gtk.FileChooserAction.SAVE,
-                                                     (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
-                                                     Gtk.STOCK_OPEN, Gtk.ResponseType.ACCEPT))
-        save_recovery_dialog.set_do_overwrite_confirmation(True)
-        save_recovery_dialog.set_modal(True)
-        save_recovery_dialog.set_current_name(os.path.basename(self.recovery_key_location.get_text()))
-        save_recovery_dialog.set_filename(self.recovery_key_location.get_text())
-        save_recovery_dialog.connect("response", self.on_save_recovery_selected)
-        save_recovery_dialog.remove_shortcut_folder('/root')
-        save_recovery_dialog.show()
-        if orig_home is not None:
-            os.environ['HOME'] = orig_home
-        else:
-            del os.environ['HOME']
-
-    def on_save_recovery_selected(self, dialog, response_id):
-        from gi.repository import Gtk
-        if response_id == Gtk.ResponseType.ACCEPT:
-            self.recovery_key_location.set_text(dialog.get_filename())
-        dialog.destroy()
-
-        is_removable = misc.is_removable_device(self.recovery_key_location.get_text())
-        self.recovery_key_location_warning.set_visible(not is_removable)
-
-    def on_recovery_key_generate_button(self, widget):
-        self.generate_recovery_key()
-
-    def on_recovery_key_toggle_visibility(self, widget, icon_pos, event):
-        from gi.repository import Gtk
-        visibility = self.recovery_key.get_visibility()
-        self.recovery_key.set_visibility(not visibility)
-        self.verified_recovery_key.set_visibility(not visibility)
-        self.recovery_key.set_icon_from_icon_name(
-            Gtk.EntryIconPosition.SECONDARY, ('view-conceal-symbolic', 'view-reveal-symbolic')[visibility])
-
-    def on_recovery_key_enable_toggled(self, widget):
-        self.enable_recovery_key(widget.get_active())
-
-    def enable_recovery_key(self, enable=False):
-        self.recovery_key_warning.set_sensitive(enable)
-        self.recovery_key_label.set_sensitive(enable)
-        self.recovery_key.set_sensitive(enable)
-        self.recovery_key_generate_button.set_sensitive(enable)
-        self.verified_recovery_key_label.set_sensitive(enable)
-        self.verified_recovery_key.set_sensitive(enable)
-        self.recovery_key_location_label.set_sensitive(enable)
-        self.recovery_key_location_warning.set_sensitive(enable)
-        self.recovery_key_location.set_sensitive(enable)
-        self.recovery_key_button.set_sensitive(enable)
-
-        if enable:
-            self.generate_recovery_key()
-        else:
-            self.recovery_key.set_text("")
-            self.verified_recovery_key.set_text("")
-            self.recovery_strength.set_current_page(
-                self.password_strength_pages['empty'])
-            self.recovery_match.set_current_page(
-                self.password_match_pages['empty'])
-
     def should_show_bitlocker_page(self):
         return ('bitlocker' in self.extra_options or
                 os.environ.get('SHOW_BITLOCKER_UI', '0') == '1')
@@ -470,7 +366,6 @@ class PageGtk(PageBase):
             self.set_page_title(self.custom_partitioning.get_label())
             self.current_page = self.page_advanced
             self.move_crypto_widgets(auto=False)
-            self.recovery_key.set_text("")
             self.controller.go_to_page(self.current_page)
             self.controller.toggle_next_button('install_button')
             self.plugin_is_install = True
@@ -541,24 +436,6 @@ class PageGtk(PageBase):
             self.plugin_is_install = True
             return True
 
-        recovery_key_location_path = self.recovery_key_location.get_text()
-        if recovery_key_location_path:
-            try:
-                with open(recovery_key_location_path, "w") as f:
-                    f.write(self.recovery_key.get_text())
-            except Exception as exc:
-                save_recovery_key_info = 'ubiquity/text/save_recovery_key_info'
-                msg = self.controller.get_string(save_recovery_key_info).replace('${ERRORMSG}', str(exc))
-
-                from gi.repository import Gtk
-                dialog = Gtk.MessageDialog(
-                    self.current_page.get_toplevel(), Gtk.DialogFlags.MODAL,
-                    Gtk.MessageType.ERROR, Gtk.ButtonsType.CLOSE, None)
-                dialog.set_markup(msg)
-                dialog.run()
-                dialog.destroy()
-                return True
-
         # Return control to partman, which will call
         # get_autopartition_choice and start partitioninging the device.
         self.controller.switch_to_install_interface()
@@ -578,7 +455,6 @@ class PageGtk(PageBase):
             # be marked as Install Now.
             self.controller.allow_go_forward(True)
             self.controller.toggle_next_button()
-            self.plugin_is_restart = False
             self.plugin_is_install = False
             return True
         else:
@@ -705,7 +581,7 @@ class PageGtk(PageBase):
                     '/usr/share/ubiquity')
                 icon.logo.set_from_file(os.path.join(
                     PATH, 'pixmaps', 'windows_square.png'))
-            elif 'buntu' in title.lower():
+            elif 'linux mint' in title.lower():
                 icon.set_property('icon-name', 'distributor-logo')
             else:
                 icon.set_property('icon-name', 'block-device')
@@ -1138,17 +1014,9 @@ class PageGtk(PageBase):
             self.partition_dialog_okbutton.set_sensitive(True)
 
         for widget in ['password_grid', 'crypto_label', 'crypto_warning',
-                       'verified_crypto_label',
-                       'crypto_extra_label',
-                       'crypto_overwrite_space', 'crypto_extra_time',
-                       'recovery_key_enable', 'recovery_key_warning',
-                       'recovery_grid',
-                       'recovery_key_label',
-                       'verified_recovery_key_label',
-                       'recovery_key_location_label']:
+                       'verified_crypto_label', 'crypto_extra_label',
+                       'crypto_overwrite_space', 'crypto_extra_time']:
             getattr(getattr(self, widget), action)()
-        is_removable = misc.is_removable_device(self.recovery_key_location.get_text())
-        self.recovery_key_location_warning.set_visible(not is_removable)
 
     @plugin.only_this_page
     def partman_dialog(self, devpart, partition, create=True):
@@ -1685,28 +1553,6 @@ class PageGtk(PageBase):
             self.password_strength.set_current_page(
                 self.password_strength_pages['empty'])
 
-        # Recovery key
-        recovery = self.recovery_key.get_text()
-        vrecovery = self.verified_recovery_key.get_text()
-
-        if recovery:
-            if recovery != vrecovery:
-                # It's okay to reuse complete since it'll stay False if it's
-                # already false from previous check and switch to False
-                # otherwise.
-                # In either case, we don't want to proceed if the password or
-                # the recovery are invalid.
-                complete = False
-                self.recovery_match.set_current_page(
-                    self.password_match_pages['mismatch'])
-            else:
-                self.recovery_match.set_current_page(
-                    self.password_match_pages['ok'])
-
-            txt = validation.human_password_strength(recovery)[0]
-            self.recovery_strength.set_current_page(
-                self.password_strength_pages[txt])
-
         self.controller.allow_go_forward(complete)
         self.partition_dialog_okbutton.set_sensitive(complete)
         return complete
@@ -1724,12 +1570,6 @@ class PageGtk(PageBase):
     def get_crypto_keys(self):
         if self.info_loop(None):
             return self.password.get_text()
-        else:
-            return False
-
-    def get_recovery_keys(self):
-        if self.info_loop(None):
-            return self.recovery_key.get_text()
         else:
             return False
 
@@ -2288,7 +2128,7 @@ class Page(plugin.Plugin):
                 self.thaw_choices('choose_partition')
 
     def calculate_reuse_option(self):
-        '''Takes the current Ubuntu version on disk and the release we're about
+        '''Takes the current Linux Mint version on disk and the release we're about
         to install as parameters.'''
 
         # TODO: verify that ubuntu is the same partition as one of the ones
@@ -2313,7 +2153,7 @@ class Page(plugin.Plugin):
                     return None
 
                 if current_version == new_version and final:
-                    # "Windows (or Mac, ...) and the current version of Ubuntu
+                    # "Windows (or Mac, ...) and the current version of Linux Mint
                     # are present" case
                     q = 'ubiquity/partitioner/ubuntu_reinstall'
                     self.db.subst(q, 'CURDISTRO', ubuntu)
@@ -2352,7 +2192,7 @@ class Page(plugin.Plugin):
                     if not system.startswith('Windows Recovery'):
                         operating_systems.append(system)
         ubuntu_systems = [x for x in operating_systems
-                          if x.lower().find('buntu') != -1]
+                          if x.lower().find('linux mint') != -1]
         return (operating_systems, ubuntu_systems)
 
     def calculate_autopartitioning_options(self, operating_systems,
@@ -2360,10 +2200,10 @@ class Page(plugin.Plugin):
         '''
         There are six possibilities we have to consider:
         - Just Windows (or Mac, ...) is present
-        - An older version of Ubuntu is present
+        - An older version of Linux Mint is present
         - There are no operating systems present
-        - Windows (or Mac, ...) and an older version of Ubuntu are present
-        - Windows (or Mac, ...) and the current version of Ubuntu are present
+        - Windows (or Mac, ...) and an older version of Linux Mint are present
+        - Windows (or Mac, ...) and the current version of Linux Mint are present
         - There are multiple operating systems present
 
         We leave ordering and providing icons for each option to the frontend,
@@ -2418,7 +2258,7 @@ class Page(plugin.Plugin):
         elif os_count == 1:
             system = operating_systems[0]
             if len(ubuntu_systems) == 1:
-                # "An older version of Ubuntu is present" case
+                # "An older version of Linux Mint is present" case
                 if 'replace' in self.extra_options:
                     q = 'ubiquity/partitioner/ubuntu_format'
                     self.db.subst(q, 'CURDISTRO', system)
@@ -2437,7 +2277,7 @@ class Page(plugin.Plugin):
                 options['use_device'] = opt
 
                 if wubi_option:
-                    # We don't have a Wubi-like solution for Ubuntu yet (though
+                    # We don't have a Wubi-like solution for Linux Mint yet (though
                     # wubi_option is also a check for ntfs).
                     pass
                 elif resize_option:
@@ -3394,8 +3234,6 @@ class Page(plugin.Plugin):
 
             if do_preseed:
                 self.preseed(question, self.ui.get_crypto_keys())
-                self.preseed('ubiquity/crypto_key', self.ui.get_crypto_keys())
-                self.preseed('ubiquity/recovery_key', self.ui.get_recovery_keys())
                 return True
 
         elif question == 'partman-crypto/mainmenu':

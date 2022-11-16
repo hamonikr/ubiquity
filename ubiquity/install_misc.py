@@ -38,7 +38,6 @@ import traceback
 from apt.cache import Cache
 from apt.progress.base import InstallProgress
 from apt.progress.text import AcquireProgress
-import apt
 import apt_pkg
 import debconf
 
@@ -229,13 +228,6 @@ def query_recorded_installed():
         with open("/var/lib/ubiquity/apt-installed") as record_file:
             for line in record_file:
                 apt_installed.add(line.strip())
-    apt_removed, apt_removed_recursive = query_recorded_removed()
-    all_removed = apt_removed | apt_removed_recursive
-    if apt_installed & all_removed:
-        syslog.syslog(
-            'Refusing to install %s: marked to be removed later on, so this '
-            'would be redundant.' % (apt_installed & all_removed))
-    apt_installed = apt_installed - all_removed
     return apt_installed
 
 
@@ -532,46 +524,33 @@ def broken_packages(cache):
     return brokenpkgs
 
 
-def mark_install(cache, to_install):
-    to_install = sorted(to_install)
+def mark_install(cache, pkg):
+    cachedpkg = get_cache_pkg(cache, pkg)
+    if cachedpkg is None:
+        return
+    if not cachedpkg.is_installed or cachedpkg.is_upgradable:
+        apt_error = False
+        try:
+            cachedpkg.mark_install()
+        except SystemError:
+            apt_error = True
+        if cache._depcache.broken_count > 0 or apt_error:
+            brokenpkgs = broken_packages(cache)
+            while brokenpkgs:
+                for brokenpkg in brokenpkgs:
+                    get_cache_pkg(cache, brokenpkg).mark_keep()
+                new_brokenpkgs = broken_packages(cache)
+                if brokenpkgs == new_brokenpkgs:
+                    break  # we can do nothing more
+                brokenpkgs = new_brokenpkgs
 
-    for pkg in to_install:
-        cachedpkg = get_cache_pkg(cache, pkg)
-        if cachedpkg is None:
-            continue
-        if not cachedpkg.is_installed:
-            cachedpkg.mark_install(auto_fix=False, auto_inst=False, from_user=True)
-        elif cachedpkg.is_upgradable:
-            auto = cachedpkg.is_auto_installed
-            cachedpkg.mark_install(auto_fix=False, auto_inst=False, from_user=True)
-            cachedpkg.mark_auto(auto)
-
-    for pkg in to_install:
-        cachedpkg = get_cache_pkg(cache, pkg)
-        if cachedpkg is None:
-            continue
-        if not cachedpkg.is_installed:
-            cachedpkg.mark_install(auto_fix=False, auto_inst=True, from_user=True)
-        elif cachedpkg.is_upgradable:
-            auto = cachedpkg.is_auto_installed
-            cachedpkg.mark_install(auto_fix=False, auto_inst=True, from_user=True)
-            cachedpkg.mark_auto(auto)
-
-    if cache.broken_count > 0:
-        brokenpkgs = ", ".join(sorted(broken_packages(cache)))
-        syslog.syslog(syslog.LOG_WARNING, f"Try to fix these broken packages: {brokenpkgs}.")
-        for pkg in cache:
-            if pkg.marked_delete:
-                pkg.mark_keep()
-        apt.ProblemResolver(cache).resolve_by_keep()
-
-    if cache.broken_count > 0:
-        brokenpkgs = ", ".join(sorted(broken_packages(cache)))
-        to_install = ", ".join(to_install)
-        # We have a conflict we couldn't solve
-        cache.clear()
-        raise InstallStepError(
-            f"Unable to install {to_install} due to the broken packages: {brokenpkgs}.")
+            if cache._depcache.broken_count > 0:
+                # We have a conflict we couldn't solve
+                cache.clear()
+                raise InstallStepError(
+                    "Unable to install '%s' due to conflicts." % pkg)
+    else:
+        cachedpkg.mark_auto(False)
 
 
 def expand_dependencies_simple(cache, keep, to_remove, recommends=True):
@@ -955,7 +934,8 @@ class InstallBase:
                 return
 
             with cache.actiongroup():
-                mark_install(cache, to_install)
+                for pkg in to_install:
+                    mark_install(cache, pkg)
 
             self.db.progress('SET', 1)
             self.progress_region(1, 10)

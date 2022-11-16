@@ -73,7 +73,6 @@ class Install(install_misc.InstallBase):
 
         self.select_language_packs(save=True)
         self.select_ecryptfs()
-        self.keep_ad_tools()
         if self.db.get('ubiquity/install/generate-blacklist') == 'true':
             self.db.progress('START', 0, 100, 'ubiquity/install/title')
             self.db.progress('INFO', 'ubiquity/install/blacklist')
@@ -114,7 +113,7 @@ class Install(install_misc.InstallBase):
             # We don't later wait() on this pid by design.  There's no
             # sense waiting for updates to finish downloading when they can
             # quite easily finish downloading them once inside the new
-            # Ubuntu system.
+            # Linux Mint system.
             # TODO can we incorporate the bytes copied / bytes total into
             # the main progress bar?
             # TODO log to /var/log/installer/debug
@@ -368,7 +367,7 @@ class Install(install_misc.InstallBase):
             with open(fs_size) as total_size_fp:
                 total_size = int(total_size_fp.readline())
         else:
-            # Fallback in case an Ubuntu derivative forgets to put
+            # Fallback in case an Linux Mint derivative forgets to put
             # /casper/filesystem.size on the CD, or to account for things
             # like CD->USB transformation tools that don't copy this file.
             # This is slower than just reading the size from a file, but
@@ -752,14 +751,6 @@ class Install(install_misc.InstallBase):
                                   os.path.join(home, homedir))
                     install_misc.record_installed(['ecryptfs-utils'])
                     break
-
-    def keep_ad_tools(self):
-        """Mark Active Directory tools to be kept for now
-
-        The decision in plugininstall (after the copy starts) will tell us
-        if the user has selected or not AD integration, and so, which tools to remove."""
-
-        install_misc.record_installed(['adcli', 'realmd', 'sssd'])
 
 
 if __name__ == '__main__':

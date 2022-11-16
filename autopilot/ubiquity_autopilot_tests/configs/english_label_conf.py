@@ -22,7 +22,7 @@ def get_distribution():
         for line in f:
             distro = line[:max(line.find(' '), 0) or None]
             if distro:
-                if distro == 'Ubuntu-GNOME' or distro == "Ubuntu-MATE":
+                if distro == 'Linux Mint-GNOME' or distro == "Linux Mint-MATE":
                     return str(distro.replace('-', ' '))
                 else:
                     return str(distro)
@@ -45,7 +45,8 @@ def generate_config():
     config['stepPrepare'] = {}
     stepPrepare = config['stepPrepare']
     stepPrepare['page_title'] = \
-        '<span size="xx-large">Updates and other software</span>'
+        '<span size="xx-large">Updates and other software</span>'\
+        .format(distro_flavor)
     stepPrepare['prepare_best_results'] = \
         'For best results, please ensure that this computer:'
     stepPrepare['prepare_foss_disclaimer'] = \

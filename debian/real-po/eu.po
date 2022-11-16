@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: ubiquity@packages.debian.org\n"
 "POT-Creation-Date: 2020-04-08 09:24+0100\n"
-"PO-Revision-Date: 2020-04-15 02:30+0000\n"
-"Last-Translator: Launchpad Translations Administrators <Unknown>\n"
+"PO-Revision-Date: 2020-03-30 17:21+0000\n"
+"Last-Translator: Ibai Oihanguren Sala <Unknown>\n"
 "Language-Team: Basque <itzulpena@euskalgnu.org>\n"
+"Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2020-04-22 09:36+0000\n"
-"X-Generator: Launchpad (build aad6b57d58e2f621954298e262c1cc904860f5d2)\n"
-"Language: eu\n"
+"X-Launchpad-Export-Date: 2020-04-04 15:49+0000\n"
+"X-Generator: Launchpad (build a296f04231dee355be5db73cc878b9e21689a253)\n"
 
 #. Type: text
 #. Description
@@ -70,7 +70,7 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Ubuntu'
+#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
 #. MEDIUM is a variable substituted into this string, and may be 'CD'
 #: ../ubiquity.templates:10001
 msgid ""
@@ -82,7 +82,7 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Ubuntu'
+#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:10001
 msgid ""
 "Or if you're ready, you can install ${RELEASE} alongside (or instead of) "
@@ -93,14 +93,14 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Ubuntu'
+#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:11001
 msgid "Try ${RELEASE}"
 msgstr "Probatu ${RELEASE}"
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Ubuntu'
+#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:12001
 msgid "Install ${RELEASE}"
 msgstr "Instalatu ${RELEASE}"
@@ -112,8 +112,8 @@ msgid ""
 "You may wish to read the <a href=\"release-notes\">release notes</a> or <a "
 "href=\"update\">update this installer</a>."
 msgstr ""
-"Baliteke <a href=\"release-notes\">bertsio-oharrak</a> irakurri edo <a "
-"href=\"update\">instalatzailea eguneratu</a> nahi izatea."
+"Baliteke <a href=\"release-notes\">bertsio-oharrak</a> irakurri edo <a href="
+"\"update\">instalatzailea eguneratu</a> nahi izatea."
 
 #. Type: text
 #. Description
@@ -215,10 +215,8 @@ msgstr "Minuskulaz hasi behar da."
 #. Type: text
 #. Description
 #: ../ubiquity.templates:29001
-msgid ""
-"May only contain lower-case letters, digits, hyphens, and underscores."
-msgstr ""
-"Minuskulak, digituak, marratxoak eta azpimarrak soilik eduki ditzake."
+msgid "May only contain lower-case letters, digits, hyphens, and underscores."
+msgstr "Minuskulak, digituak, marratxoak eta azpimarrak soilik eduki ditzake."
 
 #. Type: text
 #. Description
@@ -381,8 +379,10 @@ msgstr "Prestatu partizioak"
 #. This is used as a button label, and should be translated as an action.
 #. Omit the [ ... ] from the translation.
 #: ../ubiquity.templates:55001
+#, fuzzy
+#| msgid "_Install Now[ action ]"
 msgid "_Restart[ action ]"
-msgstr "_Berrabiarazi[ action ]"
+msgstr "_Instalatu"
 
 #. Type: text
 #. Description
@@ -434,7 +434,7 @@ msgstr "Abiarazte-kudeatzailerik gabe jarraitu."
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Ubuntu'
+#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:63001
 msgid ""
 "You will need to manually install a bootloader in order to start ${RELEASE}."
@@ -706,7 +706,7 @@ msgstr "Abiarazte-kudeatzailea"
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Ubuntu'
+#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:104001
 msgid ""
 "Installation has finished.  You can continue testing ${RELEASE} now, but "
@@ -1051,20 +1051,20 @@ msgstr "Pakete hauek apurtuta daude:"
 #: ../ubiquity.templates:146001 ../ubiquity.templates:147001
 msgid ""
 "This may be due to using an old installer image, or it may be due to a bug "
-"in some of the packages listed above. More details may be found in "
-"/var/log/syslog. The installer will try to continue anyway, but may fail at "
-"a later point, and will not be able to install or remove other packages "
-"(possibly including itself) from the installed system. You should first look "
-"for newer versions of your installer image, or failing that report the "
-"problem to your distributor."
+"in some of the packages listed above. More details may be found in /var/log/"
+"syslog. The installer will try to continue anyway, but may fail at a later "
+"point, and will not be able to install or remove other packages (possibly "
+"including itself) from the installed system. You should first look for newer "
+"versions of your installer image, or failing that report the problem to your "
+"distributor."
 msgstr ""
 "Hau instalatzaile-irudi zahar baten edo goian zerrendatutako paketeren baten "
-"akatsen baten erruz izan daiteke. Xehetasun gehiago aurkituko dituzu "
-"'/var/log/syslog'-n. Aurrera jarraitzen saiatuko da instalatzailea, baina "
-"posible da aurrerago huts egitea, eta ez da beste pakete batzuk (agian bere "
-"burua ezta ere) instalatu edo kentzeko gai izango. Lehenik, zure "
-"instalatzaile-irudiaren bertsio berriak bilatu beharko zenituzke, edo zure "
-"hornitzaileari arazo honen berri eman beharko zenioke."
+"akatsen baten erruz izan daiteke. Xehetasun gehiago aurkituko dituzu '/var/"
+"log/syslog'-n. Aurrera jarraitzen saiatuko da instalatzailea, baina posible "
+"da aurrerago huts egitea, eta ez da beste pakete batzuk (agian bere burua "
+"ezta ere) instalatu edo kentzeko gai izango. Lehenik, zure instalatzaile-"
+"irudiaren bertsio berriak bilatu beharko zenituzke, edo zure hornitzaileari "
+"arazo honen berri eman beharko zenioke."
 
 #. Type: error
 #. Description
@@ -1176,8 +1176,7 @@ msgstr "Itxi muntatze-puntu hauek erabiltzen ari den edozein aplikazio."
 #. Type: boolean
 #. Description
 #: ../ubiquity.templates:165001
-msgid ""
-"Would you like the installer to try to unmount these partitions again?"
+msgid "Would you like the installer to try to unmount these partitions again?"
 msgstr ""
 "Nahi al duzu instalatzailea berriro saiatzea partizio hauek desmuntatzen?"
 
@@ -1490,8 +1489,8 @@ msgid ""
 "1 partition will be deleted, use the <a href=\"\">advanced partitioning "
 "tool</a> for more control"
 msgstr ""
-"Partizio bat ezabatuko da, erabili <a href=\"\">partizio-editore "
-"aurreratua</a> kontrol gehiagorako"
+"Partizio bat ezabatuko da, erabili <a href=\"\">partizio-editore aurreratua</"
+"a> kontrol gehiagorako"
 
 #. Type: text
 #. Description
@@ -1516,46 +1515,38 @@ msgstr "Sentitzen dugu"
 #. RST means "Rapid Storage Technology". Don't translate it.
 #: ../ubiquity.templates:224001
 msgid "Turn off RST"
-msgstr "Itzali RST"
+msgstr ""
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:225001
 msgid ""
 "This computer uses Intel RST (Rapid Storage Technology). You need to turn "
-"off RST before installing Ubuntu. For instructions, open this page on a "
-"phone or other device: <a "
-"href=\"https://help.ubuntu.com/rst\">help.ubuntu.com/rst</a>"
+"off RST before installing Linux Mint. For instructions, open this page on a "
+"phone or other device: <a href=\"https://help.ubuntu.com/rst\">help.ubuntu."
+"com/rst</a>"
 msgstr ""
-"Ordenagailu honek Intel RST (Rapid Storage Technology) teknologia darabil. "
-"Ubuntu instalatu baino lehen RST itzali beharra duzu. Jarraibideetarako, "
-"ireki orri hau mugikorrean edo beste gailu batean: <a "
-"href=\"https://help.ubuntu.com/rst\">help.ubuntu.com/rst</a>"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:226001
 msgid "Turn off BitLocker"
-msgstr "Itzali BitLocker"
+msgstr ""
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:227001
 msgid ""
 "This computer uses Windows BitLocker encryption. You need to turn off "
-"BitLocker in Windows before installing Ubuntu. For instructions, open this "
-"page on a phone or other device: <a "
-"href=\"https://help.ubuntu.com/bitlocker\">help.ubuntu.com/bitlocker</a>"
+"BitLocker in Windows before installing Linux Mint. For instructions, open this "
+"page on a phone or other device: <a href=\"https://help.ubuntu.com/bitlocker"
+"\">help.ubuntu.com/bitlocker</a>"
 msgstr ""
-"Ordenagailu honek Windowsen BitLocker zifratzea darabil. Windowsen BitLocker "
-"itzali beharra duzu Ubuntu instalatu baino lehen. Jarraibideetarako, ireki "
-"orri hau mugikorrean edo beste gailu batean: <a "
-"href=\"https://help.ubuntu.com/bitlocker\">help.ubuntu.com/bitlocker</a>"
 
 #. Type: text
 #. Description
 #. SIZE is a variable substituted into this string, and may be '3.7 GB'
-#. RELEASE is a variable substituted into this string, the Ubuntu flavor'
+#. RELEASE is a variable substituted into this string, the Linux Mint flavor'
 #: ../ubiquity.templates:228001
 msgid "You need at least ${SIZE} disk space to install ${RELEASE}."
 msgstr "Gutxienez ${SIZE} libre behar dira diskoan ${RELEASE} instalatzeko."
@@ -1665,11 +1656,11 @@ msgstr ""
 #. Description
 #: ../ubiquity.templates:244001
 msgid ""
-"Web browser, utilities, office software, plus additional internet "
-"applications and media players."
+"Web browser, utilities, office software, plus additional "
+"internet applications and media players."
 msgstr ""
-"Web nabigatzailea, utilitateak, bulegotika softwarea, + Interneterako "
-"aplikazio gehigarriak eta multimedia-erreproduzitzaileak."
+"Web nabigatzailea, utilitateak, bulegotika softwarea, + "
+"Interneterako aplikazio gehigarriak eta multimedia-erreproduzitzaileak."
 
 #. Type: text
 #. Description
@@ -1739,7 +1730,7 @@ msgstr "[idatzi hemen aldatzeko]"
 #. Type: text
 #. Description
 #. OS is a variable substituted into this string, and may be 'Windows 7'
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:259001
 msgid "Replace ${OS} with ${DISTRO}"
 msgstr "Ordeztu ${OS} ${DISTRO}(r)ekin"
@@ -1757,7 +1748,7 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #. OS is a variable substituted into this string, and may be 'Windows 7'
 #: ../ubiquity.templates:260001
 msgid "Install ${DISTRO} alongside ${OS}"
@@ -1783,7 +1774,7 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #. OS is a variable substituted into this string, and may be 'Windows 7'
 #: ../ubiquity.templates:261001
 msgid "Install ${DISTRO} inside ${OS}"
@@ -1797,7 +1788,7 @@ msgstr "Beste aukera bat"
 
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:262001
 msgid ""
 "You can create or resize partitions yourself, or choose multiple partitions "
@@ -1808,14 +1799,14 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. CURDISTRO is a variable substituted into this string, and may be 'Ubuntu 10.10'
+#. CURDISTRO is a variable substituted into this string, and may be 'Linux Mint 10.10'
 #: ../ubiquity.templates:263001
 msgid "Erase ${CURDISTRO} and reinstall"
 msgstr "Ezabatu ${CURDISTRO} eta berrinstalatu"
 
 #. Type: text
 #. Description
-#. CURDISTRO is a variable substituted into this string, and may be 'Ubuntu 10.10'
+#. CURDISTRO is a variable substituted into this string, and may be 'Linux Mint 10.10'
 #: ../ubiquity.templates:263001
 msgid ""
 "<span foreground=\"darkred\">Warning:</span> This will delete all your "
@@ -1827,19 +1818,19 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #. VER is a variable substituted into this string, and may be '11.04'
-#. CURDISTRO is a variable substituted into this string, and may be 'Ubuntu 10.10'
+#. CURDISTRO is a variable substituted into this string, and may be 'Linux Mint 10.10'
 #: ../ubiquity.templates:264001
 msgid "Install ${DISTRO} ${VER} alongside ${CURDISTRO}"
 msgstr "Instalatu ${DISTRO} ${VER} ${CURDISTRO}(r)ekin batera"
 
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:265001 ../ubiquity.templates:268001
 msgid "Erase disk and install ${DISTRO}"
 msgstr "Hustu diskoa eta instalatu ${DISTRO}"
@@ -1863,7 +1854,7 @@ msgstr "Ezabatu guztia eta berrinstalatu"
 #. Type: text
 #. Description
 #. OS is a variable substituted into this string, and may be 'Windows 7'
-#. CURDISTRO is a variable substituted into this string, and may be 'Ubuntu 10.10'
+#. CURDISTRO is a variable substituted into this string, and may be 'Linux Mint 10.10'
 #: ../ubiquity.templates:266001
 msgid ""
 "<span foreground=\"darkred\">Warning:</span> This will delete all your "
@@ -1871,12 +1862,12 @@ msgid ""
 "${CURDISTRO}."
 msgstr ""
 "<span foreground=\"darkred\">Abisua:</span> Honek programa, dokumentu, "
-"argazki, musika eta bestelako fitxategi guztiak ezabatuko ditu, bai "
-"${OS}(e)n, bai ${CURDISTRO}(e)n."
+"argazki, musika eta bestelako fitxategi guztiak ezabatuko ditu, bai ${OS}"
+"(e)n, bai ${CURDISTRO}(e)n."
 
 #. Type: text
 #. Description
-#. CURDISTRO is a variable substituted into this string, and may be 'Ubuntu 10.10'
+#. CURDISTRO is a variable substituted into this string, and may be 'Linux Mint 10.10'
 #: ../ubiquity.templates:267001
 msgid "Reinstall ${CURDISTRO}"
 msgstr "Berrinstalatu ${CURDISTRO}"
@@ -1906,7 +1897,7 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:269001
 msgid "Install ${DISTRO} alongside them"
 msgstr "Instalatu ${DISTRO} besteekin batera"
@@ -2194,12 +2185,12 @@ msgstr ""
 #. Description
 #: ../ubiquity.templates:310001
 msgid ""
-"After installation completes, Ubuntu will assist you in configuring UEFI "
+"After installation completes, Linux Mint will assist you in configuring UEFI "
 "Secure Boot. To ensure that this change is being made by you as an "
 "authorized user, and not by an attacker, you must choose a password now and "
 "then use the same password after reboot to confirm the change."
 msgstr ""
-"Instalazioa osatzean, Ubuntuk UEFI Secure Boot konfiguratzen lagunduko dizu. "
+"Instalazioa osatzean, Linux Mintk UEFI Secure Boot konfiguratzen lagunduko dizu. "
 "Aldaketa hau zeuk, baimendun erabiltzaileak, egiten duela ziurtatzeko (ez "
 "erasotzaile batek), pasahitz bat aukeratu behar duzu orain, eta gero "
 "berrabiarazi ondoren pasahitz bera sartuz aldaketa berretsi."
@@ -2210,12 +2201,12 @@ msgstr ""
 msgid ""
 "<span foreground=\"darkred\">Warning</span>: If you choose not to install "
 "these drivers, or if you proceed but do not confirm the password upon "
-"reboot, Ubuntu will still be able to boot on your system but these third-"
+"reboot, Linux Mint will still be able to boot on your system but these third-"
 "party drivers will not be available for your hardware."
 msgstr ""
 "<span foreground=\"darkred\">Abisua</span>: Kontrolatzaile hauek ez "
 "instalatzea erabakitzen baduzu, edo aurrera jarraitzen baduzu baina "
-"berrabiaraztean pasahitza ez baduzu berresten, Ubuntuk sistema abiarazi "
+"berrabiaraztean pasahitza ez baduzu berresten, Linux Mintk sistema abiarazi "
 "ahalko du baina hirugarrenen kontrolatzaile hauek ez dira eskuragarri egongo "
 "zure hardwarean."
 
@@ -2295,10 +2286,3 @@ msgstr ""
 #: ../oem-config.templates:3001
 msgid "Removing packages"
 msgstr "Paketeak ezabatzen"
-
-#~ msgid ""
-#~ "Web browser, utilities, office software, KDE PIM suite plus additional "
-#~ "internet applications and media players."
-#~ msgstr ""
-#~ "Web nabigatzailea, utilitateak, bulegotika softwarea, KDE PIM suitea + "
-#~ "Interneterako aplikazio gehigarriak eta multimedia-erreproduzitzaileak."

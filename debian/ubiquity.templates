@@ -44,7 +44,7 @@ _Description:
 
 Template: ubiquity/text/try_install_text_label
 Type: text
-# RELEASE is a variable substituted into this string, and may be 'Ubuntu'
+# RELEASE is a variable substituted into this string, and may be 'Linux Mint'
 #flag:comment:2
 # MEDIUM is a variable substituted into this string, and may be 'CD'
 _Description:
@@ -56,12 +56,12 @@ _Description:
 
 Template: ubiquity/text/try_ubuntu
 Type: text
-# RELEASE is a variable substituted into this string, and may be 'Ubuntu'
+# RELEASE is a variable substituted into this string, and may be 'Linux Mint'
 _Description: Try ${RELEASE}
 
 Template: ubiquity/text/install_ubuntu
 Type: text
-# RELEASE is a variable substituted into this string, and may be 'Ubuntu'
+# RELEASE is a variable substituted into this string, and may be 'Linux Mint'
 _Description: Install ${RELEASE}
 
 Template: ubiquity/text/release_notes_label
@@ -278,7 +278,7 @@ _Description: Continue without a bootloader.
 
 Template: ubiquity/text/skip_label
 Type: text
-# RELEASE is a variable substituted into this string, and may be 'Ubuntu'
+# RELEASE is a variable substituted into this string, and may be 'Linux Mint'
 _Description:
  You will need to manually install a bootloader in order to start ${RELEASE}.
 
@@ -471,7 +471,7 @@ _Description: Boot loader
 
 Template: ubiquity/text/finished_label
 Type: text
-# RELEASE is a variable substituted into this string, and may be 'Ubuntu'
+# RELEASE is a variable substituted into this string, and may be 'Linux Mint'
 _Description:
  Installation has finished.  You can continue testing ${RELEASE} now, but until
  you restart the computer, any changes you make or documents you save will
@@ -656,10 +656,6 @@ Template: ubiquity/install/bootloader
 Type: text
 _Description: Configuring boot loader...
 
-Template: ubiquity/install/activedirectory
-Type: text
-_Description: Configuring Active Directory...
-
 Template: ubiquity/install/apt_clone_save
 Type: text
 _Description: Saving installed packages...
@@ -773,23 +769,6 @@ _Description: Error restoring installed applications
  An error occurred while restoring previously-installed applications.  The
  installation will continue, but you may have to manually reinstall some
  applications after the computer reboots.
-
-Template: ubiquity/install/broken_active_directory
-Type: error
-_Description: Error configuring connection to Active Directory
- Sorry, Active Directory can't be set up at the moment. Once your system is up
- and running, visit
- <a href="https://discourse.ubuntu.com/t/service-sssd/11579">ubuntu.com/activedirectory</a>
- for help.
-
-Template: ubiquity/install/broken_luks_add_key
-Type: error
-_Description: Error setting LUKS recovery key
- An error occurred while setting the recovery key.  The
- installation will continue, but you may have to manually add the recovery
- key in the installed system with the command:
- .
- cryptsetup luksAddKey device_name
 
 Template: ubiquity/install/md5_check
 Type: boolean
@@ -1084,12 +1063,6 @@ Template: ubiquity/text/use_wireless
 Type: text
 _Description: Connect to this network
 
-Template: ubiquity/prepare_automatic
-Type: boolean
-Default: false
-Description: for internal use; can be preseeded
- Include the prepare plugin in automatic mode.
-
 Template: ubiquity/use_nonfree
 Type: boolean
 Default: false
@@ -1181,7 +1154,7 @@ _Description: Turn off RST
 
 Template: ubiquity/text/label_using_rst
 Type: text
-_Description: This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST before installing Ubuntu. For instructions, open this page on a phone or other device: <a href="https://help.ubuntu.com/rst">help.ubuntu.com/rst</a>
+_Description: This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST before installing Linux Mint. For instructions, open this page on a phone or other device: <a href="https://help.ubuntu.com/rst">help.ubuntu.com/rst</a>
 
 Template: ubiquity/text/bitlocker_header
 Type: text
@@ -1189,12 +1162,12 @@ _Description: Turn off BitLocker
 
 Template: ubiquity/text/label_using_bitlocker
 Type: text
-_Description: This computer uses Windows BitLocker encryption. You need to turn off BitLocker in Windows before installing Ubuntu. For instructions, open this page on a phone or other device: <a href="https://help.ubuntu.com/bitlocker">help.ubuntu.com/bitlocker</a>
+_Description: This computer uses Windows BitLocker encryption. You need to turn off BitLocker in Windows before installing Linux Mint. For instructions, open this page on a phone or other device: <a href="https://help.ubuntu.com/bitlocker">help.ubuntu.com/bitlocker</a>
 
 Template: ubiquity/text/required_space
 Type: text
 # SIZE is a variable substituted into this string, and may be '3.7 GB'
-# RELEASE is a variable substituted into this string, the Ubuntu flavor'
+# RELEASE is a variable substituted into this string, the Linux Mint flavor'
 _Description: You need at least ${SIZE} disk space to install ${RELEASE}.
 
 Template: ubiquity/text/free_space
@@ -1340,7 +1313,7 @@ Template: ubiquity/partitioner/single_os_replace
 Type: text
 # OS is a variable substituted into this string, and may be 'Windows 7'
 #flag:comment:1
-# DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+# DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 _Description: Replace ${OS} with ${DISTRO}
  <span foreground="darkred">Warning:</span> This will delete all of your ${OS}
  programs, documents, photos, music, and any other files.
@@ -1348,7 +1321,7 @@ _Description: Replace ${OS} with ${DISTRO}
 Template: ubiquity/partitioner/single_os_resize
 Type: text
 #flag:comment:1
-# DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+# DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 # OS is a variable substituted into this string, and may be 'Windows 7'
 _Description: Install ${DISTRO} alongside ${OS}
  Documents, music, and other personal files will be kept. You can choose which
@@ -1357,7 +1330,7 @@ _Description: Install ${DISTRO} alongside ${OS}
 Template: ubiquity/partitioner/ubuntu_inside
 Type: text
 #flag:comment:1
-# DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+# DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 # OS is a variable substituted into this string, and may be 'Windows 7'
 _Description: Install ${DISTRO} inside ${OS}
  Documents, music, and other personal files will be kept. You can choose which
@@ -1366,14 +1339,14 @@ _Description: Install ${DISTRO} inside ${OS}
 Template: ubiquity/partitioner/advanced
 Type: text
 #flag:comment:2
-# DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+# DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 _Description: Something else
  You can create or resize partitions yourself, or choose multiple partitions
  for ${DISTRO}.
 
 Template: ubiquity/partitioner/ubuntu_format
 Type: text
-# CURDISTRO is a variable substituted into this string, and may be 'Ubuntu 10.10'
+# CURDISTRO is a variable substituted into this string, and may be 'Linux Mint 10.10'
 _Description: Erase ${CURDISTRO} and reinstall
  <span foreground="darkred">Warning:</span> This will delete all your
  ${CURDISTRO} programs, documents, photos, music, and any other files.
@@ -1381,9 +1354,9 @@ _Description: Erase ${CURDISTRO} and reinstall
 Template: ubiquity/partitioner/ubuntu_resize
 Type: text
 #flag:comment:1
-# DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+# DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 # VER is a variable substituted into this string, and may be '11.04'
-# CURDISTRO is a variable substituted into this string, and may be 'Ubuntu 10.10'
+# CURDISTRO is a variable substituted into this string, and may be 'Linux Mint 10.10'
 _Description: Install ${DISTRO} ${VER} alongside ${CURDISTRO}
  Documents, music, and other personal files will be kept. You can choose which
  operating system you want each time the computer starts up.
@@ -1391,7 +1364,7 @@ _Description: Install ${DISTRO} ${VER} alongside ${CURDISTRO}
 Template: ubiquity/partitioner/no_systems_format
 Type: text
 #flag:comment:1
-# DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+# DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 _Description: Erase disk and install ${DISTRO}
  <span foreground="darkred">Warning:</span> This will delete any files on the
  disk.
@@ -1400,7 +1373,7 @@ Template: ubiquity/partitioner/ubuntu_and_os_format
 Type: text
 #flag:comment:2
 # OS is a variable substituted into this string, and may be 'Windows 7'
-# CURDISTRO is a variable substituted into this string, and may be 'Ubuntu 10.10'
+# CURDISTRO is a variable substituted into this string, and may be 'Linux Mint 10.10'
 _Description: Erase everything and reinstall
  <span foreground="darkred">Warning:</span> This will delete all your
  programs, documents, photos, music, and other files in both ${OS} and
@@ -1409,7 +1382,7 @@ _Description: Erase everything and reinstall
 Template: ubiquity/partitioner/ubuntu_reinstall
 Type: text
 #flag:comment:1
-# CURDISTRO is a variable substituted into this string, and may be 'Ubuntu 10.10'
+# CURDISTRO is a variable substituted into this string, and may be 'Linux Mint 10.10'
 _Description: Reinstall ${CURDISTRO}
  Documents, music, and other personal files will be kept. Installed software
  will be kept where possible. System-wide settings will be cleared.
@@ -1417,7 +1390,7 @@ _Description: Reinstall ${CURDISTRO}
 Template: ubiquity/partitioner/multiple_os_format
 Type: text
 #flag:comment:1
-# DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+# DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 _Description: Erase disk and install ${DISTRO}
  <span foreground="darkred">Warning:</span> This will delete all your programs,
  documents, photos, music, and any other files in all operating systems.
@@ -1425,7 +1398,7 @@ _Description: Erase disk and install ${DISTRO}
 Template: ubiquity/partitioner/multiple_os_resize
 Type: text
 #flag:comment:1
-# DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+# DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 _Description: Install ${DISTRO} alongside them
  Documents, music, and other personal files will be kept. You can choose which
  operating system you want each time the computer starts up.
@@ -1640,14 +1613,14 @@ _Description:
  hardware. Your system also has UEFI Secure Boot enabled. UEFI Secure Boot
  needs to be configured to allow the use of these third-party drivers.
  .
- After installation completes, Ubuntu will assist you in configuring UEFI
+ After installation completes, Linux Mint will assist you in configuring UEFI
  Secure Boot. To ensure that this change is being made by you as an authorized
  user, and not by an attacker, you must choose a password now and then use
  the same password after reboot to confirm the change.
  .
  <span foreground="darkred">Warning</span>: If you choose not to install
  these drivers, or if you proceed but do not confirm the password upon reboot,
- Ubuntu will still be able to boot on your system but these third-party
+ Linux Mint will still be able to boot on your system but these third-party
  drivers will not be available for your hardware.
 
 Template: ubiquity/secureboot_key
@@ -1658,151 +1631,3 @@ Template: ubiquity/text/partman_confirm_zfs
 Type: text
 _Description:
  partition #%(partid)s as %(parttype)s used for %(partusage)s
-
-Template: ubiquity/login_use_directory
-Type: text
-_Description: Authenticate against a directory
-
-Template: ubiquity/directory_domain
-Type: text
-_Description: Active Directory domain name
-
-Template: ubiquity/directory_user
-Type: text
-_Description: Administrator to join the domain
-
-Template: ubiquity/directory_passwd
-Type: password
-_Description: Administrator password to join the domain
-
-Template: ubiquity/text/login_directory
-Type: text
-_Description:
- Use Active Directory
-
-Template: ubiquity/text/login_directory_extra_label
-Type: text
-_Description:
-  You'll enter domain and other details in the next step.
-
-Template: ubiquity/text/domain_label
-Type: text
-_Description:
- Domain:
-
-Template: ubiquity/text/domain_name_error_label
-Type: text
-_Description:
- You must enter a domain name
-
-Template: ubiquity/text/directory_testbutton
-Type: text
-_Description:
- Test connection
-
-Template: ubiquity/text/domain_user_label
-Type: text
-_Description:
- Domain Administrator:
-
-Template: ubiquity/text/domain_user_error_label
-Type: text
-_Description:
- You must enter a user name
-
-Template: ubiquity/text/domain_passwd_label
-Type: text
-_Description:
- Password:
-
-Template: ubiquity/text/directory_information_title
-Type: text
-_Description: Configure Active Directory
-
-Template: ubiquity/text/hostname_error
-Type: text
-_Description: That name already exists on the network.
-
-Template: ubiquity/text/domain_connection_error
-Type: text
-_Description: Failed to connect to domain.
-
-Template: ubiquity/text/recovery_key_enable
-Type: text
-_Description:
- Enable recovery key:
-
-Template: ubiquity/text/recovery_key_label
-Type: text
-_Description:
- Recovery key:
-
-Template: ubiquity/text/verified_recovery_key_label
-Type: text
-_Description:
- Confirm recovery key:
-
-Template: ubiquity/text/show_recovery_key
-Type: text
-_Description:
- Display recovery key:
-
-Template: ubiquity/text/recovery_key_warning
-Type: text
-_Description:
- A recovery key is generated and will be temporarily saved on the live system.
- You can select an alternate location. Save this file and keep it in a safe
- place elsewhere before rebooting.
-
-Template: ubiquity/text/recovery_key_location_label
-Type: text
-_Description: Location:
-
-Template: ubiquity/text/recovery_key_location_warning
-Type: text
-_Description:
- It is not recommended to store the key on a non removable device.
-
-Template: ubiquity/crypto_key
-Type: password
-_Description: Crypto key for LUKS + LVM
-
-Template: ubiquity/recovery_key
-Type: password
-_Description: Recovery key for LUKS + LVM
-
-Template: ubiquity/text/save_recovery_key_info
-Type: text
-_Description:
- Count not save recovery key:
- .
- ${ERRORMSG}
-
-Template: ubiquity/text/recovery_key_filename
-Type: text
-_Description:
- Enter recovery key filename
-
-Template: ubiquity/text/recovery_mismatch
-Type: text
-_Description: Passwords do not match
-
-Template: ubiquity/text/recovery_too_short
-Type: text
-_Description: Short password
-
-Template: ubiquity/text/recovery_weak
-Type: text
-_Description: Weak password
-
-Template: ubiquity/text/recovery_fair
-Type: text
-_Description: Fair password
-
-Template: ubiquity/text/recovery_good
-Type: text
-_Description: Good password
-
-Template: ubiquity/text/recovery_strong
-Type: text
-_Description: Strong password

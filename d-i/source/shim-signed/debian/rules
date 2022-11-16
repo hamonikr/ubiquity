@@ -1,10 +1,7 @@
 #! /usr/bin/make -f
 
-include /usr/share/dpkg/default.mk
-
 VERSION := $(shell LC_ALL=C dpkg-parsechangelog | grep ^Version: | cut -d ' ' -f 2)
 SHIM_VERSION := $(shell dpkg-query -f '$${Version}\n' -W shim)
-export SHIM_VERSION
 
 ifeq ($(DEB_TARGET_ARCH),amd64)
 export EFI_ARCH := X64
@@ -12,10 +9,7 @@ endif
 ifeq ($(DEB_TARGET_ARCH),arm64)
 export EFI_ARCH := AA64
 endif
-export EFI_ARCH_LOWER := $(shell echo $(EFI_ARCH) | tr A-Z a-z)
-export SHIM_BASE = shim$(EFI_ARCH_LOWER).efi
-export FB_BASE = fb$(EFI_ARCH_LOWER).efi
-export MM_BASE = mm$(EFI_ARCH_LOWER).efi
+export SHIM_BASE = shim$(shell echo $(EFI_ARCH) | tr A-Z a-z).efi
 
 %:
 	dh $@
@@ -31,6 +25,3 @@ override_dh_installchangelogs:
 override_dh_gencontrol:
 	dh_gencontrol -- -v$(VERSION)+$(SHIM_VERSION) \
 		-Vshim:Version=$(SHIM_VERSION)
-
-override_dh_builddeb:
-	dh_builddeb -- -Zxz

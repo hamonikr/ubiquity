@@ -25,6 +25,8 @@ import subprocess
 import sys
 import syslog
 
+import gettext
+
 from ubiquity import i18n, misc, osextras, plugin, upower
 from ubiquity.install_misc import (archdetect, is_secure_boot,
                                    minimal_install_rlist_path)
@@ -73,40 +75,15 @@ class PreparePageBase(plugin.PluginUI):
         self.rst_title_text = i18n.get_string('rst_header', lang)
         return
 
-    def db_get(self, question):
-        # This is a hack wrapper to use db.get() not available in PageGtk/PageKde.
-
-        # These are safety nets for the controller attribute (which both have set)
-        # and also _wizard (which is set in its class constructor), just in case.
-        controller = self.get('controller')
-        if controller is None or controller._wizard is None:
-            return None
-
-        # The db should be set when PageGtk/PageKde class constructors run, since
-        # their Wizard's class constructors initialize BaseFrontend, and it calls
-        # start_debconf(), before Wizard instantiates PageGtk/PageKde to get here.
-        # But again, just in case.
-        wizard = controller._wizard
-        db_old = wizard.db
-        if db_old is None:
-            wizard.start_debconf()
-        answer = wizard.db.get(question)
-        if db_old is None:
-            wizard.stop_debconf()
-        return answer
-
 
 class PageGtk(PreparePageBase):
-    restricted_package_name = 'ubuntu-restricted-addons'
+    restricted_package_name = 'mint-meta-codecs'
 
     def __init__(self, controller, *args, **kwargs):
-        self.controller = controller
-        prepare_automatic = self.db_get('ubiquity/prepare_automatic')
-        if self.is_automatic and prepare_automatic != 'true':
-            self.debug('prepare: not included in automatic mode')
+        if self.is_automatic:
             self.page = None
             return
-
+        self.controller = controller
         from ubiquity.gtkwidgets import Builder
         builder = Builder()
         self.controller.add_builder(builder)
@@ -235,9 +212,14 @@ class PageGtk(PreparePageBase):
         PreparePageBase.plugin_translate(self, lang)
         release = misc.get_release()
 
+        # self.prepare_nonfree_software.set_label(gettext.dgettext("mintreport", "Install multimedia codecs"))
+        # self.prepare_foss_disclaimer.set_label(gettext.dgettext("mintreport", "Multimedia codecs are required to play some video formats and to properly render some websites."))
+
         from gi.repository import Gtk
         for widget in [self.prepare_download_updates,
                        self.label_required_space,
+                       self.prepare_nonfree_software,
+                       self.prepare_foss_disclaimer,
                        self.label_free_space]:
             text = i18n.get_string(Gtk.Buildable.get_name(widget), lang)
             text = text.replace('${RELEASE}', release.name)
@@ -317,13 +299,10 @@ class PageKde(PreparePageBase):
 
     def __init__(self, controller, *args, **kwargs):
         from ubiquity.qtwidgets import StateBox
-        self.controller = controller
-        prepare_automatic = self.db_get('ubiquity/prepare_automatic')
-        if self.is_automatic and prepare_automatic != 'true':
-            self.debug('prepare: not included in automatic mode')
+        if self.is_automatic:
             self.page = None
             return
-
+        self.controller = controller
         try:
             from PyQt5 import uic
             from PyQt5 import QtGui
@@ -455,7 +434,7 @@ class PageKde(PreparePageBase):
         for widget in widgets:
             text = widget.text()
             text = text.replace('${RELEASE}', release.name)
-            text = text.replace('Ubuntu', 'Kubuntu')
+            text = text.replace('Linux Mint', 'Kubuntu')
             widget.setText(text)
 
 
@@ -490,15 +469,7 @@ class Page(plugin.Plugin):
             with open('/run/ubuntu-drivers-oem.autoinstall', 'r') as f:
                 syslog.syslog(F'ubuntu-drivers list-oem finished with: "{" ".join(f.read().splitlines())}"')
         except FileNotFoundError:
-            syslog.syslog("ubuntu-drivers list-oem finished with no available packages. Maybe we need to apt update? "
-                          "Doing that and trying again.")
-            # We only do this when we really have to since it could be slow: apt update & re-run of ubuntu-drivers
-            self.frontend.save_oem_metapackages_list(wait_finished=True)
-            try:
-                with open('/run/ubuntu-drivers-oem.autoinstall', 'r') as f:
-                    syslog.syslog(F'ubuntu-drivers list-oem finished with: "{" ".join(f.read().splitlines())}"')
-            except FileNotFoundError:
-                syslog.syslog("No, we didn't find any OEM packages again.")
+            syslog.syslog('ubuntu-drivers list-oem finished with no available packages')
 
         if self.should_show_rst_page():
             if not self.ui.show_rst_page():

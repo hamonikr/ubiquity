@@ -421,12 +421,7 @@ EndSection
             visual_a11y = 'access=v' in proc_cmdline
 
             background_image = None
-            for background in (
-                    '/usr/share/backgrounds/hamonikr/default_background.jpg',
-                    '/usr/share/backgrounds/'
-                    'ubuntustudio/ubuntustudio-default.png',
-                    '/usr/share/lubuntu/wallpapers/'
-                    'lubuntu-default-wallpaper.png'):
+            for background in ('/usr/share/backgrounds/linuxmint/default_background.jpg'):
                 exists = os.access(background, os.R_OK)
                 if exists:
                     background_image = background
@@ -504,7 +499,7 @@ EndSection
 
                 if (osextras.find_on_path('gnome-shell')):
                     # set this environment variable since we have
-                    # session-specific GSettings overrides for Ubuntu/Shell,
+                    # session-specific GSettings overrides for Linux Mint/Shell,
                     # like the theme.
                     os.environ['XDG_CURRENT_DESKTOP'] = 'ubuntu:GNOME'
                     if (osextras.find_on_path(
@@ -533,7 +528,6 @@ EndSection
                 gsd = ['/usr/libexec/gsd-a11y-keyboard',
                        '/usr/libexec/gsd-a11y-settings',
                        '/usr/libexec/gsd-clipboard',
-                       '/usr/libexec/gsd-keyboard',
                        '/usr/libexec/gsd-media-keys',
                        '/usr/libexec/gsd-power',
                        '/usr/libexec/gsd-xsettings']

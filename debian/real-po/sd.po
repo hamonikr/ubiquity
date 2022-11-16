@@ -11,12 +11,12 @@ msgstr ""
 "PO-Revision-Date: 2019-11-21 05:23+0000\n"
 "Last-Translator: Abdul-Rahim Nizamani <Unknown>\n"
 "Language-Team: Sindhi <sd@li.org>\n"
+"Language: sd\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2020-04-22 09:37+0000\n"
-"X-Generator: Launchpad (build aad6b57d58e2f621954298e262c1cc904860f5d2)\n"
-"Language: sd\n"
+"X-Launchpad-Export-Date: 2020-04-04 15:48+0000\n"
+"X-Generator: Launchpad (build a296f04231dee355be5db73cc878b9e21689a253)\n"
 
 #. Type: text
 #. Description
@@ -68,7 +68,7 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Ubuntu'
+#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
 #. MEDIUM is a variable substituted into this string, and may be 'CD'
 #: ../ubiquity.templates:10001
 msgid ""
@@ -80,7 +80,7 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Ubuntu'
+#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:10001
 msgid ""
 "Or if you're ready, you can install ${RELEASE} alongside (or instead of) "
@@ -91,14 +91,14 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Ubuntu'
+#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:11001
 msgid "Try ${RELEASE}"
 msgstr "اوبنٽو آزمايو"
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Ubuntu'
+#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:12001
 msgid "Install ${RELEASE}"
 msgstr "اوبنٽو تنسيب ڪريو"
@@ -207,8 +207,7 @@ msgstr ""
 #. Type: text
 #. Description
 #: ../ubiquity.templates:29001
-msgid ""
-"May only contain lower-case letters, digits, hyphens, and underscores."
+msgid "May only contain lower-case letters, digits, hyphens, and underscores."
 msgstr ""
 
 #. Type: text
@@ -369,8 +368,10 @@ msgstr "ورهاڱا تيار ڪريو"
 #. This is used as a button label, and should be translated as an action.
 #. Omit the [ ... ] from the translation.
 #: ../ubiquity.templates:55001
+#, fuzzy
+#| msgid "_Install Now[ action ]"
 msgid "_Restart[ action ]"
-msgstr ""
+msgstr "_تنصيب شروع"
 
 #. Type: text
 #. Description
@@ -420,7 +421,7 @@ msgstr "بوٽلوڊر کان بغير جاري رکو."
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Ubuntu'
+#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:63001
 msgid ""
 "You will need to manually install a bootloader in order to start ${RELEASE}."
@@ -685,7 +686,7 @@ msgstr "بوٽلوڊر"
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Ubuntu'
+#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:104001
 msgid ""
 "Installation has finished.  You can continue testing ${RELEASE} now, but "
@@ -1007,12 +1008,12 @@ msgstr "هيٺيان پئڪيج ٽٽل حالت ۾ آهن:"
 #: ../ubiquity.templates:146001 ../ubiquity.templates:147001
 msgid ""
 "This may be due to using an old installer image, or it may be due to a bug "
-"in some of the packages listed above. More details may be found in "
-"/var/log/syslog. The installer will try to continue anyway, but may fail at "
-"a later point, and will not be able to install or remove other packages "
-"(possibly including itself) from the installed system. You should first look "
-"for newer versions of your installer image, or failing that report the "
-"problem to your distributor."
+"in some of the packages listed above. More details may be found in /var/log/"
+"syslog. The installer will try to continue anyway, but may fail at a later "
+"point, and will not be able to install or remove other packages (possibly "
+"including itself) from the installed system. You should first look for newer "
+"versions of your installer image, or failing that report the problem to your "
+"distributor."
 msgstr ""
 
 #. Type: error
@@ -1113,8 +1114,7 @@ msgstr "اهي مائونٽ پوائنٽ استعمال ڪندڙ پروگرام 
 #. Type: boolean
 #. Description
 #: ../ubiquity.templates:165001
-msgid ""
-"Would you like the installer to try to unmount these partitions again?"
+msgid "Would you like the installer to try to unmount these partitions again?"
 msgstr ""
 
 #. Type: boolean
@@ -1440,9 +1440,9 @@ msgstr ""
 #: ../ubiquity.templates:225001
 msgid ""
 "This computer uses Intel RST (Rapid Storage Technology). You need to turn "
-"off RST before installing Ubuntu. For instructions, open this page on a "
-"phone or other device: <a "
-"href=\"https://help.ubuntu.com/rst\">help.ubuntu.com/rst</a>"
+"off RST before installing Linux Mint. For instructions, open this page on a "
+"phone or other device: <a href=\"https://help.ubuntu.com/rst\">help.ubuntu."
+"com/rst</a>"
 msgstr ""
 
 #. Type: text
@@ -1456,15 +1456,15 @@ msgstr ""
 #: ../ubiquity.templates:227001
 msgid ""
 "This computer uses Windows BitLocker encryption. You need to turn off "
-"BitLocker in Windows before installing Ubuntu. For instructions, open this "
-"page on a phone or other device: <a "
-"href=\"https://help.ubuntu.com/bitlocker\">help.ubuntu.com/bitlocker</a>"
+"BitLocker in Windows before installing Linux Mint. For instructions, open this "
+"page on a phone or other device: <a href=\"https://help.ubuntu.com/bitlocker"
+"\">help.ubuntu.com/bitlocker</a>"
 msgstr ""
 
 #. Type: text
 #. Description
 #. SIZE is a variable substituted into this string, and may be '3.7 GB'
-#. RELEASE is a variable substituted into this string, the Ubuntu flavor'
+#. RELEASE is a variable substituted into this string, the Linux Mint flavor'
 #: ../ubiquity.templates:228001
 msgid "You need at least ${SIZE} disk space to install ${RELEASE}."
 msgstr ""
@@ -1568,8 +1568,8 @@ msgstr ""
 #. Description
 #: ../ubiquity.templates:244001
 msgid ""
-"Web browser, utilities, office software, plus additional internet "
-"applications and media players."
+"Web browser, utilities, office software, plus additional "
+"internet applications and media players."
 msgstr ""
 
 #. Type: text
@@ -1634,7 +1634,7 @@ msgstr "[تبديل ڪرڻ لاءِ هتي ٽائپ ڪريو]"
 #. Type: text
 #. Description
 #. OS is a variable substituted into this string, and may be 'Windows 7'
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:259001
 msgid "Replace ${OS} with ${DISTRO}"
 msgstr ""
@@ -1650,7 +1650,7 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #. OS is a variable substituted into this string, and may be 'Windows 7'
 #: ../ubiquity.templates:260001
 msgid "Install ${DISTRO} alongside ${OS}"
@@ -1673,7 +1673,7 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #. OS is a variable substituted into this string, and may be 'Windows 7'
 #: ../ubiquity.templates:261001
 msgid "Install ${DISTRO} inside ${OS}"
@@ -1687,7 +1687,7 @@ msgstr "ٻيو ڪجھ"
 
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:262001
 msgid ""
 "You can create or resize partitions yourself, or choose multiple partitions "
@@ -1698,14 +1698,14 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. CURDISTRO is a variable substituted into this string, and may be 'Ubuntu 10.10'
+#. CURDISTRO is a variable substituted into this string, and may be 'Linux Mint 10.10'
 #: ../ubiquity.templates:263001
 msgid "Erase ${CURDISTRO} and reinstall"
 msgstr ""
 
 #. Type: text
 #. Description
-#. CURDISTRO is a variable substituted into this string, and may be 'Ubuntu 10.10'
+#. CURDISTRO is a variable substituted into this string, and may be 'Linux Mint 10.10'
 #: ../ubiquity.templates:263001
 msgid ""
 "<span foreground=\"darkred\">Warning:</span> This will delete all your "
@@ -1714,19 +1714,19 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #. VER is a variable substituted into this string, and may be '11.04'
-#. CURDISTRO is a variable substituted into this string, and may be 'Ubuntu 10.10'
+#. CURDISTRO is a variable substituted into this string, and may be 'Linux Mint 10.10'
 #: ../ubiquity.templates:264001
 msgid "Install ${DISTRO} ${VER} alongside ${CURDISTRO}"
 msgstr ""
 
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:265001 ../ubiquity.templates:268001
 msgid "Erase disk and install ${DISTRO}"
 msgstr "ڊسڪ خالي ڪري اوبنٽو تنصيب ڪريو"
@@ -1750,7 +1750,7 @@ msgstr "سڀ ڪجھ ڊاهيو ۽ ٻيهر تنصيب ڪريو"
 #. Type: text
 #. Description
 #. OS is a variable substituted into this string, and may be 'Windows 7'
-#. CURDISTRO is a variable substituted into this string, and may be 'Ubuntu 10.10'
+#. CURDISTRO is a variable substituted into this string, and may be 'Linux Mint 10.10'
 #: ../ubiquity.templates:266001
 msgid ""
 "<span foreground=\"darkred\">Warning:</span> This will delete all your "
@@ -1760,7 +1760,7 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. CURDISTRO is a variable substituted into this string, and may be 'Ubuntu 10.10'
+#. CURDISTRO is a variable substituted into this string, and may be 'Linux Mint 10.10'
 #: ../ubiquity.templates:267001
 msgid "Reinstall ${CURDISTRO}"
 msgstr ""
@@ -1784,7 +1784,7 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:269001
 msgid "Install ${DISTRO} alongside them"
 msgstr ""
@@ -2048,7 +2048,7 @@ msgstr ""
 #. Description
 #: ../ubiquity.templates:310001
 msgid ""
-"After installation completes, Ubuntu will assist you in configuring UEFI "
+"After installation completes, Linux Mint will assist you in configuring UEFI "
 "Secure Boot. To ensure that this change is being made by you as an "
 "authorized user, and not by an attacker, you must choose a password now and "
 "then use the same password after reboot to confirm the change."
@@ -2060,7 +2060,7 @@ msgstr ""
 msgid ""
 "<span foreground=\"darkred\">Warning</span>: If you choose not to install "
 "these drivers, or if you proceed but do not confirm the password upon "
-"reboot, Ubuntu will still be able to boot on your system but these third-"
+"reboot, Linux Mint will still be able to boot on your system but these third-"
 "party drivers will not be available for your hardware."
 msgstr ""
 
@@ -2118,8 +2118,8 @@ msgid ""
 "additional modifications you require to the system."
 msgstr ""
 "نئين نظام ۾ بوٽ ڪندي توهان 'oem' کاتيدار طور پهريان چونڊيل ڳجهي لفظ سان داخل "
-"ٿيندؤ؛ هن کاتيدار کي 'sudo' ڪمانڊ ذريعي انتظامي اختيارات حاصل آهن. پوءِ "
-"توهان پنهنجيون گهربل تبديليون نظام ۾ لاڳو ڪري سگهندؤ."
+"ٿيندؤ؛ هن کاتيدار کي 'sudo' ڪمانڊ ذريعي انتظامي اختيارات حاصل آهن. پوءِ توهان "
+"پنهنجيون گهربل تبديليون نظام ۾ لاڳو ڪري سگهندؤ."
 
 #. Type: text
 #. Description

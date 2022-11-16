@@ -31,7 +31,7 @@ import re
 
 import debconf
 
-from ubiquity import i18n, misc, plugin, validation
+from ubiquity import misc, plugin, validation, i18n
 
 
 NAME = 'usersetup'
@@ -117,6 +117,18 @@ class PageBase(plugin.PluginUI):
         """Returns true if the user should be automatically logged in."""
         raise NotImplementedError('get_auto_login')
 
+    def set_encrypt_home(self, value):
+        """Set whether the home directory should be encrypted."""
+        raise NotImplementedError('set_encrypt_home')
+
+    def set_force_encrypt_home(self, value):
+        """Forces whether the home directory should be encrypted."""
+        raise NotImplementedError('set_force_encrypt_home')
+
+    def get_encrypt_home(self):
+        """Returns true if the home directory should be encrypted."""
+        raise NotImplementedError('get_encrypt_home')
+
     def username_error(self, msg):
         """The selected username was bad."""
         raise NotImplementedError('username_error')
@@ -147,9 +159,7 @@ class PageBase(plugin.PluginUI):
         self.allow_password_empty = empty
 
     def plugin_translate(self, lang):
-        self.hostname_error_text = i18n.get_string('hostname_error', lang)
-        self.domain_connection_error_text = i18n.get_string('domain_connection_error', lang)
-
+        return
 
 class PageGtk(PageBase):
     plugin_title = 'ubiquity/text/userinfo_heading_label'
@@ -178,6 +188,7 @@ class PageGtk(PageBase):
         self.password = builder.get_object('password')
         self.verified_password = builder.get_object('verified_password')
         self.login_auto = builder.get_object('login_auto')
+        self.login_encrypt = builder.get_object('login_encrypt')
         self.login_pass = builder.get_object('login_pass')
         self.username_error_label = builder.get_object('username_error_label')
         self.hostname_error_label = builder.get_object('hostname_error_label')
@@ -189,19 +200,6 @@ class PageGtk(PageBase):
         self.fullname_ok = builder.get_object('fullname_ok')
         self.password_ok = builder.get_object('password_ok')
         self.password_strength = builder.get_object('password_strength')
-
-        self.login_directory = builder.get_object('login_directory')
-        self.login_directory_extra_label = builder.get_object('login_directory_extra_label')
-        self.domain_name = builder.get_object('domain_name')
-        self.domain_name_ok = builder.get_object('domain_name_ok')
-        self.domain_name_error_label = builder.get_object('domain_name_error_label')
-        self.domain_user = builder.get_object('domain_user')
-        self.domain_user_ok = builder.get_object('domain_user_ok')
-        self.domain_user_error_label = builder.get_object('domain_user_error_label')
-        self.domain_passwd = builder.get_object('domain_passwd')
-        self.directory_testbutton = builder.get_object('directory_testbutton')
-
-        self.userinfo_notebook = builder.get_object('userinfo_notebook')
 
         # Dodgy hack to let us center the contents of the page without it
         # moving as elements appear and disappear, specifically the full name
@@ -221,11 +219,6 @@ class PageGtk(PageBase):
         self.hostname_changed_id = self.hostname.connect(
             'changed', self.on_hostname_changed)
 
-        if not os.path.exists('/usr/sbin/realm'):
-            self.login_directory.hide()
-            self.login_directory_extra_label.hide()
-        self.login_directory_extra_label.set_sensitive(False)
-
         if self.controller.oem_config:
             self.fullname.set_text('OEM Configuration (temporary user)')
             self.fullname.set_editable(False)
@@ -238,11 +231,13 @@ class PageGtk(PageBase):
             self.hostname_edited = True
             self.login_vbox.hide()
             # The UserSetup component takes care of preseeding passwd/user-uid.
-            misc.execute_root('apt-install', 'oem-config-gtk',
-                                             'oem-config-slideshow-ubuntu')
+            misc.execute_root('apt-install', 'oem-config-gtk')
 
         self.resolver_ok = True
         self.plugin_widgets = self.page
+
+    def plugin_translate(self, lang):
+        self.login_encrypt.set_label(i18n.get_string('mint:Encrypt my home folder', lang))
 
     # Functions called by the Page.
 
@@ -270,6 +265,15 @@ class PageGtk(PageBase):
     def get_auto_login(self):
         return self.login_auto.get_active()
 
+    def set_encrypt_home(self, value):
+        self.login_encrypt.set_active(value)
+
+    def set_force_encrypt_home(self, value):
+        self.login_vbox.set_sensitive(not value)
+
+    def get_encrypt_home(self):
+        return self.login_encrypt.get_active()
+
     def username_error(self, msg):
         self.username_ok.hide()
         m = '<small><span foreground="darkred"><b>%s</b></span></small>' % msg
@@ -294,40 +298,10 @@ class PageGtk(PageBase):
     def set_hostname(self, value):
         self.hostname.set_text(value)
 
-    def get_login_directory(self):
-        """ Use a directory for authentication """
-        return self.login_directory.get_active()
-
-    def get_domain_name(self):
-        """ Get the domain name """
-        return self.domain_name.get_text()
-
-    def get_domain_user(self):
-        """ Get the domain name """
-        return self.domain_user.get_text()
-
-    def get_domain_passwd(self):
-        """ Get the domain name """
-        return self.domain_passwd.get_text()
-
-    def domain_name_error(self, msg):
-        self.domain_name_ok.hide()
-        m = '<small><span foreground="darkred"><b>%s</b></span></small>' % msg
-        self.domain_name_error_label.set_markup(m)
-        self.domain_name_error_label.show()
-
-    def domain_user_error(self, msg):
-        self.domain_user_ok.hide()
-        m = '<small><span foreground="darkred"><b>%s</b></span></small>' % msg
-        self.domain_user_error_label.set_markup(m)
-        self.domain_user_error_label.show()
-
     def clear_errors(self):
         self.username_error_label.hide()
         self.hostname_error_label.hide()
         self.password_error_label.hide()
-
-        self.domain_name_error_label.hide()
 
     # Callback functions.
 
@@ -411,14 +385,6 @@ class PageGtk(PageBase):
 
         self.controller.allow_go_forward(complete)
 
-    def on_password_toggle_visibility(self, widget, icon_pos, event):
-        from gi.repository import Gtk
-        visibility = self.password.get_visibility()
-        self.password.set_visibility(not visibility)
-        self.verified_password.set_visibility(not visibility)
-        self.password.set_icon_from_icon_name(
-            Gtk.EntryIconPosition.SECONDARY, ('view-conceal-symbolic', 'view-reveal-symbolic')[visibility])
-
     def on_username_changed(self, widget):
         self.username_edited = (widget.get_text() != '')
 
@@ -440,7 +406,8 @@ class PageGtk(PageBase):
         except GLib.GError:
             pass
         else:
-            self.hostname_error(self.hostname_error_text)
+            # FIXME: i18n
+            self.hostname_error('That name already exists on the network.')
             self.hostname_ok.hide()
 
     def hostname_timeout(self, widget):
@@ -466,92 +433,13 @@ class PageGtk(PageBase):
         else:
             self.resolver_ok = False
 
-    def validate_directory_info(self, widget=None):
-        """ Validate domain information """
-        domain_name_is_valid = True
-        domain_info_complete = True
-
-        domain_name_txt = self.domain_name.get_text().strip()
-        domain_user_txt = self.domain_user.get_text()
-        domain_passwd_txt = self.domain_passwd.get_text()
-
-        self.domain_name_ok.hide()
-        if domain_name_txt:
-            errors = check_hostname(domain_name_txt)
-            if errors:
-                self.domain_name_error(make_error_string(self.controller, errors))
-                domain_name_is_valid = False
-            else:
-                self.domain_name_error_label.hide()
-        else:
-            self.domain_name_error_label.hide()
-            domain_name_is_valid = False
-        self.directory_testbutton.set_sensitive(domain_name_is_valid)
-        domain_info_complete = domain_name_is_valid
-
-        if domain_user_txt:
-            # Don't enforce lower case for AD administrator.
-            errors = check_username(domain_user_txt.lower())
-            if errors:
-                self.domain_user_error(make_error_string(self.controller, errors))
-                domain_info_complete = False
-            else:
-                self.domain_user_ok.show()
-                self.domain_user_error_label.hide()
-        else:
-            self.domain_user_ok.hide()
-            self.domain_user_error_label.hide()
-            domain_info_complete = False
-
-        if not domain_passwd_txt:
-            domain_info_complete = False
-
-        self.controller.allow_go_forward(domain_info_complete)
-
-    def switch_userinfo_tab(self, tab):
-        self.userinfo_notebook.set_current_page(tab)
-
-        if tab == 1:
-            self.title = 'ubiquity/text/directory_information_title'
-            self.controller.allow_go_backward(True)
-            self.validate_directory_info()
-        else:
-            self.title = self.plugin_title
-            self.controller.allow_go_backward(False)
-            self.controller.allow_go_forward(True)
-
-        self.controller._wizard.set_page_title(self)
-
-    def plugin_set_connectivity_state(self, state):
-        # For AD we need network connectivity but it can be local and not
-        # necessarily internet connectivity
-        if not state:
-            self.login_directory.set_active(False)
-        self.login_directory.set_sensitive(state)
-
-    def plugin_on_next_clicked(self):
-        if self.userinfo_notebook.get_current_page() == 0 and self.get_login_directory():
-            self.switch_userinfo_tab(1)
-            return True
-        return False
-
-    def plugin_on_back_clicked(self):
-        if self.userinfo_notebook.get_current_page() == 1:
-            self.switch_userinfo_tab(0)
-            return True
-        return False
-
-    def on_testdomain_click(self, widget):
-        if misc.execute('realm', 'discover', self.domain_name.get_text()):
-            self.domain_name_ok.show()
-            self.domain_name_error_label.hide()
-        else:
-            self.domain_name_ok.hide()
-            self.domain_name_error(self.domain_connection_error_text)
-            self.domain_name_error_label.show()
-
-    def on_login_directory_toggled(self, widget):
-        self.login_directory_extra_label.set_sensitive(widget.get_active())
+    def on_authentication_toggled(self, w):
+        if w == self.login_auto and w.get_active():
+            self.login_encrypt.set_active(False)
+        elif w == self.login_encrypt and w.get_active():
+            # TODO why is this so slow to activate the login_pass radio button
+            # when checking encrypted home?
+            self.login_pass.set_active(True)
 
 
 class PageKde(PageBase):
@@ -562,7 +450,7 @@ class PageKde(PageBase):
         self.controller = controller
 
         from PyQt5 import uic
-        from PyQt5.QtGui import QPixmap, QIcon
+        from PyQt5.QtGui import QPixmap
 
         self.plugin_widgets = uic.loadUi(
             '/usr/share/ubiquity/qt/stepUserSetup.ui')
@@ -580,6 +468,7 @@ class PageKde(PageBase):
             self.page.username.setEnabled(False)
             self.page.login_pass.hide()
             self.page.login_auto.hide()
+            self.page.login_encrypt.hide()
             self.username_edited = True
             self.hostname_edited = True
 
@@ -595,30 +484,19 @@ class PageKde(PageBase):
         self.page.password_error_image.setPixmap(warningIcon)
         self.page.hostname_error_image.setPixmap(warningIcon)
 
-        self.page.show_password.setIcon(QIcon.fromTheme("password-show-off"))
-
         self.clear_errors()
 
         self.page.fullname.textChanged[str].connect(self.on_fullname_changed)
         self.page.username.textChanged[str].connect(self.on_username_changed)
         self.page.hostname.textChanged[str].connect(self.on_hostname_changed)
-        self.page.show_password.toggled.connect(self.on_show_password)
         # self.page.password.textChanged[str].connect(self.on_password_changed)
         # self.page.verified_password.textChanged[str].connect(
         #    self.on_verified_password_changed)
+        self.page.login_pass.clicked[bool].connect(self.on_login_pass_clicked)
+        self.page.login_auto.clicked[bool].connect(self.on_login_auto_clicked)
 
         self.page.password_debug_warning_label.setVisible(
             'UBIQUITY_DEBUG' in os.environ)
-
-    def on_show_password(self, state):
-        from PyQt5 import QtWidgets
-        from PyQt5.QtGui import QIcon
-
-        modes = (QtWidgets.QLineEdit.Password, QtWidgets.QLineEdit.Normal)
-        icons = ("password-show-off", "password-show-on")
-        self.page.password.setEchoMode(modes[state])
-        self.page.verified_password.setEchoMode(modes[state])
-        self.page.show_password.setIcon(QIcon.fromTheme(icons[state]))
 
     def on_fullname_changed(self):
         # If the user did not manually enter a username create one for him.
@@ -673,6 +551,24 @@ class PageKde(PageBase):
 
     def get_auto_login(self):
         return self.page.login_auto.isChecked()
+
+    def on_login_pass_clicked(self, checked):
+        self.page.login_encrypt.setEnabled(checked)
+
+    def on_login_auto_clicked(self, checked):
+        self.page.login_encrypt.setChecked(not(checked))
+        self.page.login_encrypt.setEnabled(not(checked))
+
+    def set_encrypt_home(self, value):
+        self.page.login_encrypt.setChecked(value)
+
+    def set_force_encrypt_home(self, value):
+        self.page.login_encrypt.setDisabled(value)
+        self.page.login_auto.setDisabled(value)
+        self.page.login_pass.setDisabled(value)
+
+    def get_encrypt_home(self):
+        return self.page.login_encrypt.isChecked()
 
     def username_error(self, msg):
         self.page.username_error_reason.setText(msg)
@@ -759,6 +655,15 @@ class PageNoninteractive(PageBase):
     def get_auto_login(self):
         return self.auto_login
 
+    def set_encrypt_home(self, value):
+        self.encrypt_home = value
+
+    def set_force_encrypt_home(self, value):
+        self.set_encrypt_home(value)
+
+    def get_encrypt_home(self):
+        return self.encrypt_home
+
     def username_error(self, msg):
         """The selected username was bad."""
         print('\nusername error: %s' % msg, file=self.console)
@@ -822,6 +727,14 @@ class Page(plugin.Plugin):
                 self.ui.set_auto_login(auto_login == 'true')
             except debconf.DebconfError:
                 pass
+            try:
+                encrypt_home = self.db.get('user-setup/force-encrypt-home')
+                if not encrypt_home:
+                    encrypt_home = self.db.get('user-setup/encrypt-home')
+                self.ui.set_encrypt_home(encrypt_home == 'true')
+                self.ui.set_force_encrypt_home(encrypt_home == 'true')
+            except debconf.DebconfError:
+                pass
         try:
             empty = self.db.get('user-setup/allow-password-empty') == 'true'
         except debconf.DebconfError:
@@ -850,8 +763,7 @@ class Page(plugin.Plugin):
             # TODO: It would be neater to use a wrapper script.
             command = [
                 'sh', '-c',
-                '/usr/lib/ubiquity/user-setup/user-setup-ask /target && '
-                '/usr/share/ubiquity/user-setup-encrypted-swap',
+                '/usr/lib/ubiquity/user-setup/user-setup-ask /target',
             ]
             return command, questions
 
@@ -871,6 +783,7 @@ class Page(plugin.Plugin):
         password = self.ui.get_password()
         password_confirm = self.ui.get_verified_password()
         auto_login = self.ui.get_auto_login()
+        encrypt_home = self.ui.get_encrypt_home()
 
         self.preseed('passwd/user-fullname', fullname)
         self.preseed('passwd/username', username)
@@ -882,7 +795,7 @@ class Page(plugin.Plugin):
         else:
             self.preseed('passwd/user-uid', '')
         self.preseed_bool('passwd/auto-login', auto_login)
-        self.preseed_bool('user-setup/encrypt-home', False)
+        self.preseed_bool('user-setup/encrypt-home', encrypt_home)
 
         hostname = self.ui.get_hostname()
 
@@ -904,13 +817,6 @@ class Page(plugin.Plugin):
                 self.preseed('netcfg/get_domain', hd[1])
             else:
                 self.preseed('netcfg/get_domain', '')
-
-        if hasattr(self.ui, 'get_login_directory'):
-            self.preseed_bool('ubiquity/login_use_directory', self.ui.get_login_directory())
-            if self.ui.get_login_directory():
-                self.preseed('ubiquity/directory_domain', self.ui.get_domain_name())
-                self.preseed('ubiquity/directory_user', self.ui.get_domain_user())
-                self.preseed('ubiquity/directory_passwd', self.ui.get_domain_passwd())
 
         plugin.Plugin.ok_handler(self)
 
@@ -935,8 +841,6 @@ class Install(plugin.InstallPlugin):
             command = [
                 '/usr/lib/ubiquity/user-setup/user-setup-apply', '/target']
             environ = {}
-            if os.path.exists('/var/lib/ubiquity/encrypted-swap'):
-                environ['OVERRIDE_ALREADY_ENCRYPTED_SWAP'] = '1'
         return command, [], environ
 
     def error(self, priority, question):

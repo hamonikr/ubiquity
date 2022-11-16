@@ -73,7 +73,7 @@ class TestFrontend(unittest.TestCase):
             # Anything smaller will need to use Alt+Ctrl+Pgd/Right
             # Scrollbars anyone?
             # self.assertLessEqual(alloc.width, 640, page.module.NAME)  # fixme
-            self.assertLessEqual(alloc.height, 744, page.module.NAME)  # 768 - 24px (top panel)
+            self.assertLessEqual(alloc.height, 556, page.module.NAME)
             if page.module.NAME == 'partman':
                 ui.allow_change_step(False)
 
@@ -123,7 +123,6 @@ class TestFrontend(unittest.TestCase):
                 # setup page.
                 'password_strength', 'hostname_error_label',
                 'password_error_label', 'username_error_label',
-                'recovery_strength',
                 # Pulled straight from debconf into the UI on progress.
                 'install_progress_text',
                 # Contains just the traceback.
@@ -133,7 +132,6 @@ class TestFrontend(unittest.TestCase):
                 'page_title',
                 # To be calculated and set
                 'partition_lvm_status',
-                'recovery_key_location',
                 # These are "placeholders" for debconfs impromptu notices
                 'ubi_question_dialog', 'question_label',
                 # Calculated error string

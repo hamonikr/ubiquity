@@ -206,7 +206,7 @@ class Install(install_misc.InstallBase):
             pass
 
         self.next_region()
-        self.remove_unusable_kernels()
+        #self.remove_unusable_kernels()
 
         self.next_region(size=4)
         self.db.progress('INFO', 'ubiquity/install/hardware')
@@ -219,22 +219,14 @@ class Install(install_misc.InstallBase):
         self.next_region()
         self.db.progress('INFO', 'ubiquity/install/installing')
 
-        if 'UBIQUITY_OEM_USER_CONFIG' in os.environ:
-            self.install_oem_extras()
-        else:
-            self.install_extras()
+        self.install_extras()
 
         # Configure zsys
         self.configure_zsys()
 
         self.next_region()
-        self.db.progress('INFO', 'ubiquity/install/activedirectory')
-        self.configure_active_directory()
-
-        self.next_region()
         self.db.progress('INFO', 'ubiquity/install/bootloader')
         self.copy_mok()
-        self.configure_recovery_key()
         self.configure_bootloader()
 
         self.next_region(size=4)
@@ -249,20 +241,20 @@ class Install(install_misc.InstallBase):
             self.remove_extras()
 
         self.next_region()
-        if 'UBIQUITY_OEM_USER_CONFIG' not in os.environ:
-            self.install_restricted_extras()
 
-        self.db.progress('INFO', 'ubiquity/install/apt_clone_restore')
-        try:
-            self.apt_clone_restore()
-        except Exception:
-            syslog.syslog(
-                syslog.LOG_WARNING,
-                'Could not restore packages from the previous install:')
-            for line in traceback.format_exc().split('\n'):
-                syslog.syslog(syslog.LOG_WARNING, line)
-            self.db.input('critical', 'ubiquity/install/broken_apt_clone')
-            self.db.go()
+        self.install_restricted_extras()
+
+        # self.db.progress('INFO', 'ubiquity/install/apt_clone_restore')
+        # try:
+        #     self.apt_clone_restore()
+        # except Exception:
+        #     syslog.syslog(
+        #         syslog.LOG_WARNING,
+        #         'Could not restore packages from the previous install:')
+        #     for line in traceback.format_exc().split('\n'):
+        #         syslog.syslog(syslog.LOG_WARNING, line)
+        #     self.db.input('critical', 'ubiquity/install/broken_apt_clone')
+        #     self.db.go()
         try:
             self.copy_network_config()
         except Exception:
@@ -299,6 +291,14 @@ class Install(install_misc.InstallBase):
                 syslog.syslog(syslog.LOG_WARNING, line)
         self.copy_dcd()
 
+        # Fix /etc/crypttab
+        crypttab_file = self.target_file("etc/crypttab")
+        if os.path.exists(crypttab_file):
+            os.system("sed -i 's@/target/@/@g' %s" % crypttab_file)
+
+        # Fix Grub title
+        install_misc.chrex(self.target, '/usr/share/ubuntu-system-adjustments/systemd/adjust-grub-title')
+
         self.db.progress('SET', self.count)
         self.db.progress('INFO', 'ubiquity/install/log_files')
         self.copy_logs()
@@ -326,7 +326,7 @@ class Install(install_misc.InstallBase):
     def configure_python(self):
         """Byte-compile Python modules.
 
-        To save space, Ubuntu excludes .pyc files from the live filesystem.
+        To save space, Linux Mint excludes .pyc files from the live filesystem.
         Recreate them now to restore the appearance of a system installed
         from .debs.
         """
@@ -456,7 +456,7 @@ class Install(install_misc.InstallBase):
         except debconf.DebconfError:
             domain = ''
         if hostname == '':
-            hostname = 'ubuntu'
+            hostname = 'mint'
 
         with open(self.target_file('etc/hosts'), 'w') as hosts:
             print("127.0.0.1\tlocalhost", file=hosts)
@@ -900,65 +900,6 @@ class Install(install_misc.InstallBase):
                         continue
                 os.symlink(linksrc, linkdst)
 
-    def configure_recovery_key(self):
-        crypto_key = self.db.get('ubiquity/crypto_key')
-        recovery_key = self.db.get('ubiquity/recovery_key')
-        if not crypto_key or not recovery_key:
-            self.clean_crypto_keys()
-            return
-
-        debconf_disk = self.db.get('partman-auto/select_disk')
-        disk = debconf_disk.split('/')[-1].replace('=', '/')
-        if not disk:  # disk is not set in manual partitioning mode
-            syslog.syslog(
-                syslog.LOG_ERR,
-                'Determining installation disk failed. '
-                'Setting a recovery key is supported only with partman-auto.')
-            self.clean_crypto_keys()
-            self.db.input('critical', 'ubiquity/install/broken_luks_add_key')
-            self.db.go()
-            return
-
-        args = ['lsblk', '-lp', '-oNAME,FSTYPE', disk]
-        lsblk_out = subprocess.check_output(args).decode(sys.stdout.encoding)
-        for line in lsblk_out.splitlines():
-            if 'crypto_LUKS' not in line:
-                continue
-            dev = line.split()[0]
-
-        if not dev:
-            syslog.syslog(syslog.LOG_ERR, ' '.join(args))
-            syslog.syslog(syslog.LOG_ERR, 'determining crypto device failed. Output: %s' % lsblk_out)
-            self.clean_crypto_keys()
-            self.db.input('critical', 'ubiquity/install/broken_luks_add_key')
-            self.db.go()
-            return
-        syslog.syslog(' '.join(args))
-
-        key_args = "%s\n%s" % (crypto_key, recovery_key)
-        try:
-            log_args = ['log-output', '-t', 'ubiquity']
-            log_args.extend(['cryptsetup', 'luksAddKey', dev])
-            p = subprocess.run(log_args, input=key_args, encoding="utf-8")
-        except subprocess.CalledProcessError as e:
-            syslog.syslog(syslog.LOG_ERR, ' '.join(log_args))
-            syslog.syslog(syslog.LOG_ERR, "cryptsetup failed(%s): %s" % (e.returncode, e.output))
-            return
-        finally:
-            self.clean_crypto_keys()
-
-        if p.returncode != 0:
-            syslog.syslog(syslog.LOG_ERR, ' '.join(log_args))
-            self.db.input('critical', 'ubiquity/install/broken_luks_add_key')
-            self.db.go()
-            return
-
-        syslog.syslog(' '.join(log_args))
-
-    def clean_crypto_keys(self):
-        self.db.set('ubiquity/crypto_key', '')
-        self.db.set('ubiquity/recovery_key', '')
-
     def configure_bootloader(self):
         """Configure and install the boot loader."""
         if 'UBIQUITY_OEM_USER_CONFIG' in os.environ:
@@ -1024,74 +965,6 @@ class Install(install_misc.InstallBase):
         use_zfs = self.db.get('ubiquity/use_zfs')
         if use_zfs:
             misc.execute_root('/usr/share/ubiquity/zsys-setup', 'finalize')
-
-    def configure_active_directory(self):
-        """ Join Active Directory domain and enable pam_mkhomedir """
-        use_directory = self.db.get('ubiquity/login_use_directory')
-        if use_directory != 'true':
-            install_misc.record_removed(['adcli', 'realmd', 'sssd'], recursive=True)
-            return
-
-        from socket import gethostname
-        hostname_cur = gethostname()
-        hostname_new = ''
-        with open(self.target_file('etc/hostname'), 'r') as f:
-            hostname_new = f.read().strip()
-
-        # Set hostname for AD to determine FQDN (no fqdn option in realm join, only adcli)
-        misc.execute_root('hostname', hostname_new)
-
-        directory_domain = self.db.get('ubiquity/directory_domain')
-        directory_user = self.db.get('ubiquity/directory_user')
-        directory_passwd = self.db.get('ubiquity/directory_passwd')
-
-        binds = ("/proc", "/sys", "/dev", "/run")
-        try:
-            for bind in binds:
-                misc.execute('mount', '--bind', bind, self.target + bind)
-            # join AD on host (services are running on host)
-            if not self.join_domain(hostname_new, directory_domain, directory_user, directory_passwd):
-                self.db.input('critical', 'ubiquity/install/broken_active_directory')
-                self.db.go()
-            install_misc.record_removed(['adcli'], recursive=True)
-        finally:
-            for bind in binds:
-                misc.execute('umount', '-f', self.target + bind)
-            # Reset hostname
-            misc.execute_root('hostname', hostname_cur)
-
-        # Enable pam_mkhomedir
-        try:
-            subprocess.check_call(['chroot', self.target, 'pam-auth-update',
-                                   '--package', '--enable', 'mkhomedir'],
-                                  preexec_fn=install_misc.debconf_disconnect)
-        except subprocess.CalledProcessError:
-            self.db.input('critical', 'ubiquity/install/broken_active_directory')
-            self.db.go()
-
-    def join_domain(self, hostname, directory_domain, directory_user, directory_passwd):
-        """ Join an Active Directory domain """
-        log_args = ['log-output', '-t', 'ubiquity']
-        log_args.extend(['realm', 'join', '--install', self.target,
-                         '--user', directory_user, '--computer-name', hostname,
-                         '--unattended', directory_domain])
-        try:
-            p = subprocess.run(log_args, input=directory_passwd, timeout=60, encoding="utf-8")
-        except TimeoutError as e:
-            syslog.syslog(syslog.LOG_ERR, ' '.join(log_args))
-            syslog.syslog(syslog.LOG_ERR, "Command timed out(%s): %s" % (e.errno, e.strerror))
-            return False
-        except IOError as e:
-            syslog.syslog(syslog.LOG_ERR, ' '.join(log_args))
-            syslog.syslog(syslog.LOG_ERR, "OS error(%s): %s" % (e.errno, e.strerror))
-            return False
-
-        if p.returncode != 0:
-            syslog.syslog(syslog.LOG_ERR, ' '.join(log_args))
-            return False
-
-        syslog.syslog(' '.join(log_args))
-        return True
 
     def copy_mok(self):
         if 'UBIQUITY_OEM_USER_CONFIG' in os.environ:
@@ -1290,17 +1163,17 @@ class Install(install_misc.InstallBase):
     def install_extras(self):
         """Try to install packages requested by installer components."""
         # We only ever install these packages from the CD.
-        sources_list = self.target_file('etc/apt/sources.list')
-        os.rename(sources_list, "%s.apt-setup" % sources_list)
-        with open("%s.apt-setup" % sources_list) as old_sources:
-            with open(sources_list, 'w') as new_sources:
-                found_cdrom = False
-                for line in old_sources:
-                    if 'cdrom:' in line:
-                        print(line, end="", file=new_sources)
-                        found_cdrom = True
-        if not found_cdrom:
-            os.rename("%s.apt-setup" % sources_list, sources_list)
+        # sources_list = self.target_file('etc/apt/sources.list')
+        # os.rename(sources_list, "%s.apt-setup" % sources_list)
+        # with open("%s.apt-setup" % sources_list) as old_sources:
+        #     with open(sources_list, 'w') as new_sources:
+        #         found_cdrom = False
+        #         for line in old_sources:
+        #             if 'cdrom:' in line:
+        #                 print(line, end="", file=new_sources)
+        #                 found_cdrom = True
+        # if not found_cdrom:
+        #     os.rename("%s.apt-setup" % sources_list, sources_list)
 
         # this will install free & non-free things, but not things
         # that have multiarch Depends or Recommends. Instead, those
@@ -1345,8 +1218,8 @@ class Install(install_misc.InstallBase):
             except FileNotFoundError:
                 pass
 
-        if found_cdrom:
-            os.rename("%s.apt-setup" % sources_list, sources_list)
+        # if found_cdrom:
+        #     os.rename("%s.apt-setup" % sources_list, sources_list)
 
         # TODO cjwatson 2007-08-09: python reimplementation of
         # oem-config/finish-install.d/07oem-config-user. This really needs
@@ -1354,6 +1227,8 @@ class Install(install_misc.InstallBase):
         # instead.
         try:
             if self.db.get('oem-config/enable') == 'true':
+                oem_pkgs = ['oem-config-gtk']
+                self.do_install(oem_pkgs)
                 if os.path.isdir(self.target_file('home/oem')):
                     with open(self.target_file('home/oem/.hwdb'), 'w'):
                         pass

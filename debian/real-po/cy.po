@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: ubiquity@packages.debian.org\n"
 "POT-Creation-Date: 2020-04-08 09:24+0100\n"
-"PO-Revision-Date: 2020-04-15 02:27+0000\n"
+"PO-Revision-Date: 2019-11-21 05:25+0000\n"
 "Last-Translator: Rhoslyn Prys <rprys@yahoo.com>\n"
 "Language-Team: Welsh <>\n"
+"Language: cy\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2020-04-22 09:37+0000\n"
-"X-Generator: Launchpad (build aad6b57d58e2f621954298e262c1cc904860f5d2)\n"
-"Language: cy\n"
+"X-Launchpad-Export-Date: 2020-04-04 15:49+0000\n"
+"X-Generator: Launchpad (build a296f04231dee355be5db73cc878b9e21689a253)\n"
 
 #. Type: text
 #. Description
@@ -71,7 +71,7 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Ubuntu'
+#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
 #. MEDIUM is a variable substituted into this string, and may be 'CD'
 #: ../ubiquity.templates:10001
 msgid ""
@@ -83,7 +83,7 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Ubuntu'
+#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:10001
 msgid ""
 "Or if you're ready, you can install ${RELEASE} alongside (or instead of) "
@@ -94,14 +94,14 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Ubuntu'
+#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:11001
 msgid "Try ${RELEASE}"
 msgstr "Rhoi cynnig ar ${RELEASE}"
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Ubuntu'
+#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:12001
 msgid "Install ${RELEASE}"
 msgstr "Gosod  ${RELEASE}"
@@ -214,8 +214,7 @@ msgstr "Rhaid iddo ddechrau â llythyren fach."
 #. Type: text
 #. Description
 #: ../ubiquity.templates:29001
-msgid ""
-"May only contain lower-case letters, digits, hyphens, and underscores."
+msgid "May only contain lower-case letters, digits, hyphens, and underscores."
 msgstr ""
 "Rhaid iddo gynnwys lythrennau bach, digidau, cysylltnodau, a thansgorau yn "
 "unig."
@@ -282,8 +281,7 @@ msgstr "Rhaid iddo fod rhwng 1 a 63 nod o hyd."
 #. Description
 #: ../ubiquity.templates:39001
 msgid "May only contain letters, digits, hyphens, and dots."
-msgstr ""
-"Rhaid iddo gynnwys llythrennau, digidau, cysylltnodau a dotiau'n unig."
+msgstr "Rhaid iddo gynnwys llythrennau, digidau, cysylltnodau a dotiau'n unig."
 
 #. Type: text
 #. Description
@@ -383,8 +381,10 @@ msgstr "Paratoi ymraniadau"
 #. This is used as a button label, and should be translated as an action.
 #. Omit the [ ... ] from the translation.
 #: ../ubiquity.templates:55001
+#, fuzzy
+#| msgid "_Install Now[ action ]"
 msgid "_Restart[ action ]"
-msgstr ""
+msgstr "_Gosod Nawr"
 
 #. Type: text
 #. Description
@@ -436,7 +436,7 @@ msgstr "Parhau heb gychwynnwr."
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Ubuntu'
+#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:63001
 msgid ""
 "You will need to manually install a bootloader in order to start ${RELEASE}."
@@ -706,7 +706,7 @@ msgstr "Cychwynnwr"
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Ubuntu'
+#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:104001
 msgid ""
 "Installation has finished.  You can continue testing ${RELEASE} now, but "
@@ -762,7 +762,7 @@ msgid ""
 "Installation is complete. You need to restart the computer in order to use "
 "the new installation."
 msgstr ""
-"Wedi gosod Ubuntu. Mae'n rhaid ailgychwyn y cyfrifiadur er mwyn defnyddio'r "
+"Wedi gosod Linux Mint. Mae'n rhaid ailgychwyn y cyfrifiadur er mwyn defnyddio'r "
 "gosodiad newydd."
 
 #. Type: text
@@ -886,8 +886,7 @@ msgstr ""
 #. Description
 #: ../ubiquity.templates:122001
 msgid "The following file did not match its source copy on the CD/DVD:"
-msgstr ""
-"Nid oedd y ffeil canlynol yn cyfateb i'w ffynhonell copio ar y CD/DVD:"
+msgstr "Nid oedd y ffeil canlynol yn cyfateb i'w ffynhonell copio ar y CD/DVD:"
 
 #. Type: text
 #. Description
@@ -1048,12 +1047,12 @@ msgstr "Mae'r pecynnau canlynol mewn cyflwr torriedig"
 #: ../ubiquity.templates:146001 ../ubiquity.templates:147001
 msgid ""
 "This may be due to using an old installer image, or it may be due to a bug "
-"in some of the packages listed above. More details may be found in "
-"/var/log/syslog. The installer will try to continue anyway, but may fail at "
-"a later point, and will not be able to install or remove other packages "
-"(possibly including itself) from the installed system. You should first look "
-"for newer versions of your installer image, or failing that report the "
-"problem to your distributor."
+"in some of the packages listed above. More details may be found in /var/log/"
+"syslog. The installer will try to continue anyway, but may fail at a later "
+"point, and will not be able to install or remove other packages (possibly "
+"including itself) from the installed system. You should first look for newer "
+"versions of your installer image, or failing that report the problem to your "
+"distributor."
 msgstr ""
 "Gall hwn wedi cael ei achosi gan ddefnyddio delwedd gosod hen, neu efallai "
 "oherwydd nam mewn rhai o'r pecynnau wedi'u rhestri uchod. Mi allwch "
@@ -1170,8 +1169,7 @@ msgstr "Caewch unrhyw raglenni sy'n defnyddio'r pwyntiau arosod hyn."
 #. Type: boolean
 #. Description
 #: ../ubiquity.templates:165001
-msgid ""
-"Would you like the installer to try to unmount these partitions again?"
+msgid "Would you like the installer to try to unmount these partitions again?"
 msgstr "Ydych chi'n eisiau i'r gosodwr ceisio dadarosod y rhaniadau yma eto?"
 
 #. Type: boolean
@@ -1471,8 +1469,8 @@ msgid ""
 "%d partitions will be deleted, use the <a href=\"\">advanced partitioning "
 "tool</a> for more control"
 msgstr ""
-"Caiff %d o raniadau eu dileu, defnyddiwch yr <a href=\"\">offer rhanu "
-"uwch</a> am fwy o reolaeth"
+"Caiff %d o raniadau eu dileu, defnyddiwch yr <a href=\"\">offer rhanu uwch</"
+"a> am fwy o reolaeth"
 
 #. Type: text
 #. Description
@@ -1481,8 +1479,8 @@ msgid ""
 "1 partition will be deleted, use the <a href=\"\">advanced partitioning "
 "tool</a> for more control"
 msgstr ""
-"Caiff 1 rhaniad ei ddileu, defnyddiwch yr  <a href=\"\">offer rhannu "
-"uwch</a>  am fwy o reolaeth"
+"Caiff 1 rhaniad ei ddileu, defnyddiwch yr  <a href=\"\">offer rhannu uwch</"
+"a>  am fwy o reolaeth"
 
 #. Type: text
 #. Description
@@ -1514,9 +1512,9 @@ msgstr ""
 #: ../ubiquity.templates:225001
 msgid ""
 "This computer uses Intel RST (Rapid Storage Technology). You need to turn "
-"off RST before installing Ubuntu. For instructions, open this page on a "
-"phone or other device: <a "
-"href=\"https://help.ubuntu.com/rst\">help.ubuntu.com/rst</a>"
+"off RST before installing Linux Mint. For instructions, open this page on a "
+"phone or other device: <a href=\"https://help.ubuntu.com/rst\">help.ubuntu."
+"com/rst</a>"
 msgstr ""
 
 #. Type: text
@@ -1530,15 +1528,15 @@ msgstr ""
 #: ../ubiquity.templates:227001
 msgid ""
 "This computer uses Windows BitLocker encryption. You need to turn off "
-"BitLocker in Windows before installing Ubuntu. For instructions, open this "
-"page on a phone or other device: <a "
-"href=\"https://help.ubuntu.com/bitlocker\">help.ubuntu.com/bitlocker</a>"
+"BitLocker in Windows before installing Linux Mint. For instructions, open this "
+"page on a phone or other device: <a href=\"https://help.ubuntu.com/bitlocker"
+"\">help.ubuntu.com/bitlocker</a>"
 msgstr ""
 
 #. Type: text
 #. Description
 #. SIZE is a variable substituted into this string, and may be '3.7 GB'
-#. RELEASE is a variable substituted into this string, the Ubuntu flavor'
+#. RELEASE is a variable substituted into this string, the Linux Mint flavor'
 #: ../ubiquity.templates:228001
 msgid "You need at least ${SIZE} disk space to install ${RELEASE}."
 msgstr "Mae angen o leiaf ${SIZE} o le ar ddisg i osod ${RELEASE}."
@@ -1647,11 +1645,11 @@ msgstr ""
 #. Description
 #: ../ubiquity.templates:244001
 msgid ""
-"Web browser, utilities, office software, plus additional internet "
-"applications and media players."
+"Web browser, utilities, office software, plus additional "
+"internet applications and media players."
 msgstr ""
-"Porwr gwe, gwasanaethau, meddalwedd swyddfa, apiau gwe ychwanegol a "
-"chwaraewyr cyfrwng."
+"Porwr gwe, gwasanaethau, meddalwedd swyddfa, apiau gwe "
+"ychwanegol a chwaraewyr cyfrwng."
 
 #. Type: text
 #. Description
@@ -1718,7 +1716,7 @@ msgstr "[teipiwch yma i newid]"
 #. Type: text
 #. Description
 #. OS is a variable substituted into this string, and may be 'Windows 7'
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:259001
 msgid "Replace ${OS} with ${DISTRO}"
 msgstr "Amnewid ${OS} am ${DISTRO}"
@@ -1736,7 +1734,7 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #. OS is a variable substituted into this string, and may be 'Windows 7'
 #: ../ubiquity.templates:260001
 msgid "Install ${DISTRO} alongside ${OS}"
@@ -1762,7 +1760,7 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #. OS is a variable substituted into this string, and may be 'Windows 7'
 #: ../ubiquity.templates:261001
 msgid "Install ${DISTRO} inside ${OS}"
@@ -1776,7 +1774,7 @@ msgstr "Rhywbeth arall"
 
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:262001
 msgid ""
 "You can create or resize partitions yourself, or choose multiple partitions "
@@ -1787,14 +1785,14 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. CURDISTRO is a variable substituted into this string, and may be 'Ubuntu 10.10'
+#. CURDISTRO is a variable substituted into this string, and may be 'Linux Mint 10.10'
 #: ../ubiquity.templates:263001
 msgid "Erase ${CURDISTRO} and reinstall"
 msgstr "Dileu ${CURDISTRO} ac ailosod"
 
 #. Type: text
 #. Description
-#. CURDISTRO is a variable substituted into this string, and may be 'Ubuntu 10.10'
+#. CURDISTRO is a variable substituted into this string, and may be 'Linux Mint 10.10'
 #: ../ubiquity.templates:263001
 msgid ""
 "<span foreground=\"darkred\">Warning:</span> This will delete all your "
@@ -1806,19 +1804,19 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #. VER is a variable substituted into this string, and may be '11.04'
-#. CURDISTRO is a variable substituted into this string, and may be 'Ubuntu 10.10'
+#. CURDISTRO is a variable substituted into this string, and may be 'Linux Mint 10.10'
 #: ../ubiquity.templates:264001
 msgid "Install ${DISTRO} ${VER} alongside ${CURDISTRO}"
 msgstr "Gosod ${DISTRO} ${VER} ochr yn ochr â ${CURDISTRO}"
 
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:265001 ../ubiquity.templates:268001
 msgid "Erase disk and install ${DISTRO}"
 msgstr "Dileu'r ddisg a gosod ${DISTRO}"
@@ -1842,7 +1840,7 @@ msgstr "Dileu popeth ac ailosod"
 #. Type: text
 #. Description
 #. OS is a variable substituted into this string, and may be 'Windows 7'
-#. CURDISTRO is a variable substituted into this string, and may be 'Ubuntu 10.10'
+#. CURDISTRO is a variable substituted into this string, and may be 'Linux Mint 10.10'
 #: ../ubiquity.templates:266001
 msgid ""
 "<span foreground=\"darkred\">Warning:</span> This will delete all your "
@@ -1855,7 +1853,7 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. CURDISTRO is a variable substituted into this string, and may be 'Ubuntu 10.10'
+#. CURDISTRO is a variable substituted into this string, and may be 'Linux Mint 10.10'
 #: ../ubiquity.templates:267001
 msgid "Reinstall ${CURDISTRO}"
 msgstr "Ailosod ${CURDISTRO}"
@@ -1885,7 +1883,7 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:269001
 msgid "Install ${DISTRO} alongside them"
 msgstr "Gosod ${DISTRO} ochr yn ochr â nhw"
@@ -2166,7 +2164,7 @@ msgstr ""
 #. Description
 #: ../ubiquity.templates:310001
 msgid ""
-"After installation completes, Ubuntu will assist you in configuring UEFI "
+"After installation completes, Linux Mint will assist you in configuring UEFI "
 "Secure Boot. To ensure that this change is being made by you as an "
 "authorized user, and not by an attacker, you must choose a password now and "
 "then use the same password after reboot to confirm the change."
@@ -2178,12 +2176,12 @@ msgstr ""
 msgid ""
 "<span foreground=\"darkred\">Warning</span>: If you choose not to install "
 "these drivers, or if you proceed but do not confirm the password upon "
-"reboot, Ubuntu will still be able to boot on your system but these third-"
+"reboot, Linux Mint will still be able to boot on your system but these third-"
 "party drivers will not be available for your hardware."
 msgstr ""
 "<span foreground=\"darkred\">Rhybudd</span>: Os fyddwch yn penderfynu peidio "
 "gosod y gyrwyr yma neu os ydych am barhau heb gadarnhau'r cyfrinair wrth "
-"ailgychwyn, bydd Ubuntu dal yn gallu cychwyn eich system ond ni fydd y "
+"ailgychwyn, bydd Linux Mint dal yn gallu cychwyn eich system ond ni fydd y "
 "gyrwyr trydydd parti hyn ar gael ar gyfer eich caledwedd."
 
 #. Type: password
@@ -2261,10 +2259,3 @@ msgstr ""
 #: ../oem-config.templates:3001
 msgid "Removing packages"
 msgstr "Dileu pecynnau"
-
-#~ msgid ""
-#~ "Web browser, utilities, office software, KDE PIM suite plus additional "
-#~ "internet applications and media players."
-#~ msgstr ""
-#~ "Porwr gwe, gwasanaethau, meddalwedd swyddfa, casgliad PIM KDE, apiau gwe "
-#~ "ychwanegol a chwaraewyr cyfrwng."

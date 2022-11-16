@@ -7,16 +7,16 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: ubiquity@packages.debian.org\n"
 "POT-Creation-Date: 2020-04-08 09:24+0100\n"
-"PO-Revision-Date: 2020-04-15 12:59+0000\n"
-"Last-Translator: Shinichirou Yamada "
-"<yamada_strong_yamada_nice_64bit@yahoo.co.jp>\n"
+"PO-Revision-Date: 2020-03-01 03:06+0000\n"
+"Last-Translator: Shinichirou Yamada <yamada_strong_yamada_nice_64bit@yahoo."
+"co.jp>\n"
 "Language-Team: Debian L10n Japanese <debian-l10n-japanese@lists.debian.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2020-04-22 09:36+0000\n"
-"X-Generator: Launchpad (build aad6b57d58e2f621954298e262c1cc904860f5d2)\n"
-"Language: \n"
+"X-Launchpad-Export-Date: 2020-04-04 15:48+0000\n"
+"X-Generator: Launchpad (build a296f04231dee355be5db73cc878b9e21689a253)\n"
 
 #. Type: text
 #. Description
@@ -65,40 +65,44 @@ msgid ""
 "for this batch of systems. This name will be saved on the installed system "
 "and can be used to help with bug reports."
 msgstr ""
-"PC製造業者用のOEMモードでインストールします。このPCのシリーズ (または製造ロット) "
-"を示す固有の名前を入力してください。この名前はインストールされたシステムに保存され、バグレポート時の情報として使用できます。"
+"PC製造業者用のOEMモードでインストールします。このPCのシリーズ (または製造ロッ"
+"ト) を示す固有の名前を入力してください。この名前はインストールされたシステム"
+"に保存され、バグレポート時の情報として使用できます。"
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Ubuntu'
+#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
 #. MEDIUM is a variable substituted into this string, and may be 'CD'
 #: ../ubiquity.templates:10001
 msgid ""
 "You can try ${RELEASE} without making any changes to your computer, directly "
 "from this ${MEDIUM}."
-msgstr "コンピューターに変更を加えることなく ${MEDIUM} から直接 ${RELEASE} を試すことができます。"
+msgstr ""
+"コンピューターに変更を加えることなく ${MEDIUM} から直接 ${RELEASE} を試すこと"
+"ができます。"
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Ubuntu'
+#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:10001
 msgid ""
 "Or if you're ready, you can install ${RELEASE} alongside (or instead of) "
 "your current operating system.  This shouldn't take too long."
 msgstr ""
-"もしくは、現在のオペレーティングシステムを消去することなく (あるいは置き換えて) ${RELEASE} "
-"をインストールすることもできます。インストールにはそれほど時間がかかりません。"
+"もしくは、現在のオペレーティングシステムを消去することなく (あるいは置き換え"
+"て) ${RELEASE} をインストールすることもできます。インストールにはそれほど時間"
+"がかかりません。"
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Ubuntu'
+#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:11001
 msgid "Try ${RELEASE}"
 msgstr "${RELEASE} を試す"
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Ubuntu'
+#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:12001
 msgid "Install ${RELEASE}"
 msgstr "${RELEASE} をインストール"
@@ -117,13 +121,16 @@ msgstr ""
 #. Description
 #: ../ubiquity.templates:14001
 msgid "You may wish to read the <a href=\"release-notes\">release notes</a>."
-msgstr "お望みならば <a href=\"release-notes\">リリースノート</a> をご覧ください。"
+msgstr ""
+"お望みならば <a href=\"release-notes\">リリースノート</a> をご覧ください。"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:15001
 msgid "You may wish to <a href=\"update\">update this installer</a>."
-msgstr "お望みならば <a href=\"update\">このインストーラーをアップデート</a> してください。"
+msgstr ""
+"お望みならば <a href=\"update\">このインストーラーをアップデート</a> してくだ"
+"さい。"
 
 #. Type: text
 #. Description
@@ -197,7 +204,9 @@ msgstr "ユーザー名の入力:"
 msgid ""
 "&lt;small&gt;If more than one person will use this computer, you can set up "
 "multiple accounts after installation.&lt;/small&gt;"
-msgstr "<small>このコンピューターを複数人で使用する場合、インストール後に複数のアカウントを設定することができます。</small>"
+msgstr ""
+"<small>このコンピューターを複数人で使用する場合、インストール後に複数のアカウ"
+"ントを設定することができます。</small>"
 
 #. Type: text
 #. Description
@@ -208,8 +217,7 @@ msgstr "小文字から始める必要があります。"
 #. Type: text
 #. Description
 #: ../ubiquity.templates:29001
-msgid ""
-"May only contain lower-case letters, digits, hyphens, and underscores."
+msgid "May only contain lower-case letters, digits, hyphens, and underscores."
 msgstr "小文字、数字、ハイフン、アンダースコアのみ含むことができます。"
 
 #. Type: text
@@ -230,7 +238,9 @@ msgstr "パスワードの入力:"
 msgid ""
 "&lt;small&gt;Enter the same password twice, so that it can be checked for "
 "typing errors.&lt;/small&gt;"
-msgstr "<small>タイプミスをチェックするため、同じパスワードを2回入力してください。</small>"
+msgstr ""
+"<small>タイプミスをチェックするため、同じパスワードを2回入力してください。</"
+"small>"
 
 #. Type: text
 #. Description
@@ -284,13 +294,17 @@ msgstr "ハイフンで始まったりハイフンで終わるようにはでき
 #. Description
 #: ../ubiquity.templates:41001
 msgid "May not start or end with a dot, or contain the sequence \"..\"."
-msgstr "ドットで始まったりドットで終わったり、\"..\"のように続けたものを含むことはできません。"
+msgstr ""
+"ドットで始まったりドットで終わったり、\"..\"のように続けたものを含むことはで"
+"きません。"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:42001
 msgid "You are running in debugging mode. Do not use a valuable password!"
-msgstr "デバッグモードで起動しています。普段利用しているパスワードを入力しないでください!"
+msgstr ""
+"デバッグモードで起動しています。普段利用しているパスワードを入力しないでくだ"
+"さい!"
 
 #. Type: text
 #. Description
@@ -370,8 +384,10 @@ msgstr "パーティションの準備中"
 #. This is used as a button label, and should be translated as an action.
 #. Omit the [ ... ] from the translation.
 #: ../ubiquity.templates:55001
+#, fuzzy
+#| msgid "_Install Now[ action ]"
 msgid "_Restart[ action ]"
-msgstr ""
+msgstr "インストール(_I)"
 
 #. Type: text
 #. Description
@@ -405,7 +421,9 @@ msgstr "ブートローダのインストールに失敗しました"
 msgid ""
 "Sorry, an error occurred and it was not possible to install the bootloader "
 "at the specified location."
-msgstr "申し訳ありません、エラーが発生したため指定の位置にブートローダをインストールすることができませんでした。"
+msgstr ""
+"申し訳ありません、エラーが発生したため指定の位置にブートローダをインストール"
+"することができませんでした。"
 
 #. Type: text
 #. Description
@@ -421,11 +439,13 @@ msgstr "ブートローダなしで続けます。"
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Ubuntu'
+#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:63001
 msgid ""
 "You will need to manually install a bootloader in order to start ${RELEASE}."
-msgstr "${RELEASE} を起動するには、手動でブートローダをインストールする必要があります。"
+msgstr ""
+"${RELEASE} を起動するには、手動でブートローダをインストールする必要がありま"
+"す。"
 
 #. Type: text
 #. Description
@@ -493,8 +513,11 @@ msgid ""
 "details will be sent to our bug tracker and a developer will attend to the "
 "problem as soon as possible."
 msgstr ""
-"申し訳ありません、インストーラーがクラッシュしました。このウィンドウを閉じた後で、バグ報告ツールを使ってバグ報告を送信することができます。これにより、あな"
-"たのシステムならびにインストールプロセスに関する情報を収集します。詳細は私達のバグトラッカーに送られ、開発者ができるだけ早くこの問題に対応するでしょう。"
+"申し訳ありません、インストーラーがクラッシュしました。このウィンドウを閉じた"
+"後で、バグ報告ツールを使ってバグ報告を送信することができます。これにより、あ"
+"なたのシステムならびにインストールプロセスに関する情報を収集します。詳細は私"
+"達のバグトラッカーに送られ、開発者ができるだけ早くこの問題に対応するでしょ"
+"う。"
 
 #. Type: text
 #. Description
@@ -688,15 +711,16 @@ msgstr "ブートローダ"
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Ubuntu'
+#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:104001
 msgid ""
 "Installation has finished.  You can continue testing ${RELEASE} now, but "
 "until you restart the computer, any changes you make or documents you save "
 "will not be preserved."
 msgstr ""
-"インストールが完了しました。このまま ${RELEASE} "
-"の試用を続けることもできますが、コンピューターを再起動するまでは、なにか変更を行ったり文書を保存してもデータは残りません。"
+"インストールが完了しました。このまま ${RELEASE} の試用を続けることもできます"
+"が、コンピューターを再起動するまでは、なにか変更を行ったり文書を保存しても"
+"データは残りません。"
 
 #. Type: text
 #. Description
@@ -742,7 +766,9 @@ msgstr "UEFIモードにとどまる"
 msgid ""
 "Installation is complete. You need to restart the computer in order to use "
 "the new installation."
-msgstr "インストールは完了しました。新たにインストールされたシステムを使うにはコンピューターの再起動が必要です。"
+msgstr ""
+"インストールは完了しました。新たにインストールされたシステムを使うにはコン"
+"ピューターの再起動が必要です。"
 
 #. Type: text
 #. Description
@@ -811,7 +837,8 @@ msgid ""
 "complete on the target partition.  Please run the installer again and select "
 "a larger partition to install into."
 msgstr ""
-"インストールに必要なハードディスクの空き容量が不足しています。インストーラーを起動し直して、充分な空き容量を持ったパーティションを選択してください。"
+"インストールに必要なハードディスクの空き容量が不足しています。インストーラー"
+"を起動し直して、充分な空き容量を持ったパーティションを選択してください。"
 
 #. Type: error
 #. Description
@@ -821,8 +848,9 @@ msgid ""
 "CD/DVD, to burn the CD/DVD at a lower speed, or to clean the CD/DVD drive "
 "lens (cleaning kits are often available from electronics suppliers)."
 msgstr ""
-"多くの場合、CD/DVDかドライブの問題です。CD/DVDのホコリを取り除くか、CD/DVDを低速で焼き直すか、CD/DVDドライブのレンズを掃除すれば解"
-"決するかもしれません（電気店に行けば、ドライブレンズの掃除キットが販売されています）。"
+"多くの場合、CD/DVDかドライブの問題です。CD/DVDのホコリを取り除くか、CD/DVDを"
+"低速で焼き直すか、CD/DVDドライブのレンズを掃除すれば解決するかもしれません"
+"（電気店に行けば、ドライブレンズの掃除キットが販売されています）。"
 
 #. Type: error
 #. Description
@@ -832,8 +860,9 @@ msgid ""
 "hard disk is old and in need of replacement, or to move the system to a "
 "cooler environment."
 msgstr ""
-"多くの場合、ハードディスクの問題です。ハードディスクが古く置き換える必要があるかどうかを確認するか、より低温の環境に移動して動作させると解決するかもしれま"
-"せん。"
+"多くの場合、ハードディスクの問題です。ハードディスクが古く置き換える必要があ"
+"るかどうかを確認するか、より低温の環境に移動して動作させると解決するかもしれ"
+"ません。"
 
 #. Type: error
 #. Description
@@ -851,9 +880,11 @@ msgid ""
 "electronics suppliers), to check whether the hard disk is old and in need of "
 "replacement, or to move the system to a cooler environment."
 msgstr ""
-"多くの場合、CD/DVDかドライブ、もしくはハードディスクの問題です。CD/DVDのホコリを取り除く、CD/DVDを低速で焼き直す、CD/DVDドライブの"
-"レンズを掃除する（電気店に行けば、ドライブレンズの掃除キットが販売されています）、ハードディスクが古く置き換える必要があるかどうかを確認する、より低温の環"
-"境に移動して動作させる、などを実行するとと解決するかもしれません。"
+"多くの場合、CD/DVDかドライブ、もしくはハードディスクの問題です。CD/DVDのホコ"
+"リを取り除く、CD/DVDを低速で焼き直す、CD/DVDドライブのレンズを掃除する（電気"
+"店に行けば、ドライブレンズの掃除キットが販売されています）、ハードディスクが"
+"古く置き換える必要があるかどうかを確認する、より低温の環境に移動して動作させ"
+"る、などを実行するとと解決するかもしれません。"
 
 #. Type: select
 #. Description
@@ -1020,18 +1051,20 @@ msgstr "次のパッケージは壊れています："
 #: ../ubiquity.templates:146001 ../ubiquity.templates:147001
 msgid ""
 "This may be due to using an old installer image, or it may be due to a bug "
-"in some of the packages listed above. More details may be found in "
-"/var/log/syslog. The installer will try to continue anyway, but may fail at "
-"a later point, and will not be able to install or remove other packages "
-"(possibly including itself) from the installed system. You should first look "
-"for newer versions of your installer image, or failing that report the "
-"problem to your distributor."
+"in some of the packages listed above. More details may be found in /var/log/"
+"syslog. The installer will try to continue anyway, but may fail at a later "
+"point, and will not be able to install or remove other packages (possibly "
+"including itself) from the installed system. You should first look for newer "
+"versions of your installer image, or failing that report the problem to your "
+"distributor."
 msgstr ""
-"このエラーは、古いインストールイメージを使用したか、上記のパッケージのバグによって発生した可能性があります。より詳細な情報は、/var/log/syslo"
-"g "
-"を確認してください。インストーラーはインストールを続行しますが、この先で失敗する可能性があり、インストール済みのPCから他のパッケージ（上記のパッケージも"
-"おそらく含まれます）のインストールや削除ができなくなる可能性があります。まず最新のインストールイメージを探した上で、それでも失敗するなら問題点を製造元に報"
-"告してください。"
+"このエラーは、古いインストールイメージを使用したか、上記のパッケージのバグに"
+"よって発生した可能性があります。より詳細な情報は、/var/log/syslog を確認して"
+"ください。インストーラーはインストールを続行しますが、この先で失敗する可能性"
+"があり、インストール済みのPCから他のパッケージ（上記のパッケージもおそらく含"
+"まれます）のインストールや削除ができなくなる可能性があります。まず最新のイン"
+"ストールイメージを探した上で、それでも失敗するなら問題点を製造元に報告してく"
+"ださい。"
 
 #. Type: error
 #. Description
@@ -1059,7 +1092,8 @@ msgid ""
 "continue, but the network configuration will have to be set up again in the "
 "installed system."
 msgstr ""
-"ネットワーク設定のコピー中にエラーが発生しました。インストールは継続しますが、システムのインストール後に再度ネットワークの設定を行う必要があります。"
+"ネットワーク設定のコピー中にエラーが発生しました。インストールは継続します"
+"が、システムのインストール後に再度ネットワークの設定を行う必要があります。"
 
 #. Type: error
 #. Description
@@ -1075,8 +1109,8 @@ msgid ""
 "will continue, but the bluetooth configuration will have to be set up again "
 "in the installed system."
 msgstr ""
-"Bluetooth設定のコピー中にエラーが発生しました。インストールは続けますが、Bluetooth設定はインストール後のシステムで再度設定する必要があり"
-"ます。"
+"Bluetooth設定のコピー中にエラーが発生しました。インストールは続けますが、"
+"Bluetooth設定はインストール後のシステムで再度設定する必要があります。"
 
 #. Type: error
 #. Description
@@ -1092,8 +1126,9 @@ msgid ""
 "installation will continue, but you may have to manually reinstall some "
 "applications after the computer reboots."
 msgstr ""
-"インストールされていたアプリケーションの復元処理でエラーが発生しました。インストールは続行されますが、インストールが完了して再起動した後で、あらためてアプ"
-"リケーションを手動で再インストールする必要があります。"
+"インストールされていたアプリケーションの復元処理でエラーが発生しました。イン"
+"ストールは続行されますが、インストールが完了して再起動した後で、あらためてア"
+"プリケーションを手動で再インストールする必要があります。"
 
 #. Type: text
 #. Description
@@ -1126,21 +1161,23 @@ msgid ""
 "The installer needs to commit changes to partition tables, but cannot do so "
 "because partitions on the following mount points could not be unmounted:"
 msgstr ""
-"インストーラーは、パーティションテーブルへの変更を反映する必要がありますが、以下のマウントポイントのパーティションがアンマウントされていないため実行できま"
-"せん:"
+"インストーラーは、パーティションテーブルへの変更を反映する必要がありますが、"
+"以下のマウントポイントのパーティションがアンマウントされていないため実行でき"
+"ません:"
 
 #. Type: boolean
 #. Description
 #: ../ubiquity.templates:165001
 msgid "Please close any applications using these mount points."
-msgstr "これらのマウントポイントを使用しているアプリケーションを終了して下さい。"
+msgstr ""
+"これらのマウントポイントを使用しているアプリケーションを終了して下さい。"
 
 #. Type: boolean
 #. Description
 #: ../ubiquity.templates:165001
-msgid ""
-"Would you like the installer to try to unmount these partitions again?"
-msgstr "インストーラーがこれらのパーティションを再度アンマウントしてみても良いですか?"
+msgid "Would you like the installer to try to unmount these partitions again?"
+msgstr ""
+"インストーラーがこれらのパーティションを再度アンマウントしてみても良いですか?"
 
 #. Type: boolean
 #. Description
@@ -1154,7 +1191,9 @@ msgstr "partitionerに戻りますか？"
 msgid ""
 "Some of the partitions you created are too small.  Please make the following "
 "partitions at least this large:"
-msgstr "作成したパーティションのいくつかが小さすぎます。以下のパーティションを少なくともこの大きさにしてください:"
+msgstr ""
+"作成したパーティションのいくつかが小さすぎます。以下のパーティションを少なく"
+"ともこの大きさにしてください:"
 
 #. Type: boolean
 #. Description
@@ -1162,7 +1201,9 @@ msgstr "作成したパーティションのいくつかが小さすぎます。
 msgid ""
 "If you do not go back to the partitioner and increase the size of these "
 "partitions, the installation may fail."
-msgstr "もしpartitionerに戻らず、これらパーティションのサイズが増えているならば、インストールに失敗しているかもしれません。"
+msgstr ""
+"もしpartitionerに戻らず、これらパーティションのサイズが増えているならば、イン"
+"ストールに失敗しているかもしれません。"
 
 #. Type: text
 #. Description
@@ -1308,7 +1349,9 @@ msgstr "CD"
 msgid ""
 "Please choose the language to use for the install process. This language "
 "will be the default language for this computer."
-msgstr "インストール時に利用する言語を選択してください。この言語はこのコンピューターのデフォルトの言語として設定されます。"
+msgstr ""
+"インストール時に利用する言語を選択してください。この言語はこのコンピューター"
+"のデフォルトの言語として設定されます。"
 
 #. Type: text
 #. Description
@@ -1316,7 +1359,9 @@ msgstr "インストール時に利用する言語を選択してください。
 msgid ""
 "Please choose the language used for the configuration process. This language "
 "will be the default language for this computer."
-msgstr "設定作業で利用する言語を選択してください。この言語はこのコンピューターのデフォルトの言語として設定されます。"
+msgstr ""
+"設定作業で利用する言語を選択してください。この言語はこのコンピューターのデ"
+"フォルトの言語として設定されます。"
 
 #. Type: text
 #. Description
@@ -1333,7 +1378,8 @@ msgid ""
 "The installer encountered an unrecoverable error.  A desktop session will "
 "now be run so that you may investigate the problem or try installing again."
 msgstr ""
-"インストーラーに回復不能なエラーが発生しました。問題を調査したり、再度インストールを試すことができるようデスクトップセッションを実行したままにします。"
+"インストーラーに回復不能なエラーが発生しました。問題を調査したり、再度インス"
+"トールを試すことができるようデスクトップセッションを実行したままにします。"
 
 #. Type: text
 #. Description
@@ -1355,9 +1401,9 @@ msgid ""
 "party software, download updates, automatically detect your timezone, and "
 "install full support for your language."
 msgstr ""
-"このコンピューターをwi-"
-"fiネットワークに接続すると、サードパーティのソフトウェアのインストールやアップデータのダウンロード、タイムゾーンの自動検出、利用する言語を完全にサポート"
-"するソフトのインストールが可能になります。"
+"このコンピューターをwi-fiネットワークに接続すると、サードパーティのソフトウェ"
+"アのインストールやアップデータのダウンロード、タイムゾーンの自動検出、利用す"
+"る言語を完全にサポートするソフトのインストールが可能になります。"
 
 #. Type: text
 #. Description
@@ -1430,7 +1476,8 @@ msgid ""
 "%d partitions will be deleted, use the <a href=\"\">advanced partitioning "
 "tool</a> for more control"
 msgstr ""
-"%d 個のパーティションが削除されます。高度な設定をするには、<a href=\"\">拡張パーティショニングツール</a> を利用してください。"
+"%d 個のパーティションが削除されます。高度な設定をするには、<a href=\"\">拡張"
+"パーティショニングツール</a> を利用してください。"
 
 #. Type: text
 #. Description
@@ -1439,7 +1486,8 @@ msgid ""
 "1 partition will be deleted, use the <a href=\"\">advanced partitioning "
 "tool</a> for more control"
 msgstr ""
-"1 個のパーティションが削除されます。高度な設定をするには、<a href=\"\">拡張パーティショニングツール</a> を利用してください。"
+"1 個のパーティションが削除されます。高度な設定をするには、<a href=\"\">拡張"
+"パーティショニングツール</a> を利用してください。"
 
 #. Type: text
 #. Description
@@ -1471,9 +1519,9 @@ msgstr ""
 #: ../ubiquity.templates:225001
 msgid ""
 "This computer uses Intel RST (Rapid Storage Technology). You need to turn "
-"off RST before installing Ubuntu. For instructions, open this page on a "
-"phone or other device: <a "
-"href=\"https://help.ubuntu.com/rst\">help.ubuntu.com/rst</a>"
+"off RST before installing Linux Mint. For instructions, open this page on a "
+"phone or other device: <a href=\"https://help.ubuntu.com/rst\">help.ubuntu."
+"com/rst</a>"
 msgstr ""
 
 #. Type: text
@@ -1487,18 +1535,19 @@ msgstr ""
 #: ../ubiquity.templates:227001
 msgid ""
 "This computer uses Windows BitLocker encryption. You need to turn off "
-"BitLocker in Windows before installing Ubuntu. For instructions, open this "
-"page on a phone or other device: <a "
-"href=\"https://help.ubuntu.com/bitlocker\">help.ubuntu.com/bitlocker</a>"
+"BitLocker in Windows before installing Linux Mint. For instructions, open this "
+"page on a phone or other device: <a href=\"https://help.ubuntu.com/bitlocker"
+"\">help.ubuntu.com/bitlocker</a>"
 msgstr ""
 
 #. Type: text
 #. Description
 #. SIZE is a variable substituted into this string, and may be '3.7 GB'
-#. RELEASE is a variable substituted into this string, the Ubuntu flavor'
+#. RELEASE is a variable substituted into this string, the Linux Mint flavor'
 #: ../ubiquity.templates:228001
 msgid "You need at least ${SIZE} disk space to install ${RELEASE}."
-msgstr "${RELEASE} のインストールには少なくとも ${SIZE} のディスク容量が必要です。"
+msgstr ""
+"${RELEASE} のインストールには少なくとも ${SIZE} のディスク容量が必要です。"
 
 #. Type: text
 #. Description
@@ -1525,7 +1574,9 @@ msgstr "インターネットに接続されていること"
 msgid ""
 "This software is subject to license terms included with its documentation. "
 "Some is proprietary."
-msgstr "このソフトウェアはそのドキュメントに含まれるライセンス規約に基づきます。いくつかはプロプライエタリです。"
+msgstr ""
+"このソフトウェアはそのドキュメントに含まれるライセンス規約に基づきます。いく"
+"つかはプロプライエタリです。"
 
 #. Type: text
 #. Description
@@ -1533,7 +1584,9 @@ msgstr "このソフトウェアはそのドキュメントに含まれるライ
 msgid ""
 "Install third-party software for graphics and Wi-Fi hardware and additional "
 "media formats"
-msgstr "グラフィックスとWi-Fiハードウェアと追加のメディアフォーマットのサードパーティ製ソフトウェアをインストールする"
+msgstr ""
+"グラフィックスとWi-Fiハードウェアと追加のメディアフォーマットのサードパーティ"
+"製ソフトウェアをインストールする"
 
 #. Type: text
 #. Description
@@ -1593,15 +1646,19 @@ msgstr "通常のインストール"
 #. Description
 #: ../ubiquity.templates:243001
 msgid "Web browser, utilities, office software, games, and media players."
-msgstr "ウェブブラウザー、ユーティリティ、オフィスソフトウェア、ゲームにメディアプレイヤー"
+msgstr ""
+"ウェブブラウザー、ユーティリティ、オフィスソフトウェア、ゲームにメディアプレ"
+"イヤー"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:244001
 msgid ""
-"Web browser, utilities, office software, plus additional internet "
-"applications and media players."
-msgstr "ウェブブラウザー、ユーティリティ、オフィスソフトウェア、追加のインターネットアプリケーションとメディアプレイヤー"
+"Web browser, utilities, office software, plus additional "
+"internet applications and media players."
+msgstr ""
+"ウェブブラウザー、ユーティリティ、オフィスソフトウェア、スイートに追加"
+"のインターネットアプリケーションとメディアプレイヤー"
 
 #. Type: text
 #. Description
@@ -1616,8 +1673,9 @@ msgid ""
 "Installing third-party drivers requires configuring Secure Boot. To do this, "
 "you need to choose a security key now, and enter it when the system restarts."
 msgstr ""
-"サードパーティのドライバーをインストールするにはセキュアブートの設定が必要です。ここでセキュリティキーを設定した上で、システム再起動時にそのキーを入力して"
-"ください。"
+"サードパーティのドライバーをインストールするにはセキュアブートの設定が必要で"
+"す。ここでセキュリティキーを設定した上で、システム再起動時にそのキーを入力し"
+"てください。"
 
 #. Type: text
 #. Description
@@ -1645,8 +1703,9 @@ msgid ""
 "conventions for your country, fetch updates from sites close to you, and set "
 "the clock to the correct local time."
 msgstr ""
-"現在地を選択してください。現在地を選択すると、国ごとの慣習に合わせた適切な表示をしたり、近くのサイトからアップデートを取得したり、時計を正確な現地時間に合"
-"わせることができます。"
+"現在地を選択してください。現在地を選択すると、国ごとの慣習に合わせた適切な表"
+"示をしたり、近くのサイトからアップデートを取得したり、時計を正確な現地時間に"
+"合わせることができます。"
 
 #. Type: text
 #. Description
@@ -1669,7 +1728,7 @@ msgstr "[変更するにはここに入力]"
 #. Type: text
 #. Description
 #. OS is a variable substituted into this string, and may be 'Windows 7'
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:259001
 msgid "Replace ${OS} with ${DISTRO}"
 msgstr "${OS}を${DISTRO}で置き換える"
@@ -1682,12 +1741,12 @@ msgid ""
 "<span foreground=\"darkred\">Warning:</span> This will delete all of your "
 "${OS} programs, documents, photos, music, and any other files."
 msgstr ""
-"<span foreground=\"darkred\">警告:</span> これにより、${OS} "
-"上にあるプログラム、ドキュメント、写真、音楽、その他のファイルはすべて削除されます。"
+"<span foreground=\"darkred\">警告:</span> これにより、${OS} 上にあるプログラ"
+"ム、ドキュメント、写真、音楽、その他のファイルはすべて削除されます。"
 
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #. OS is a variable substituted into this string, and may be 'Windows 7'
 #: ../ubiquity.templates:260001
 msgid "Install ${DISTRO} alongside ${OS}"
@@ -1706,11 +1765,13 @@ msgstr "${DISTRO} を ${OS} とは別にインストール"
 msgid ""
 "Documents, music, and other personal files will be kept. You can choose "
 "which operating system you want each time the computer starts up."
-msgstr "ドキュメント、音楽、その他の個人ファイルは残されます。コンピュータを起動する際に、どのOSで起動するか選択できます。"
+msgstr ""
+"ドキュメント、音楽、その他の個人ファイルは残されます。コンピュータを起動する"
+"際に、どのOSで起動するか選択できます。"
 
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #. OS is a variable substituted into this string, and may be 'Windows 7'
 #: ../ubiquity.templates:261001
 msgid "Install ${DISTRO} inside ${OS}"
@@ -1724,46 +1785,48 @@ msgstr "それ以外"
 
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:262001
 msgid ""
 "You can create or resize partitions yourself, or choose multiple partitions "
 "for ${DISTRO}."
-msgstr "${DISTRO} 向けに、自分でパーティションの作成やサイズ変更を行ったり、複数のパーティションを選択することもできます。"
+msgstr ""
+"${DISTRO} 向けに、自分でパーティションの作成やサイズ変更を行ったり、複数の"
+"パーティションを選択することもできます。"
 
 #. Type: text
 #. Description
-#. CURDISTRO is a variable substituted into this string, and may be 'Ubuntu 10.10'
+#. CURDISTRO is a variable substituted into this string, and may be 'Linux Mint 10.10'
 #: ../ubiquity.templates:263001
 msgid "Erase ${CURDISTRO} and reinstall"
 msgstr "${CURDISTRO}を削除して再インストール"
 
 #. Type: text
 #. Description
-#. CURDISTRO is a variable substituted into this string, and may be 'Ubuntu 10.10'
+#. CURDISTRO is a variable substituted into this string, and may be 'Linux Mint 10.10'
 #: ../ubiquity.templates:263001
 msgid ""
 "<span foreground=\"darkred\">Warning:</span> This will delete all your "
 "${CURDISTRO} programs, documents, photos, music, and any other files."
 msgstr ""
-"<span foreground=\"darkred\">警告:</span> これにより、 ${CURDISTRO} "
-"の中身（アプリケーション・文書・写真・音楽など）をすべて削除します。"
+"<span foreground=\"darkred\">警告:</span> これにより、 ${CURDISTRO} の中身"
+"（アプリケーション・文書・写真・音楽など）をすべて削除します。"
 
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #. VER is a variable substituted into this string, and may be '11.04'
-#. CURDISTRO is a variable substituted into this string, and may be 'Ubuntu 10.10'
+#. CURDISTRO is a variable substituted into this string, and may be 'Linux Mint 10.10'
 #: ../ubiquity.templates:264001
 msgid "Install ${DISTRO} ${VER} alongside ${CURDISTRO}"
 msgstr "${DISTRO} ${VER} を ${CURDISTRO} と併用可能な形でインストール"
 
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:265001 ../ubiquity.templates:268001
 msgid "Erase disk and install ${DISTRO}"
 msgstr "ディスクを削除して${DISTRO}をインストール"
@@ -1775,7 +1838,8 @@ msgid ""
 "<span foreground=\"darkred\">Warning:</span> This will delete any files on "
 "the disk."
 msgstr ""
-"<span foreground=\"darkred\">警告:</span> これにより、ハードディスク上のすべてのファイルが削除されます。"
+"<span foreground=\"darkred\">警告:</span> これにより、ハードディスク上のすべ"
+"てのファイルが削除されます。"
 
 #. Type: text
 #. Description
@@ -1786,7 +1850,7 @@ msgstr "完全に削除して再インストール"
 #. Type: text
 #. Description
 #. OS is a variable substituted into this string, and may be 'Windows 7'
-#. CURDISTRO is a variable substituted into this string, and may be 'Ubuntu 10.10'
+#. CURDISTRO is a variable substituted into this string, and may be 'Linux Mint 10.10'
 #: ../ubiquity.templates:266001
 msgid ""
 "<span foreground=\"darkred\">Warning:</span> This will delete all your "
@@ -1798,7 +1862,7 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. CURDISTRO is a variable substituted into this string, and may be 'Ubuntu 10.10'
+#. CURDISTRO is a variable substituted into this string, and may be 'Linux Mint 10.10'
 #: ../ubiquity.templates:267001
 msgid "Reinstall ${CURDISTRO}"
 msgstr "${CURDISTRO}の再インストール"
@@ -1810,7 +1874,8 @@ msgid ""
 "Documents, music, and other personal files will be kept. Installed software "
 "will be kept where possible. System-wide settings will be cleared."
 msgstr ""
-"ドキュメント、音楽、その他の個人ファイルは残されます。インストールされているソフトウェアは可能であれば残されます。システム全体の設定はクリアされます。"
+"ドキュメント、音楽、その他の個人ファイルは残されます。インストールされている"
+"ソフトウェアは可能であれば残されます。システム全体の設定はクリアされます。"
 
 #. Type: text
 #. Description
@@ -1820,12 +1885,12 @@ msgid ""
 "programs, documents, photos, music, and any other files in all operating "
 "systems."
 msgstr ""
-"<span foreground=\"darkred\">警告:</span> "
-"これにより、すべてのOS上にあるプログラム、ドキュメント、写真、音楽、その他のファイルはすべて削除されます。"
+"<span foreground=\"darkred\">警告:</span> これにより、すべてのOS上にあるプロ"
+"グラム、ドキュメント、写真、音楽、その他のファイルはすべて削除されます。"
 
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Ubuntu'
+#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:269001
 msgid "Install ${DISTRO} alongside them"
 msgstr "${DISTRO} をこれらと併用可能な形でインストール"
@@ -1835,7 +1900,8 @@ msgstr "${DISTRO} をこれらと併用可能な形でインストール"
 #. OS is a variable substituted into this string, and may be 'Windows 7'
 #: ../ubiquity.templates:270001
 msgid "This computer currently has ${OS} on it. What would you like to do?"
-msgstr "コンピューターには ${OS} がインストールされています。どのようにしますか？"
+msgstr ""
+"コンピューターには ${OS} がインストールされています。どのようにしますか？"
 
 #. Type: text
 #. Description
@@ -1845,7 +1911,9 @@ msgstr "コンピューターには ${OS} がインストールされていま�
 msgid ""
 "This computer currently has ${OS1} and ${OS2} on it. What would you like to "
 "do?"
-msgstr "コンピューターには ${OS1} と ${OS2} がインストールされています。どのようにしますか？"
+msgstr ""
+"コンピューターには ${OS1} と ${OS2} がインストールされています。どのようにし"
+"ますか？"
 
 #. Type: text
 #. Description
@@ -1853,7 +1921,8 @@ msgstr "コンピューターには ${OS1} と ${OS2} がインストールさ�
 msgid ""
 "This computer currently has multiple operating systems on it. What would you "
 "like to do?"
-msgstr "コンピューターには複数のOSがインストールされています。どのようにしますか？"
+msgstr ""
+"コンピューターには複数のOSがインストールされています。どのようにしますか？"
 
 #. Type: text
 #. Description
@@ -1861,7 +1930,9 @@ msgstr "コンピューターには複数のOSがインストールされてい�
 msgid ""
 "This computer currently has no detected operating systems. What would you "
 "like to do?"
-msgstr "コンピューターにインストールされたOSは見つかりませんでした。どのようにしますか？"
+msgstr ""
+"コンピューターにインストールされたOSは見つかりませんでした。どのようにします"
+"か？"
 
 #. Type: text
 #. Description
@@ -1899,7 +1970,9 @@ msgstr "新しい${RELEASE}のインストールにLVMを使用する"
 msgid ""
 "This will set up Logical Volume Management. It allows taking snapshots and "
 "easier partition resizing."
-msgstr "これにより論理ボリュームマネージャーを設定します。LVMはスナップショットの取得やパーティションサイズの変更が簡単に行えます。"
+msgstr ""
+"これにより論理ボリュームマネージャーを設定します。LVMはスナップショットの取得"
+"やパーティションサイズの変更が簡単に行えます。"
 
 #. Type: text
 #. Description
@@ -1915,9 +1988,9 @@ msgid ""
 "on all operating systems. This is experimental and may cause data loss. Do "
 "not use on production systems."
 msgstr ""
-"<span foreground=\"darkred\">警告:</span> "
-"このオプションはすべてのOSのすべてのファイルを削除します。この機能は実験的で、データの損失を引き起こすかもしれません。日常的に使用するシステムでは有効に"
-"しないでください。"
+"<span foreground=\"darkred\">警告:</span> このオプションはすべてのOSのすべて"
+"のファイルを削除します。この機能は実験的で、データの損失を引き起こすかもしれ"
+"ません。日常的に使用するシステムでは有効にしないでください。"
 
 #. Type: text
 #. Description
@@ -1982,7 +2055,8 @@ msgid ""
 "Disk encryption protects your files in case you lose your computer. It "
 "requires you to enter a security key each time the computer starts up."
 msgstr ""
-"ディスク暗号化はあなたがコンピュータを紛失した際、あなたのファイルを守ります。コンピュータを起動するたびにセキュリティキーを入力する必要があります。"
+"ディスク暗号化はあなたがコンピュータを紛失した際、あなたのファイルを守りま"
+"す。コンピュータを起動するたびにセキュリティキーを入力する必要があります。"
 
 #. Type: text
 #. Description
@@ -1998,8 +2072,9 @@ msgid ""
 "all data will be lost. If you need to, write down your key and keep it in a "
 "safe place elsewhere."
 msgstr ""
-"<span foreground=\"darkred\">警告:</span> "
-"このセキュリティキーを紛失するとすべてのデータが失われます。必要に応じて、キーを書き留めておき、他の安全な場所で保管してください。"
+"<span foreground=\"darkred\">警告:</span> このセキュリティキーを紛失するとす"
+"べてのデータが失われます。必要に応じて、キーを書き留めておき、他の安全な場所"
+"で保管してください。"
 
 #. Type: text
 #. Description
@@ -2061,7 +2136,9 @@ msgstr "MB"
 msgid ""
 "Logical Volume Management (LVM) lets ${RELEASE} treat multiple physical "
 "volumes as a single volume."
-msgstr "論理ボリューム管理(LVM)により${RELEASE}は複数の物理ボリュームを単一のボリュームとして扱えます。"
+msgstr ""
+"論理ボリューム管理(LVM)により${RELEASE}は複数の物理ボリュームを単一のボリュー"
+"ムとして扱えます。"
 
 #. Type: text
 #. Description
@@ -2090,21 +2167,23 @@ msgid ""
 "hardware. Your system also has UEFI Secure Boot enabled. UEFI Secure Boot "
 "needs to be configured to allow the use of these third-party drivers."
 msgstr ""
-"インストール中にこのシステムにあるグラフィックスまたはWi-"
-"Fiハードウェアドライバーのためのサードパーティソフトウェアを有効にしました。このシステムはUEFIセキュアブートも有効になっています。UEFIセキュアブ"
-"ートでサードパーティのドライバーを使用するには設定が必要です。"
+"インストール中にこのシステムにあるグラフィックスまたはWi-Fiハードウェアドライ"
+"バーのためのサードパーティソフトウェアを有効にしました。このシステムはUEFIセ"
+"キュアブートも有効になっています。UEFIセキュアブートでサードパーティのドライ"
+"バーを使用するには設定が必要です。"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:310001
 msgid ""
-"After installation completes, Ubuntu will assist you in configuring UEFI "
+"After installation completes, Linux Mint will assist you in configuring UEFI "
 "Secure Boot. To ensure that this change is being made by you as an "
 "authorized user, and not by an attacker, you must choose a password now and "
 "then use the same password after reboot to confirm the change."
 msgstr ""
-"インストール完了後、UbuntuはUEFIセキュアブートの設定を手助けします。攻撃者ではなく認証されたユーザーによる変更であることを確実にするためにここで"
-"パスワードを入力し、さらに再起動後先ほどと同じパスワードを入力する必要があります。"
+"インストール完了後、Linux MintはUEFIセキュアブートの設定を手助けします。攻撃者で"
+"はなく認証されたユーザーによる変更であることを確実にするためにここでパスワー"
+"ドを入力し、さらに再起動後先ほどと同じパスワードを入力する必要があります。"
 
 #. Type: text
 #. Description
@@ -2112,12 +2191,13 @@ msgstr ""
 msgid ""
 "<span foreground=\"darkred\">Warning</span>: If you choose not to install "
 "these drivers, or if you proceed but do not confirm the password upon "
-"reboot, Ubuntu will still be able to boot on your system but these third-"
+"reboot, Linux Mint will still be able to boot on your system but these third-"
 "party drivers will not be available for your hardware."
 msgstr ""
-"<span foreground=\"darkred\">警告</span>: "
-"もし、これらのドライバーをインストールしないことを選択した、または、インストールしても再起動時にパスワードを確認しない場合、Ubuntu "
-"はブートしますが、これらのサードパーティドライバーはあなたのハードウェアには利用できません。"
+"<span foreground=\"darkred\">警告</span>: もし、これらのドライバーをインス"
+"トールしないことを選択した、または、インストールしても再起動時にパスワードを"
+"確認しない場合、Linux Mint はブートしますが、これらのサードパーティドライバーはあ"
+"なたのハードウェアには利用できません。"
 
 #. Type: password
 #. Description
@@ -2172,8 +2252,10 @@ msgid ""
 "administrative privileges using 'sudo'. You will then be able to make any "
 "additional modifications you require to the system."
 msgstr ""
-"新しいシステムで起動した時に、'oem'ユーザーとして最初に選択したパスワードでログインすることができます。このユーザーは'sudo'を使うことで管理に必"
-"要な特権を扱うことができます。これにより、必要な追加や変更をシステムに加えることができます。"
+"新しいシステムで起動した時に、'oem'ユーザーとして最初に選択したパスワードでロ"
+"グインすることができます。このユーザーは'sudo'を使うことで管理に必要な特権を"
+"扱うことができます。これにより、必要な追加や変更をシステムに加えることができ"
+"ます。"
 
 #. Type: text
 #. Description
@@ -2183,16 +2265,12 @@ msgid ""
 "prepare'. This will cause the system to delete the temporary 'oem' user and "
 "ask the end user various configuration questions the next time it boots."
 msgstr ""
-"システムを満足のいく状態に設定したら、'oem-config-prepare' を実行してください。この操作により一時的に作成した 'oem' "
-"ユーザーが削除され、次回のコンピューター起動時にエンドユーザーに色々な設定に関する質問を行います。"
+"システムを満足のいく状態に設定したら、'oem-config-prepare' を実行してくださ"
+"い。この操作により一時的に作成した 'oem' ユーザーが削除され、次回のコンピュー"
+"ター起動時にエンドユーザーに色々な設定に関する質問を行います。"
 
 #. Type: text
 #. Description
 #: ../oem-config.templates:3001
 msgid "Removing packages"
 msgstr "パッケージを削除しています"
-
-#~ msgid ""
-#~ "Web browser, utilities, office software, KDE PIM suite plus additional "
-#~ "internet applications and media players."
-#~ msgstr "ウェブブラウザー、ユーティリティ、オフィスソフトウェア、KDE PIMスイートに追加のインターネットアプリケーションとメディアプレイヤー"

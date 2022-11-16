@@ -10,7 +10,7 @@ hw-detect 1.117ubuntu7
 localechooser 2.71ubuntu4
 netcfg 1.142ubuntu8
 partconf 1.50ubuntu1
-partman-auto 134ubuntu13.1
+partman-auto 134ubuntu13
 partman-auto-crypto 25ubuntu1
 partman-auto-loop 0ubuntu21
 partman-auto-lvm 59ubuntu4
@@ -18,7 +18,7 @@ partman-base 206ubuntu6
 partman-basicfilesystems 127ubuntu2
 partman-basicmethods 70
 partman-btrfs 29ubuntu1
-partman-crypto 101ubuntu4.1
+partman-crypto 101ubuntu4
 partman-efi 71ubuntu5
 partman-ext3 86ubuntu1
 partman-jfs 58
@@ -28,6 +28,6 @@ partman-swapfile 1
 partman-target 98ubuntu1
 partman-xfs 66
 preseed 1.71ubuntu11
-shim-signed 1.40.7
+shim-signed 1.40.3
 tzsetup 1:0.94ubuntu2
 user-setup 1.63ubuntu6
