@@ -1,3 +1,10 @@
+ubiquity (20.04.15.19+hamonikr17) taebaek; urgency=medium
+
+  [Kevin Kim]
+  * Adjust language list
+
+ -- HamoniKR <pkg@hamonikr.org>  Thu, 17 Nov 2022 10:52:36 +0900
+
 ubiquity (20.04.15.19+hamonikr16) taebaek; urgency=medium
 
   [Kevin Kim]
