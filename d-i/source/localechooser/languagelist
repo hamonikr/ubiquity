@@ -1,30 +1,13 @@
-ar;Arabic;عربي;3;EG;ar_EG.UTF-8;;console-setup
 ast;Asturian;Asturianu;2;ES;ast_ES.UTF-8;;console-setup
-ca;Catalan;Català;1;ES;ca_ES.UTF-8;;console-setup
-zh_CN;Chinese (Simplified);中文(简体);3;CN;zh_CN.UTF-8;zh_CN:zh;
-zh_TW;Chinese (Traditional);中文(繁體);3;TW;zh_TW.UTF-8;zh_TW:zh;
-da;Danish;Dansk;1;DK;da_DK.UTF-8;;console-setup
-nl;Dutch;Nederlands;1;NL;nl_NL.UTF-8;;console-setup
-en;English;English;0;US;en_US.UTF-8;;console-setup
-et;Estonian;Eesti;2;EE;et_EE.UTF-8;;console-setup
-fr;French;Français;1;FR;fr_FR.UTF-8;;console-setup
 de;German;Deutsch;1;DE;de_DE.UTF-8;;console-setup
-el;Greek;Ελληνικά;2;GR;el_GR.UTF-8;;console-setup
-id;Indonesian;Bahasa Indonesia;1;ID;id_ID.UTF-8;;console-setup
-it;Italian;Italiano;1;IT;it_IT.UTF-8;;console-setup
+en;English;English;0;US;en_US.UTF-8;;console-setup
+fr;French;Français;1;FR;fr_FR.UTF-8;;console-setup
 ja;Japanese;日本語;3;JP;ja_JP.UTF-8;;
 ko;Korean;한국어;3;KR;ko_KR.UTF-8;;
-lo;Lao;﻿ລາວ;4;LA;lo_LA;;console-setup
-ml;Malayalam;മലയാളം;4;IN;ml_IN;;
-pl;Polish;Polski;2;PL;pl_PL.UTF-8;;console-setup
-pt;Portuguese;Português;1;PT;pt_PT.UTF-8;pt:pt_BR:en;console-setup
 pt_BR;Portuguese (Brazil);Português do Brasil;1;BR;pt_BR.UTF-8;pt_BR:pt:en;console-setup
-ro;Romanian;Română;2;RO;ro_RO.UTF-8;;console-setup
 ru;Russian;Русский;2;RU;ru_RU.UTF-8;;console-setup
-es;Spanish;Español;1;ES;es_ES.UTF-8;;console-setup
-sv;Swedish;Svenska;1;SE;sv_SE.UTF-8;;console-setup
-tl;Tagalog;Tagalog;1;PH;tl_PH.UTF-8;;console-setup
 th;Thai;ภาษาไทย;3;TH;th_TH.UTF-8;;console-setup
+tl;Tagalog;Tagalog;1;PH;tl_PH.UTF-8;;console-setup
 tr;Turkish;Türkçe;2;TR;tr_TR.UTF-8;;console-setup
-uk;Ukrainian;Українська;2;UA;uk_UA.UTF-8;;console-setup
-vi;Vietnamese;Tiếng Việt;3;VN;vi_VN;;console-setup
+zh_CN;Chinese (Simplified);中文(简体);3;CN;zh_CN.UTF-8;zh_CN:zh;
+zh_TW;Chinese (Traditional);中文(繁體);3;TW;zh_TW.UTF-8;zh_TW:zh;
