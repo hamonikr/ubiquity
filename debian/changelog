@@ -1,3 +1,10 @@
+ubiquity (20.04.15.19+hamonikr16) taebaek; urgency=medium
+
+  [Kevin Kim]
+  * Update ko.po
+
+ -- HamoniKR <pkg@hamonikr.org>  Thu, 17 Nov 2022 10:22:31 +0900
+
 ubiquity (20.04.15.19+hamonikr15) taebaek; urgency=medium
 
   [Kevin Kim]
