@@ -1,3 +1,17 @@
+ubiquity (20.04.15.19+hamonikr15) taebaek; urgency=medium
+
+  [Kevin Kim]
+  * Update localechooser
+   - Add CJK additional packages
+   - Add policy file translation
+   - Add shortlist
+   - Update ko.po
+   - Update user-setup-apply for hamonikr-zsh
+   - Update ubiquity theme
+   - Removed localechooser-post-base-installer.patch (duplicated)
+
+ -- HamoniKR <pkg@hamonikr.org>  Wed, 16 Nov 2022 21:17:19 +0900
+
 ubiquity (20.04.15.19+hamonikr14) taebaek; urgency=medium
 
   [Kevin Kim]

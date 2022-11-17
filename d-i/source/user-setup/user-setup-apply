@@ -208,12 +208,18 @@ if [ "$RET" = true ] && ! is_system_user; then
 			umountproc=:
 		fi
 	fi
+
 	if [ -x $ROOT/usr/sbin/adduser ]; then
-		$log $chroot $ROOT adduser --disabled-password --gecos "$RET" $UIDOPT $ENCRYPT_HOME_OPT "$USER" >/dev/null || true
+		# When using zsh in HamoniKR OS
+		if [ -x $ROOT/usr/bin/zsh ] && [ `dpkg-query -W --showformat='${db:Status-Status}' hamonikr-zsh` = "installed" ] ; then
+			$log $chroot $ROOT adduser --disabled-password --shell /usr/bin/zsh --gecos "$RET" $UIDOPT $ENCRYPT_HOME_OPT "$USER" >/dev/null || true
+		else
+			$log $chroot $ROOT adduser --disabled-password --gecos "$RET" $UIDOPT $ENCRYPT_HOME_OPT "$USER" >/dev/null || true
+		fi
 	else
 		$log $chroot $ROOT useradd -c "$RET" -m "$USER" $UIDOPT >/dev/null || true
 	fi
-
+	
 	# Clear the user password from the database.
 	db_set passwd/user-password-crypted ''
 	db_set passwd/user-password ''

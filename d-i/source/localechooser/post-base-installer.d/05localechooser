@@ -71,9 +71,9 @@ set_field () {
 	value="$3"
 
 	if grep -qs "^#* *$category=" "$file"; then
-		sed -i "s,^#* *$category=.*,$category=\"$value\"," "$file"
+		sed -i "s,^#* *$category=.*,$category=$value," "$file"
 	else
-		echo "$category=\"$value\"" >> "$file"
+		echo "$category=$value" >> "$file"
 	fi
 }
 
@@ -99,7 +99,7 @@ if [ -e $DESTFILE ]; then
 			echo "LANGUAGE=\"$LANGLIST\"" >> $DESTFILE
 		fi
 	fi
-	sed -s 's/\"//g' $DESTFILE	
+	sed -i 's/\"//g' $DESTFILE	
 fi
 # Fallback in case the file wasn't provided by locales, or the format
 # changed.
@@ -109,7 +109,7 @@ if [ ! -e "$DESTFILE" ] || ! grep -q '^LANG=' $DESTFILE; then
 	if echo "$LANGLIST" | grep -q ":"; then
 		echo "LANGUAGE=\"$LANGLIST\"" >> $DESTFILE
 	fi
-	sed -s 's/\"//g' $DESTFILE	
+	sed -i 's/\"//g' $DESTFILE	
 fi
 
 if [ "$LOCALE_TRANSLATIONS" != "$LOCALE" ]; then
@@ -118,6 +118,13 @@ if [ "$LOCALE_TRANSLATIONS" != "$LOCALE" ]; then
 		LC_TELEPHONE LC_MEASUREMENT LC_IDENTIFICATION; do
 		set_field /target/etc/default/locale "$category" "$LOCALE"
 	done
+else
+	# 선택한 언어와 설치 환경의 로케일이 같아도 선택한 언어로 로케일 관련 변수 재 설정
+	for category in \
+		LC_NUMERIC LC_TIME LC_MONETARY LC_PAPER LC_NAME LC_ADDRESS \
+		LC_TELEPHONE LC_MEASUREMENT LC_IDENTIFICATION; do
+		set_field /target/etc/default/locale "$category" "$LOCALE_TRANSLATIONS"
+	done	
 fi
 
 # For languages that have no chance to be displayed at the Linux console
