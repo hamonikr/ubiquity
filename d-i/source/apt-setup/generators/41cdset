@@ -57,11 +57,17 @@ fi
 # Images written to USB pen drives still need better support
 # too... :-(
 cd_type=$(cat /cdrom/.disk/cd_type)
-if [ "$cd_type" = "full_cd/single" ] || \
-	[ "$cd_type" = "bluray" ] || \
-	[ "$cd_type" = "live" ]; then
+case "$cd_type" in
+    live)
 	exit 0
-fi
+	;;
+    full_cd/single)
+	exit 0
+	;;
+    bluray*)
+	exit 0
+	;;
+esac
 
 get_label() {
 	LC_ALL=C $logoutput --pass-stdout $chroot $ROOT \
@@ -91,7 +97,7 @@ if [ "$ROOT" ]; then
 	trap chroot_cleanup_localmounts EXIT HUP INT QUIT TERM
 fi
 
-tmp=$($chroot $ROOT tempfile)
+tmp=$($chroot $ROOT mktemp)
 
 cd_label=$(tail -n1 /var/lib/install-cd.id)
 db_subst apt-setup/cdrom/set-first LABEL "$cd_label"

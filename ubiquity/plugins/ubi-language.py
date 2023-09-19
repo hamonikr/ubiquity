@@ -17,8 +17,6 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-from __future__ import print_function
-
 import locale
 import os
 import re
@@ -170,7 +168,6 @@ class PageGtk(PageBase):
                 column = Gtk.TreeViewColumn(
                     None, Gtk.CellRendererText(), text=0)
                 column.set_sizing(Gtk.TreeViewColumnSizing.GROW_ONLY)
-
                 self.treeview.append_column(column)
                 selection = self.treeview.get_selection()
                 selection.connect(
@@ -250,7 +247,7 @@ class PageGtk(PageBase):
         release = misc.get_release()
         install_medium = misc.get_install_medium()
         install_medium = i18n.get_string(install_medium, lang)
-        # Set the release name (Linux Mint 10.04) and medium (USB or CD) where
+        # Set the release name (Ubuntu 10.04) and medium (USB or CD) where
         # necessary.
         w = self.try_install_text_label
         text = i18n.get_string(Gtk.Buildable.get_name(w), lang)
@@ -556,7 +553,7 @@ class PageKde(PageBase):
                 text = widget.text()
                 text = text.replace('${RELEASE}', release.name)
                 text = text.replace('${MEDIUM}', install_medium)
-                text = text.replace('Linux Mint', 'Kubuntu')
+                text = text.replace('Ubuntu', 'Kubuntu')
                 widget.setText(text)
 
         self.update_release_notes_label()

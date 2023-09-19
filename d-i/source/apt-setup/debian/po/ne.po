@@ -23,10 +23,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer_packages_po_sublevel1_ne\n"
 "Report-Msgid-Bugs-To: apt-setup@packages.debian.org\n"
-"POT-Creation-Date: 2017-10-23 22:02+0000\n"
-"PO-Revision-Date: 2017-12-17 18:40+0000\n"
-"Last-Translator: Jeewal Kunwar <jeewalkunwar1@gmail.com>\n"
-"Language-Team: American English <kde-i18n-doc@kde.org>\n"
+"POT-Creation-Date: 2019-11-02 22:41+0100\n"
+"PO-Revision-Date: 2019-08-28 18:10+0000\n"
+"Last-Translator: leela <53352@protonmail.com>\n"
+"Language-Team: Nepali <info@mpp.org.np>\n"
 "Language: ne\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -116,6 +116,7 @@ msgstr "डाउनलोड भईरहेको लोकल रिपोज
 #. Description
 #. You should end this with a colon. A non-translatable variable
 #. follows with the mirror URL
+#. :sl2:
 #: ../apt-setup-udeb.templates:8002
 msgid ""
 "The installer failed to download the public key used to sign the local "
@@ -275,8 +276,9 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../apt-cdrom-setup.templates:1001
-msgid "Scanning the CD-ROM..."
-msgstr "सी डी-रोम स्क्यान गरिदैछ..."
+#, fuzzy
+msgid "Scanning the installation media..."
+msgstr "स्थापना समाप्त गरिदै"
 
 #. Type: error
 #. Description
@@ -288,9 +290,13 @@ msgstr "apt कन्फिगरेशन समस्या"
 #. Type: error
 #. Description
 #. :sl2:
-#: ../apt-cdrom-setup.templates:2001
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../apt-cdrom-setup.templates:2001 ../apt-cdrom-setup.templates:6001
+#, fuzzy
 msgid ""
-"An attempt to configure apt to install additional packages from the CD "
+"An attempt to configure apt to install additional packages from the media "
 "failed."
 msgstr ""
 "सी डी बाट थप प्याकेजहरू स्थापना गर्नलाई apt कन्फिगर गर्न गरिएको प्रयत्न असफल भयो ।"
@@ -309,25 +315,27 @@ msgstr ""
 #. :sl1:
 #: ../apt-cdrom-setup.templates:3001 ../apt-cdrom-setup.templates:4001
 #: ../apt-cdrom-setup.templates:5001 ../apt-cdrom-setup.templates:6001
-msgid "Scan another CD or DVD?"
-msgstr "अर्को सीडी वा डीभीडी स्क्यान गर्नुहुन्छ ?"
+#, fuzzy
+msgid "Scan extra installation media?"
+msgstr "SILO स्थापना असफल भयो"
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../apt-cdrom-setup.templates:3001
-msgid "Your installation CD or DVD has been scanned; its label is:"
-msgstr "तपाईँको स्थापना सीडी वा डीभीडी स्क्यान गरिएको छ; यसको लेबुल:"
+msgid "Scanning your installation media finds the label:"
+msgstr ""
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../apt-cdrom-setup.templates:3001
+#, fuzzy
 msgid ""
-"You now have the option to scan additional CDs or DVDs for use by the "
-"package manager (apt). Normally these should be from the same set as the "
-"installation CD/DVD. If you do not have any additional CDs or DVDs "
-"available, this step can just be skipped."
+"You now have the option of scanning additional media for use by the package "
+"manager (apt). Normally these should be from the same set as the one you "
+"booted from. If you do not have any additional media, this step can just be "
+"skipped."
 msgstr ""
 "तपाईँसँग हाल प्याकेज प्रबन्धक (एपीटी) ले प्रयोग गरेको अतिरिक्त सीडी वा डीभीडीहरू स्क्यान "
 "गर्ने विकल्प छ । सामन्यतया यी स्थापना सीडी/डीभीडी जस्तै एउटै सेटबाट हुन्छन् । यदि तपाईँसँग "
@@ -340,7 +348,8 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../apt-cdrom-setup.templates:3001 ../apt-cdrom-setup.templates:4001
-msgid "If you wish to scan another CD or DVD, please insert it now."
+#, fuzzy
+msgid "If you wish to scan more media, please insert another one now."
 msgstr ""
 "यदि तपाईँ अर्को सीडी वा डीभीडी स्क्यान गर्न चाहनुहुन्छ भने, कृपया यसलाई अहिले घुसाउनुहोस् ।"
 
@@ -348,21 +357,24 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../apt-cdrom-setup.templates:4001
-msgid "The CD or DVD with the following label has been scanned:"
+#, fuzzy
+msgid "The image with the following label has been scanned:"
 msgstr "निम्न लेबुलको सीडी वा डीभीडी स्क्यान गरिएको छ:"
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../apt-cdrom-setup.templates:5001
-msgid "The CD or DVD with the following label has already been scanned:"
+#, fuzzy
+msgid "The image with the following label has already been scanned:"
 msgstr "निम्न लेबुलको सीडी वा डीभीडी पहिल्यै स्क्यान गरिएको छ:"
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../apt-cdrom-setup.templates:5001
-msgid "Please replace it now if you wish to scan another CD or DVD."
+#, fuzzy
+msgid "Please replace it now, if you wish to scan another."
 msgstr ""
 "यदि तपाईँ अर्को सीडी वा डीभीडी स्क्यान गर्न चाहनुहुन्छ भने कृपया यसलाई अहिले बदल्नुहोस् ।"
 
@@ -370,24 +382,13 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../apt-cdrom-setup.templates:6001
-msgid ""
-"An attempt to configure apt to install additional packages from the CD/DVD "
-"failed."
-msgstr ""
-"सीडी/डीभीडीबाट थप प्याकेजहरू स्थापना गर्न एपीटी कन्फिगर गर्न एउटा प्रयास असफल भयो ।"
-
-#. Type: boolean
-#. Description
-#. :sl1:
-#: ../apt-cdrom-setup.templates:6001
-msgid "Please check that the CD/DVD has been inserted correctly."
+#, fuzzy
+msgid "Please check that the media has been inserted correctly."
 msgstr "कृपया सीडी/डीभीडी सही तरीकाले घुसाइयो भन्ने जाँच गर्नुहोस् ।"
 
 #. Type: text
 #. Description
 #. :sl1:
-#. This template uses the same text as used in the package apt for apt-cdrom
-#. Do not translate "/cdrom/" (the mount point)
 #: ../apt-cdrom-setup.templates:7001
 msgid "Media change"
 msgstr "मिडिया परिवर्तन"
@@ -395,14 +396,11 @@ msgstr "मिडिया परिवर्तन"
 #. Type: text
 #. Description
 #. :sl1:
-#. This template uses the same text as used in the package apt for apt-cdrom
-#. Do not translate "/cdrom/" (the mount point)
 #: ../apt-cdrom-setup.templates:7001
-msgid ""
-"/cdrom/:Please insert the disc labeled: '${LABEL}' in the drive '/cdrom/' "
-"and press enter."
+#, fuzzy
+msgid "Please insert the media labeled '${LABEL}' and press enter."
 msgstr ""
-"/cdrom/:कृपया लेबुल गरिएको डिस्क घुसाउनुहोस्: '/cdrom/' ड्राइभमा '${LABEL}' गर्नुहोस् र "
+"/cdrom/: कृपया लेबुल गरिएको डिस्क घुसाउनुहोस् '/cdrom/' ड्राइभमा '${LABEL}' गर्नुहोस् र "
 "इन्टर थिच्नुहोस् ।"
 
 #. Type: text
@@ -420,9 +418,10 @@ msgstr "स्रोत डट सूचीमा netinst सीडी अक्
 #. Description
 #. :sl2:
 #: ../apt-cdrom-setup.templates:9001 ../apt-mirror-setup.templates:6001
+#, fuzzy
 msgid ""
-"If you are installing from a netinst CD and choose not to use a mirror, you "
-"will end up with only a very minimal base system."
+"If you are installing from a netinst CD image and choose not to use a "
+"mirror, you will end up with only a very minimal base system."
 msgstr ""
 "यदि तपाईँ नेटिन्स्ट सीडीबाट स्थापना गरिरहनु भएको छ र मिरर प्रयोग गर्न चाहनुहुन्न भने, "
 "तपाईँले धेरै न्यूनतम आधार प्रणालीमा मात्र सक्नुहुनेछ ।"
@@ -431,8 +430,9 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../apt-cdrom-setup.templates:10001
+#, fuzzy
 msgid ""
-"You are installing from a netinst CD, which by itself only allows "
+"You are installing from a netinst CD image, which by itself only allows "
 "installation of a very minimal base system. Use a mirror to install a more "
 "complete system."
 msgstr ""
@@ -444,8 +444,10 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../apt-cdrom-setup.templates:11001
+#, fuzzy
 msgid ""
-"You are installing from a CD, which contains a limited selection of packages."
+"You are installing from an image which contains a limited selection of "
+"packages."
 msgstr ""
 "तपाईँ सीडीबाट स्थापना गरिरहनु भएको छ जसले प्याकेजहरूको सीमित छनौट समाविष्ट गर्दछ ।"
 
@@ -454,9 +456,9 @@ msgstr ""
 #. :sl1:
 #. The value of %i can be 2 or 3
 #: ../apt-cdrom-setup.templates:12001
-#, no-c-format
+#, fuzzy, no-c-format
 msgid ""
-"You have scanned %i CDs. Even though these contain a fair selection of "
+"You have scanned %i images. Even though these contain a fair selection of "
 "packages, some may be missing (notably some packages needed to support "
 "languages other than English)."
 msgstr ""
@@ -469,9 +471,9 @@ msgstr ""
 #. :sl1:
 #. The value of %i can be from 4 to 8
 #: ../apt-cdrom-setup.templates:13001
-#, no-c-format
+#, fuzzy, no-c-format
 msgid ""
-"You have scanned %i CDs. Even though these contain a large selection of "
+"You have scanned %i images. Even though these contain a large selection of "
 "packages, some may be missing."
 msgstr ""
 "तपाईँले %i सीडीहरू स्क्यान गर्नु भएको छ । यद्यपि यसले प्याकेजहरूको ठूलो छनौट समाविष्ट गरे "
@@ -492,8 +494,9 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../apt-cdrom-setup.templates:15001
+#, fuzzy
 msgid ""
-"You are installing from a DVD. Even though the DVD contains a large "
+"You are installing from a DVD image. Even though it contains a large "
 "selection of packages, some may be missing."
 msgstr ""
 "तपाईँ डीभीडीबाट स्थापना गरिरहनु भएको छ । यद्यपि डीभीडीले प्याकेजहरूको ठूलो छनौट "
@@ -555,10 +558,9 @@ msgstr ""
 #. :sl1:
 #. Type: boolean
 #. Description
-#. This template is used by the Linux Mint version of d-i.
+#. This template is used by the Ubuntu version of d-i.
 #. :sl2:
-#: ../apt-mirror-setup.templates:2001
-#: ../apt-mirror-setup.templates-ubuntu:1001
+#: ../apt-mirror-setup.templates:2001 ../apt-mirror-setup.templates-ubuntu:1001
 msgid "Please choose whether you want to have it available anyway."
 msgstr "कृपया रोज्नुहोस् कि तपाईँ जे भए पनि यसलाई उपलब्ध चाहनुहुन्छ ।"
 
@@ -588,22 +590,21 @@ msgstr ""
 #. :sl1:
 #. Type: boolean
 #. Description
-#. This template is used by the Linux Mint version of d-i.
+#. This template is used by the Ubuntu version of d-i.
 #. :sl2:
 #. Type: boolean
 #. Description
-#. This template is used by the Linux Mint version of d-i.
+#. This template is used by the Ubuntu version of d-i.
 #. :sl2:
 #. Type: boolean
 #. Description
-#. This template is used by the Linux Mint version of d-i.
+#. This template is used by the Ubuntu version of d-i.
 #. :sl2:
 #. Type: boolean
 #. Description
-#. This template is used by the Linux Mint version of d-i.
+#. This template is used by the Ubuntu version of d-i.
 #. :sl2:
-#: ../apt-mirror-setup.templates:3001
-#: ../apt-mirror-setup.templates-ubuntu:2001
+#: ../apt-mirror-setup.templates:3001 ../apt-mirror-setup.templates-ubuntu:2001
 #: ../apt-mirror-setup.templates-ubuntu:3001
 #: ../apt-mirror-setup.templates-ubuntu:4001
 #: ../apt-mirror-setup.templates-ubuntu:5001
@@ -622,12 +623,14 @@ msgstr "मिरर परिवर्तन गर्नुहोस्"
 
 #. Type: select
 #. Description
+#. :sl2:
 #: ../apt-mirror-setup.templates:4002
 msgid "Downloading a file failed:"
 msgstr "डाउनलोड गरिरहेको फाइल असफल भयो:"
 
 #. Type: select
 #. Description
+#. :sl2:
 #: ../apt-mirror-setup.templates:4002
 msgid ""
 "The installer failed to access the mirror. This may be a problem with your "
@@ -650,9 +653,11 @@ msgstr "सञ्जाल ऐना प्रयोग गर्नुहुन
 #. Description
 #. :sl1:
 #: ../apt-mirror-setup.templates:5001
+#, fuzzy
 msgid ""
 "A network mirror can be used to supplement the software that is included on "
-"the CD-ROM. This may also make newer versions of software available."
+"the installation media. This may also make newer versions of software "
+"available."
 msgstr ""
 "सञ्जाल ऐना सफ्टवेयर परिशिष्ट गर्न प्रयोग गर्न सकिन्छ जुन सी डी रोममा समावेश भएको हुन्छ । "
 "यसले पनि उपलब्ध सफ्टवेयरको नयाँ संस्करण बनाउँन सक्छ ।"
@@ -673,7 +678,7 @@ msgstr "कुनै सञ्जाल मिरर चयन गरिएक�
 
 #. Type: boolean
 #. Description
-#. This template is used by the Linux Mint version of d-i.
+#. This template is used by the Ubuntu version of d-i.
 #. :sl2:
 #: ../apt-mirror-setup.templates-ubuntu:1001
 msgid "Use restricted software?"
@@ -681,7 +686,7 @@ msgstr "निषेधित गरिएको सफ्टवेयर प्
 
 #. Type: boolean
 #. Description
-#. This template is used by the Linux Mint version of d-i.
+#. This template is used by the Ubuntu version of d-i.
 #. :sl2:
 #: ../apt-mirror-setup.templates-ubuntu:1001
 msgid ""
@@ -697,7 +702,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#. This template is used by the Linux Mint version of d-i.
+#. This template is used by the Ubuntu version of d-i.
 #. :sl2:
 #: ../apt-mirror-setup.templates-ubuntu:2001
 msgid "Use software from the \"universe\" component?"
@@ -705,7 +710,7 @@ msgstr "\"universe\" तत्वबाट सफ्टवेयर प्रय
 
 #. Type: boolean
 #. Description
-#. This template is used by the Linux Mint version of d-i.
+#. This template is used by the Ubuntu version of d-i.
 #. :sl2:
 #: ../apt-mirror-setup.templates-ubuntu:2001
 msgid ""
@@ -719,7 +724,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#. This template is used by the Linux Mint version of d-i.
+#. This template is used by the Ubuntu version of d-i.
 #. :sl2:
 #: ../apt-mirror-setup.templates-ubuntu:3001
 msgid "Use software from the \"multiverse\" component?"
@@ -727,7 +732,7 @@ msgstr "\"multiverse\" अवयवबाट सफ्टवेयर प्र�
 
 #. Type: boolean
 #. Description
-#. This template is used by the Linux Mint version of d-i.
+#. This template is used by the Ubuntu version of d-i.
 #. :sl2:
 #: ../apt-mirror-setup.templates-ubuntu:3001
 msgid ""
@@ -744,7 +749,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#. This template is used by the Linux Mint version of d-i.
+#. This template is used by the Ubuntu version of d-i.
 #. :sl2:
 #: ../apt-mirror-setup.templates-ubuntu:4001
 msgid "Use software from the \"partner\" repository?"
@@ -752,13 +757,13 @@ msgstr "\"partner\" तत्वबाट सफ्टवेयर प्रय�
 
 #. Type: boolean
 #. Description
-#. This template is used by the Linux Mint version of d-i.
+#. This template is used by the Ubuntu version of d-i.
 #. :sl2:
 #: ../apt-mirror-setup.templates-ubuntu:4001
 msgid ""
 "Some additional software is available from Canonical's \"partner\" "
-"repository. This software is not part of Linux Mint, but is offered by Canonical "
-"and the respective vendors as a service to Linux Mint users."
+"repository. This software is not part of Ubuntu, but is offered by Canonical "
+"and the respective vendors as a service to Ubuntu users."
 msgstr ""
 "क्यानोनीकलको \"partner\" तत्वबाट केही अतिरिक्त सफ्टवेयर उपलव्ध छ । यो सफ्टवेयर उबन्तुको "
 "भाग होइन तर यसलाई क्यानोनीकल र उबन्तु प्रयोगकर्ताहरूलाई सेवा स्वरूप विशिष्ट ग्राहकको "
@@ -766,7 +771,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#. This template is used by the Linux Mint version of d-i.
+#. This template is used by the Ubuntu version of d-i.
 #. :sl2:
 #: ../apt-mirror-setup.templates-ubuntu:5001
 msgid "Use backported software?"
@@ -774,7 +779,7 @@ msgstr "ब्याकपोर्ट भएको सफ्टवेयर प
 
 #. Type: boolean
 #. Description
-#. This template is used by the Linux Mint version of d-i.
+#. This template is used by the Ubuntu version of d-i.
 #. :sl2:
 #: ../apt-mirror-setup.templates-ubuntu:5001
 msgid ""
@@ -786,34 +791,3 @@ msgstr ""
 "यो निष्काशन सँगै काम गर्न विकास ट्री बाट केही सफ्टवेयर ब्याकपोर्ट भएको छ । निष्काशनमा "
 "समाविष्ट भएको परिक्षण जस्तै यो सफ्टवेयर पुरा हुन नसके पनि, यसले केही अनुप्रयोगहरुको नयाँ "
 "संस्करणहरू समावेश गर्दछ जसले काम लाग्ने विशेषताहरू उपलब्ध गराउन सक्छ ।"
-
-#. Type: multiselect
-#. Choices
-#. SEC_HOST, and PARTNER_HOST are host names (e.g.
-#. security.ubuntu.com)
-#. Translators: the *entire* string should be under 55 columns
-#. including host name. In short, KEEP THIS SHORT and, yes, that's tricky
-#. :sl2:
-#: ../apt-setup-udeb.templates:12001
-#, fuzzy
-msgid "partner archive (from ${PARTNER_HOST}))"
-msgstr "(${SEC_HOST} बाट) सुरक्षा अद्यावधिक गर्दछ"
-
-#. Type: multiselect
-#. Description
-#. :sl2:
-#: ../apt-setup-udeb.templates:12002
-#, fuzzy
-msgid ""
-"Linux Mint has some additional services that provide updates to releases and add-"
-"on packages."
-msgstr "डेवियनमा अद्यावधिक गर्ने देखि निष्कासन गर्ने दुइवटा सेवा छन्: सुरक्षीत र अस्थायी ।"
-
-#. Type: multiselect
-#. Description
-#. :sl2:
-#: ../apt-setup-udeb.templates:12002
-msgid ""
-"The partner archive contains software provided by Canonical's partners as a "
-"service to Linux Mint users."
-msgstr ""

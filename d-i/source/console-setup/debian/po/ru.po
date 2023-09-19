@@ -20,13 +20,14 @@
 # Mikhail Zabaluev <mhz@altlinux.org>, 2006.
 # Nikolai Prokoschenko <nikolai@prokoschenko.de>, 2004.
 # Pavel Maryanov <acid@jack.kiev.ua>, 2009,2010.
-# Yuri Kozlov <yuray@komyakino.ru>, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2018.
+# Yuri Kozlov <yuray@komyakino.ru>, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2018, 2020.
+# Lev Lamberov <dogsleg@debian.org>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: console-setup@packages.debian.org\n"
-"POT-Creation-Date: 2019-11-02 19:48+0100\n"
-"PO-Revision-Date: 2018-10-07 13:13+0300\n"
+"POT-Creation-Date: 2020-10-28 20:01+0000\n"
+"PO-Revision-Date: 2020-11-16 07:09+0300\n"
 "Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
 "Language: ru\n"
@@ -91,7 +92,7 @@ msgstr "# кириллица - не славянские языки"
 #. :sl3:
 #: ../console-setup.templates:5001
 msgid ". Cyrillic - non-Slavic languages (for blind users)"
-msgstr ". кириллица - не славянские языки (для незрачих)"
+msgstr ". кириллица - не славянские языки (для незрячих)"
 
 #. Type: select
 #. Choices
@@ -317,13 +318,11 @@ msgstr ""
 #. :sl3:
 #: ../console-setup.templates:8001
 msgid ""
-"Please select the size of the font for the console.  For reference, the font "
-"used when the computer boots has size 8x16.  Some font sizes require the kbd "
-"console package (not console-tools) plus framebuffer."
+"Please select the size of the font for the console.  Some font sizes require "
+"framebuffer."
 msgstr ""
-"Выберите размер шрифта для консоли. Для справки: шрифт, отображаемый при "
-"загрузке компьютера, имеет размер 8x16. Для некоторых размеров шрифтов "
-"требуется консольный пакет kbd (не console-tools) и фрейм-буфер."
+"Выберите размер шрифта для консоли. Для некоторых шрифтов требуется фрейм-"
+"буфер."
 
 #. Type: select
 #. Description
@@ -961,6 +960,13 @@ msgstr "Бенгальский"
 #: ../keyboard-configuration.templates:16001
 msgid "Belgian"
 msgstr "Бельгийская"
+
+#. Type: select
+#. Choices
+#. :sl1:
+#: ../keyboard-configuration.templates:16001
+msgid "Berber (Latin)"
+msgstr "Берберская (Алжир, латинская)"
 
 #. Type: select
 #. Choices

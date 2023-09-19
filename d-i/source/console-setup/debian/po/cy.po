@@ -20,9 +20,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: console-setup@packages.debian.org\n"
-"POT-Creation-Date: 2019-11-02 19:48+0100\n"
-"PO-Revision-Date: 2018-03-19 21:51+0000\n"
-"Last-Translator: Huw Waters <huwwaters@gmail.com>\n"
+"POT-Creation-Date: 2020-10-28 20:01+0000\n"
+"PO-Revision-Date: 2019-08-28 18:10+0000\n"
+"Last-Translator: leela <53352@protonmail.com>\n"
 "Language-Team: Welsh <>\n"
 "Language: cy\n"
 "MIME-Version: 1.0\n"
@@ -312,14 +312,13 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../console-setup.templates:8001
+#, fuzzy
 msgid ""
-"Please select the size of the font for the console.  For reference, the font "
-"used when the computer boots has size 8x16.  Some font sizes require the kbd "
-"console package (not console-tools) plus framebuffer."
+"Please select the size of the font for the console.  Some font sizes require "
+"framebuffer."
 msgstr ""
 "Dewiswch faint y ffont ar gyfer y consol. Er gwybodaeth, maint y ffont "
-"ddefnyddir pan mae'r cyfrifiadur yn cychwyn yw 8x16. Mae angen y pecyn kbd "
-"console (nid console-tools) a framebuffer ar gyfer rhai maint ffontiau."
+"ddefnyddir pan mae'r cyfrifiadur yn cychwyn yw 8x16."
 
 #. Type: select
 #. Description
@@ -951,6 +950,13 @@ msgstr "Bengaleg"
 #: ../keyboard-configuration.templates:16001
 msgid "Belgian"
 msgstr "Belgeg"
+
+#. Type: select
+#. Choices
+#. :sl1:
+#: ../keyboard-configuration.templates:16001
+msgid "Berber (Latin)"
+msgstr ""
 
 #. Type: select
 #. Choices

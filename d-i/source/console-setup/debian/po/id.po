@@ -18,6 +18,8 @@
 # * Setyo Nugroho (setyo@gmx.net), 2004.
 # * Arief S Fitrianto <arief@gurame.fisika.ui.ac.id>, 2008-2011.
 # * Al Qalit <qal.smith@gmail.com>, 2018.
+# * Andika Triwidada <andika@gmail.com>, 2018, 2019, 2020.
+# * Fahmi Ali <fahmi.ali1945@gmail.com>, 2020.
 #
 # Translations from iso-codes:
 #   Alastair McKinstry <mckinstry@computer.org>, 2002.
@@ -32,8 +34,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer (level1)\n"
 "Report-Msgid-Bugs-To: console-setup@packages.debian.org\n"
-"POT-Creation-Date: 2019-11-02 19:48+0100\n"
-"PO-Revision-Date: 2018-06-16 08:13+0000\n"
+"POT-Creation-Date: 2020-10-28 20:01+0000\n"
+"PO-Revision-Date: 2020-10-31 02:27+0000\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Debian Indonesia Translators <debian-l10n-indonesian@lists."
 "debian.org>\n"
@@ -322,13 +324,11 @@ msgstr ""
 #. :sl3:
 #: ../console-setup.templates:8001
 msgid ""
-"Please select the size of the font for the console.  For reference, the font "
-"used when the computer boots has size 8x16.  Some font sizes require the kbd "
-"console package (not console-tools) plus framebuffer."
+"Please select the size of the font for the console.  Some font sizes require "
+"framebuffer."
 msgstr ""
-"Silakan pilih ukuran fonta untuk konsol. Sebagai acuan, fonta yang digunakan "
-"ketika komputer boot berukuran 8x16.  Beberapa ukuran fonta membutuhkan "
-"paket kbd konsol (bukan console-tools) ditambah framebuffer."
+"Silakan pilih ukuran fonta untuk konsol.  Beberapa ukuran fonta memerlukan "
+"framebuffer."
 
 #. Type: select
 #. Description
@@ -964,6 +964,13 @@ msgstr "Belgia"
 #. Choices
 #. :sl1:
 #: ../keyboard-configuration.templates:16001
+msgid "Berber (Latin)"
+msgstr "Berber (Latin)"
+
+#. Type: select
+#. Choices
+#. :sl1:
+#: ../keyboard-configuration.templates:16001
 msgid "Bosnian"
 msgstr "Bosnia"
 
@@ -979,7 +986,7 @@ msgstr "Brasil"
 #. :sl1:
 #: ../keyboard-configuration.templates:16001
 msgid "British English"
-msgstr "Inggris Inggris"
+msgstr "Inggris Britania"
 
 #. Type: select
 #. Choices

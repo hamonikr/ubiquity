@@ -71,9 +71,9 @@ set_field () {
 	value="$3"
 
 	if grep -qs "^#* *$category=" "$file"; then
-		sed -i "s,^#* *$category=.*,$category=$value," "$file"
+		sed -i "s,^#* *$category=.*,$category=\"$value\"," "$file"
 	else
-		echo "$category=$value" >> "$file"
+		echo "$category=\"$value\"" >> "$file"
 	fi
 }
 
@@ -124,7 +124,7 @@ else
 		LC_NUMERIC LC_TIME LC_MONETARY LC_PAPER LC_NAME LC_ADDRESS \
 		LC_TELEPHONE LC_MEASUREMENT LC_IDENTIFICATION; do
 		set_field /target/etc/default/locale "$category" "$LOCALE_TRANSLATIONS"
-	done	
+	done
 fi
 
 # For languages that have no chance to be displayed at the Linux console

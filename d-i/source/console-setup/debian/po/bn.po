@@ -18,6 +18,7 @@
 # Ayesha Akhtar <ayesha@ankur.org.bd>, 2010.
 # Israt Jahan <israt@ankur.org.bd>, 2010.
 # Zenat Rahnuma <zenat@ankur.org.bd>, 2011.
+# Indrani Roy <indrani@scriptek.co.in>, 2021.
 #
 # Translations from iso-codes:
 #   Debian Foundation, 2005.
@@ -31,10 +32,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bn\n"
 "Report-Msgid-Bugs-To: console-setup@packages.debian.org\n"
-"POT-Creation-Date: 2019-11-02 19:48+0100\n"
-"PO-Revision-Date: 2012-03-13 19:06+0600\n"
-"Last-Translator: Robin Mehdee (রবিন মেহদী) <robin@ankur.org.bd>\n"
-"Language-Team: Bengali \n"
+"POT-Creation-Date: 2020-10-28 20:01+0000\n"
+"PO-Revision-Date: 2021-01-09 15:33+0000\n"
+"Last-Translator: Indrani Roy <indrani@scriptek.co.in>\n"
+"Language-Team: Bengali\n"
 "Language: bn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -320,10 +321,10 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../console-setup.templates:8001
+#, fuzzy
 msgid ""
-"Please select the size of the font for the console.  For reference, the font "
-"used when the computer boots has size 8x16.  Some font sizes require the kbd "
-"console package (not console-tools) plus framebuffer."
+"Please select the size of the font for the console.  Some font sizes require "
+"framebuffer."
 msgstr ""
 "অনুগ্রহ করে লিনাক্স কনসোলের জন্য ফন্টের আকার নির্বাচন করুন। রেফারেন্স হিসেবে, "
 "কম্পিউটার বুটের আকার 8x16 হলে ফন্ট ব্যবহৃত হয়েছে।"
@@ -954,6 +955,13 @@ msgstr "বেলজিয়"
 #. Choices
 #. :sl1:
 #: ../keyboard-configuration.templates:16001
+msgid "Berber (Latin)"
+msgstr ""
+
+#. Type: select
+#. Choices
+#. :sl1:
+#: ../keyboard-configuration.templates:16001
 msgid "Bosnian"
 msgstr "বসনিয়া"
 
@@ -1512,7 +1520,7 @@ msgstr "ভিয়েতনামী"
 #. Description
 #: ../keyboard-configuration.templates:16002
 msgid "Keymap to use:"
-msgstr "যে কি-ম্যাপ ব্যবহার করা হবে:"
+msgstr "ব্যবহারের করার জন্য কী-ম্যাপ:"
 
 #. Type: boolean
 #. Description

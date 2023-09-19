@@ -11,7 +11,7 @@
 # Janos Guljas <janos@resenje.org>, 2010-2012.
 # Veselin Mijušković <veselin.mijuskovic@gmail.com>, 2008.
 # Milan Kostic <kosticmilan77@open.telekom.rs>, 2012.
-# Filipovic Dragan <filipovic@tutanota.com>, 2018.
+# Filipovic Dragan <filipovic@tutanota.com>, 2018, 2020.
 #
 # Translations from iso-codes:
 #   Aleksandar Jelenak <aleksandar.jelenak@gmail.com>, 2010.
@@ -25,8 +25,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: console-setup@packages.debian.org\n"
-"POT-Creation-Date: 2019-11-02 19:48+0100\n"
-"PO-Revision-Date: 2018-03-24 10:39+0000\n"
+"POT-Creation-Date: 2020-10-28 20:01+0000\n"
+"PO-Revision-Date: 2020-12-27 11:29+0000\n"
 "Last-Translator: Filipovic Dragan <filipovic@tutanota.com>\n"
 "Language-Team: Serbian <debian-l10n-serbian@lists.debian.org>\n"
 "Language: sr\n"
@@ -315,13 +315,11 @@ msgstr ""
 #. :sl3:
 #: ../console-setup.templates:8001
 msgid ""
-"Please select the size of the font for the console.  For reference, the font "
-"used when the computer boots has size 8x16.  Some font sizes require the kbd "
-"console package (not console-tools) plus framebuffer."
+"Please select the size of the font for the console.  Some font sizes require "
+"framebuffer."
 msgstr ""
-"Изаберите величинну фонта за конзолу. На пример, фонт при бутовању има "
-"величину 8x16.  Неке величине фонтова захтевају kbd конзолни пакет (не "
-"console-tools) плус фрејмбафер."
+"Изаберите величинну фонта за конзолу. За неке величине фонтова потребан је "
+"међуспремник."
 
 #. Type: select
 #. Description
@@ -946,6 +944,13 @@ msgstr "бенгалски"
 #: ../keyboard-configuration.templates:16001
 msgid "Belgian"
 msgstr "белгијски"
+
+#. Type: select
+#. Choices
+#. :sl1:
+#: ../keyboard-configuration.templates:16001
+msgid "Berber (Latin)"
+msgstr "берберски (латин)"
 
 #. Type: select
 #. Choices

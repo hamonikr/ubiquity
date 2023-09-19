@@ -31,8 +31,6 @@
 # with Ubiquity; if not, write to the Free Software Foundation, Inc., 51
 # Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-from __future__ import print_function
-
 import atexit
 import configparser
 from functools import reduce
@@ -51,6 +49,7 @@ DBusGMainLoop(set_as_default=True)
 
 # in query mode we won't be in X, but import needs to pass
 if 'DISPLAY' in os.environ:
+    gi.require_version('Gtk', '3.0')
     from gi.repository import Gtk, Gdk, GObject, GLib, Atk, Gio
     from ubiquity import gtkwidgets
 
@@ -255,6 +254,7 @@ class Wizard(BaseFrontend):
         self.screen_reader = False
         self.orca_process = None
         self.a11y_settings = None
+        self.have_apt_updated = False
 
         # To get a "busy mouse":
         self.watch = Gdk.Cursor.new(Gdk.CursorType.WATCH)
@@ -306,7 +306,7 @@ class Wizard(BaseFrontend):
             }
             progressbar progress {
               min-height: 10px;
-              border-radius: 2px;
+              border-radius: 4px;
               border: none;
             }
             paned separator {
@@ -401,13 +401,58 @@ class Wizard(BaseFrontend):
             self.live_installer.connect(
                 'key-press-event', self.a11y_profile_keys)
 
+        # Wait for sound.target to become ready
+        self.soundWatcher = misc.SystemdUnitWatcher('sound.target',
+                                                    self.play_system_ready)
+
+        self.save_oem_metapackages_list()
+
+    def play_system_ready(self):
+        # play the system ready sound
         if osextras.find_on_path('canberra-gtk-play'):
             subprocess.Popen(
                 ['canberra-gtk-play', '--id=system-ready'],
                 preexec_fn=misc.drop_all_privileges)
 
+    def save_oem_metapackages_list(self, wait_finished=False):
+        ''' If we can, update the apt indexes. Then run 'ubuntu-drivers
+        list-oem' to find any OEM metapackages for this system. If we've
+        already done this with updated apt indexes before, there's no point
+        running again, so just return. '''
+
+        # We already did it
+        if self.have_apt_updated:
+            syslog.syslog(syslog.LOG_INFO, "We've already apt updated and "
+                          "run, not doing so again.")
+            return
+
         with misc.raised_privileges():
+            try:
+                import apt
+                syslog.syslog(syslog.LOG_INFO, "Trying to update apt indexes "
+                              "to run ubuntu-drivers against fresh data.")
+                cache = apt.cache.Cache()
+                cache.update()
+                cache.open()
+                self.have_apt_updated = True
+            except apt.cache.FetchFailedException:
+                syslog.syslog(syslog.LOG_INFO,
+                              "Failed to update apt indexes; offline? "
+                              "Continuing without.")
+            except apt.cache.LockFailedException:
+                syslog.syslog(syslog.LOG_WARNING,
+                              "Failed to update apt indexes, permission "
+                              "denied: running under test?")
+
             if osextras.find_on_path('ubuntu-drivers'):
+                # We already ran, were offline then, and are still offline, no
+                # point running again.
+                if os.path.exists('/run/ubuntu-drivers-oem.autoinstall') and \
+                        not self.have_apt_updated:
+                    return
+
+                # It's either the first run or a subsequent one but we now
+                # managed to update the apt indexes.
                 self.ubuntu_drivers = subprocess.Popen(
                     ['ubuntu-drivers',
                      'list-oem',
@@ -416,6 +461,10 @@ class Wizard(BaseFrontend):
                     stdin=subprocess.DEVNULL,
                     stdout=subprocess.PIPE,
                     stderr=subprocess.DEVNULL)
+
+                if wait_finished:
+                    self.ubuntu_drivers.communicate()
+                    self.ubuntu_drivers = None
 
     def all_children(self, parent):
         if isinstance(parent, Gtk.Container):
@@ -525,6 +574,11 @@ class Wizard(BaseFrontend):
         if self.timeout_id:
             GLib.source_remove(self.timeout_id)
         self.timeout_id = GLib.timeout_add(300, self.check_returncode)
+
+    def set_connectivity_state(self, state):
+        for p in self.pages:
+            if hasattr(p.ui, 'plugin_set_connectivity_state'):
+                p.ui.plugin_set_connectivity_state(state)
 
     def set_online_state(self, state):
         for p in self.pages:
@@ -910,9 +964,7 @@ class Wizard(BaseFrontend):
             request = decision.get_request()
             uri = request.get_uri()
             decision.ignore()
-            subprocess.Popen(['sensible-browser', uri],
-                             close_fds=True,
-                             preexec_fn=misc.drop_all_privileges)
+            misc.launch_uri(uri)
             return True
         return False
 
@@ -981,7 +1033,7 @@ class Wizard(BaseFrontend):
                          'install_details_expander']:
             box = self.builder.get_object(eventbox)
             style = box.get_style_context()
-            style.add_class('ubiquity-menubar')
+            style.add_class('menubar')
 
         # TODO lazy load
         import gi
@@ -1073,6 +1125,7 @@ class Wizard(BaseFrontend):
         self.allow_go_backward(False)
 
         misc.add_connection_watch(self.network_change)
+        misc.add_connection_watch(self.set_connectivity_state, global_only=False)
 
     def set_window_hints(self, widget):
         if (self.oem_user_config or
@@ -1509,9 +1562,6 @@ class Wizard(BaseFrontend):
         self.quit_main_loop()
 
     # Callbacks
-    def dialog_hide_on_delete(self, widget, event, data=None):
-        widget.hide()
-        return True
 
     def on_quit_clicked(self, unused_widget):
         self.warning_dialog.set_transient_for(
@@ -1705,7 +1755,13 @@ class Wizard(BaseFrontend):
         # Setup zfs layout
         use_zfs = self.db.get('ubiquity/use_zfs')
         if use_zfs == 'true':
+            env = os.environ.copy()
+            zfs_keystore_key = self.db.get('ubiquity/zfs_keystore_key')
+            if zfs_keystore_key:
+                os.environ['ZFS_KS_KEY'] = zfs_keystore_key
             misc.execute_root('/usr/share/ubiquity/zsys-setup', 'init')
+            os.environ.clear()
+            os.environ.update(env)
 
         syslog.syslog('Starting the installation')
 
@@ -1840,13 +1896,21 @@ class Wizard(BaseFrontend):
             msg = title
         dialog = Gtk.MessageDialog(
             self.live_installer, Gtk.DialogFlags.MODAL,
-            Gtk.MessageType.ERROR, Gtk.ButtonsType.OK, msg)
+            Gtk.MessageType.ERROR, Gtk.ButtonsType.OK, "")
         dialog.set_title(title)
+        dialog.set_markup(msg)
+        for label in dialog.get_message_area().get_children():
+            if not isinstance(label, Gtk.Label):
+                continue
+            label.connect('activate-link', self.on_link_clicked)
         dialog.run()
         self.set_busy_cursor(saved_busy_cursor)
         dialog.hide()
         if fatal:
             self.return_to_partitioning()
+
+    def on_link_clicked(self, widget, uri):
+        misc.launch_uri(uri)
 
     def toggle_grub_fail(self, unused_widget):
         if self.grub_no_new_device.get_active():

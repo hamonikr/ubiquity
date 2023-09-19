@@ -15,6 +15,7 @@
 # Timo Jyrinki <timo.jyrinki@iki.fi>, 2012.
 # Juhani Numminen <juhaninumminen0@gmail.com>, 2018, 2019.
 # Arto Keiski <arto.keiski@iki.fi>, 2018.
+# Kimmo Kujansuu <mrkujansuu@gmail.com>, 2021.
 #
 # Translations from iso-codes:
 # Copyright (C) 2007 Tobias Toedter <t.toedter@gmx.net>.
@@ -26,9 +27,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: console-setup@packages.debian.org\n"
-"POT-Creation-Date: 2019-11-02 19:48+0100\n"
-"PO-Revision-Date: 2019-02-01 20:18+0000\n"
-"Last-Translator: Juhani Numminen <juhaninumminen0@gmail.com>\n"
+"POT-Creation-Date: 2020-10-28 20:01+0000\n"
+"PO-Revision-Date: 2021-07-17 08:34+0000\n"
+"Last-Translator: Kimmo Kujansuu <mrkujansuu@gmail.com>\n"
 "Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
@@ -316,14 +317,9 @@ msgstr ""
 #. :sl3:
 #: ../console-setup.templates:8001
 msgid ""
-"Please select the size of the font for the console.  For reference, the font "
-"used when the computer boots has size 8x16.  Some font sizes require the kbd "
-"console package (not console-tools) plus framebuffer."
-msgstr ""
-"Valitse konsolissa käytettävän kirjasimen koko. Vertailukohtana voit käyttää "
-"tietokoneen käynnistyessä käytettävää koon 8x16 kirjasinta.Jotkin "
-"kirjasinkoot vaativat kbd-konsolipaketin (ei console-tools-pakettia) sekä "
-"kuvapuskurin."
+"Please select the size of the font for the console.  Some font sizes require "
+"framebuffer."
+msgstr "Valitse konsolin fonttikoko. Jotkin fonttikoot vaativat framebufferin."
 
 #. Type: select
 #. Description
@@ -963,6 +959,13 @@ msgstr "belgialainen"
 #. Choices
 #. :sl1:
 #: ../keyboard-configuration.templates:16001
+msgid "Berber (Latin)"
+msgstr "Berber (latina)"
+
+#. Type: select
+#. Choices
+#. :sl1:
+#: ../keyboard-configuration.templates:16001
 msgid "Bosnian"
 msgstr "bosnialainen"
 
@@ -1449,7 +1452,7 @@ msgstr "sveitsinsaksalainen"
 #. :sl1:
 #: ../keyboard-configuration.templates:16001
 msgid "Tajik"
-msgstr "tadžikinkielinen"
+msgstr "Tajikl"
 
 #. Type: select
 #. Choices
@@ -1477,7 +1480,7 @@ msgstr "thai"
 #. :sl1:
 #: ../keyboard-configuration.templates:16001
 msgid "Tibetan"
-msgstr "tiibetiläinen"
+msgstr "tiibettiläinen"
 
 # console-keymaps-acorn, Russian
 #. Type: select

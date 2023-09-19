@@ -7,6 +7,10 @@ ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
   MAKEFLAGS += -j$(NUMJOBS)
 endif
 
+ifeq (,$(filter noudeb, $(DEB_BUILD_PROFILES)))
+  with_udeb = yes
+endif
+
 xkbdir := /usr/share/X11/xkb
 
 pre := debian/preprocessor
@@ -68,7 +72,7 @@ clean : maintainer-clean
 	ln -sf debian/copyright COPYRIGHT
 
 .PHONY : deb-udeb-install
-deb-udeb-install: deb-install-linux deb-install-main deb-install-bdf2psf udeb-install-linux udeb-install
+deb-udeb-install: deb-install-linux deb-install-main deb-install-bdf2psf $(if $(with_udeb),udeb-install-linux udeb-install)
 
 .PHONY : deb-install-linux
 deb-install-linux: build
@@ -245,7 +249,6 @@ udeb-install: build
 	dh_testroot
 	dh_prep -p console-setup-amiga-ekmap
 	dh_prep -p console-setup-ataritt-ekmap
-	dh_prep -p console-setup-macintoshold-ekmap
 	dh_prep -p console-setup-pc-ekmap
 	dh_prep -p console-setup-sun4-ekmap
 	dh_prep -p console-setup-sun5-ekmap
@@ -318,7 +321,9 @@ binary-indep: build deb-udeb-install
 	$(pre) debian/keyboard-configuration/DEBIAN/postinst
 	$(pre) debian/console-setup/DEBIAN/config
 	$(pre) debian/console-setup/DEBIAN/postinst
+ifeq ($(with_udeb),yes)
 	$(pre) --udeb debian/console-setup-udeb/DEBIAN/postinst
+endif
 	dh_gencontrol
 	dh_md5sums
 	dh_builddeb

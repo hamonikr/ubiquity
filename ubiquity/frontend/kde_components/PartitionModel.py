@@ -259,7 +259,7 @@ class TreeItem:
         else:
             # Yes, I know, 1000000 bytes is annoying. Sorry. This is what
             # partman expects.
-            size_mb = int(partition['parted']['size']) / 1000000
+            size_mb = int(partition['parted']['size']) // 1000000
             return '%d MB' % size_mb
 
     def partman_column_used(self):
@@ -271,5 +271,5 @@ class TreeItem:
         else:
             # Yes, I know, 1000000 bytes is annoying. Sorry. This is what
             # partman expects.
-            size_mb = int(partition['resize_min_size']) / 1000000
+            size_mb = int(partition['resize_min_size']) // 1000000
             return '%d MB' % size_mb

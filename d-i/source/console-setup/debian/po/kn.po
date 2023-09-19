@@ -10,6 +10,7 @@
 # Translators:
 # shashi kiran <shashi859@gmail.com>, 2010, 2011.
 # Prabodh CP <prabodhcp@gmail.com>, 2011.
+# Yogesh <yogesh@karnatakaeducation.org.in>, 2020.
 #
 # Credits: Thanks to contributions from Free Software Movement Karnataka (FSMK), 2011.
 #
@@ -20,9 +21,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kn\n"
 "Report-Msgid-Bugs-To: console-setup@packages.debian.org\n"
-"POT-Creation-Date: 2019-11-02 19:48+0100\n"
-"PO-Revision-Date: 2018-04-02 06:37+0000\n"
-"Last-Translator: Yogesh <yogesh@kalike.org>\n"
+"POT-Creation-Date: 2020-10-28 20:01+0000\n"
+"PO-Revision-Date: 2020-07-21 17:24+0000\n"
+"Last-Translator: Yogesh <yogesh@karnatakaeducation.org.in>\n"
 "Language-Team: Kannada <debian-l10n-kannada@lists.debian.org>\n"
 "Language: kn\n"
 "MIME-Version: 1.0\n"
@@ -309,14 +310,13 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../console-setup.templates:8001
+#, fuzzy
 msgid ""
-"Please select the size of the font for the console.  For reference, the font "
-"used when the computer boots has size 8x16.  Some font sizes require the kbd "
-"console package (not console-tools) plus framebuffer."
+"Please select the size of the font for the console.  Some font sizes require "
+"framebuffer."
 msgstr ""
 "ದಯಮಾಡಿ ಆಜ್ಞಾಫಲಕದ ಫಾಂಟ್ ಗಾತ್ರವನ್ನು ಆಯ್ಕೆಮಾಡಿ. ಉದಾಹರಣೆಗೆ ಗಣಕವನ್ನು ಬೂಟ್ ಮಾಡುವಾಗ ಬಳಸುವ "
-"ಫಾಂಟ್ ಗಾತ್ರವು 8x16. ಕೆಲವು ಫಾಂಟ್ ಗಾತ್ರಗಳಿಗೆ kbd ಆಜ್ಞಾಫಲಕ ಮೆದುಸರಕಿನ (ಆಜ್ಞಾಫಲಕ "
-"ಸಲಕರಣೆಗಳಲ್ಲ) ಮತ್ತು ಫ್ರೇಮ್ ಬಫರಿನ್ ಅಗತ್ಯವಿದೆ."
+"ಫಾಂಟ್ ಗಾತ್ರವು 8x16."
 
 #. Type: select
 #. Description
@@ -948,6 +948,13 @@ msgstr "ಬೆಲ್ಜಿಯನ್"
 #. Choices
 #. :sl1:
 #: ../keyboard-configuration.templates:16001
+msgid "Berber (Latin)"
+msgstr ""
+
+#. Type: select
+#. Choices
+#. :sl1:
+#: ../keyboard-configuration.templates:16001
 msgid "Bosnian"
 msgstr "ಬೋಸ್ನಿಯನ್"
 
@@ -969,7 +976,6 @@ msgstr "ಬ್ರಿಟಿಷ್ ಇಂಗ್ಲೀಷ್"
 #. Choices
 #. :sl1:
 #: ../keyboard-configuration.templates:16001
-#, fuzzy
 msgid "Bulgarian (BDS layout)"
 msgstr "ಬಲ್ಗೇರಿಯನ್ (ಉಚ್ಚಾರಣಾನುರೂಪವಾಗಿರುವ ವಿನ್ಯಾಸ)"
 
@@ -1299,7 +1305,6 @@ msgstr "ಪರ್ಶಿಯನ್"
 #. Choices
 #. :sl1:
 #: ../keyboard-configuration.templates:16001
-#, fuzzy
 msgid "Philippines"
 msgstr "ಫಿಲಿಪ್ಪೀನ್ಸ್"
 

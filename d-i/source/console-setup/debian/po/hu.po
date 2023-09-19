@@ -21,16 +21,16 @@
 #   Kalman Kemenczy <kkemenczy@gmail.com>, 2010.
 #   Andras TIMAR <timar@gnome.hu>, 2000-2001.
 # SZERVÁC Attila <sas@321.hu>, 2012.
-# Dr. Nagy Elemér Károly <eknagy@omikk.bme.hu>, 2012.
+# Dr. Nagy Elemér Károly <eknagy@omikk.bme.hu>, 2012, 2018.
 # Judit Gyimesi <judit.gyimesi.x@gmail.com>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: console-setup@packages.debian.org\n"
-"POT-Creation-Date: 2019-11-02 19:48+0100\n"
-"PO-Revision-Date: 2018-03-21 09:13+0000\n"
-"Last-Translator: Dr. Nagy Elemér Károly <eknagy@omikk.bme.hu>\n"
+"POT-Creation-Date: 2020-10-28 20:01+0000\n"
+"PO-Revision-Date: 2018-09-15 19:19+0000\n"
+"Last-Translator: flekken <flekken@gmail.com>\n"
 "Language-Team: Debian L10n Hungarian <debian-l10n-hungarian@lists.debian."
 "org>\n"
 "Language: hu\n"
@@ -316,14 +316,13 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../console-setup.templates:8001
+#, fuzzy
 msgid ""
-"Please select the size of the font for the console.  For reference, the font "
-"used when the computer boots has size 8x16.  Some font sizes require the kbd "
-"console package (not console-tools) plus framebuffer."
+"Please select the size of the font for the console.  Some font sizes require "
+"framebuffer."
 msgstr ""
 "Kérlek, válaszd ki a konzol betűméretét. Összehasonlításképp: a gép "
-"indulásakor ez 8x16. Egyes fontméretek a kbd konzol csomagot igénylik (nem a "
-"console-tools-t) és keretpuffert."
+"indulásakor ez 8x16."
 
 #. Type: select
 #. Description
@@ -1001,6 +1000,13 @@ msgstr "bengáli"
 #: ../keyboard-configuration.templates:16001
 msgid "Belgian"
 msgstr "belga"
+
+#. Type: select
+#. Choices
+#. :sl1:
+#: ../keyboard-configuration.templates:16001
+msgid "Berber (Latin)"
+msgstr ""
 
 #. Type: select
 #. Choices

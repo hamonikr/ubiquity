@@ -17,8 +17,6 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-from __future__ import print_function
-
 import codecs
 from functools import reduce
 import locale
@@ -26,8 +24,6 @@ import os
 import re
 import subprocess
 import sys
-
-import gettext
 
 from ubiquity import im_switch, misc
 
@@ -104,7 +100,6 @@ def get_translations(languages=None, core_names=[], extra_prefixes=[]):
             'partman-target/no_root',
             'partman-target/text/method',
             'grub-installer/bootdev',
-            'popularity-contest/participate',
         ))
         prefixes = reduce(lambda x, y: x + '|' + y, extra_prefixes, prefixes)
 
@@ -223,9 +218,6 @@ def map_widget_name(prefix, name):
 
 def get_string(name, lang, prefix=None):
     """Get the translation of a single string."""
-    if name.startswith("mint:"):
-        name = name.replace("mint:", "")
-        return gettext.dgettext("mintubiquity", name)
     question = map_widget_name(prefix, name)
     translations = get_translations()
     if question not in translations:

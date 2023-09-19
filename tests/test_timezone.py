@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 # -*- coding: utf-8; -*-
 
-from test.support import EnvironmentVarGuard
+try:
+    from test.support import EnvironmentVarGuard
+except ImportError:
+    from test.support.os_helper import EnvironmentVarGuard
 import unittest
 
 import debconf

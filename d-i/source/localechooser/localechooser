@@ -69,7 +69,8 @@ language_display_level() {
 	    *)
 		# We can not know what the ssh client supports, let it have
 		# everything.
-		if [ "$SSH_CLIENT" ]; then
+		# Speakup can also support any UTF-8 language.
+		if [ "$SSH_CLIENT" ] || lsmod | grep -q "speakup_soft" || lsmod | grep -q "speakup_dummy" ; then
 			level=4
 		elif [ "$TERM_FRAMEBUFFER" ]; then
 			level=3

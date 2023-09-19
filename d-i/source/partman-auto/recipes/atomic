@@ -11,7 +11,7 @@ partman-auto/text/atomic_scheme ::
 	method{ efi }
 	format{ } .
 
-512 1024 768 ext4
+1792 1024 2048 ext4
 	$defaultignore{ }
 	$lvmignore{ }
 	method{ format }
@@ -28,7 +28,7 @@ partman-auto/text/atomic_scheme ::
 	$default_filesystem{ }
 	mountpoint{ / } .
 
-100% 512 200% linux-swap
+200% 512 200% linux-swap
 	$defaultignore{ }
 	$lvmok{ }
 	$reusemethod{ }

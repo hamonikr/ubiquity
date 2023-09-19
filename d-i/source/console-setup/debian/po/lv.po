@@ -23,13 +23,14 @@
 # Rihards Priedītis <rprieditis@gmail.com>, 2009, 2010.
 # Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2012, 2013, 2017.
 # Peteris Krisjanis <pecisk@gmail.com>, 2008, 2012.
-# Tranzistors <rudolfs.mazurs@gmail.com>, 2018.
+# Tranzistors <rudolfs.mazurs@gmail.com>, 2018, 2021.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: console-setup@packages.debian.org\n"
-"POT-Creation-Date: 2019-11-02 19:48+0100\n"
-"PO-Revision-Date: 2018-10-17 19:33+0000\n"
+"POT-Creation-Date: 2020-10-28 20:01+0000\n"
+"PO-Revision-Date: 2021-01-29 15:32+0000\n"
 "Last-Translator: Tranzistors <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
 "Language: lv\n"
@@ -317,13 +318,11 @@ msgstr ""
 #. :sl3:
 #: ../console-setup.templates:8001
 msgid ""
-"Please select the size of the font for the console.  For reference, the font "
-"used when the computer boots has size 8x16.  Some font sizes require the kbd "
-"console package (not console-tools) plus framebuffer."
+"Please select the size of the font for the console.  Some font sizes require "
+"framebuffer."
 msgstr ""
-"Lūdzu, izvēlieties fonta izmēru konsolei. Salīdzināšanai - datoram "
-"palaižoties, fonta izmērs ir 8x16. Dažiem fonta izmēriem nepieciešama kbd "
-"konsoles pakotne (ne console-tools) un kadru buferis."
+"Lūdzu, izvēlieties fonta izmēru konsolei. Dažiem fontu izmēriem vajag kadru "
+"buferi."
 
 #. Type: select
 #. Description
@@ -956,6 +955,13 @@ msgstr "Bengāļu"
 #: ../keyboard-configuration.templates:16001
 msgid "Belgian"
 msgstr "Beļģu"
+
+#. Type: select
+#. Choices
+#. :sl1:
+#: ../keyboard-configuration.templates:16001
+msgid "Berber (Latin)"
+msgstr "Berberu (latīņu)"
 
 #. Type: select
 #. Choices

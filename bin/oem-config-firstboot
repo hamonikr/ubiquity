@@ -151,7 +151,7 @@ EOF
 			pkill -u oem || true
 			userdel --force --remove oem || true
 		fi
-		apt-get -y purge ubiquity >>/var/log/oem-config.log 2>&1
+		apt-get -y autoremove --purge ubiquity >>/var/log/oem-config.log 2>&1
 	fi
 
 	reboot

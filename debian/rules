@@ -45,7 +45,6 @@ build-stamp:
 
 check:
 	# Sanity-check before upload.
-	./check-docker.py
 	find -name debian -prune -o -name \*.py -print | xargs py3compile
 	find -type f \( -name \*.pyc -o -name \*.pyo \) -print0 | xargs -0r rm -f
 	find -name __pycache__ -print0 | xargs -0r rm -rf
@@ -169,8 +168,10 @@ endif
 	done
 	cp -a d-i/source/localechooser/post-base-installer.d/05localechooser \
 		debian/ubiquity/usr/lib/ubiquity/localechooser/post-base-installer
+	patch debian/ubiquity/usr/lib/ubiquity/localechooser/post-base-installer \
+		< d-i/patches/localechooser-post-base-installer.patch
 	patch debian/ubiquity/lib/partman/finish.d/25create_swapfile \
-		< d-i/patches/partman-swapfile-background.patch
+		< d-i/patches/partman-swapfile-background.patch		
 	chmod +x debian/ubiquity/usr/lib/ubiquity/localechooser/post-base-installer
 	sed 's/\\\$${!TAB}/ /g' \
 		debian/ubiquity/usr/lib/ubiquity/localechooser/localechooser \
@@ -211,15 +212,6 @@ endif
 		d-i/source/debian-installer-utils/post-base-installer.d/10register-module \
 		> debian/oem-config/usr/lib/ubiquity/debian-installer-utils/register-module.post-base-installer-oem
 	chmod +x debian/oem-config/usr/lib/ubiquity/debian-installer-utils/register-module.post-base-installer-oem
-ifeq ($(DEB_HOST_ARCH),amd64)
-	install d-i/source/shim-signed/openssl.cnf \
-		debian/ubiquity/usr/lib/ubiquity/shim-signed/openssl.cnf
-	sed 's,/usr/lib/shim/mok/openssl.cnf,/usr/lib/ubiquity/shim-signed/openssl.cnf,g' \
-		d-i/source/shim-signed/update-secureboot-policy \
-		> debian/ubiquity/usr/lib/ubiquity/shim-signed/update-secureboot-policy
-	chmod +x debian/ubiquity/usr/lib/ubiquity/shim-signed/update-secureboot-policy
-endif
-
 	touch install-stamp
 
 tests: install-stamp
@@ -272,7 +264,7 @@ endif
 
 # Build architecture-dependent files here.
 binary-arch: DH_OPTIONS=$(BINARY_ARCH_OPTIONS)
-binary-arch: install-stamp
+binary-arch: tests install-stamp
 	dh_testdir
 	dh_testroot
 	dh_installchangelogs
@@ -309,4 +301,4 @@ binary-arch: install-stamp
 	NO_PNG_PKG_MANGLE=1 dh_builddeb -- -Zxz
 
 binary: binary-indep binary-arch
-.PHONY: build clean binary-indep binary-arch binary install
+.PHONY: build clean binary-indep binary-arch binary install tests

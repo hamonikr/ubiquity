@@ -17,15 +17,11 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-from __future__ import print_function
-
 import glob
 import os
 import subprocess
 import sys
 import syslog
-
-import gettext
 
 from ubiquity import i18n, misc, osextras, plugin, upower
 from ubiquity.install_misc import (archdetect, is_secure_boot,
@@ -75,14 +71,17 @@ class PreparePageBase(plugin.PluginUI):
         self.rst_title_text = i18n.get_string('rst_header', lang)
         return
 
+    def show_ubuntu_drivers_spinner(self):
+        return
+
+    def hide_ubuntu_drivers_spinner(self):
+        return
+
 
 class PageGtk(PreparePageBase):
-    restricted_package_name = 'mint-meta-codecs'
+    restricted_package_name = 'ubuntu-restricted-addons'
 
     def __init__(self, controller, *args, **kwargs):
-        if self.is_automatic:
-            self.page = None
-            return
         self.controller = controller
         from ubiquity.gtkwidgets import Builder
         builder = Builder()
@@ -155,8 +154,22 @@ class PageGtk(PreparePageBase):
         self.controller.go_to_page(self.current_page)
         return True
 
+    def show_ubuntu_drivers_spinner(self):
+        frontend = self.controller._wizard
+        frontend.status_spinner.show()
+        frontend.status_spinner.start()
+        frontend.status_label.show()
+
+    def hide_ubuntu_drivers_spinner(self):
+        frontend = self.controller._wizard
+        frontend.status_spinner.hide()
+        frontend.status_spinner.stop()
+        frontend.status_label.hide()
+
     def plugin_on_next_clicked(self):
         if self.current_page != self.rst_page:
+            if self.get_use_nonfree():
+                self.show_ubuntu_drivers_spinner()
             return
 
         self.controller._wizard.do_reboot()
@@ -210,16 +223,16 @@ class PageGtk(PreparePageBase):
 
     def plugin_translate(self, lang):
         PreparePageBase.plugin_translate(self, lang)
-        release = misc.get_release()
 
-        # self.prepare_nonfree_software.set_label(gettext.dgettext("mintreport", "Install multimedia codecs"))
-        # self.prepare_foss_disclaimer.set_label(gettext.dgettext("mintreport", "Multimedia codecs are required to play some video formats and to properly render some websites."))
+        frontend = self.controller._wizard
+        frontend.status_label.set_text(self.controller.get_string(
+            'ubiquity/text/preparing_ud_label', lang))
+
+        release = misc.get_release()
 
         from gi.repository import Gtk
         for widget in [self.prepare_download_updates,
                        self.label_required_space,
-                       self.prepare_nonfree_software,
-                       self.prepare_foss_disclaimer,
                        self.label_free_space]:
             text = i18n.get_string(Gtk.Buildable.get_name(widget), lang)
             text = text.replace('${RELEASE}', release.name)
@@ -299,13 +312,13 @@ class PageKde(PreparePageBase):
 
     def __init__(self, controller, *args, **kwargs):
         from ubiquity.qtwidgets import StateBox
-        if self.is_automatic:
-            self.page = None
-            return
         self.controller = controller
         try:
             from PyQt5 import uic
-            from PyQt5 import QtGui
+            from PyQt5 import QtGui, QtWidgets
+            # No worries, this has nothing to do with NM, we just want the
+            # generic progress indicator from there
+            from ubiquity.frontend.kde_components.nmwidgets import ProgressIndicator
             self.page = uic.loadUi('/usr/share/ubiquity/qt/stepPrepare.ui')
             self.prepare_minimal_install = self.page.prepare_minimal_install
             self.qt_label_minimal_install = self.page.qt_label_minimal_install
@@ -321,6 +334,10 @@ class PageKde(PreparePageBase):
             self.badPassword = self.page.badPassword
             self.badPassword.setPixmap(QtGui.QPixmap(
                 "/usr/share/icons/oxygen/16x16/status/dialog-warning.png"))
+            self.progress_indicator = ProgressIndicator()
+            self.progress_indicator.hide()
+            layout = QtWidgets.QHBoxLayout(self.page.progress_container)
+            layout.addWidget(self.progress_indicator)
             # TODO we should set these up and tear them down while on this
             # page.
             try:
@@ -348,6 +365,18 @@ class PageKde(PreparePageBase):
 
     def show_rst_page(self):
         return False
+
+    def show_ubuntu_drivers_spinner(self):
+        self.progress_indicator.show()
+        self.progress_indicator.setSpinnerVisible(True)
+
+    def hide_ubuntu_drivers_spinner(self):
+        self.progress_indicator.setSpinnerVisible(False)
+        self.progress_indicator.hide()
+
+    def plugin_on_next_clicked(self):
+        if self.get_use_nonfree():
+            self.show_ubuntu_drivers_spinner()
 
     def show_insufficient_space_page(self, required, free):
         from PyQt5 import QtWidgets
@@ -424,6 +453,9 @@ class PageKde(PreparePageBase):
 
     def plugin_translate(self, lang):
         PreparePageBase.plugin_translate(self, lang)
+        # Translate the progress label
+        self.progress_indicator.setText(self.controller.get_string(
+            'ubiquity/text/preparing_ud_label', lang))
         # gtk does the ${RELEASE} replace for the title in gtk_ui but we do
         # it per plugin because our title widget is per plugin
         release = misc.get_release()
@@ -434,7 +466,7 @@ class PageKde(PreparePageBase):
         for widget in widgets:
             text = widget.text()
             text = text.replace('${RELEASE}', release.name)
-            text = text.replace('Linux Mint', 'Kubuntu')
+            text = text.replace('Ubuntu', 'Kubuntu')
             widget.setText(text)
 
 
@@ -469,7 +501,15 @@ class Page(plugin.Plugin):
             with open('/run/ubuntu-drivers-oem.autoinstall', 'r') as f:
                 syslog.syslog(F'ubuntu-drivers list-oem finished with: "{" ".join(f.read().splitlines())}"')
         except FileNotFoundError:
-            syslog.syslog('ubuntu-drivers list-oem finished with no available packages')
+            syslog.syslog("ubuntu-drivers list-oem finished with no available packages. Maybe we need to apt update? "
+                          "Doing that and trying again.")
+            # We only do this when we really have to since it could be slow: apt update & re-run of ubuntu-drivers
+            self.frontend.save_oem_metapackages_list(wait_finished=True)
+            try:
+                with open('/run/ubuntu-drivers-oem.autoinstall', 'r') as f:
+                    syslog.syslog(F'ubuntu-drivers list-oem finished with: "{" ".join(f.read().splitlines())}"')
+            except FileNotFoundError:
+                syslog.syslog("No, we didn't find any OEM packages again.")
 
         if self.should_show_rst_page():
             if not self.ui.show_rst_page():
@@ -542,3 +582,7 @@ class Page(plugin.Plugin):
                         'ubiquity/nonfree_package',
                         self.ui.restricted_package_name)
         plugin.Plugin.ok_handler(self)
+
+    def cleanup(self):
+        self.ui.hide_ubuntu_drivers_spinner()
+        plugin.Plugin.cleanup(self)

@@ -9,7 +9,7 @@
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 #
 # Copyright (C) 2010 Free Software Foundation
-# Sveinn í Felli <sv1@fellsnet.is>, 2018.
+# Sveinn í Felli <sv1@fellsnet.is>, 2018, 2019, 2020.
 #
 # Translations from iso-codes:
 # Copyright (C) 2002,2003, 2010, 2011, 2012 Free Software Foundation, Inc.
@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Icelandic (Debian Installer)\n"
 "Report-Msgid-Bugs-To: console-setup@packages.debian.org\n"
-"POT-Creation-Date: 2019-11-02 19:48+0100\n"
-"PO-Revision-Date: 2018-04-04 14:38+0000\n"
+"POT-Creation-Date: 2020-10-28 20:01+0000\n"
+"PO-Revision-Date: 2020-12-04 13:29+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
 "Language: is\n"
@@ -315,13 +315,10 @@ msgstr ""
 #. :sl3:
 #: ../console-setup.templates:8001
 msgid ""
-"Please select the size of the font for the console.  For reference, the font "
-"used when the computer boots has size 8x16.  Some font sizes require the kbd "
-"console package (not console-tools) plus framebuffer."
+"Please select the size of the font for the console.  Some font sizes require "
+"framebuffer."
 msgstr ""
-"Veldu leturstærð fyrir stjórnskjáinn. Til samanburðar má geta að letrið sem "
-"notað er þegar vélin ræsir sig upp er í stærðinni 8x16. Sumar leturstærðir "
-"þarfnast kbd stjórnskjáspakkans (elli console-tools) auk skjáminnis "
+"Veldu leturstærð fyrir stjórnskjáinn. Sumt letur þarf að nota rammabiðminni "
 "(framebuffer)."
 
 #. Type: select
@@ -959,6 +956,13 @@ msgstr "Bengalst"
 #: ../keyboard-configuration.templates:16001
 msgid "Belgian"
 msgstr "Belgískt"
+
+#. Type: select
+#. Choices
+#. :sl1:
+#: ../keyboard-configuration.templates:16001
+msgid "Berber (Latin)"
+msgstr "Berbíska (latneskt stafróf)"
 
 #. Type: select
 #. Choices

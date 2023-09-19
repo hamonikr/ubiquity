@@ -18,13 +18,15 @@
 # Christian Rose <menthos@menthos.com>, 2004.
 # Daniel Nylander <po@danielnylander.se>, 2007.
 # Martin Bagge <martin.bagge@bthstudent.se>, 2008, 2016.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2018, 2020.
+# Mattias Münster <mattiasmun@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: console-setup@packages.debian.org\n"
-"POT-Creation-Date: 2019-11-02 19:48+0100\n"
-"PO-Revision-Date: 2018-03-24 14:40+0000\n"
-"Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
+"POT-Creation-Date: 2020-10-28 20:01+0000\n"
+"PO-Revision-Date: 2020-10-31 02:27+0000\n"
+"Last-Translator: Kristoffer Grundström <swedishsailfishosuser@tutanota.com>\n"
 "Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
@@ -314,13 +316,10 @@ msgstr ""
 #. :sl3:
 #: ../console-setup.templates:8001
 msgid ""
-"Please select the size of the font for the console.  For reference, the font "
-"used when the computer boots has size 8x16.  Some font sizes require the kbd "
-"console package (not console-tools) plus framebuffer."
+"Please select the size of the font for the console.  Some font sizes require "
+"framebuffer."
 msgstr ""
-"Välj teckenstorlek för konsolen. Som referens kan du tänka på att startläget "
-"använder storlek 8x16. Vissa teckenstorlekar kräver konsolpaketet kbd (inte "
-"console-tools) plus framebuffer."
+"Välj teckenstorlek för konsolen. Vissa teckenstorlekar kräver framebuffer."
 
 #. Type: select
 #. Description
@@ -955,6 +954,13 @@ msgstr "Bengali"
 #: ../keyboard-configuration.templates:16001
 msgid "Belgian"
 msgstr "Belgisk (latin1)"
+
+#. Type: select
+#. Choices
+#. :sl1:
+#: ../keyboard-configuration.templates:16001
+msgid "Berber (Latin)"
+msgstr "Berber (Latin)"
 
 #. Type: select
 #. Choices

@@ -358,7 +358,7 @@ kernel_update_list () {
 	(set +e;
 	# Hack to get the metapackages in the right order; should be
 	# replaced by something better at some point.
-	chroot /target apt-cache search ^linux- | grep '^linux-\(amd64\|686\|k7\|generic\|lowlatency\|server\|virtual\|preempt\|rt\|xen\|oem-20.04\|power\|cell\|omap\|omap4\|keystone\)';
+	chroot /target apt-cache search ^linux- | grep '^linux-\(amd64\|686\|k7\|generic\|lowlatency\|server\|virtual\|preempt\|rt\|xen\|oem-22.04\|power\|cell\|omap\|omap4\|keystone\)';
 	chroot /target apt-cache search ^linux-image- | grep -v '^linux-image-[2-9]\.';
 	chroot /target apt-cache search ^kfreebsd-image;
 	chroot /target apt-cache search ^gnumach-image) | \
@@ -937,7 +937,7 @@ EOT
 		fi
 		
 		if [ "$MIRROR" = ports.ubuntu.com ]; then
-			# Awful Linux Mint-specific hack. *-security suites for ports
+			# Awful Ubuntu-specific hack. *-security suites for ports
 			# architectures aren't available on security.ubuntu.com, only on
 			# ports.ubuntu.com.
 			SECMIRROR="$MIRROR"

@@ -24,6 +24,7 @@
 # rpool/ROOT/ubuntu_${UUID}/usr/local
 # rpool/USERDATA/$user_$UUID2
 # rpool/USERDATA/root_$UUID2
+# rpool/keystore
 #
 # Steps:
 # - Verify that /target is mounted
@@ -47,6 +48,8 @@ ZSYSTMP="/tmp/$(basename $0)"
 INIT_FLAG="${ZSYSTMP}/init.done"
 FSTAB_PARTMAN="${ZSYSTMP}/fstab.partman"
 PARTITION_LAYOUT="${ZSYSTMP}/layout"
+KEYSTORE_ROOT="/run/keystore/rpool"
+KEYSTORE_SIZE="500M"
 
 mkdir -p "${ZSYSTMP}"
 
@@ -88,10 +91,16 @@ while true ; do
     esac
 done
 
-COMMAND=$( echo $1| tr '[:upper:]' '[:lower:]' )
+COMMAND=$( echo $1 | tr '[:upper:]' '[:lower:]' )
 EXTRAARG=""
 if [ $# -gt 1 ]; then
     EXTRAARG="${2}"
+fi
+
+ENCRYPTION=0
+ZFS_KS_KEY=${ZFS_KS_KEY:-}
+if [ -n "${ZFS_KS_KEY}" ]; then
+	ENCRYPTION=1
 fi
 
 check_prerequisites() {
@@ -204,28 +213,30 @@ get_layout() {
 		esac
 	fi
 
-	partesp=1
-	if is_gpt "${disk}"; then
+	if [ -d /sys/firmware/efi/efivars ]; then
 		# No extended partition on EFI + GPT
 		# The layout is
 		# 1: ESP
 		# 2: swap
 		# 3: bpool
 		# 4: rpool
+		partesp=1
 		partswap=2
 		partbpool=3
 		partrpool=4
+
+	# As partman forces now gpt for any installation, we consider that not having efivar equals gpt with BiosBoot (LP: #1796260)
 	else
-		# MBR pools are on extended partition
 		# The layout is:
-		# 1: ESP
-		# 2: Extended
-		# 5: swap
-		# 6: bpool
-		# 7: rpool
-		partswap=5
-		partbpool=6
-		partrpool=7
+		# 1: BiosBoot
+		# 2: ESP
+		# 3: swap
+		# 4: bpool
+		# 5: rpool
+		partesp=2
+		partswap=3
+		partbpool=4
+		partrpool=5
 	fi
 
 	echo "OK|${disk}|${partbase}|${partesp}|${partswap}|${partbpool}|${partrpool}"
@@ -239,61 +250,58 @@ format_disk() {
 	partrpool="$5"
 	ss="$6"
 	partswap=$(( partbpool - 1 ))
-	partext=$(( partesp + 1 ))
 	partprefix="${disk}${partbase}"
 
 	sfdisktmp="${ZSYSTMP}/sfdisk.cfg"
 	rm -f "${sfdisktmp}"
 
-	echo "I: Formatting disk $disk with partitions ESP:${partesp} ext:${partext} swap:${partswap} bpool:${partbpool} rpool:${partrpool}"
+	echo "I: Formatting disk $disk with partitions swap:${partswap} bpool:${partbpool} rpool:${partrpool}"
 
 	# bpool size: 500M < 5% of ZFS allocated space < 2G
-	# partswap is partition 2 on GPT systems and first extended partition on MBR.
-	size_percent=$(expr \( $(blockdev --getsize64 ${partprefix}${partswap}) / 1024 / 1024 \) \* 5 / 100)
+	# srcpath is the system partition on initial layout.
+	srcpath=$(lsblk -ln -o PATH ${disk}|tail -1)
+	partsrc=${srcpath##*${partprefix}}
+	size_percent=$(expr \( $(blockdev --getsize64 ${srcpath}) / 1024 / 1024 \) \* 5 / 100)
 	bpool_size=500
 	[ ${size_percent} -gt ${bpool_size} ] && bpool_size=${size_percent}
 	[ ${bpool_size} -gt 2048 ] && bpool_size=2048
 
-	if is_gpt "${disk}"; then
-		# Improvement: Delete all the partitions but the ESP
-		# There should be only 1 or 2 partitions but it can be made generic
-		if ! esp_exists "${disk}"; then
-			start=$(sfdisk -l "${disk}"|grep "^${partprefix}${partesp}"|awk '{print $2}')
-			cat > "${sfdisktmp}" <<EOF
+	# Improvement: Delete all the partitions but the ESP
+	# There should be only 1 or 2 partitions but it can be made generic
+	if ! esp_exists "${disk}"; then
+		start=$(sfdisk -l "${disk}"|grep "^${partprefix}${partesp}"|awk '{print $2}')
+		cat > "${sfdisktmp}" <<EOF
 ${partprefix}${partesp}   : start= ${start}, size=    512M,        type=C12A7328-F81F-11D2-BA4B-00A0C93EC93B, bootable
 EOF
-		else
-			sfdisk --delete "${disk}" ${partswap}
-		fi
+	else
+		sfdisk --delete "${disk}" ${partsrc}
+	fi
 
-		cat >> "${sfdisktmp}" <<EOF
+	cat >> "${sfdisktmp}" <<EOF
 ${partprefix}${partswap}  :   size= ${ss}M,         type=0657FD6D-A4AB-43C4-84E5-0933C84B4F4F
 ${partprefix}${partbpool} :   size= ${bpool_size}M, type=6A82CB45-1DD2-11B2-99A6-080020736631
 ${partprefix}${partrpool} :                         type=6A85CF4D-1DD2-11B2-99A6-080020736631
 EOF
-	else
-		if ! esp_exists "${disk}"; then
-			start=$(sfdisk -l "${disk}"|grep "^${partprefix}${partesp}"|awk '{print $2}')
-			cat > "${sfdisktmp}" <<EOF
-${partprefix}${partesp}   : start= ${start}, size=    512M,        type=ef, bootable
-EOF
-		else
-			sfdisk --delete "${disk}" ${partswap}
-		fi
 
-		cat >> "${sfdisktmp}" <<EOF
-${partprefix}${partswap}  :                size= ${ss}M,         type=82
-${partprefix}${partbpool} :                size= ${bpool_size}M, type=a5
-${partprefix}${partrpool} :                                      type=a5
-EOF
-
-	fi
-	cat "${sfdisktmp}" | sfdisk --append "${disk}"
+	cat "${sfdisktmp}" | sfdisk --append --no-reread "${disk}"
 
 	# Force a re-read of the partition table
 	echo "I: Re-reading partition table"
 	partx --add "${disk}" 2>/dev/null || true
 	partx --show "${disk}"
+}
+
+init_keystore() {
+	keystore_dev="$1"
+	echo "I: Initializing Key Store"
+
+	if [ ${ENCRYPTION} -eq 1 ]; then
+		mkdir -p "${KEYSTORE_ROOT}"
+		printf "%s" "${ZFS_KS_KEY}" | cryptsetup luksFormat /dev/zvol/${keystore_dev} -
+		printf "%s" "${ZFS_KS_KEY}" | cryptsetup luksOpen /dev/zvol/${keystore_dev} keystore-rpool -
+		mke2fs -t ext4 /dev/mapper/keystore-rpool -L keystore-rpool
+		mount /dev/mapper/keystore-rpool "${KEYSTORE_ROOT}"
+	fi
 }
 
 init_zfs() {
@@ -305,10 +313,28 @@ init_zfs() {
 	# Now we can create the pools and dataset
 	UUID_ORIG=$(head -100 /dev/urandom | tr -dc 'a-z0-9' |head -c6)
 
+    # Use stable uuid for partition when available as device name can change
+    # Let udev finish its job before proceeding with zpool creation
+    udevadm settle
+    bpooluuid=$(blkid -s PARTUUID -o value $partbpool)
+    [ -n "$bpooluuid" -a -e "/dev/disk/by-partuuid/$bpooluuid" ] && partbpool=/dev/disk/by-partuuid/$bpooluuid
+    rpooluuid=$(blkid -s PARTUUID -o value  $partrpool)
+    [ -n "$rpooluuid" -a -e "/dev/disk/by-partuuid/$rpooluuid" ] && partrpool=/dev/disk/by-partuuid/$rpooluuid
+
 	# Pools
+	encrypt_args=""
+	if [ ${ENCRYPTION} -eq 1 ]; then
+		# Creation of the encryption key
+		local ks_system_key="${KEYSTORE_ROOT}/system.key"
+		local ks_system_key_tmp="${ZSYSTMP}/$(basename "${ks_system_key}")"
+		head -c 32 /dev/urandom > "${ks_system_key_tmp}"
+		encrypt_args="-O encryption=on -O keylocation=file://${ks_system_key_tmp} -O keyformat=raw"
+	fi
+
 	# rpool
 	zpool create -f \
 		-o ashift=12 \
+		-o autotrim=on \
 		-O compression=lz4 \
 		-O acltype=posixacl \
 		-O xattr=sa \
@@ -318,6 +344,7 @@ init_zfs() {
 		-O canmount=off \
 		-O dnodesize=auto \
 		-O sync=disabled \
+		${encrypt_args} \
 		-O mountpoint=/ -R "${target}" rpool "${partrpool}"
 
 	# bpool
@@ -325,6 +352,7 @@ init_zfs() {
 	# Then only features supported by grub are enabled.
 	zpool create -f \
 		-o ashift=12 \
+		-o autotrim=on \
 		-d \
 		-o feature@async_destroy=enabled \
 		-o feature@bookmarks=enabled \
@@ -345,6 +373,17 @@ init_zfs() {
 		-O canmount=off \
 		-O devices=off \
 		-O mountpoint=/boot -R "${target}" bpool "${partbpool}"
+
+	if [ ${ENCRYPTION} -eq 1 ]; then
+		# Creation of the encryption keystore on the pool directly
+		# and point to the system ZFS decryption key path
+		local keystore_dev="rpool/keystore"
+		zfs create -o encryption=off -V ${KEYSTORE_SIZE} "${keystore_dev}"
+		init_keystore "${keystore_dev}"
+		mv "${ks_system_key_tmp}" "${ks_system_key}"
+		chmod 600 "${ks_system_key}"
+		zfs set keylocation=file://"${ks_system_key}" rpool
+	fi
 
 	# Root and boot dataset
 	zfs create rpool/ROOT -o canmount=off -o mountpoint=none
@@ -401,7 +440,6 @@ move_user () {
 init_system_partitions() {
 	target="$1"
 	partefi="$2"
-	partgrub="$3"
 
 	# ESP
 	mkdir -p "${target}/boot/efi"
@@ -415,17 +453,8 @@ init_system_partitions() {
 }
 
 esp_exists() {
-	if is_gpt "${1}"; then
-		parttype="C12A7328-F81F-11D2-BA4B-00A0C93EC93B"
-	else
-		# FIXME: Currently partman-auto set the type of EFI on MBR as W95 (b) instead of EFI (ef)
-		parttype="b"
-	fi
+	parttype="C12A7328-F81F-11D2-BA4B-00A0C93EC93B"
 	sfdisk -d "${1}" | grep -q "type=${parttype}"
-}
-
-is_gpt() {
-	sfdisk -d "${1}" | awk '/^label:/ {print $2}'|grep -q gpt
 }
 
 check_prerequisites ${REQUIREDPKGS}
@@ -437,7 +466,7 @@ if [ -z "${COMMAND}" ]; then
 	exit 1
 elif [ "${COMMAND}" = "layout" ]; then
 	# Just displays de layout that will be created without any change to the disk.
-	# At this stage we don't now yet the size of the partition that will be created.
+	# At this stage we don't know yet the size of the partition that will be created.
 	IFS="|" read ERR DISK PARTBASE PARTESP PARTSWAP PARTBPOOL PARTRPOOL<<EOF
 $(get_layout ${TARGET} "${EXTRAARG}")
 EOF
@@ -478,7 +507,7 @@ EOF
 	partx --show "${DISK}"
 
 	# Swap files are not supported on ZFS, we use a swap partition instead:
-	SWAPFILE="$(grep "^${TARGET}" /proc/swaps |awk '{print $1}')"
+	SWAPFILE="$(grep "^${TARGET}" /proc/swaps | awk '{print $1}')"
 	# Give us a minimum swap partition size of 4MB in case we decide on
 	# no swap, just to keep the partition layout stable:
 	SWAPSIZE=4194304
@@ -495,7 +524,7 @@ EOF
 	prepare_target "${TARGET}"
 	format_disk "${DISK}" "${PARTBASE}" "${PARTESP}" "${PARTBPOOL}" "${PARTRPOOL}" "${SWAPVOLSIZE}"
 	init_zfs "${TARGET}" "${DISK}${PARTBASE}${PARTBPOOL}" "${DISK}${PARTBASE}${PARTRPOOL}"
-	init_system_partitions "${TARGET}" "${DISK}${PARTBASE}1" "${DISK}${PARTBASE}${PARTESP}"
+	init_system_partitions "${TARGET}" "${DISK}${PARTBASE}${PARTESP}"
 
 	# Generate fstab
 	# $TARGET/etc has been destroyed by the creation of the zfs partitition
@@ -515,11 +544,28 @@ EOF
 	echo "/boot/efi/grub\t/boot/grub\tnone\tdefaults,bind\t0\t0" >> "${TARGET}/etc/fstab"
 
 	if [ -n "${SWAPFILE}" ]; then
-		SWAPDEVICE="${DISK}${PARTBASE}${PARTSWAP}"
-		mkswap -f "${SWAPDEVICE}"
-		SWAPID=$(blkid -s UUID -o value "${SWAPDEVICE}")
-		printf "UUID=${SWAPID}\tnone\tswap\tdiscard\t0\t0\n" >> "${TARGET}/etc/fstab"
-		swapon -v "${SWAPDEVICE}"
+		swap_device="${DISK}${PARTBASE}${PARTSWAP}"
+		if [ ${ENCRYPTION} -eq 1 ]; then
+			# Format swap as Luks
+			swap_name="cryptoswap"
+			touch ${ZSYSTMP}/swap.keyfile
+			cryptsetup -q --key-file=${ZSYSTMP}/swap.keyfile luksFormat "${swap_device}"
+			cryptsetup -q --key-file=${ZSYSTMP}/swap.keyfile luksOpen "${swap_device}" "${swap_name}"
+			udevadm settle
+			orig_swap_device="${swap_device}"
+			swap_device="/dev/mapper/${swap_name}"
+
+			# Update crypttab
+			printf "${swap_name}\t${orig_swap_device}\t/dev/urandom\tswap,initramfs" >> "${TARGET}/etc/crypttab"
+			swap_dev_fstab="${swap_device}"
+		fi
+		mkswap -f "${swap_device}"
+		if [ ${ENCRYPTION} -eq 0 ]; then
+            # for unencrypted swap, this has to be after mkswap to read the right device id
+			swap_dev_fstab="UUID=$(blkid -s UUID -o value "${swap_device}")"
+        fi
+		printf "${swap_dev_fstab}\tnone\tswap\tsw\t0\t0\n" >> "${TARGET}/etc/fstab"
+		swapon -v "${swap_device}"
 	fi
 	# Make /boot/{grub,efi} world readable
 	sed -i 's#\(.*boot/efi.*\)umask=0077\(.*\)#\1umask=0022,fmask=0022,dmask=0022\2#' "${TARGET}/etc/fstab"
@@ -527,7 +573,9 @@ EOF
 	echo "I: Marking ZFS utilities to be kept in the target system"
 	apt-install zfsutils-linux 2>/dev/null
 	apt-install zfs-initramfs 2>/dev/null
-	apt-install zsys 2>/dev/null
+	# apt-install zsys 2>/dev/null
+	apt-install cryptsetup 2>/dev/null
+	apt-install cryptsetup-initramfs 2>/dev/null
 
 	touch "$INIT_FLAG"
 elif [ "${COMMAND}" = "finalize" ]; then
@@ -535,19 +583,6 @@ elif [ "${COMMAND}" = "finalize" ]; then
 		echo "W: zsys init didn't succeed. Not proceeding with command: ${COMMAND}. Aborting!"
 		exit 1
 	fi
-
-	# Activate zfs generator.
-	# After enabling the generator we should run zfs set canmount=on DATASET
-	# in the chroot for one dataset of each pool to refresh the zfs cache.
-	echo "I: Activating zfs generator"
-	ln -s /usr/lib/zfs-linux/zed.d/history_event-zfs-list-cacher.sh "${TARGET}/etc/zfs/zed.d"
-
-	# Create zpool cache
-	zpool set cachefile= bpool
-	zpool set cachefile= rpool
-	cp /etc/zfs/zpool.cache "${TARGET}/etc/zfs/"
-	mkdir -p "${TARGET}/etc/zfs/zfs-list.cache"
-	touch "${TARGET}/etc/zfs/zfs-list.cache/bpool" "${TARGET}/etc/zfs/zfs-list.cache/rpool"
 
 	# Handle userdata
 	UUID_ORIG=$(head -100 /dev/urandom | tr -dc 'a-z0-9' |head -c6)
@@ -563,6 +598,35 @@ elif [ "${COMMAND}" = "finalize" ]; then
 
 	echo "I: Changing sync mode of rpool to standard"
 	zfs set sync=standard rpool
+
+	# Disable resumable device
+	if [ -b /dev/mapper/cryptoswap ]; then
+		mkdir -p "${TARGET}/etc/initramfs-tools/conf.d"
+		echo "RESUME=none" > "${TARGET}/etc/initramfs-tools/conf.d/resume"
+		chroot "${TARGET}" update-initramfs -u
+	fi
+
+	# Activate zfs generator, after all zfs commands have completed
+	echo "I: Activating zfs generator"
+
+	# Create zpool cache
+	zpool set cachefile= bpool
+	zpool set cachefile= rpool
+	cp /etc/zfs/zpool.cache "${TARGET}/etc/zfs/"
+	mkdir -p "/etc/zfs/zfs-list.cache" "${TARGET}/etc/zfs/zfs-list.cache"
+	for pool in bpool rpool; do
+		# Force cache generation
+		: >"/etc/zfs/zfs-list.cache/${pool}"
+		# Execute zfs-list-cacher with a manual fake event
+		env -i ZEVENT_POOL=${pool} ZED_ZEDLET_DIR=/etc/zfs/zed.d ZEVENT_SUBCLASS=history_event ZFS=zfs ZEVENT_HISTORY_INTERNAL_NAME=create /etc/zfs/zed.d/history_event-zfs-list-cacher.sh
+		# ZFS list doesn't honor target prefix for chroots for
+		# the mountpoint property
+		# https://github.com/openzfs/zfs/issues/1078
+		# Drop leading /target from all mountpoint fields
+		sed -E "s|\t${TARGET}/?|\t/|g" "/etc/zfs/zfs-list.cache/${pool}" > "${TARGET}/etc/zfs/zfs-list.cache/${pool}"
+		# Ensure installer system doesn't generate mount units
+		rm -f "/etc/zfs/zfs-list.cache/${pool}"
+	done
 
 	echo "I: ZFS setup complete"
 else

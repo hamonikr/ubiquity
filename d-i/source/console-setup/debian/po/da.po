@@ -6,6 +6,7 @@
 # translation of debian-installer_packages_po_sublevel1_da.po to
 # Danish messages for debian-installer.
 # This file is distributed under the same license as debian-installer.
+# Michael Millet <mikevlet@protonmail.com>, 2021.
 # Joe Hansen <joedalton2@yahoo.dk>, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
 # Ask Hjorth Larsen <asklarsen@gmail.com>, 2010.
 # Mads Bille Lundby <lundbymads@gmail.com, 2009.
@@ -38,9 +39,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer_packages_po_sublevel1_da\n"
 "Report-Msgid-Bugs-To: console-setup@packages.debian.org\n"
-"POT-Creation-Date: 2019-11-02 19:48+0100\n"
-"PO-Revision-Date: 2018-12-28 22:08+0000\n"
-"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"POT-Creation-Date: 2020-10-28 20:01+0000\n"
+"PO-Revision-Date: 2021-01-30 22:11+0000\n"
+"Last-Translator: Michael Millet <mikevlet@protonmail.com>\n"
 "Language-Team: <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
@@ -331,15 +332,13 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../console-setup.templates:8001
+#, fuzzy
 msgid ""
-"Please select the size of the font for the console.  For reference, the font "
-"used when the computer boots has size 8x16.  Some font sizes require the kbd "
-"console package (not console-tools) plus framebuffer."
+"Please select the size of the font for the console.  Some font sizes require "
+"framebuffer."
 msgstr ""
 "Vælg venligst skrifttypens størrelse i konsollen. Til sammenligning er den "
-"anvendte skrifttypestørrelse 8x16, når computeren starter op. Nogle "
-"skriftstørrelser kræver pakken kbd console (ikke console-tools) samt "
-"framebuffer."
+"anvendte skrifttypestørrelse 8x16, når computeren starter op."
 
 #. Type: select
 #. Description
@@ -973,6 +972,13 @@ msgstr "Bengali"
 #: ../keyboard-configuration.templates:16001
 msgid "Belgian"
 msgstr "Belgisk"
+
+#. Type: select
+#. Choices
+#. :sl1:
+#: ../keyboard-configuration.templates:16001
+msgid "Berber (Latin)"
+msgstr "Berbisk (Latin)"
 
 #. Type: select
 #. Choices
