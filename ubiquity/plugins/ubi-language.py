@@ -17,8 +17,6 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-from __future__ import print_function
-
 import locale
 import os
 import re
@@ -170,7 +168,6 @@ class PageGtk(PageBase):
                 column = Gtk.TreeViewColumn(
                     None, Gtk.CellRendererText(), text=0)
                 column.set_sizing(Gtk.TreeViewColumnSizing.GROW_ONLY)
-
                 self.treeview.append_column(column)
                 selection = self.treeview.get_selection()
                 selection.connect(

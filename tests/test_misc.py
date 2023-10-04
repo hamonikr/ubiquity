@@ -4,7 +4,11 @@ import grp
 import io
 import os
 import pwd
-from test.support import EnvironmentVarGuard, run_unittest
+from test.support import run_unittest
+try:
+    from test.support import EnvironmentVarGuard
+except ImportError:
+    from test.support.os_helper import EnvironmentVarGuard
 import unittest
 
 # These tests require Mock 0.7.0

@@ -214,6 +214,11 @@ class PartAuto(QtWidgets.QWidget):
         self.verified_password.setEchoMode(QtWidgets.QLineEdit.Password)
         self.verified_password.textChanged.connect(self.verify_password)
         box.addWidget(self.verified_password)
+        self.show_password = QtWidgets.QToolButton()
+        self.show_password.setIcon(QtGui.QIcon.fromTheme("password-show-off"))
+        self.show_password.setCheckable(True)
+        self.show_password.toggled.connect(self.on_show_password)
+        box.addWidget(self.show_password)
         self.badPassword = QtWidgets.QLabel()
         self.badPassword.setPixmap(QtGui.QPixmap(
             "/usr/share/icons/oxygen/16x16/status/dialog-warning.png"))
@@ -233,6 +238,13 @@ class PartAuto(QtWidgets.QWidget):
         # select the first button
         b = self.autopartition_buttongroup.button(0)
         b and b.click()
+
+    def on_show_password(self, state):
+        modes = (QtWidgets.QLineEdit.Password, QtWidgets.QLineEdit.Normal)
+        icons = ("password-show-off", "password-show-on")
+        self.password.setEchoMode(modes[state])
+        self.verified_password.setEchoMode(modes[state])
+        self.show_password.setIcon(QtGui.QIcon.fromTheme(icons[state]))
 
     # slot for when partition is resized on the bar
     def on_partitionResized(self, unused, size):

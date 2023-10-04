@@ -208,7 +208,6 @@ if [ "$RET" = true ] && ! is_system_user; then
 			umountproc=:
 		fi
 	fi
-
 	if [ -x $ROOT/usr/sbin/adduser ]; then
 		# When using zsh in HamoniKR OS
 		if [ -x $ROOT/usr/bin/zsh ] && [ `dpkg-query -W --showformat='${db:Status-Status}' hamonikr-zsh` = "installed" ] ; then
@@ -219,7 +218,7 @@ if [ "$RET" = true ] && ! is_system_user; then
 	else
 		$log $chroot $ROOT useradd -c "$RET" -m "$USER" $UIDOPT >/dev/null || true
 	fi
-	
+
 	# Clear the user password from the database.
 	db_set passwd/user-password-crypted ''
 	db_set passwd/user-password ''

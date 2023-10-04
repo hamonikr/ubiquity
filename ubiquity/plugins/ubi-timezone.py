@@ -17,8 +17,6 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-from __future__ import print_function
-
 import os
 import re
 import time
@@ -95,6 +93,8 @@ class PageGtk(plugin.PluginUI):
             self.controller.allow_go_forward(True)
 
     def changed(self, entry):
+        from gi import require_version
+        require_version('Soup', '2.4')
         from gi.repository import Gtk, GObject, GLib, Soup
 
         text = misc.utf8(self.city_entry.get_text())
@@ -156,6 +156,8 @@ class PageGtk(plugin.PluginUI):
     def geoname_cb(self, session, message, user_data):
         import syslog
         import json
+        from gi import require_version
+        require_version('Soup', '2.4')
         from gi.repository import GLib, Soup
 
         text, model = user_data
@@ -191,7 +193,9 @@ class PageGtk(plugin.PluginUI):
 
     def setup_page(self):
         # TODO Put a frame around the completion to add contrast (LP: # 605908)
+        from gi import require_version
         from gi.repository import Gtk, GLib
+        require_version('TimezoneMap', '1.0')
         from gi.repository import TimezoneMap
         self.tzdb = ubiquity.tz.Database()
         self.tzmap = TimezoneMap.TimezoneMap()

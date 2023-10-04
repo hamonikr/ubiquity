@@ -2,7 +2,10 @@
 # -*- coding: utf-8; -*-
 
 import os
-from test.support import EnvironmentVarGuard
+try:
+    from test.support import EnvironmentVarGuard
+except ImportError:
+    from test.support.os_helper import EnvironmentVarGuard
 import unittest
 
 from gi.repository import Gtk

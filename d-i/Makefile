@@ -14,15 +14,13 @@ PACKAGES += $(shell cat $(LISTDIR)/$(DEB_HOST_ARCH))
 endif
 # We don't need to build console-setup.
 PACKAGES := $(filter-out console-setup,$(PACKAGES))
-PACKAGES := $(filter-out shim-signed,$(PACKAGES))
 
 update:
 	@perl -MDpkg::Deps -e1 >/dev/null 2>&1 || { \
 		echo "You need dpkg-dev >= 1.14.8 installed to do this." >&2; \
 		exit 1; \
 	}
-	./get-sources update
-	./get-sources $(shell sort -u $(LISTDIR)/*)
+	./update-manifest
 	./update-control
 ifdef UPDATE_LOCAL
 	mv manifest.old manifest
@@ -33,14 +31,11 @@ endif
 check:
 	./check-manifest
 
-maintainer-clean:
-	rm -rf $(SOURCEDIR)
-
 build:
 	set -e; for package in $(PACKAGES); do \
 		if [ -d "$(SOURCEDIR)/$$package" ]; then \
 			(cd "$(SOURCEDIR)/$$package" && \
-			 debian/rules build) || exit 1; \
+			 DEB_BUILD_PROFILES='!noudeb' debian/rules build) || exit 1; \
 		fi; \
 	done
 
@@ -48,11 +43,12 @@ clean:
 	rm -rf $(APTDIR)
 	for dir in $(SOURCEDIR)/*; do \
 		if [ "$${dir##*/}" != console-setup ] && [ -d "$$dir" ]; then \
-			(cd "$$dir" && debian/rules clean) || exit 1; \
+			(cd "$$dir" && DEB_BUILD_PROFILES='!noudeb' debian/rules clean) || exit 1; \
 		fi; \
 	done
 	$(MAKE) -C $(SOURCEDIR)/console-setup/Keyboard clean
-	rm -f $(SOURCEDIR)/*.deb $(SOURCEDIR)/*.udeb
+	git restore $(SOURCEDIR)/console-setup || :
+	rm -f $(SOURCEDIR)/*.deb $(SOURCEDIR)/*.udeb $(SOURCEDIR)/*.ddeb
 	rm -f manifest.old
 	rm -rf udeb-control templates
 
@@ -61,7 +57,7 @@ install:
 		if [ -d "$(SOURCEDIR)/$$package" ]; then \
 			(export NO_PKG_MANGLE=1; \
 			 cd "$(SOURCEDIR)/$$package" && \
-			 debian/rules binary && \
+			 DEB_BUILD_PROFILES='!noudeb' debian/rules binary && \
 			 rm -rf debian/*/DEBIAN) || exit 1; \
 		fi; \
 	done

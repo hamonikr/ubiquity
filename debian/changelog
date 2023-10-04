@@ -1,181 +1,83 @@
-ubiquity (20.04.15.19+hamonikr17) taebaek; urgency=medium
+ubiquity (22.04.21+hamonikr1) kumkang; urgency=medium
 
-  [Kevin Kim]
-  * Adjust language list
+  * Release for HamoniKR 7.0
+   - Merge from linuxmint ubiquity 22.04.16+mint12 and ubuntu
 
- -- HamoniKR <pkg@hamonikr.org>  Thu, 17 Nov 2022 10:52:36 +0900
+ -- HamoniKR <pkg@hamonikr.org>  Wed, 04 Oct 2023 18:57:45 +0900
 
-ubiquity (20.04.15.19+hamonikr16) taebaek; urgency=medium
+ubiquity (22.04.16+mint12) victoria; urgency=medium
 
-  [Kevin Kim]
-  * Update ko.po
+  * Fix: resolv.conf just before cleanup
 
- -- HamoniKR <pkg@hamonikr.org>  Thu, 17 Nov 2022 10:22:31 +0900
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 14 Sep 2023 10:06:23 +0100
 
-ubiquity (20.04.15.19+hamonikr15) taebaek; urgency=medium
+ubiquity (22.04.16+mint11) victoria; urgency=medium
 
-  [Kevin Kim]
-  * Update localechooser
-   - Add CJK additional packages
-   - Add policy file translation
-   - Add shortlist
-   - Update ko.po
-   - Update user-setup-apply for hamonikr-zsh
-   - Update ubiquity theme
-   - Removed localechooser-post-base-installer.patch (duplicated)
+  [ Michael Webster ]
+  * stepUserInfo.ui: Use symbolic icons instead of stock gtk-yes for field validation.
 
- -- HamoniKR <pkg@hamonikr.org>  Wed, 16 Nov 2022 21:17:19 +0900
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 09 Jul 2023 09:35:04 +0200
 
-ubiquity (20.04.15.19+hamonikr14) taebaek; urgency=medium
-
-  [Kevin Kim]
-  * Adjust width_request to 120px
-   - stepLanguage.ui
-  * Update greeter screen image
-
- -- HamoniKR <pkg@hamonikr.org>  Wed, 16 Nov 2022 16:17:54 +0900
-
-ubiquity (20.04.15.19+hamonikr13) taebaek; urgency=medium
-
-  [Kevin Kim]
-  * Update greeter screen
-
- -- HamoniKR <pkg@hamonikr.org>  Wed, 16 Nov 2022 15:28:52 +0900
-
-ubiquity (20.04.15.19+hamonikr12) taebaek; urgency=medium
-
-  [Kevin Kim]
-  * Update backgroung image as hamonikr
-
- -- HamoniKR <pkg@hamonikr.org>  Wed, 16 Nov 2022 13:58:26 +0900
-
-ubiquity (20.04.15.19+hamonikr11) taebaek; urgency=medium
-
-  [Kevin Kim]
-  * Update Languagelist 
-   - Add LC_TIME in localechoose
-
- -- HamoniKR <pkg@hamonikr.org>  Wed, 16 Nov 2022 11:30:33 +0900
-
-ubiquity (20.04.15.19+hamonikr10) taebaek; urgency=medium
-
-  [Kevin Kim]
-  * Done other language test
-   - Test on Chinese, Japanese
-  * Merge from linuxmint version
-
- -- HamoniKR <pkg@hamonikr.org>  Wed, 16 Nov 2022 10:21:51 +0900
-
-ubiquity (20.04.15+linuxmint17) una; urgency=medium
+ubiquity (22.04.16+mint10) victoria; urgency=medium
 
   * l10n: Update translations
 
- -- Clement Lefebvre <root@linuxmint.com>  Fri, 31 Dec 2021 13:26:17 +0000
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 07 Jul 2023 18:11:34 +0200
 
-ubiquity (20.04.15+linuxmint16) una; urgency=medium
+ubiquity (22.04.16+mint9) victoria; urgency=medium
 
+  * ubi-timezone: Specify Soup version
   * l10n: Update translations
 
- -- Clement Lefebvre <root@linuxmint.com>  Mon, 06 Dec 2021 16:16:20 +0000
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 08 Jun 2023 12:22:31 +0100
 
-ubiquity (20.04.15+linuxmint15) uma; urgency=medium
-
-  * l10n: Update translations
-
- -- Clement Lefebvre <root@linuxmint.com>  Fri, 25 Jun 2021 16:01:32 +0100
-
-ubiquity (20.04.15+linuxmint14) uma; urgency=medium
-
-  * l10n: Update translations
-
- -- Clement Lefebvre <root@linuxmint.com>  Thu, 10 Jun 2021 12:34:02 +0100
-
-ubiquity (20.04.15+linuxmint13) ulyssa; urgency=medium
-
-  * l10n: Update translations
-
- -- Clement Lefebvre <root@linuxmint.com>  Sat, 02 Jan 2021 17:46:44 +0000
-
-ubiquity (20.04.15+linuxmint12) ulyssa; urgency=medium
-
-  * l10n: Update translations
-
- -- Clement Lefebvre <root@linuxmint.com>  Thu, 10 Dec 2020 13:02:52 +0000
-
-ubiquity (20.04.15+linuxmint11) ulyssa; urgency=medium
-
-  * Fix: make grub_default consider the boot argument in the non-removable case
-    (LP: #1847898)
-
- -- Clement Lefebvre <root@linuxmint.com>  Fri, 04 Dec 2020 17:00:39 +0000
-
-ubiquity (20.04.15+linuxmint10) ulyana; urgency=medium
-
-  [ Clement Lefebvre ]
-  * Set min disk size to 15GB
-
-  [ gogogogi ]
-  * Fix and update obsolete Croatian translation (#47)
+ubiquity (22.04.16+mint8) victoria; urgency=medium
 
   [ Clement Lefebvre ]
   * l10n: Update translations
 
- -- Clement Lefebvre <root@linuxmint.com>  Wed, 24 Jun 2020 13:32:31 +0100
+  [ Carlos Wu ]
+  * Fix Dutch language translation typo (#57)
 
-ubiquity (20.04.15+linuxmint9) ulyana; urgency=medium
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 06 Jun 2023 12:13:57 +0100
 
-  * OEM: Remove the Ubuntu slideshow
+ubiquity (22.04.16+mint7) vera; urgency=medium
 
- -- Clement Lefebvre <root@linuxmint.com>  Wed, 10 Jun 2020 13:01:03 +0100
+  * Rename icon to mintubiquity
 
-ubiquity (20.04.15+linuxmint8) ulyana; urgency=medium
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 13 Dec 2022 10:16:24 +0000
 
-  [ Mejans ]
-  * Add Occitan to language selection (#45)
-
- -- Clement Lefebvre <root@linuxmint.com>  Tue, 12 May 2020 14:44:39 +0100
-
-ubiquity (20.04.15+linuxmint7) ulyana; urgency=medium
+ubiquity (22.04.16+mint6) vera; urgency=medium
 
   * l10n: Update translations
 
- -- Clement Lefebvre <root@linuxmint.com>  Tue, 12 May 2020 12:01:41 +0100
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 02 Dec 2022 17:48:53 +0000
 
-ubiquity (20.04.15+linuxmint6) ulyana; urgency=medium
+ubiquity (22.04.16+mint5) vanessa; urgency=medium
 
-  * Add missing import
+  * Force installation of mint-meta-codecs
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 07 Jul 2022 15:39:41 +0200
+
+ubiquity (22.04.16+mint4) vanessa; urgency=medium
+
+  * Force installation of mint-meta-codecs
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 07 Jul 2022 11:20:42 +0200
+
+ubiquity (22.04.16+mint3) vanessa; urgency=medium
+
+  * cinnamon: Fix CSD support
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 27 Jun 2022 17:54:23 +0200
+
+ubiquity (22.04.16+mint2) vanessa; urgency=medium
+
   * l10n: Update translations
 
- -- Clement Lefebvre <root@linuxmint.com>  Fri, 08 May 2020 11:51:34 +0100
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 27 Jun 2022 14:40:12 +0200
 
-ubiquity (20.04.15+linuxmint5) ulyana; urgency=medium
-
-  * Don't encrypt swap
-
- -- Clement Lefebvre <root@linuxmint.com>  Thu, 07 May 2020 13:02:37 +0100
-
-ubiquity (20.04.15+linuxmint4) ulyana; urgency=medium
-
-  * Don't encrypt swap...
-
- -- Clement Lefebvre <root@linuxmint.com>  Thu, 07 May 2020 10:55:37 +0100
-
-ubiquity (20.04.15+linuxmint3) ulyana; urgency=medium
-
-  * Prepare: Fix gettext call
-  * Don't encrypt Swap
-  * l10n: Update POT
-
- -- Clement Lefebvre <root@linuxmint.com>  Thu, 07 May 2020 10:06:08 +0100
-
-ubiquity (20.04.15+linuxmint2) ulyana; urgency=medium
-
-  * Disable instalation of proprietaty drivers
-  * Prepare UI: Make it clear we're only talking about codecs
-
- -- Clement Lefebvre <root@linuxmint.com>  Wed, 06 May 2020 13:12:56 +0100
-
-ubiquity (20.04.15+linuxmint1) ulyana; urgency=medium
+ubiquity (22.04.16+mint1) vanessa; urgency=medium
 
   [ Clement Lefebvre ]
   * Naming: Fix VTE font
@@ -193,7 +95,6 @@ ubiquity (20.04.15+linuxmint1) ulyana; urgency=medium
   * Fix: Set LC_TIME to reflect the language rather than the location
   * APT: Adapt apt-setup generators
   * apt-setup: Fix permissions on 70locale
-  * APT: Don't run apt-clone when / isn't formatted.
   * APT: plugininstall.py, don't call apt-setup in install_extras()
   * APT: Don't remove unusable kernel
   * APT: Fixed CDROM source not being removed in target
@@ -208,15 +109,624 @@ ubiquity (20.04.15+linuxmint1) ulyana; urgency=medium
   * Adjust grub title at the end of the installation
   * Fix: /etc/crypttab when using encrypted dir
   * Add Kabyle to language selection
-  * Bring back home encryption
   * Re-bump Virtualbox resolution after running ubuntu-drivers
   * l18n: Add a new l10n domain
   * Prepare: Install multimedia codecs
   * Prepare: Remove "download updates" option
   * l10n: Update Mint POT and msgids
+  * Disable instalation of proprietaty drivers
+  * Prepare UI: Make it clear we're only talking about codecs
+  * Prepare: Fix gettext call
+  * Don't encrypt Swap
+  * l10n: Update POT
+  * l10n: Update translations
+  * OEM: Remove the Ubuntu slideshow
+  * Set min disk size to 15GB
+  * Bring back home encryption
   * l10n: Translate home dir encryption option
 
- -- Clement Lefebvre <root@linuxmint.com>  Sat, 25 Apr 2020 13:17:30 +0100
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 08 Jun 2022 12:27:14 +0200
+
+ubiquity (22.04.16) jammy; urgency=medium
+
+  * Update the Linux Mint logo to the new branding for the Install Linux Mint screen.
+    (LP: #1969455)
+
+ -- Brian Murray <brian@ubuntu.com>  Thu, 21 Apr 2022 05:55:15 -0700
+
+ubiquity (22.04.15) jammy; urgency=medium
+
+  * Set GNOME keyboard layout during installation (LP: #1875062)
+
+ -- Benjamin Drung <bdrung@ubuntu.com>  Wed, 13 Apr 2022 15:56:30 -0700
+
+ubiquity (22.04.14) jammy; urgency=medium
+
+  * Updated translations.
+
+ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@ubuntu.com>  Wed, 13 Apr 2022 14:59:45 +0200
+
+ubiquity (22.04.13) jammy; urgency=medium
+
+  * Remove Zsys on ZFS installation. ZFS is still available.
+
+ -- Jean-Baptiste Lallement <jean-baptiste.lallement@ubuntu.com>  Thu, 07 Apr 2022 11:09:39 +0200
+
+ubiquity (22.04.12) jammy; urgency=medium
+
+  [ Gunnar Hjalmarsson ]
+  * Update the localechooser subtree from 2.89ubuntu3
+    (lp: #1943768, #1966530)
+  * Automatic update of included source packages: localechooser
+    2.89ubuntu3.
+
+  [ Dimitri John Ledkov ]
+  * Switch kernel flavours [oem|hwe]-20.04 to [oem|hwe]-22.04.
+
+ -- Dimitri John Ledkov <dimitri.ledkov@canonical.com>  Wed, 06 Apr 2022 15:12:50 +0100
+
+ubiquity (22.04.11) jammy; urgency=medium
+
+  * In partman-auto further increase the minimum and maximum sizes for /boot
+    partitions on default, x86, and EFI platforms to a minium of 1792Mb and a
+    maximum of 2048Mb. (LP: #1959971)
+
+ -- Brian Murray <brian@ubuntu.com>  Fri, 01 Apr 2022 08:52:20 -0700
+
+ubiquity (22.04.10) jammy; urgency=medium
+
+  * Automatic update of included source packages:
+    - choose-mirror 2.78ubuntu10 for bump to jammy
+  * debian/real-po/templates.pot: update template using debconf-updatepo
+    - This also updates various of the other *.po files in real-po
+
+ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@ubuntu.com>  Mon, 28 Mar 2022 18:25:23 +0200
+
+ubiquity (22.04.9) jammy; urgency=medium
+
+  * There was one fix too many in the previous changes to the Kubuntu frontend
+    which resulted in the Timezone map not displaying which then caused the
+    installation process to hang. (LP: #1966204)
+
+ -- Brian Murray <brian@ubuntu.com>  Fri, 25 Mar 2022 11:53:16 -0700
+
+ubiquity (22.04.8) jammy; urgency=medium
+
+  * In partman-auto bump the minimum and maximum sizes for /boot partitions on
+    default, x86, and EFI platforms to a minium of 1024Mb and a maximum of
+    1848Mb. (LP: #1959971)
+  * After copying log files to /var/log/installer set the permissions to 0o640
+    and change the group owner to adm.
+  * Resolve a crash in the KDE frontend when trying to install Kubuntu which
+    was caused by changes to division. Thanks to LP user Cyril for the patch.
+    (LP: #1963697)
+
+ -- Brian Murray <brian@ubuntu.com>  Tue, 22 Mar 2022 10:35:07 -0700
+
+ubiquity (22.04.7) jammy; urgency=medium
+
+  * Remove the support for selecting software with tasksel as that is no
+    longer used by anything. (LP: #1964026)
+
+ -- Brian Murray <brian@ubuntu.com>  Mon, 07 Mar 2022 13:51:37 -0800
+
+ubiquity (22.04.6) jammy; urgency=medium
+
+  * Update the manifest so the build succeeds.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Fri, 04 Feb 2022 11:47:35 -0800
+
+ubiquity (22.04.5) jammy; urgency=medium
+
+  [ Łukasz 'sil2100' Zemczak ]
+  * Add the ability to unhide passwords for the KDE frontend as well (follow
+    up to the GTK changes released before).
+
+  [ Steve Langasek ]
+  * Do not support setting up archive.canonical.com as a source; the partner
+    archive is now obsolete.  LP: #1959343.
+
+ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@ubuntu.com>  Thu, 03 Feb 2022 12:41:46 +0100
+
+ubiquity (22.04.4) jammy; urgency=medium
+
+  [ Brian Murray ]
+  * debian/ubiquity.templates: capitalize Wi-Fi in multiple places so that is
+    consistent throughout the installer.
+  * tests/*: use a try except so EnvironmentVarGuard can be imported with
+    python3.9 or python3.10.
+
+  [ Łukasz 'sil2100' Zemczak ]
+  * Add the ability to unhide passwords that are being typed-in during various
+    stages (GTK for now).
+
+  [ Rik Mills ]
+  * ubiquity-dm: Fix try/install screen for KDE. (LP: #1958120)
+    - Remove legacy KDE4 code now that the binary it tries to start was
+      removed in latest plasma release.
+    - Fix background wallpaper extension. png -> jpg
+
+ -- Brian Murray <brian@ubuntu.com>  Wed, 26 Jan 2022 11:35:06 -0800
+
+ubiquity (22.04.3) jammy; urgency=medium
+
+  * tests/test_timezone.py:
+    - update for changes in the new tzdata
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 23 Nov 2021 23:37:23 +0100
+
+ubiquity (22.04.2) jammy; urgency=medium
+
+  * Automatic update of included source packages
+    - apt-setup 1:0.157ubuntu3.1 for tempfile deprecation fixes
+    - console-setup 1.205ubuntu1 for deprecation and build fixes
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Mon, 22 Nov 2021 17:45:27 +0100
+
+ubiquity (22.04.1) jammy; urgency=medium
+
+  * Automatic update of included source packages: apt-setup
+    1:0.157ubuntu3.
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Mon, 22 Nov 2021 16:01:30 +0100
+
+ubiquity (21.10.10) impish; urgency=medium
+
+  * ubi-partman.py: Do not display a restart button in the advanced
+    partitioning screen when installing alongside Windows Boot Manager. Thanks
+    to Sam van Kampen for the patch. (LP: #1942648)
+
+ -- Brian Murray <brian@ubuntu.com>  Tue, 12 Oct 2021 05:52:59 -0700
+
+ubiquity (21.10.9) impish; urgency=medium
+
+  * ubiquity-dm: use dbus-update-activation-environment for every desktop
+    environment. Thanks to Gordon N. Squash for the patch. (LP: #1231091)
+
+ -- Brian Murray <brian@ubuntu.com>  Fri, 08 Oct 2021 13:04:00 -0700
+
+ubiquity (21.10.8) impish; urgency=medium
+
+  * Updated translations.
+
+ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@ubuntu.com>  Tue, 05 Oct 2021 18:39:30 +0200
+
+ubiquity (21.10.7) impish; urgency=medium
+
+  * ubiquity/gsettings.py, ubiquity/misc.py, data/ubiquity.desktop.in: also
+    preserve XDG_DATA_DIRS when running ubiquity in a live session, which
+    fixes opening the release notes hyperlink (and all other hyperlinks)
+    with the correct application (firefox vs gedit) (LP: #1945658)
+
+ -- Olivier Tilloy <olivier.tilloy@canonical.com>  Tue, 05 Oct 2021 17:55:29 +0200
+
+ubiquity (21.10.6) impish; urgency=medium
+
+  [ Didier Roche ]
+  * debian/ubiquity.templates: fix formatting of error message to not
+    contain markup
+
+  [ Olivier Tilloy ]
+  * ubiquity/frontend/gtk_ui.py, ubiquity/misc.py, debian/control: use
+    xdg-open instead of sensible-browser to open the release notes and
+    other hyperlinks consistently (LP: #1945015)
+
+  [ Yuan-Chen Cheng ]
+  * bin/ubiquity: add pre-install hookdir for oem-config mode
+
+ -- Olivier Tilloy <olivier.tilloy@canonical.com>  Mon, 27 Sep 2021 15:14:25 +0200
+
+ubiquity (21.10.5) impish; urgency=medium
+
+  * tests/test_gtkwidgets.py, ubiquity/frontend/gtk_ui.py:
+    - use gi.require_version to ensure we import the right gtk bindings
+      (lp: #1936488)
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 16 Jul 2021 16:03:27 +0200
+
+ubiquity (21.10.4) impish; urgency=medium
+
+  [ Didier Roche ]
+  [ Jean-Baptiste Lallement ]
+  * Make the recovery key a 48 digits password by default
+   (LP: 1928860)
+  * Recovery key is editable and optional.
+  * Show the recovery key during manual partitioning.
+  * Display a warning if recovery key is stored on a non removable media.
+
+ -- Jean-Baptiste Lallement <jean-baptiste.lallement@ubuntu.com>  Thu, 15 Jul 2021 14:34:49 +0200
+
+ubiquity (21.10.3) impish; urgency=medium
+
+  [ Didier Roche ]
+  [ Jean-Baptiste Lallement ]
+  * krb5-config can be completely removed from the list of packages to keep or
+    remove now that kerberos configuration is not needed anymore.
+
+ -- Jean-Baptiste Lallement <jean-baptiste.lallement@ubuntu.com>  Wed, 23 Jun 2021 10:26:04 +0200
+
+ubiquity (21.10.2) impish; urgency=medium
+
+  [ Didier Roche ]
+  [ Jean-Baptiste Lallement ]
+  * connectity check: Make a distinction between local and global connection
+    availability. For example, AD can be enabled with a working site
+    connection but no internet, while package download requires a global
+    connection.
+  * revert configuration of Kerberos when AD is enabled. It is not required
+    when all the services are running on Windows.
+
+ -- Jean-Baptiste Lallement <jean-baptiste.lallement@ubuntu.com>  Mon, 21 Jun 2021 12:07:12 +0200
+
+ubiquity (21.10.1) impish; urgency=medium
+
+  * choose-mirror: hirsute -> impish
+
+ -- Iain Lane <iain.lane@canonical.com>  Thu, 13 May 2021 17:58:27 +0100
+
+ubiquity (21.04.19) hirsute; urgency=medium
+
+  [ Didier Roche ]
+  [ Jean-Baptiste Lallement ]
+  * Only set the recovery key when partman-auto is used (LP: #1925002)
+
+ -- Jean-Baptiste Lallement <jean-baptiste.lallement@ubuntu.com>  Mon, 19 Apr 2021 15:17:58 +0200
+
+ubiquity (21.04.18) hirsute; urgency=medium
+
+  * Only auto-configure ESP larger than 50 MiB - this works around LP 1924823,
+    where the 5 MB ESP on the install medium was configured as /boot/efi.
+
+ -- Julian Andres Klode <juliank@ubuntu.com>  Mon, 19 Apr 2021 13:01:53 +0200
+
+ubiquity (21.04.17) hirsute; urgency=medium
+
+  [ Rik Mills ]
+  * Remove autoconversion = False setting for qvariant in the KDE frontend.
+    Fixes LP: #1912327 and LP: #1916331.
+
+ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@ubuntu.com>  Fri, 16 Apr 2021 16:25:59 +0200
+
+ubiquity (21.04.16) hirsute; urgency=medium
+
+  * Updated translations.
+
+ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@ubuntu.com>  Thu, 15 Apr 2021 15:14:05 +0200
+
+ubiquity (21.04.15) hirsute; urgency=medium
+
+  * scripts/plugininstall.py: Only install grub to ESP if ESP is configured
+    (LP: #1893964)
+
+ -- Julian Andres Klode <juliank@ubuntu.com>  Wed, 14 Apr 2021 17:29:57 +0200
+
+ubiquity (21.04.14) hirsute; urgency=medium
+
+  * zys-setup: ZFS generator is enabled by default (LP: 1922402)
+
+ -- Jean-Baptiste Lallement <jean-baptiste.lallement@ubuntu.com>  Tue, 06 Apr 2021 12:17:46 +0200
+
+ubiquity (21.04.13) hirsute; urgency=medium
+
+  * misc: Fixed crash when trying to escape a non string (LP: #1921567)
+
+ -- Jean-Baptiste Lallement <jean-baptiste.lallement@ubuntu.com>  Wed, 31 Mar 2021 10:39:43 +0200
+
+ubiquity (21.04.12) hirsute; urgency=medium
+
+  [ Didier Roche ]
+  [ Jean-Baptiste Lallement ]
+  * Added support for recovery key.
+    This adds a second key that can be used for recovery. This key is saved to
+    a file to be stored in a secure location to recover an encrypted device.
+    (LP: #1921358)
+
+ -- Jean-Baptiste Lallement <jean-baptiste.lallement@ubuntu.com>  Wed, 17 Mar 2021 09:38:45 +0100
+
+ubiquity (21.04.11) hirsute; urgency=medium
+
+  [ Didier Roche ]
+  [ Jean-Baptiste Lallement ]
+  * Configure krb5 client so access to AD with GPO enabled works out of the
+    box after installation.
+  * Keep packages required for AD installed. When AD installation is selected
+    we want to keep all the packages used to make it work and remove them
+    otherwise.
+
+  [ Dimitri John Ledkov ]
+  * install_misc: refuse to install packages that have been marked for removal.
+    This should generally fix issues we've been seeing with installations using
+    the OEM metapackages.  (LP: #1914374)
+  * Merge netcfg 171 from Debian into ~ubuntu-installer repo, and subtree
+    pull it in.
+  * Automatic update of included source packages: netcfg 171ubuntu1
+  * Build udebs with !noudeb profile set, to actually build with udebs.
+  * Delete KeyboardNames.pl becuase it is annoying.
+  * Automatic update of included source packages.
+  * Properly drop dh-systemd build-dep from the d-i/update-control script.
+  * Add symlink in netcfg mock_paths with and without _fn suffix, cause
+    check in hirsute-release & hirsute-proposed want one or the other.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Wed, 17 Mar 2021 02:22:11 +0000
+
+ubiquity (21.04.10) hirsute; urgency=medium
+
+  * Drop build-dependency on obsolete dh-systemd
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Fri, 05 Mar 2021 16:54:23 -0800
+
+ubiquity (21.04.9) hirsute; urgency=medium
+
+  [ Iain Lane ]
+  * check-kernels: Don't remove the oem kernel if we want it (LP: #1915114)
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Tue, 09 Feb 2021 13:53:35 +0000
+
+ubiquity (21.04.8) hirsute; urgency=medium
+
+  * install_misc: Mark all installed packages as manually installed.  When
+    we're marking packages to install, mark them as `from_user=True`, which
+    means manually installed. This prevents them being autoremoved either
+    during installation or afterwards in the target system.  Fixes removal of
+    the OEM kernel resulting in unbootable certified systems. (LP: #1914091)
+
+ -- Iain Lane <iain.lane@canonical.com>  Mon, 01 Feb 2021 17:03:00 +0000
+
+ubiquity (21.04.7) hirsute; urgency=medium
+
+  [ William 'jawn-smith' Wilson ]
+  * Listen on systemd signals in order to wait for sound.target to come
+    up before attempting to play the system ready sound (LP: #1901043)
+
+ -- Brian Murray <brian@ubuntu.com>  Fri, 29 Jan 2021 09:57:20 -0800
+
+ubiquity (21.04.6) hirsute; urgency=medium
+
+  * Revert "BD on iproute2" There's a mock 'ip' command which is supposed to
+    be used actually.
+  * Append _fn to netcfg mock_path name. This is actually why the mock 'ip'
+    command wasn't being found. The check library now generates the testcase
+    with `_fn` appended, so we need to rename our directory to follow suit.
+
+ -- Iain Lane <iain.lane@canonical.com>  Mon, 25 Jan 2021 19:02:50 +0000
+
+ubiquity (21.04.5) hirsute; urgency=medium
+
+  [ Mauricio Faria de Oliveira ]
+  * ubiquity/plugins/ubi-prepare.py: let the prepare page run in
+    automatic mode to install 3rd party drivers. (LP: #1895351)
+
+  [ Iain Lane ]
+  * Drop all "from __future__ import print". This was kept 8 years ago when
+    porting to py3, because pyflakes required it at the time to work properly.
+  * ubiquity-dm: Set DISPLAY in the systemd environment for kubuntu too.
+  * netcfg/tests/tests.mk: Disable -Werror=format.
+    Upstream `check` has rewritten the macros, and now they trip these
+    warnings. They should be updated to use ck_assert_* really.
+
+  [ Shih-Yuan Lee (FourDollars) ]
+  * install_misc.py: Use another mechanism to install the packages. (LP:
+    #1908023)
+
+ -- Iain Lane <iain.lane@canonical.com>  Mon, 25 Jan 2021 18:24:07 +0000
+
+ubiquity (21.04.4) hirsute; urgency=medium
+
+  [ Jean-Baptiste Lallement ]
+  * Moved from deprecated sip4 to sip from PyQt5 (LP: #1903378) Thanks Rik
+    Mills for the references.
+  * Replaced deprecated module imp by importlib (LP: #1898494)
+
+  [ Shih-Yuan Lee (FourDollars) ]
+  * set() has a random order when looping it that makes the failure of
+    dependencies issue random. Sort the list of package to make it predictable
+    and easier to diagnose dependency issues.
+
+  [ Łukasz 'sil2100' Zemczak ]
+  * Provide some minimal user feedback on the UI when ubuntu-drivers is busy
+    while running in the background. (LP: #1824905)
+
+  [ Gunnar Hjalmarsson ]
+  * d-i/patches/localechooser-post-base-installer.patch:
+    - Set nl (Dutch) as the default Belgian language (LP: #1907914)
+
+ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@ubuntu.com>  Fri, 08 Jan 2021 18:13:07 +0000
+
+ubiquity (21.04.3) hirsute; urgency=medium
+
+  [ Mauricio Faria de Oliveira ]
+  * Introduce preseed option partman-crypto/luksformat_options
+
+  [ Łukasz 'sil2100' Zemczak ]
+  * Automatic update of included source packages: partman-crypto
+    101ubuntu5.
+
+ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@ubuntu.com>  Thu, 03 Dec 2020 15:21:45 +0100
+
+ubiquity (21.04.2) hirsute; urgency=medium
+
+  * Fix set_indicator_keymaps to work with Python 3.9 (the .tostring() method
+    on arrays, long deprecated, has now been removed).
+
+ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Mon, 30 Nov 2020 12:41:31 +1300
+
+ubiquity (21.04.1) hirsute; urgency=medium
+
+  * Update d-i/sources/choose-mirror, switching from focal to hirsute as the
+    default (jumping by two releases as we forgot this step for groovy).
+
+ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@ubuntu.com>  Mon, 16 Nov 2020 18:56:41 +0100
+
+ubiquity (20.10.13) groovy; urgency=medium
+
+  * misc.py: unset gsd keys to trigger keyboard settings migration.
+    (LP: #1892040)
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Mon, 19 Oct 2020 18:29:34 +0100
+
+ubiquity (20.10.12) groovy; urgency=medium
+
+  [ Gunnar Hjalmarsson ]
+  * d-i/patches/localechooser-post-base-installer.patch:
+    - Set sw (Swahili) as the default Kenya language (LP: #1763025)
+  * Translation update (LP: #1897444)
+
+  [ Sebastien Bacher ]
+  * POTFILES.in entries were not updated after a directory rename
+
+ -- Gunnar Hjalmarsson <gunnarhj@ubuntu.com>  Fri, 16 Oct 2020 11:41:38 +0100
+
+ubiquity (20.10.11) groovy; urgency=medium
+
+  [ Jean-Baptiste Lallement ]
+  * Remove popularity-contest.
+  * Initialize text variables to fix crash in OEM mode (LP: #1898029)
+
+  [ Sebastien Bacher ]
+  * Updated translations (LP: #1897444)
+
+  [ Dimitri John Ledkov ]
+  * oem-config.target: Correct name of the NetworkManager.service unit
+    (LP: #1665384)
+  * localechooser.patch: set my (Burmese) as the default Myanmar language.
+    (LP: #1872186)
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Wed, 14 Oct 2020 13:18:26 +0100
+
+ubiquity (20.10.10) groovy; urgency=medium
+
+  [ Didier Roche ]
+  [ Jean-Baptiste Lallement ]
+  * AD integration for GTK UI.
+  * bump KDE_SESSION_VERSION to 5 to fix xdg-open on Kubuntu (LP: #1890173)
+
+  [ Brian Murray ]
+  * Do not try to keep installed software when reinstalling Linux Mint as the
+    process was error prone (LP: 1152399) and did not provide a quailty
+    experience. (LP: #1798369)
+
+ -- Jean-Baptiste Lallement <jean-baptiste.lallement@ubuntu.com>  Tue, 15 Sep 2020 17:06:15 +0200
+
+ubiquity (20.10.9) groovy; urgency=medium
+
+  * gtk_ui, prepare: Run 'apt update' before installing OEM metapackages. We
+    need to pick up any which might have been released after the ISO was
+    created. (LP: #1888241)
+
+ -- Iain Lane <iain.lane@canonical.com>  Tue, 21 Jul 2020 15:29:51 +0100
+
+ubiquity (20.10.8) groovy; urgency=medium
+
+  [ Michael Hudson-Doyle ]
+  * grub-installer: do not attempt to uninstall grub-efi-amd64-bin and grub-efi-amd64-signed when legacy booted
+
+  [ Jean-Baptiste Lallement ]
+  * Add right swap device id to fstab
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Mon, 06 Jul 2020 18:09:18 +0100
+
+ubiquity (20.10.7) groovy; urgency=medium
+
+  * control: drop udeb packages, no longer installable
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Mon, 29 Jun 2020 11:24:26 +0100
+
+ubiquity (20.10.6) groovy; urgency=medium
+
+  [ Michael Hudson-Doyle ]
+  * grub-installer: allow invoker to override architecture
+  * grub-installer: do not be fancy trying to determine which grub-efi package to install
+  * grub-installer: always pass --target x86_64-efi to grub-install on adm64/efi
+  * ubiquity: run grub-installer again to install ESP on amd64/legacy
+
+  [ Dimitri John Ledkov ]
+  * releasing package grub-installer version 1.128ubuntu15
+  * d-i: add docs about subtree merging of changes
+  * Automatic update of included source packages: grub-installer
+    1.128ubuntu15.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Fri, 26 Jun 2020 21:44:20 +0100
+
+ubiquity (20.10.5) groovy; urgency=medium
+
+  * Switch from apt-get source, to git subtree for vendorized d-i sources.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Tue, 16 Jun 2020 10:56:50 +0100
+
+ubiquity (20.10.4) groovy; urgency=medium
+
+  [ Dimitri John Ledkov ]
+  * d-i: drop distro patch of partman-swapfile, included in v2
+  * d-i: vendorize archdetect binary, to remove hw-detect
+  * Do not vendorize shim-signed scripts, simply use shim-signed scripts
+    that are installed in live session already anyway.
+  * ubiquity-dm: start gsd-keyboard for keyboard indicator (LP: #1847307)
+  * autopilot: pacify new pyflakes
+
+  [ Jean-Baptiste Lallement ]
+  * Calculate partition number instead of reusing swap
+  * Add partition for key store.
+  * Add creation of the key store
+  * Key store on ZVol
+  * Encryption is enabled with --encrypt|-e
+  * Added encrypted swap on ZFS systems
+  * Use env instead argument to enable encryption
+  * Properly calculate position of extended partition
+  * force key when zfs encryption is activated.
+  * Properly unmount target and its friends on zfs installation.
+  * Add ZFS encryption UI
+  * partition table is always GPT
+  * Various fixes in zsys-setup
+  * Moved keystore to /run/
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Mon, 15 Jun 2020 18:18:40 +0100
+
+ubiquity (20.10.3) groovy; urgency=medium
+
+  [ Jean-Baptiste ]
+  * zsys-setup: Fixed partition type of EFI partition Partman has been updated
+    to use 'ef' instead of 'b' as partition type of the EFI partition on MBR
+    system.  This breaks zsys installation script and this patch fixes it.
+
+  [ Dimitri John Ledkov ]
+  * Automatic update of included source packages: apt-setup
+    1:0.157ubuntu2, partman-swapfile 2.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Mon, 08 Jun 2020 01:23:03 +0100
+
+ubiquity (20.10.2) groovy; urgency=medium
+
+  [ Jean-Baptiste Lallement ]
+  * zsys-setup: Use persistent device name for vdevs (LP: #1880869)
+  * Only export pools created during installation and containing dataset
+    mounted under /target (LP: #1875045)
+
+  [ Dimitri John Ledkov ]
+  * Automatic update of included source packages: partman-partitioning
+    120ubuntu3. LP: #1796260
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Thu, 28 May 2020 22:41:16 +0100
+
+ubiquity (20.10.1) groovy; urgency=medium
+
+  [ Sebastien Bacher ]
+  * debian/real-po:
+    - updated translations from launchpad, including strings from the new
+      subpage for RST (lp: #1874103)
+
+  [ Jean-Baptiste Lallement ]
+  * zsys-setup: Enable autotrim on all pools.
+
+  [ Dimitri John Ledkov ]
+  * Automatic update of included source packages: console-setup
+    1.195ubuntu2, localechooser 2.71ubuntu5, partman-efi 84ubuntu1,
+    partman-lvm 133.
+
+  [ Michael Hudson-Doyle ]
+  * make grub_default consider the boot argument in the non-removable case
+    (LP: #1847898)
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Wed, 27 May 2020 11:32:08 +0100
 
 ubiquity (20.04.15) focal; urgency=medium
 

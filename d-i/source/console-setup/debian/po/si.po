@@ -17,9 +17,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: console-setup@packages.debian.org\n"
-"POT-Creation-Date: 2019-11-02 19:48+0100\n"
-"PO-Revision-Date: 2012-02-28 10:16+0530\n"
-"Last-Translator: Danishka Navin <danishka@gmail.com>\n"
+"POT-Creation-Date: 2020-10-28 20:01+0000\n"
+"PO-Revision-Date: 2019-08-28 18:10+0000\n"
+"Last-Translator: leela <53352@protonmail.com>\n"
 "Language-Team: Sinhala <info@hanthana.org>\n"
 "Language: si\n"
 "MIME-Version: 1.0\n"
@@ -306,14 +306,13 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../console-setup.templates:8001
+#, fuzzy
 msgid ""
-"Please select the size of the font for the console.  For reference, the font "
-"used when the computer boots has size 8x16.  Some font sizes require the kbd "
-"console package (not console-tools) plus framebuffer."
+"Please select the size of the font for the console.  Some font sizes require "
+"framebuffer."
 msgstr ""
-"කරුණාකර කොන්සෝලු සඳහා අකුරු ප්‍රමාණයක් තෝරන්න, උදාහරණයක් ලෙස පරිගණයක ආරම්භ  වන විට පවතින "
-"අකුරේ ප්‍රමාණය 8x16 වීම ගත හැක. ඇතැම් අකුරු ප්‍රමාණයන්ට kbd කොන්සෝල පැකේජය (console-"
-"tools නොවේ) හා රාමුබෆරය ඇවැසි වේ."
+"කරුණාකර කොන්සෝලය සඳහා අකුරු ප්‍රමාණයක් තෝරන්න, උදාහරණයක් ලෙස පරිගණයක ආරම්භ  වන විට පවතින "
+"අකුරේ ප්‍රමාණය 8x16 වීම ගත හැක."
 
 #. Type: select
 #. Description
@@ -930,6 +929,13 @@ msgstr "බෙන්ගාලි"
 #: ../keyboard-configuration.templates:16001
 msgid "Belgian"
 msgstr "බෙල්ජියානු"
+
+#. Type: select
+#. Choices
+#. :sl1:
+#: ../keyboard-configuration.templates:16001
+msgid "Berber (Latin)"
+msgstr ""
 
 #. Type: select
 #. Choices

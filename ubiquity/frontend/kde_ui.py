@@ -25,8 +25,6 @@
 # with Ubiquity; if not, write to the Free Software Foundation, Inc., 51
 # Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-from __future__ import print_function
-
 import atexit
 import dbus
 from functools import reduce
@@ -37,8 +35,6 @@ import syslog
 import traceback
 
 # kde gui specifics
-import sip
-sip.setapi("QVariant", 1)
 from PyQt5 import QtCore, QtGui, QtWidgets, uic
 
 from ubiquity import filteredcommand, i18n, misc, telemetry
@@ -169,7 +165,7 @@ class Wizard(BaseFrontend):
         # We also need to indicate version as otherwise KDElibs3 compatibility
         # might kick in such as in QIconLoader.cpp:QString fallbackTheme.
         # http://goo.gl/6LkM7X
-        os.environ["KDE_SESSION_VERSION"] = "4"
+        os.environ["KDE_SESSION_VERSION"] = "5"
         # Pretty much all of the above but for Qt5
         os.environ["QT_QPA_PLATFORMTHEME"] = "kde"
 
@@ -1074,6 +1070,12 @@ class Wizard(BaseFrontend):
             return
 
         self.allow_change_step(False)
+        ui = self.pages[self.pagesindex].ui
+        if hasattr(ui, 'plugin_on_next_clicked'):
+            if ui.plugin_on_next_clicked():
+                # Stop processing and return to the page.
+                self.allow_change_step(True)
+                return
 
         if self.dbfilter is not None:
             self.dbfilter.ok_handler()

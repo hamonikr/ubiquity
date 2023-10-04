@@ -11,12 +11,11 @@ Build-Depends: adwaita-icon-theme,
                check,
                dctrl-tools,
                debconf-utils,
-               debhelper (>= 9),
+               debhelper (>= 11),
                dh-autoreconf,
                dh-di (>= 3),
                dh-python,
-               dh-systemd,
-               dpkg-dev (>= 1.15.7),
+               dpkg-dev (>= 1.16.1~),
                gir1.2-nma-1.0,
                gir1.2-soup-2.4,
                gir1.2-timezonemap-1.0,
@@ -77,8 +76,6 @@ Vcs-Browser: https://code.launchpad.net/~ubuntu-installer/ubiquity/+git/ubiquity
 Package: ubiquity
 Architecture: any
 Depends: adduser,
-         apt-clone,
-         archdetect-deb,
          cryptsetup,
          dbus-x11,
          dpkg-repack,
@@ -97,10 +94,12 @@ Depends: adduser,
          python3-pam,
          rdate,
          sbsigntool [amd64],
+         shim-signed [amd64],
          ubiquity-artwork-${mangled-version},
          ubiquity-casper,
          ubiquity-frontend-${mangled-version},
          wget,
+         xdg-utils,
          dctrl-tools,
          ${console-setup-depends},
          ${misc:Depends},
@@ -111,6 +110,8 @@ Recommends: btrfs-progs,
             grub-pc [any-amd64 any-i386] | grub [any-amd64 any-i386] | grub-efi-amd64 [any-amd64] | grub-efi-arm64 [arm64] | grub-efi-ia32 [any-i386],
             lvm2,
             ubuntu-drivers-common (>= 0.6.3)
+Breaks: archdetect-deb
+Replaces: archdetect-deb
 Description: Linux Mint live CD installer
  This is a simple live CD installer designed to integrate well with Debian-
  and Linux Mint-based systems, and to reuse code from d-i for ease of
@@ -144,7 +145,6 @@ Depends: busybox-static | busybox,
          python3-dbus,
          python3-gi,
          python3-gi-cairo,
-         sensible-utils,
          ubiquity (= ${binary:Version}),
          ${misc:Depends},
          ${python3:Depends},
@@ -188,7 +188,6 @@ Package: ubiquity-frontend-debconf
 Architecture: any
 Depends: bogl-bterm (>= 0.1.18-2ubuntu4),
          debconf (>= 1.5.24ubuntu2) | cdebconf,
-         tasksel,
          ubiquity (= ${binary:Version}),
          ${misc:Depends},
          ${python3:Depends}
@@ -257,24 +256,6 @@ Description: debconf frontend for end-user post-OEM-install configuration
  .
  This is a frontend to oem-config that simply arranges for questions to be
  asked using the normal debconf frontend.
-
-Package: oem-config-check
-Package-Type: udeb
-Section: debian-installer
-Priority: standard
-Architecture: all
-Depends: cdebconf-udeb (>= 0.75),
-         main-menu (>= 1.03)
-Description: enter OEM mode if requested
-
-Package: oem-config-udeb
-Package-Type: udeb
-Section: debian-installer
-Architecture: all
-Depends: cdebconf-udeb,
-         oem-config-check
-XB-Installer-Menu-Item: 2350
-Description: Prepare for OEM configuration
 
 Package: oem-config-remaster
 Architecture: all

@@ -7,10 +7,10 @@ Name[ko]=하모니카 설치
 _Comment=Install this system permanently to your hard disk
 _Keywords=ubiquity;
 #use sh because pkexec is broken under xfce/lxce http://pad.lv/1193526
-Exec=sudo --preserve-env=DBUS_SESSION_BUS_ADDRESS,XDG_RUNTIME_DIR sh -c 'ubiquity gtk_ui'
-Icon=ubiquity
+Exec=sudo --preserve-env=DBUS_SESSION_BUS_ADDRESS,XDG_DATA_DIRS,XDG_RUNTIME_DIR sh -c 'ubiquity gtk_ui'
+Icon=mintubiquity
 Terminal=false
 Categories=GTK;System;Settings;
 NotShowIn=KDE;
-#X-Ubuntu-Gettext-Domain=ubiquity-desktop
+#X-Linux Mint-Gettext-Domain=ubiquity-desktop
 X-Ayatana-Appmenu-Show-Stubs=False

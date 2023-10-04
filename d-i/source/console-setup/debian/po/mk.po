@@ -23,9 +23,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer_packages_po_sublevel1_mk\n"
 "Report-Msgid-Bugs-To: console-setup@packages.debian.org\n"
-"POT-Creation-Date: 2019-11-02 19:48+0100\n"
-"PO-Revision-Date: 2012-09-23 01:33+0200\n"
-"Last-Translator: Arangel Angov <arangel@linux.net.mk>\n"
+"POT-Creation-Date: 2020-10-28 20:01+0000\n"
+"PO-Revision-Date: 2019-08-28 18:10+0000\n"
+"Last-Translator: leela <53352@protonmail.com>\n"
 "Language-Team: Macedonian <>\n"
 "Language: mk\n"
 "MIME-Version: 1.0\n"
@@ -317,10 +317,10 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../console-setup.templates:8001
+#, fuzzy
 msgid ""
-"Please select the size of the font for the console.  For reference, the font "
-"used when the computer boots has size 8x16.  Some font sizes require the kbd "
-"console package (not console-tools) plus framebuffer."
+"Please select the size of the font for the console.  Some font sizes require "
+"framebuffer."
 msgstr ""
 "Ве молам изберете ја големината на фонтот за Linux конзолата. За референца, "
 "фонтот користен при подигнување на компјутерот е со големина 16."
@@ -959,6 +959,13 @@ msgstr "Бенгалски"
 #: ../keyboard-configuration.templates:16001
 msgid "Belgian"
 msgstr "Белгиски"
+
+#. Type: select
+#. Choices
+#. :sl1:
+#: ../keyboard-configuration.templates:16001
+msgid "Berber (Latin)"
+msgstr ""
 
 #. Type: select
 #. Choices

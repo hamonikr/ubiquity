@@ -1,3 +1,22 @@
+choose-mirror (2.78ubuntu10) jammy; urgency=medium
+
+  * Switch from hirsute (and actually impish per ubiquity local changes) to
+    jammy as the default.
+
+ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@ubuntu.com>  Mon, 28 Mar 2022 18:19:18 +0200
+
+choose-mirror (2.78ubuntu9) hirsute; urgency=medium
+
+  * Switch from groovy to hirsute as the default.
+
+ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@ubuntu.com>  Mon, 16 Nov 2020 18:53:28 +0100
+
+choose-mirror (2.78ubuntu8) groovy; urgency=medium
+
+  * Switch from focal to groovy as the default.
+
+ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@ubuntu.com>  Mon, 16 Nov 2020 18:33:22 +0100
+
 choose-mirror (2.78ubuntu7) focal; urgency=medium
 
   * Switch from eoan to focal as the default.

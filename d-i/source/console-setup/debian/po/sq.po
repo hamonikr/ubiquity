@@ -20,9 +20,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: console-setup@packages.debian.org\n"
-"POT-Creation-Date: 2019-11-02 19:48+0100\n"
-"PO-Revision-Date: 2017-09-04 19:14+0200\n"
-"Last-Translator: Silva Arapi <silva.arapi@gmail.com>\n"
+"POT-Creation-Date: 2020-10-28 20:01+0000\n"
+"PO-Revision-Date: 2017-09-11 23:13+0300\n"
+"Last-Translator: Sotirios Vrachas <sotirios@vrachas.net>\n"
 "Language-Team: Albanian <debian-l10n-albanian@lists.debian.org>\n"
 "Language: sq\n"
 "MIME-Version: 1.0\n"
@@ -315,14 +315,13 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../console-setup.templates:8001
+#, fuzzy
 msgid ""
-"Please select the size of the font for the console.  For reference, the font "
-"used when the computer boots has size 8x16.  Some font sizes require the kbd "
-"console package (not console-tools) plus framebuffer."
+"Please select the size of the font for the console.  Some font sizes require "
+"framebuffer."
 msgstr ""
 "Të lutem zgjidh madhësinë e gërmave për konsolën Linux. Sa për referencë, "
-"gërma e përdorur kur kompjuteri nis ka madhësi 8X16. Disa gërma kanë të "
-"nevojshme paketën e konsolës kbd (jo veglat e konsolës) si dhe framebuffer."
+"gërma e përdorur kur kompjuteri nis ka madhësi 8X16."
 
 #. Type: select
 #. Description
@@ -957,6 +956,13 @@ msgstr "Bengale"
 #: ../keyboard-configuration.templates:16001
 msgid "Belgian"
 msgstr "Belge"
+
+#. Type: select
+#. Choices
+#. :sl1:
+#: ../keyboard-configuration.templates:16001
+msgid "Berber (Latin)"
+msgstr ""
 
 #. Type: select
 #. Choices

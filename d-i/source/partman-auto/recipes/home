@@ -11,7 +11,7 @@ partman-auto/text/home_scheme ::
 	method{ efi }
 	format{ } .
 
-512 1024 768 ext4
+1792 1024 2048 ext4
 	$defaultignore{ }
 	$lvmignore{ }
 	method{ format }

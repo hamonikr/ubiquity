@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: utf-8; -*-
 
-from __future__ import print_function
-
 import os
 import unittest
 
@@ -73,7 +71,7 @@ class TestFrontend(unittest.TestCase):
             # Anything smaller will need to use Alt+Ctrl+Pgd/Right
             # Scrollbars anyone?
             # self.assertLessEqual(alloc.width, 640, page.module.NAME)  # fixme
-            self.assertLessEqual(alloc.height, 556, page.module.NAME)
+            self.assertLessEqual(alloc.height, 744, page.module.NAME)  # 768 - 24px (top panel)
             if page.module.NAME == 'partman':
                 ui.allow_change_step(False)
 
@@ -123,6 +121,7 @@ class TestFrontend(unittest.TestCase):
                 # setup page.
                 'password_strength', 'hostname_error_label',
                 'password_error_label', 'username_error_label',
+                'recovery_strength',
                 # Pulled straight from debconf into the UI on progress.
                 'install_progress_text',
                 # Contains just the traceback.
@@ -132,6 +131,7 @@ class TestFrontend(unittest.TestCase):
                 'page_title',
                 # To be calculated and set
                 'partition_lvm_status',
+                'recovery_key_location',
                 # These are "placeholders" for debconfs impromptu notices
                 'ubi_question_dialog', 'question_label',
                 # Calculated error string
@@ -141,6 +141,9 @@ class TestFrontend(unittest.TestCase):
                 'disable_secureboot', 'prepare_foss_disclaimer',
                 'label_free_space', 'label_required_space',
                 'label_download_updates',
+                # This one is set by either the wireless and prepare plugins
+                # to indicate status
+                'status_label',
             ]
             deb_host_arch = subprocess.Popen(
                 ['dpkg-architecture', '-qDEB_HOST_ARCH'],

@@ -1,11 +1,8 @@
 #!/usr/bin/python3
 
-from __future__ import print_function
-
 import errno
 import getpass
 import grp
-import imp
 import os
 import pwd
 import signal
@@ -23,7 +20,6 @@ sys.path.insert(0, '/usr/lib/ubiquity')
 from ubiquity import gsettings, osextras
 from ubiquity.casper import get_casper
 from ubiquity.debconfcommunicator import DebconfCommunicator
-import ubiquity.frontend
 from ubiquity.misc import create_bool, utf8
 
 
@@ -181,16 +177,14 @@ class DM:
         # this lets us find out which window manager etc. to launch. Be
         # careful that importing this here will cause the underlying library
         # to try to talk to the X server, which won't go well.
+        from importlib import util
         frontend_names = ['gtk_ui', 'kde_ui']
         self.frontend = None
         for f in frontend_names:
-            try:
-                imp.find_module(f, ubiquity.frontend.__path__)
+            if util.find_spec('ubiquity.frontend.%s' % f) is not None:
                 self.frontend = f
                 break
-            except ImportError:
-                pass
-        else:
+        if self.frontend is None:
             raise AttributeError('No frontend available; tried %s' %
                                  ', '.join(frontend_names))
 
@@ -410,6 +404,20 @@ EndSection
                 stdin=null, stdout=logfile, stderr=logfile,
                 preexec_fn=self.drop_privileges))
 
+        if osextras.find_on_path("dbus-update-activation-environment"):
+            subprocess.Popen(
+                [
+                    "dbus-update-activation-environment",
+                    "--verbose",
+                    "--systemd",
+                    "DISPLAY",
+                ],
+                stdin=null,
+                stdout=logfile,
+                stderr=logfile,
+                preexec_fn=self.drop_privileges,
+            )
+
         # Accessibility infrastructure
         proc_cmdline = []
         with open('/proc/cmdline', 'r') as fp:
@@ -506,8 +514,7 @@ EndSection
                             'dbus-update-activation-environment')):
                         subprocess.Popen(
                             ['dbus-update-activation-environment',
-                             '--verbose', '--systemd', 'XDG_CURRENT_DESKTOP',
-                             'DISPLAY'],
+                             '--verbose', '--systemd', 'XDG_CURRENT_DESKTOP'],
                             stdin=null, stdout=logfile, stderr=logfile,
                             preexec_fn=self.drop_privileges)
 
@@ -528,11 +535,11 @@ EndSection
                 gsd = ['/usr/libexec/gsd-a11y-keyboard',
                        '/usr/libexec/gsd-a11y-settings',
                        '/usr/libexec/gsd-clipboard',
+                       '/usr/libexec/gsd-keyboard',
                        '/usr/libexec/gsd-media-keys',
                        '/usr/libexec/gsd-power',
                        '/usr/libexec/gsd-xsettings']
-                csd = ['/usr/bin/csd-a11y-keyboard',
-                       '/usr/bin/csd-a11y-settings',
+                csd = ['/usr/bin/csd-a11y-settings',
                        '/usr/bin/csd-clipboard',
                        '/usr/bin/csd-media-keys',
                        '/usr/bin/csd-power',
@@ -720,24 +727,6 @@ EndSection
 
             log("add_ubiquity_kdedir")
             add_ubiquity_kdedir()
-            log('start kde4breeze')
-            if osextras.find_on_path('kf5-config'):
-                output = subprocess.check_output(
-                    ['kf5-config', '--path', 'lib'],
-                    preexec_fn=self.drop_privileges)
-                output = output.decode()
-                output = output.replace('\n', '')
-                output = output.split(':')[1]
-                breeze = subprocess.Popen(
-                    [output + '/kconf_update_bin/kde4breeze'],
-                    stdin=null, stdout=logfile, stderr=logfile,
-                    preexec_fn=self.drop_privileges)
-                ret = breeze.wait()
-                log('kde4breeze exited with code {}'.format(ret))
-                if ret != 0:
-                    raise
-            else:
-                raise
             log('start kwin')
             if osextras.find_on_path('kwin'):
                 wm_cmd = ['kwin']

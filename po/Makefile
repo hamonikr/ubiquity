@@ -65,11 +65,11 @@ DISTFILES = Makefile.in.in POTFILES.in $(POFILES)
 EXTRA_DISTFILES = ChangeLog POTFILES.skip Makevars LINGUAS
 
 POTFILES = \
-	../desktop/ubiquity.desktop.in \
-	../desktop/ubiquity-kdeui.desktop.in \
-	../desktop/oem-config-prepare-kde.desktop.in \
-	../desktop/oem-config-prepare-gtk.desktop.in \
-	../desktop/com.ubuntu.ubiquity.policy.in
+	../data/ubiquity.desktop.in \
+	../data/ubiquity-kdeui.desktop.in \
+	../data/oem-config-prepare-kde.desktop.in \
+	../data/oem-config-prepare-gtk.desktop.in \
+	../data/com.ubuntu.ubiquity.policy.in
 
 CATALOGS=$(shell LINGUAS="$(USE_LINGUAS)"; for lang in $$LINGUAS; do printf "$$lang.gmo "; done)
 

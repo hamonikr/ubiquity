@@ -72,7 +72,7 @@ valid () {
 	# now.
 	return 0
 
-	tmp=$($chroot $ROOT tempfile)
+	tmp=$($chroot $ROOT mktemp)
 	echo "$line" > $ROOT$tmp
 	code=0
 	$logoutput $intarget debconf-apt-progress --logstderr $dap_opts -- \
@@ -92,7 +92,7 @@ valid () {
 # since we've disabled the run in the valid function above. Doing everything
 # in one go also allows apt-get to cache resolver failures and connection
 # timeouts and so be significantly faster when the network is unavailable.
-tmp=$($chroot $ROOT tempfile)
+tmp=$($chroot $ROOT mktemp)
 cat "$file" > $ROOT$tmp
 if [ "$PROGRESS" ]; then
 	DAP_OPTS="--dlwaypoint 100 --from $PROGRESS_FROM --to $PROGRESS_TO"

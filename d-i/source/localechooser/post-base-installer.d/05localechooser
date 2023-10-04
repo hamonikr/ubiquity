@@ -71,9 +71,9 @@ set_field () {
 	value="$3"
 
 	if grep -qs "^#* *$category=" "$file"; then
-		sed -i "s,^#* *$category=.*,$category=$value," "$file"
+		sed -i "s,^#* *$category=.*,$category=\"$value\"," "$file"
 	else
-		echo "$category=$value" >> "$file"
+		echo "$category=\"$value\"" >> "$file"
 	fi
 }
 
@@ -99,7 +99,6 @@ if [ -e $DESTFILE ]; then
 			echo "LANGUAGE=\"$LANGLIST\"" >> $DESTFILE
 		fi
 	fi
-	sed -i 's/\"//g' $DESTFILE	
 fi
 # Fallback in case the file wasn't provided by locales, or the format
 # changed.
@@ -109,12 +108,10 @@ if [ ! -e "$DESTFILE" ] || ! grep -q '^LANG=' $DESTFILE; then
 	if echo "$LANGLIST" | grep -q ":"; then
 		echo "LANGUAGE=\"$LANGLIST\"" >> $DESTFILE
 	fi
-	sed -i 's/\"//g' $DESTFILE	
 fi
-
 if [ "$LOCALE_TRANSLATIONS" != "$LOCALE" ]; then
 	for category in \
-		LC_NUMERIC LC_TIME LC_MONETARY LC_PAPER LC_NAME LC_ADDRESS \
+		LC_NUMERIC LC_MONETARY LC_PAPER LC_NAME LC_ADDRESS \
 		LC_TELEPHONE LC_MEASUREMENT LC_IDENTIFICATION; do
 		set_field /target/etc/default/locale "$category" "$LOCALE"
 	done
