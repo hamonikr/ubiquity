@@ -1,3 +1,10 @@
+ubiquity (22.04.21+hamonikr2) kumkang; urgency=medium
+
+  * Release for HamoniKR 7.0
+   - Removed 41cdset in apt-setup
+
+ -- HamoniKR <pkg@hamonikr.org>  Sun, 08 Oct 2023 03:53:31 +0900
+
 ubiquity (22.04.21+hamonikr1) kumkang; urgency=medium
 
   * Release for HamoniKR 7.0
