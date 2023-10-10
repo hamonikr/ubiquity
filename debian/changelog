@@ -1,3 +1,10 @@
+ubiquity (22.04.21+hamonikr5) kumkang; urgency=medium
+
+  * Release for HamoniKR 7.0
+   - Fixed wrong translation
+
+ -- HamoniKR <pkg@hamonikr.org>  Tue, 10 Oct 2023 15:20:48 +0900
+
 ubiquity (22.04.21+hamonikr4) kumkang; urgency=medium
 
   * Release for HamoniKR 7.0
