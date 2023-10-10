@@ -434,7 +434,7 @@ class Wizard(BaseFrontend):
                 cache = apt.cache.Cache()
                 cache.update()
                 cache.open()
-                self.have_apt_updated = False
+                self.have_apt_updated = True
             except apt.cache.FetchFailedException:
                 syslog.syslog(syslog.LOG_INFO,
                               "Failed to update apt indexes; offline? "
