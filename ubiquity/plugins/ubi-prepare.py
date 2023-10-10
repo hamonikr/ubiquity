@@ -41,7 +41,8 @@ OEM = False
 # need the dbfilter for that get.
 
 class PreparePageBase(plugin.PluginUI):
-    plugin_title = 'mint:Multimedia codecs'
+    # plugin_title = 'mint:Multimedia codecs'
+    plugin_title = 'ubiquity/text/prepare_heading_label'
     download_updates = True
     download_updates_enabled = True
 
