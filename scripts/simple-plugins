@@ -21,7 +21,7 @@ if [ "$1" = "prepare" ]; then
         logger -t ubiquity "ubuntu-drivers install failed with code: $?"
 
 
-    bump-virtualbox-resolution
+    bump-virtualbox-resolution || true
 
     db_input high ubiquity/secureboot_key || true
     db_get ubiquity/secureboot_key

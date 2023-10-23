@@ -1,3 +1,11 @@
+ubiquity (22.04.21+hamonikr6) kumkang; urgency=medium
+
+  * Release for HamoniKR 7.0
+   - Add exception handling in simple-plugins
+   - It's cause error on Ubuntu env
+
+ -- HamoniKR <pkg@hamonikr.org>  Mon, 23 Oct 2023 15:27:11 +0900
+
 ubiquity (22.04.21+hamonikr5) kumkang; urgency=medium
 
   * Release for HamoniKR 7.0
