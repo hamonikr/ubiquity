@@ -1,3 +1,19 @@
+ubiquity (24.04.9+h1) paektu; urgency=medium
+
+  [ Kevin Kim ]
+  * Merge from previous hamonikr version code
+  * Image: Change images into data and pixmap dir
+  * Add d-i/source/localechooser/debian/localechooser.templates-ko
+  * Removed lang in d-i/source/localechooser/languagelist
+  * Naming: Change DISTRIB_ID as HamoniKR
+  * ZSH shell ad default in d-i/source/user-setup/user-setup-apply
+  * Translation: Update po/ko.po
+  * DiskSize: min_size 8G, max_size 18G in ubiquity/misc.py
+  * UI: treeview width to 120px in ubiquity/plugins/ubi-language.py
+  * PluginUI: Update plugin_title in ubiquity/plugins/ubi-prepare.py
+
+ -- HamoniKR <pkg@hamonikr.org>  Sat, 03 Aug 2024 14:22:42 +0900
+
 ubiquity (24.04.3+mint12) wilma; urgency=medium
 
   * l10n: Update translations
