@@ -6,22 +6,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: ubiquity@packages.debian.org\n"
-"POT-Creation-Date: 2022-03-28 22:31+0200\n"
-"PO-Revision-Date: 2021-01-23 02:35+0000\n"
-"Last-Translator: minwook shin <Unknown>\n"
+"POT-Creation-Date: 2023-09-19 15:58+0200\n"
+"PO-Revision-Date: 2023-09-07 05:41+0000\n"
+"Last-Translator: YunKi Kim <Unknown>\n"
 "Language-Team: Korean <debian-l10n-korean@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-04-13 12:28+0000\n"
-"X-Generator: Launchpad (build 560baff2f814495c0c140fb3d6c66875f2312c96)\n"
+"X-Launchpad-Export-Date: 2023-10-04 09:36+0000\n"
+"X-Generator: Launchpad (build bd6cfd0cfc024dbe1dcd7d5d91165fb4f6a6c596)\n"
 "Language: ko\n"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:3001
 msgid "Preparing ubuntu-drivers..."
-msgstr ""
+msgstr "ubuntu-drivers 준비하는 중..."
 
 #. Type: text
 #. Description
@@ -114,9 +114,9 @@ msgid ""
 "You may wish to read the <a href=\"release-notes\">release notes</a> or <a "
 "href=\"update\">update this installer</a>."
 msgstr ""
-"하모니카 OS는 안정버전 LTS와 최신 하드웨어를 지원하는 HWE 버전이 제공되며,"
+"하모니카 OS는 커널 6.8 LTS 기반으로 다양한 프로그램이 제공되며, "
 "\n"
-"국내 GS인증 1등급을 받은 안정적인 제품으로, 2032년까지 시스템 및 보안 업데이"
+"국내 GS인증 1등급을 받은 안정적인 제품으로, 2034년까지 시스템 및 보안 업데이"
 "트를 제공합니다. \n"
 "\n"
 "보다 자세한 내용은 <a href=\"release-notes\">릴리즈 노트</a>에서 확인 할 수 "
@@ -127,9 +127,9 @@ msgstr ""
 #: ../ubiquity.templates:15001
 msgid "You may wish to read the <a href=\"release-notes\">release notes</a>."
 msgstr ""
-"하모니카 OS는 안정버전 LTS와 최신 하드웨어를 지원하는 HWE 버전이 제공되며, "
+"하모니카 OS는 커널 6.8 LTS 기반으로 다양한 프로그램이 제공되며, "
 "\n"
-"국내 GS인증 1등급을 받은 안정적인 제품으로, 2032년까지 시스템 및 보안 업데이"
+"국내 GS인증 1등급을 받은 안정적인 제품으로, 2034년까지 시스템 및 보안 업데이"
 "트를 제공합니다. \n"
 "\n"
 "보다 자세한 내용은 <a href=\"release-notes\">릴리즈 노트</a>에서 확인 할 수 "
@@ -552,7 +552,7 @@ msgstr "_Keyboard Modifiers"
 #. An indicator menu item.  The underscore goes before an accelerator key.
 #: ../ubiquity.templates:80001
 msgid "_On-screen Keyboard"
-msgstr "가상 키보드(_O)"
+msgstr "화면 키보드(_O)"
 
 #. Type: text
 #. Description
@@ -841,7 +841,7 @@ msgid ""
 "complete on the target partition.  Please run the installer again and select "
 "a larger partition to install into."
 msgstr ""
-"이 오류는 일반적으로 대상 파티션에 설치를 마칠 디스크 공간이 부족할 때 발생합니다. 설치 프로그램을 다시 실행한 후 OS를 설치할 더 "
+"이 오류는 일반적으로 대상 파티션에 설치를 마칠 디스크 공간이 부족할 때 발생합니다. 설치 프로그램을 다시 실행한 후 우분투를 설치할 더 "
 "큰 파티션을 선택하십시오."
 
 #. Type: error
@@ -1130,7 +1130,7 @@ msgstr ""
 #. Description
 #: ../ubiquity.templates:153001
 msgid "Error setting LUKS recovery key"
-msgstr ""
+msgstr "LUKS 복구 키 설정 오류"
 
 #. Type: error
 #. Description
@@ -1140,12 +1140,14 @@ msgid ""
 "continue, but you may have to manually add the recovery key in the installed "
 "system with the command:"
 msgstr ""
+"복원 키를 설정하는 도중 오류가 발생했습니다. 설치는 계속 되지만 설치된 시스템에 다음 명령어로 수동으로 복원 키를 추가해야 할 수 "
+"있습니다:"
 
 #. Type: error
 #. Description
 #: ../ubiquity.templates:153001
 msgid "cryptsetup luksAddKey device_name"
-msgstr ""
+msgstr "cryptsetup luksAddKey device_name"
 
 #. Type: text
 #. Description
@@ -1400,9 +1402,8 @@ msgid ""
 "party software, download updates, automatically detect your timezone, and "
 "install full support for your language."
 msgstr ""
-"서드 파티 소프트웨어를 설치하고 업데이트를 다운로드하며 시간대를 자동으로 검"
-"색하는 동시에 언어 지원을 완전히 설치할 수 있도록 이 컴퓨터를 무선 네트워크"
-"에 연결합니다."
+"이 컴퓨터는 Wi-Fi network에 접속하면 서드 파티 소프트웨어를 설치, 업데이트 항목 다운로드, 타임존 자동 감지와 자국어 지원 "
+"모드 설치를 할 수 있습니다."
 
 #. Type: text
 #. Description
@@ -1422,7 +1423,7 @@ msgstr "암호 표시"
 #. Description
 #: ../ubiquity.templates:208001
 msgid "I don't want to connect to a Wi-Fi network right now"
-msgstr "지금은 무선 네트워크에 연결하지 않습니다"
+msgstr "지금은 Wi-Fi 네트워크에 연결하지 않습니다"
 
 #. Type: text
 #. Description
@@ -1520,9 +1521,9 @@ msgid ""
 "phone or other device: <a "
 "href=\"https://help.ubuntu.com/rst\">help.ubuntu.com/rst</a>"
 msgstr ""
-"이 컴퓨터는 Intel RST (Rapid Storage Technology) 기능을 사용합니다. 설치 전 "
-"RST 기능을 꺼야 합니다.  자세한 내용을 확인하시려면 다른 장치에서 도움말을 확"
-"인하세요 : <a href=\"https://help.ubuntu.com/rst\">help.ubuntu.com/rst</a>"
+"이 컴퓨터는 인텔의 RST 기술 (Rapid Storage Technology)을 사용합니다.  Linux Mint를 설치하기 전에 RST를 "
+"꺼야 합니다. 다른 기기에서 다음 페이지로 접속하여 방법을 확인하시기 바랍니다: <a "
+"href=\"https://help.ubuntu.com/rst\">help.ubuntu.com/rst</a>"
 
 #. Type: text
 #. Description
@@ -1539,10 +1540,9 @@ msgid ""
 "page on a phone or other device: <a "
 "href=\"https://help.ubuntu.com/bitlocker\">help.ubuntu.com/bitlocker</a>"
 msgstr ""
-"이 컴퓨터는 윈도우 BitLocker 암호화를 사용합니다. 설치 전 윈도우의 BitLocker "
-"기능을 꺼야 합니다.  자세한 내용을 확인하시려면 다른 장치에서 도움말을 확인하"
-"세요 : <a href=\"https://help.ubuntu.com/bitlocker\">help.ubuntu.com/"
-"bitlocker</a>"
+"이 컴퓨터는 Windows의 BitLocker 드라이브 암호화를 사용하고 있습니다. Linux Mint를 설치하기 전에 Windows로 들어가서 "
+"BitLocker를 해제해야 합니다. 다른 기기에서 다음 페이지로 접속하여 방법을 확인하시기 바랍니다: <a "
+"href=\"https://help.ubuntu.com/bitlocker\">help.ubuntu.com/bitlocker</a>"
 
 #. Type: text
 #. Description
@@ -1586,8 +1586,8 @@ msgid ""
 "Install third-party software for graphics and Wi-Fi hardware and additional "
 "media formats"
 msgstr ""
-"멀티미디어 코덱, 비주얼 스튜디오 코드, 슬랙, 크롬, 알집 등 유용한"
-"소프트웨어 추가 설치 (인터넷 속도에 따라 시간이 다소 소요됩니다.)"
+"멀티미디어 코덱, 비주얼 스튜디오 코드, 줌, 슬랙, 크롬, 알약, 루트리스 등 서드"
+"파티 소프트웨어 설치 (인터넷 속도에 따라 시간이 다소 소요됩니다.)"
 
 #. Type: text
 #. Description
@@ -2144,10 +2144,9 @@ msgid ""
 "hardware. Your system also has UEFI Secure Boot enabled. UEFI Secure Boot "
 "needs to be configured to allow the use of these third-party drivers."
 msgstr ""
-"서드파티 소프트웨어를 활성화하기로 선택했으며 그래픽 및/또는 Wi-Fi 하드웨어"
-"용 하드웨어 드라이버가 포함되어 있습니다. 시스템에는 UEFI 보안 부팅도 활성화"
-"되어 있습니다. 이러한 서드파티 소프트웨어를 사용할 수 있도록 UEFI 보안 부팅"
-"을 구성해야 합니다."
+"인스톨에 third-party 소프트웨어를 추가하는것을 선택 하였습니다. 이 시스템에는  그래픽 하드웨어 드라이버와 와이파이 하드웨어 "
+"드라이버를 추가  됩니다. 이 시스템에는 UEFI Secure Boot 가 켜져 있습니다. UEFI Secure Boot 의 설정이 되어 "
+"있어어 third-party 소프트웨어 사용 할 수 있습니다"
 
 #. Type: text
 #. Description
@@ -2158,9 +2157,8 @@ msgid ""
 "authorized user, and not by an attacker, you must choose a password now and "
 "then use the same password after reboot to confirm the change."
 msgstr ""
-"설치가 완료되면 UEFI 보안 부팅 구성을 지원합니다. 이 변경 사항이 공격자가 아"
-"닌 인증된 사용자인지 확인하려면 지금 암호를 선택한 다음 재부팅 후 동일한 암호"
-"를 사용하여 변경 사항을 확인해야 합니다."
+"설치가 완료된 후, Linux Mint는 UEFI Secure Boot 설정을 도와드릴 것입니다. 이 설정이 다른 공격자가 아니라 사용자 본인에 "
+"의해 행해진 것임을 확인하기 위해, 지금 설정할 암호를 재시동 이후 똑같이 입력하여야 합니다."
 
 #. Type: text
 #. Description
@@ -2171,10 +2169,9 @@ msgid ""
 "reboot, Linux Mint will still be able to boot on your system but these third-"
 "party drivers will not be available for your hardware."
 msgstr ""
-"<span foreground=\"darkred\">주의</span>: 이 드라이버를 설치하지 않기로 선택"
-"하거나 계속 진행하지만 시스템을 다시 시작한 후 암호를 확인하지 않으면 사용자"
-"의 시스템을 시작할 수는 있지만 추가 드라이버를 설치해야 하는 사용자의 하드웨"
-"어는 사용할 수 없습니다.."
+"<span foreground=\"darkred\">주의</span>: 이 드라이버를 설치하지 않기로 선택하거나 계속 진행하지만 시스템을 "
+"다시 시작한 후 암호를 확인하지 않으면 우분투는 사용자의 시스템을 시작할 수는 있지만 추가 드라이버를 설치해야 하는 사용자의 하드웨어는 "
+"사용할 수 없습니다.."
 
 #. Type: password
 #. Description
@@ -2283,25 +2280,25 @@ msgstr "도메인에 연결하는 데 실패했습니다"
 #. Description
 #: ../ubiquity.templates:332001
 msgid "Enable recovery key:"
-msgstr ""
+msgstr "복구 키 활성화:"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:333001
 msgid "Recovery key:"
-msgstr ""
+msgstr "복구 키:"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:334001
 msgid "Confirm recovery key:"
-msgstr ""
+msgstr "복구 키 확인:"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:335001
 msgid "Display recovery key:"
-msgstr ""
+msgstr "복구 키 표시:"
 
 #. Type: text
 #. Description
@@ -2311,48 +2308,50 @@ msgid ""
 "system. You can select an alternate location. Save this file and keep it in "
 "a safe place elsewhere before rebooting."
 msgstr ""
+"복구 키가 생성되었고 라이브 시스템에 임시 저장되었습니다. 복구 키를 저장할 다른 위치를 선택할 수 있습니다. 리부팅 이전에 이 파일을 "
+"안전한 곳에 저장하십시오."
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:337001
 msgid "Location:"
-msgstr ""
+msgstr "위치:"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:338001
 msgid "It is not recommended to store the key on a non removable device."
-msgstr ""
+msgstr "고정식 저장 장치에 키를 저장하는 것은 권장되지 않습니다."
 
 #. Type: password
 #. Description
 #: ../ubiquity.templates:339001
 msgid "Crypto key for LUKS + LVM"
-msgstr ""
+msgstr "LUKS + LVM에 대한 암호화 키"
 
 #. Type: password
 #. Description
 #: ../ubiquity.templates:340001
 msgid "Recovery key for LUKS + LVM"
-msgstr ""
+msgstr "LUKS + LVM에 대한 복구 키"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:341001
-msgid "Count not save recovery key:"
+msgid "Could not save recovery key:"
 msgstr ""
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:341001
 msgid "${ERRORMSG}"
-msgstr ""
+msgstr "${ERRORMSG}"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:342001
 msgid "Enter recovery key filename"
-msgstr ""
+msgstr "복구 키 파일명 입력"
 
 #. Type: title
 #. Description
@@ -2414,25 +2413,5 @@ msgstr ""
 msgid "Removing packages"
 msgstr "패키지 제거 중"
 
-#~ msgid "Software selection"
-#~ msgstr "소프트웨어 선택"
-
-#~ msgid ""
-#~ "Connecting this computer to a wi-fi network allows you to install third-"
-#~ "party software, download updates, automatically detect your timezone, and "
-#~ "install full support for your language."
-#~ msgstr ""
-#~ "서드 파티 소프트웨어를 설치하고 업데이트를 다운로드하며 시간대를 자동으로 검색하는 동시에 언어 지원을 완전히 설치할 수 있도록 이 "
-#~ "컴퓨터를 무선 네트워크에 연결합니다."
-
-#~ msgid "I don't want to connect to a wi-fi network right now"
-#~ msgstr "지금은 무선 네트워크에 연결하지 않습니다."
-
-#~ msgid ""
-#~ "You have chosen to enable third-party software as part of your install, "
-#~ "which for this system includes hardware drivers for graphics and/or wi-fi "
-#~ "hardware. Your system also has UEFI Secure Boot enabled. UEFI Secure Boot "
-#~ "needs to be configured to allow the use of these third-party drivers."
-#~ msgstr ""
-#~ "설치 시 일부 서드파티 소프트웨어를 사용하도록 선택했습니다, 이 시스템에는 그래픽, Wi-Fi 하드웨어 드라이버가 포함되어 있습니다. "
-#~ "시스템에는 UEFI 보안 부팅도 활성화되어 있습니다. 이러한 서드파티 드라이버를 사용할 수 있도록 UEFI 보안 부팅을 구성해야합니다."
+#~ msgid "Count not save recovery key:"
+#~ msgstr "다음 복구 키를 저장할 수 없습니다:"

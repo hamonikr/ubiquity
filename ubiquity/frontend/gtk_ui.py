@@ -49,7 +49,12 @@ DBusGMainLoop(set_as_default=True)
 
 # in query mode we won't be in X, but import needs to pass
 if 'DISPLAY' in os.environ:
+    gi.require_version('Atk', '1.0')
+    gi.require_version('Gdk', '3.0')
     gi.require_version('Gtk', '3.0')
+    gi.require_version('Gio', '2.0')
+    gi.require_version('GLib', '2.0')
+    gi.require_version('GObject', '2.0')
     from gi.repository import Gtk, Gdk, GObject, GLib, Atk, Gio
     from ubiquity import gtkwidgets
 
@@ -863,7 +868,7 @@ class Wizard(BaseFrontend):
         self.set_current_page(0)
         self.live_installer.show()
 
-        while(self.pagesindex < len(self.pages)):
+        while (self.pagesindex < len(self.pages)):
             if self.current_page is None:
                 return self.returncode
 
@@ -958,7 +963,7 @@ class Wizard(BaseFrontend):
         return True
 
     def on_slideshow_link_clicked(self, web_view, decision, decision_type):
-        gi.require_version('WebKit2', '4.0')
+        gi.require_version('WebKit2', '4.1')
         from gi.repository import WebKit2
         if decision_type == WebKit2.PolicyDecisionType.NEW_WINDOW_ACTION:
             request = decision.get_request()
@@ -995,7 +1000,7 @@ class Wizard(BaseFrontend):
 
         slides = 'file://%s#%s' % (slideshow_main, parameters_encoded)
 
-        gi.require_version('WebKit2', '4.0')
+        gi.require_version('WebKit2', '4.1')
         from gi.repository import WebKit2
         # We have no significant browsing interface, so there isn't much point
         # in WebKit creating a memory-hungry cache.
@@ -1038,6 +1043,7 @@ class Wizard(BaseFrontend):
         # TODO lazy load
         import gi
         gi.require_version("Vte", "2.91")
+        gi.require_version("Pango", "1.0")
         from gi.repository import Vte, Pango
         misc.drop_privileges_save()
         self.vte = Vte.Terminal()

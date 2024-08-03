@@ -14,7 +14,6 @@
         <child>
           <object class="GtkTreeView" id="language_treeview">
             <property name="visible">True</property>
-            <property name="width_request">120</property>
             <property name="can_focus">True</property>
             <property name="headers_visible">False</property>
             <signal name="row-activated" handler="on_language_activated" swapped="no"/>

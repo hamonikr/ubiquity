@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity\n"
 "Report-Msgid-Bugs-To: ubiquity@packages.debian.org\n"
-"POT-Creation-Date: 2022-03-28 22:31+0200\n"
-"PO-Revision-Date: 2020-11-16 20:08+0000\n"
+"POT-Creation-Date: 2023-09-19 15:58+0200\n"
+"PO-Revision-Date: 2022-05-19 12:05+0000\n"
 "Last-Translator: AO <Unknown>\n"
 "Language-Team: French (Canada) <fr_CA@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-04-13 12:28+0000\n"
-"X-Generator: Launchpad (build 560baff2f814495c0c140fb3d6c66875f2312c96)\n"
+"X-Launchpad-Export-Date: 2023-10-04 09:36+0000\n"
+"X-Generator: Launchpad (build bd6cfd0cfc024dbe1dcd7d5d91165fb4f6a6c596)\n"
 "Language: \n"
 
 #. Type: text
@@ -2432,7 +2432,7 @@ msgstr ""
 #. Type: text
 #. Description
 #: ../ubiquity.templates:341001
-msgid "Count not save recovery key:"
+msgid "Could not save recovery key:"
 msgstr ""
 
 #. Type: text
@@ -2511,30 +2511,3 @@ msgstr ""
 #: ../oem-config.templates:3001
 msgid "Removing packages"
 msgstr "Suppression des paquets"
-
-#~ msgid "Software selection"
-#~ msgstr "Choix des logiciels"
-
-#~ msgid ""
-#~ "Connecting this computer to a wi-fi network allows you to install third-"
-#~ "party software, download updates, automatically detect your timezone, and "
-#~ "install full support for your language."
-#~ msgstr ""
-#~ "Connecter cet ordinateur à un réseau Wi-Fi vous permet d’installer des "
-#~ "logiciels tiers, de télécharger des mises à jour, de détecter "
-#~ "automatiquement votre fuseau horaire et d’installer la prise en charge "
-#~ "complète de votre langue."
-
-#~ msgid "I don't want to connect to a wi-fi network right now"
-#~ msgstr "Je ne veux pas me connecter tout de suite à un réseau Wi-Fi"
-
-#~ msgid ""
-#~ "You have chosen to enable third-party software as part of your install, "
-#~ "which for this system includes hardware drivers for graphics and/or wi-fi "
-#~ "hardware. Your system also has UEFI Secure Boot enabled. UEFI Secure Boot "
-#~ "needs to be configured to allow the use of these third-party drivers."
-#~ msgstr ""
-#~ "Vous avez choisi d’installer des logiciels tiers, ce qui pour ce système "
-#~ "comprend des pilotes de périphériques graphiques ou Wi-Fi. Le démarrage "
-#~ "sécurisé UEFI est aussi activé sur votre système. Le démarrage sécurisé UEFI "
-#~ "doit être configuré pour permettre l’utilisation de ces pilotes tiers."

@@ -2,7 +2,6 @@
 
 from itertools import zip_longest
 import os
-from test.support import run_unittest
 import unittest
 
 import debconf
@@ -795,13 +794,3 @@ class TestPageGtk(unittest.TestCase):
             row_text.append(' '.join(row))
         for want, got in zip(expected, row_text):
             self.assertEqual(want, got)
-
-
-if __name__ == '__main__':
-    run_unittest(
-        TestCalculateAutopartitioningOptions,
-        TestPage,
-        TestPageGrub,
-        TestPageGtk,
-        PartmanPageDirectoryTests,
-    )

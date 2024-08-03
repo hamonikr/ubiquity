@@ -1766,7 +1766,7 @@ _Description: Recovery key for LUKS + LVM
 Template: ubiquity/text/save_recovery_key_info
 Type: text
 _Description:
- Count not save recovery key:
+ Could not save recovery key:
  .
  ${ERRORMSG}
 

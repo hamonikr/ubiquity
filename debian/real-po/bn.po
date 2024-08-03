@@ -7,23 +7,23 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: ubiquity@packages.debian.org\n"
-"POT-Creation-Date: 2022-03-28 22:31+0200\n"
-"PO-Revision-Date: 2021-05-17 09:58+0000\n"
-"Last-Translator: Md Ashickur Rahman <ashickur.noor@gmail.com>\n"
+"POT-Creation-Date: 2023-09-19 15:58+0200\n"
+"PO-Revision-Date: 2022-06-29 13:14+0000\n"
+"Last-Translator: Tushar <Unknown>\n"
 "Language-Team: Bengali <ankur-bd-l10n@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-04-13 12:28+0000\n"
-"X-Generator: Launchpad (build 560baff2f814495c0c140fb3d6c66875f2312c96)\n"
-"X-Language: bn_BD\n"
+"X-Launchpad-Export-Date: 2023-10-04 09:36+0000\n"
+"X-Generator: Launchpad (build bd6cfd0cfc024dbe1dcd7d5d91165fb4f6a6c596)\n"
 "Language: \n"
+"X-Language: bn_BD\n"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:3001
 msgid "Preparing ubuntu-drivers..."
-msgstr ""
+msgstr "উনুন্টু-ড্রাইভার প্রস্তুতি নিচ্ছে..."
 
 #. Type: text
 #. Description
@@ -1157,7 +1157,7 @@ msgstr ""
 #. Description
 #: ../ubiquity.templates:153001
 msgid "Error setting LUKS recovery key"
-msgstr ""
+msgstr "LUKS পুনরুদ্ধারকৃত কী স্থাপনে ত্রুটি দেখাচ্ছে"
 
 #. Type: error
 #. Description
@@ -1167,12 +1167,15 @@ msgid ""
 "continue, but you may have to manually add the recovery key in the installed "
 "system with the command:"
 msgstr ""
+"পুনরুদ্ধারকৃত কী স্থাপনে একটি ত্রুটি দেখা যাচ্ছে। ইন্সটলেশন চলতেই থাকবে, "
+"কিন্তু আপনাকে নিচের কমান্ডের মাধ্যমে ম্যানুয়ালি পুনরুদ্ধারকৃত কী স্থাপন করতে "
+"হবেঃ"
 
 #. Type: error
 #. Description
 #: ../ubiquity.templates:153001
 msgid "cryptsetup luksAddKey device_name"
-msgstr ""
+msgstr "কৃপ্ট-সেটআপ লুক্স-এড-কী ডিভাইসের_নাম"
 
 #. Type: text
 #. Description
@@ -1441,6 +1444,9 @@ msgid ""
 "party software, download updates, automatically detect your timezone, and "
 "install full support for your language."
 msgstr ""
+"এই কম্পিউটারের সাথে ওয়াই-ফাই নেটওয়ার্ক যুক্ত করলে আপনি তৃতীয়পক্ষের সফটওয়্যার "
+"ইন্সটল করতে, আপডেট দিতে, স্বয়ংক্রিয়ভাবে সময়-জোন সেট করতে, এবং আপনার ভাষার "
+"সকল সমর্থন ইন্সটল করতে পারবেন।"
 
 #. Type: text
 #. Description
@@ -1460,7 +1466,7 @@ msgstr "শব্দচাবি প্রদর্শন"
 #. Description
 #: ../ubiquity.templates:208001
 msgid "I don't want to connect to a Wi-Fi network right now"
-msgstr ""
+msgstr "আমি এখনই ওয়াই-ফাই নেটওয়ার্কের সাথে যুক্ত হতে চাচ্ছি না"
 
 #. Type: text
 #. Description
@@ -1721,6 +1727,9 @@ msgid ""
 "Installing third-party drivers requires configuring Secure Boot. To do this, "
 "you need to choose a security key now, and enter it when the system restarts."
 msgstr ""
+"তৃতীয় পক্ষের ড্রাইভার ইনস্টল করার জন্য Secure Boot কনফিগার করতে হবে। এটা "
+"করার জন্য আপনাকে এখনই একটি সিকিউরিটি-কি বাছাই করতে হবে, এবং আপনার সিস্টেম "
+"চালু হলে তা দিতে হবে।"
 
 #. Type: text
 #. Description
@@ -2213,6 +2222,11 @@ msgid ""
 "hardware. Your system also has UEFI Secure Boot enabled. UEFI Secure Boot "
 "needs to be configured to allow the use of these third-party drivers."
 msgstr ""
+"আপনি তৃতীয়পক্ষের সফটওয়্যারগুলিকে আপনার ইন্সটলের সাথে যুক্ত করার সিদ্ধান্ত "
+"নিয়েছেন, যেটি এই সিস্টেমের ক্ষেত্রে গ্রাফিক্স বা ওয়াই-ফাই বা উভয়ের জন্য "
+"হার্ডওয়্যার ড্রাইভার গুলোকে নির্দেশ করে। আপনার সিস্টেমে UEFI নিরাপদ বুট "
+"মোডও চালু আছে। তৃতীয়পক্ষের ড্রাইভারগুলো ব্যবহার করতে UEFI নিরাপদ বুটকে "
+"কনফিগার করতে হবে।"
 
 #. Type: text
 #. Description
@@ -2223,6 +2237,10 @@ msgid ""
 "authorized user, and not by an attacker, you must choose a password now and "
 "then use the same password after reboot to confirm the change."
 msgstr ""
+"ইন্সটলেশন প্রক্রিয়া শেষে উবুন্টু আপনাকে UEFI নিরাপদ বুট কনফিগার করতে সাহায্য "
+"করবে। আপনি নিজেই একজন ব্যবহারকারী হিসেবে এটি করছেন নাকি অন্য কোন হ্যাকার এই "
+"কাজ করছে সেটি নিশ্চিত করতে, আপনাকে এখনই একটি পাসওয়ার্ড বাছাই করতে হবে এবং "
+"পুনরায় চালু হবার পরে একই পাসওয়ার্ড ব্যবহার করে নিশ্চিত হতে হবে।"
 
 #. Type: text
 #. Description
@@ -2251,78 +2269,80 @@ msgstr "MokPW এর জন্য সিকিউর বুট কী"
 #, no-c-format
 msgid "partition #%(partid)s as %(parttype)s used for %(partusage)s"
 msgstr ""
+"পার্টিশন #%(partid)s  %(parttype)s এর বিকল্প হিসেবে, ব্যবহৃত হচ্ছে "
+"%(partusage)s এর জন্য"
 
 #. Type: password
 #. Description
 #: ../ubiquity.templates:316001
 msgid "Key to secure the keystore on ZFS installations"
-msgstr ""
+msgstr "ZFS ইন্সটলের সময় কী-স্টোর নিরাপদ রাখার কী"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:317001
 msgid "Authenticate against a directory"
-msgstr ""
+msgstr "ডিরেক্টরির বিপরীতে আপনার পরিচয় যাচাই করুন"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:318001
 msgid "Active Directory domain name"
-msgstr ""
+msgstr "ডিরেক্টরির সক্রিয় ডোমেইনের নাম"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:319001
 msgid "Administrator to join the domain"
-msgstr ""
+msgstr "ডোমেইনে যুক্ত হবার পরিচালক"
 
 #. Type: password
 #. Description
 #: ../ubiquity.templates:320001
 msgid "Administrator password to join the domain"
-msgstr ""
+msgstr "ডোমেইনে যুক্ত হবার পরিচালকের পাসওয়ার্ড"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:321001
 msgid "Use Active Directory"
-msgstr ""
+msgstr "সক্রিয় ডিরেক্টরি ব্যবহার করুন"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:322001
 msgid " You'll enter domain and other details in the next step."
-msgstr ""
+msgstr " আপনি ডোমেইন এবং অন্য বর্ননা পরের ধাপে দিবেন।"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:323001
 msgid "Domain:"
-msgstr ""
+msgstr "ডোমেইনঃ"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:324001
 msgid "You must enter a domain name"
-msgstr ""
+msgstr "আপনাকে অবশ্যই একটি ডোমেইন নাম দিতে হবে"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:325001
 msgid "Test Connection"
-msgstr ""
+msgstr "সংযোগ পরীক্ষা করুন"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:326001
 msgid "Domain Administrator:"
-msgstr ""
+msgstr "ডোমেইনের পরিচালকঃ"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:327001
 msgid "You must enter a user name"
-msgstr ""
+msgstr "আপনাকে অবশ্যই ব্যবহারকারীর নাম দিতে হবে"
 
 #. Type: text
 #. Description
@@ -2346,25 +2366,25 @@ msgstr "ডোমেইনে সংযোগ ব্যর্থ হয়েছে
 #. Description
 #: ../ubiquity.templates:332001
 msgid "Enable recovery key:"
-msgstr ""
+msgstr "পুনরুদ্ধার কী ব্যবস্থা চালু করুনঃ"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:333001
 msgid "Recovery key:"
-msgstr ""
+msgstr "পুনরুদ্ধার কীঃ"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:334001
 msgid "Confirm recovery key:"
-msgstr ""
+msgstr "পুনরুদ্ধার কী নিশ্চিত করুনঃ"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:335001
 msgid "Display recovery key:"
-msgstr ""
+msgstr "পুনরুদ্ধার কী দেখুনঃ"
 
 #. Type: text
 #. Description
@@ -2374,48 +2394,51 @@ msgid ""
 "system. You can select an alternate location. Save this file and keep it in "
 "a safe place elsewhere before rebooting."
 msgstr ""
+"একটি পুনরুদ্ধার কী তৈরি হয়েছে এবং সাময়িকভাবে এটি লাইভ সিস্টেমে সংরক্ষিত "
+"হবে। আপনি সংরক্ষণের জন্য বিকল্প অবস্থানও বাছাই করতে পারেন। এই ফাইলটি সংরক্ষণ "
+"করুন এবং পুনরায় চালু হবার আগেই এটিকে অন্য নিরাপদ স্থানে রাখুন।"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:337001
 msgid "Location:"
-msgstr ""
+msgstr "অবস্থানঃ"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:338001
 msgid "It is not recommended to store the key on a non removable device."
-msgstr ""
+msgstr "অপসারণযোগ্য নয় এমন ডিভাইসে কী না রাখার পরামর্শ দেয়া হচ্ছে।"
 
 #. Type: password
 #. Description
 #: ../ubiquity.templates:339001
 msgid "Crypto key for LUKS + LVM"
-msgstr ""
+msgstr "LUKS + LVM এর ক্রিপ্টো কী"
 
 #. Type: password
 #. Description
 #: ../ubiquity.templates:340001
 msgid "Recovery key for LUKS + LVM"
-msgstr ""
+msgstr "LUKS + LVM এর পুনরুদ্ধার কী"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:341001
-msgid "Count not save recovery key:"
+msgid "Could not save recovery key:"
 msgstr ""
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:341001
 msgid "${ERRORMSG}"
-msgstr ""
+msgstr "${ERRORMSG}"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:342001
 msgid "Enter recovery key filename"
-msgstr ""
+msgstr "পুনরুদ্ধার কী এর ফাইলের নাম দিন"
 
 #. Type: title
 #. Description
@@ -2479,17 +2502,5 @@ msgstr ""
 msgid "Removing packages"
 msgstr "প্যাকেজসমূহ অপসারণ করা হচ্ছে"
 
-#~ msgid "Software selection"
-#~ msgstr "সফটওয়্যার নির্বাচন"
-
-#~ msgid ""
-#~ "Connecting this computer to a wi-fi network allows you to install third-"
-#~ "party software, download updates, automatically detect your timezone, and "
-#~ "install full support for your language."
-#~ msgstr ""
-#~ "এই কম্পিউটারকে ওয়াইফাই নেটওয়ার্কের সাথে সংযুক্ত করলে আপনাকে তৃতীয় পক্ষ "
-#~ "সফ্টওয়্যার ইনস্টল, হালানাগাদ ডাউনলোড, স্বয়ংক্রিভাবে আপনার সময় অঞ্চল সনাক্ত, "
-#~ "এবং আপনার ভাষার জন্য সম্পূর্ণ সাপোর্ট  ইনস্টল করার অনুমতি দেয়।"
-
-#~ msgid "I don't want to connect to a wi-fi network right now"
-#~ msgstr "এ মুহূর্তে আমি কোন বেতার (wi-fi) নেটওয়ার্কে সংযুক্ত হতে চাচ্ছি না।"
+#~ msgid "Count not save recovery key:"
+#~ msgstr "পুনরুদ্ধার কী সংরক্ষণ করা যাচ্ছে নাঃ"

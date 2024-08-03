@@ -1,167 +1,350 @@
-ubiquity (22.04.21+hamonikr6) kumkang; urgency=medium
+ubiquity (24.04.3+mint12) wilma; urgency=medium
 
-  * Release for HamoniKR 7.0
-   - Add exception handling in simple-plugins
-   - It's cause error on Ubuntu env
+  * l10n: Update translations
 
- -- HamoniKR <pkg@hamonikr.org>  Mon, 23 Oct 2023 15:27:11 +0900
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 21 Jul 2024 11:21:43 +0100
 
-ubiquity (22.04.21+hamonikr5) kumkang; urgency=medium
+ubiquity (24.04.3+mint11) wilma; urgency=medium
 
-  * Release for HamoniKR 7.0
-   - Fixed wrong translation
+  * Revert "Add Uzbek locale (#76)"
+  * l10n: Update translations
 
- -- HamoniKR <pkg@hamonikr.org>  Tue, 10 Oct 2023 15:20:48 +0900
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 18 Jun 2024 21:39:38 +0100
 
-ubiquity (22.04.21+hamonikr4) kumkang; urgency=medium
+ubiquity (24.04.3+mint10) wilma; urgency=medium
 
-  * Release for HamoniKR 7.0
-   - Rollback prepare_heading_label part as ubuntu version
+  [ Umidjon Almasov ]
+  * Add Uzbek locale (#76)
 
- -- HamoniKR <pkg@hamonikr.org>  Tue, 10 Oct 2023 14:53:22 +0900
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 12 Jun 2024 11:11:09 +0100
 
-ubiquity (22.04.21+hamonikr3) kumkang; urgency=medium
+ubiquity (24.04.3+mint9) wilma; urgency=medium
 
-  * Release for HamoniKR 7.0
-   - Update ko.po
+  * ubi-timezone.py: Fix Soup3 migration for offline installations
 
- -- HamoniKR <pkg@hamonikr.org>  Tue, 10 Oct 2023 12:04:11 +0900
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 15 Apr 2024 11:30:02 +0100
 
-ubiquity (22.04.21+hamonikr2) kumkang; urgency=medium
+ubiquity (24.04.3+mint8) wilma; urgency=medium
 
-  * Release for HamoniKR 7.0
-   - Removed 41cdset in apt-setup
+  * ubi-timezone.py: Add missing Gio import
 
- -- HamoniKR <pkg@hamonikr.org>  Sun, 08 Oct 2023 03:53:31 +0900
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 15 Apr 2024 09:58:30 +0100
 
-ubiquity (22.04.21+hamonikr1) kumkang; urgency=medium
-
-  * Release for HamoniKR 7.0
-   - Merge from linuxmint ubiquity 22.04.16+mint12 and ubuntu
-
- -- HamoniKR <pkg@hamonikr.org>  Wed, 04 Oct 2023 18:57:45 +0900
-
-ubiquity (22.04.16+mint12) victoria; urgency=medium
-
-  * Fix: resolv.conf just before cleanup
-
- -- Clement Lefebvre <root@linuxmint.com>  Thu, 14 Sep 2023 10:06:23 +0100
-
-ubiquity (22.04.16+mint11) victoria; urgency=medium
+ubiquity (24.04.3+mint7) wilma; urgency=medium
 
   [ Michael Webster ]
-  * stepUserInfo.ui: Use symbolic icons instead of stock gtk-yes for field validation.
+  * Switch to Soup3 / Webkit2 4.1
 
- -- Clement Lefebvre <root@linuxmint.com>  Sun, 09 Jul 2023 09:35:04 +0200
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 12 Apr 2024 15:39:41 +0100
 
-ubiquity (22.04.16+mint10) victoria; urgency=medium
+ubiquity (24.04.3+mint6) wilma; urgency=medium
 
-  * l10n: Update translations
+  * Remove ZFS option
+  * Don't let the installer update firefox-locale-*
 
- -- Clement Lefebvre <root@linuxmint.com>  Fri, 07 Jul 2023 18:11:34 +0200
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 25 Mar 2024 16:33:43 +0000
 
-ubiquity (22.04.16+mint9) victoria; urgency=medium
+ubiquity (24.04.3+mint5) wilma; urgency=medium
 
-  * ubi-timezone: Specify Soup version
-  * l10n: Update translations
+  * lang_packs: Use Mint's langpacks
+  * langpacks: Remove locale source
 
- -- Clement Lefebvre <root@linuxmint.com>  Thu, 08 Jun 2023 12:22:31 +0100
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 29 Feb 2024 14:23:45 +0000
 
-ubiquity (22.04.16+mint8) victoria; urgency=medium
+ubiquity (24.04.3+mint4) wilma; urgency=medium
 
-  [ Clement Lefebvre ]
-  * l10n: Update translations
+  * Webkit2: Also disable compositing in ubiquity-only mode (OEM)
 
-  [ Carlos Wu ]
-  * Fix Dutch language translation typo (#57)
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 28 Feb 2024 18:29:55 +0000
 
- -- Clement Lefebvre <root@linuxmint.com>  Tue, 06 Jun 2023 12:13:57 +0100
+ubiquity (24.04.3+mint3) wilma; urgency=medium
 
-ubiquity (22.04.16+mint7) vera; urgency=medium
+  * WebKit2: Disable compositing
+  * locale: Fix transition to /etc/locale.conf
 
-  * Rename icon to mintubiquity
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 28 Feb 2024 16:15:57 +0000
 
- -- Clement Lefebvre <root@linuxmint.com>  Tue, 13 Dec 2022 10:16:24 +0000
+ubiquity (24.04.3+mint2) wilma; urgency=medium
 
-ubiquity (22.04.16+mint6) vera; urgency=medium
+  * Fix: Don't depend on grub-pc
 
-  * l10n: Update translations
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 22 Feb 2024 13:37:20 +0000
 
- -- Clement Lefebvre <root@linuxmint.com>  Fri, 02 Dec 2022 17:48:53 +0000
-
-ubiquity (22.04.16+mint5) vanessa; urgency=medium
-
-  * Force installation of mint-meta-codecs
-
- -- Clement Lefebvre <root@linuxmint.com>  Thu, 07 Jul 2022 15:39:41 +0200
-
-ubiquity (22.04.16+mint4) vanessa; urgency=medium
-
-  * Force installation of mint-meta-codecs
-
- -- Clement Lefebvre <root@linuxmint.com>  Thu, 07 Jul 2022 11:20:42 +0200
-
-ubiquity (22.04.16+mint3) vanessa; urgency=medium
-
-  * cinnamon: Fix CSD support
-
- -- Clement Lefebvre <root@linuxmint.com>  Mon, 27 Jun 2022 17:54:23 +0200
-
-ubiquity (22.04.16+mint2) vanessa; urgency=medium
-
-  * l10n: Update translations
-
- -- Clement Lefebvre <root@linuxmint.com>  Mon, 27 Jun 2022 14:40:12 +0200
-
-ubiquity (22.04.16+mint1) vanessa; urgency=medium
+ubiquity (24.04.3+mint1) wilma; urgency=medium
 
   [ Clement Lefebvre ]
   * Naming: Fix VTE font
-
-  [ Butterfly ]
-  * Naming: Fix PO files after Mint substitutions
-
-  [ Clement Lefebvre ]
   * Naming: Fix partman-auto detection of Mint LSB ID
   * Naming: Fix partman-auto label to overwrite previous Mint installation
   * Build: Disable tests
   * Build: Break in Docker
-  * Fix: Increase fallback/min install size to 8GB/10GB
+  * Fix: Increase fallback/min install size to 8GB/15GB
   * Fix: Fix empty dialog
   * Fix: Set LC_TIME to reflect the language rather than the location
   * APT: Adapt apt-setup generators
-  * apt-setup: Fix permissions on 70locale
   * APT: plugininstall.py, don't call apt-setup in install_extras()
   * APT: Don't remove unusable kernel
   * APT: Fixed CDROM source not being removed in target
-
-  [ Fabien ]
-  * APT: Fix bug when installing via PXE
-
-  [ Clement Lefebvre ]
   * OEM: Don't show a panel in the Cinnamon edition
   * OEM: Fix installs
   * OEM: Add support for cinnamon-setting-daemon
   * Adjust grub title at the end of the installation
   * Fix: /etc/crypttab when using encrypted dir
-  * Add Kabyle to language selection
   * Re-bump Virtualbox resolution after running ubuntu-drivers
+  * l10n: Add Kabyle to language selection
   * l18n: Add a new l10n domain
   * Prepare: Install multimedia codecs
   * Prepare: Remove "download updates" option
+  * Disable installation of proprietary drivers
   * l10n: Update Mint POT and msgids
-  * Disable instalation of proprietaty drivers
-  * Prepare UI: Make it clear we're only talking about codecs
   * Prepare: Fix gettext call
   * Don't encrypt Swap
-  * l10n: Update POT
-  * l10n: Update translations
-  * OEM: Remove the Ubuntu slideshow
-  * Set min disk size to 15GB
   * Bring back home encryption
   * l10n: Translate home dir encryption option
+  * Force installation of mint-meta-codecs
+  * Fix: resolv.conf just before cleanup
+  * langpacks: Don't skip installing language support
 
- -- Clement Lefebvre <root@linuxmint.com>  Wed, 08 Jun 2022 12:27:14 +0200
+  [ Butterfly ]
+  * Naming: Fix PO files after Mint substitutions
+
+  [ Fabien ]
+  * APT: Fix bug when installing via PXE
+
+  [ Carlos Wu ]
+  * Fix Dutch language translation typo (#57)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 07 Feb 2024 17:08:41 +0000
+
+ubiquity (24.04.2) noble; urgency=medium
+
+  * Move kde4 -> kde in many locations, for cleanup.
+
+ -- Simon Quigley <tsimonq2@kubuntu.org>  Mon, 18 Dec 2023 17:13:57 -0600
+
+ubiquity (24.04.1) noble; urgency=medium
+
+  * Fix unit tests by discontinuing use of the internal-to-python `test`
+    module.  (LP: #2046363)
+
+ -- Dan Bungert <daniel.bungert@canonical.com>  Wed, 13 Dec 2023 11:12:46 -0700
+
+ubiquity (23.10.8) mantic; urgency=medium
+
+  * Implement copying of netplan configs to the target system, so that network
+    configuration such as wifi is retained. (LP: #2036999)
+
+ -- Dan Bungert <daniel.bungert@canonical.com>  Thu, 05 Oct 2023 10:13:39 -0600
+
+ubiquity (23.10.7) mantic; urgency=medium
+
+  * Updated translations.
+
+ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@ubuntu.com>  Wed, 04 Oct 2023 11:40:26 +0200
+
+ubiquity (23.10.6) mantic; urgency=medium
+
+  [ Erich Eickmeyer ]
+  * Preserve GTK_THEME environment variable in live session (LP: #2037676)
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Fri, 29 Sep 2023 08:50:10 -0700
+
+ubiquity (23.10.5) mantic; urgency=medium
+
+  * Force partition auto-resize boxes to have black text (LP: #2036846)
+
+ -- Erich Eickmeyer <eeickmeyer@ubuntu.com>  Thu, 28 Sep 2023 19:09:46 +0200
+
+ubiquity (23.10.4) mantic; urgency=medium
+
+  * Depend: on grub-pc.  Currently, ubiquity depends on shim-signed, but
+    only Recommends: grub-pc with alternatives; for seed generation this
+    means sometimes shim-signed -> grub-efi-amd64-signed -> grub-efi-amd64
+    is picked, which we never want.  LP: #2036199.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Fri, 15 Sep 2023 11:16:45 -0700
+
+ubiquity (23.10.3) mantic; urgency=medium
+
+  [ Michael Hudson-Doyle ]
+  * Cherry pick the fix for Debian bug #1040048 to fix build with new
+    ncurses-bin.
+
+  [ David Mohammed ]
+  * Don't display a panel for budgie-wm
+
+  [ Benjamin Drung ]
+  * Update legacy timezones in tzsetup (LP: #2031838)
+
+ -- Benjamin Drung <bdrung@ubuntu.com>  Tue, 12 Sep 2023 14:40:23 +0200
+
+ubiquity (23.10.2) mantic; urgency=medium
+
+  [ EsmaeelE ]
+  * Set fa (Persian/Farsi) as the default Iranian language (LP: #1891270)
+
+  [ Erich Eickmeyer ]
+  * Don't hide ubiquity GTK frontend and oem-config-prepare-gtk in KDE
+    environments: they aren't installed at all in Kubuntu, but Linux MintStudio
+    will use them in a KDE environment.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Sun, 13 Aug 2023 17:18:53 -0500
+
+ubiquity (23.10.1) mantic; urgency=medium
+
+  * Use pycodestyle instead of pep8.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Tue, 23 May 2023 00:42:55 +0000
+
+ubiquity (23.04.9) mantic; urgency=medium
+
+  * bin/oem-config-remove-gtk uses aptdaemon to remove packages, not
+    apt-get, so was overlooked in the previous upload.  Set the flag to
+    autoremove dependencies here as well.  LP:# 1925265.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Wed, 26 Apr 2023 21:51:58 +0200
+
+ubiquity (23.04.8) lunar; urgency=medium
+
+  * Whenever removing packages, use apt-get autoremove --purge instead of
+    apt-get purge so that no-longer-used dependencies are removed together
+    with the package in question, and we do not leave behind any packages
+    that will be reported as autoremovable later.  LP: #1925265.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Fri, 14 Apr 2023 11:35:46 -0700
+
+ubiquity (23.04.7) lunar; urgency=medium
+
+  * Updated translations.
+
+ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@ubuntu.com>  Wed, 12 Apr 2023 18:19:53 +0200
+
+ubiquity (23.04.6) lunar; urgency=medium
+
+  * tests/test_timezone.py:
+    - update for changes in the new tzdata
+
+ -- Brian Murray <brian@ubuntu.com>  Thu, 06 Apr 2023 08:45:52 -0700
+
+ubiquity (23.04.5) lunar; urgency=medium
+
+  * Update the .pot file.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Fri, 31 Mar 2023 13:05:41 -0700
+
+ubiquity (23.04.4) lunar; urgency=medium
+
+  * mktemplates.base: add more logging to ease diagnosis for failed builds
+
+ -- Olivier Gayot <olivier.gayot@canonical.com>  Fri, 27 Jan 2023 07:47:28 -0800
+
+ubiquity (23.04.3) lunar; urgency=medium
+
+  * Fix unittest failing with Python 3.11 (LP: #2003970)
+
+ -- Olivier Gayot <olivier.gayot@canonical.com>  Thu, 26 Jan 2023 19:36:54 +0100
+
+ubiquity (23.04.2) lunar; urgency=medium
+
+  * Fix lunar's pep8, not cought with local rebuild due to noautomatic.
+
+ -- Dimitri John Ledkov <dimitri.ledkov@canonical.com>  Mon, 28 Nov 2022 16:48:59 +0000
+
+ubiquity (23.04.1) lunar; urgency=medium
+
+  [ Sebastien Bacher ]
+  * d-i/source/user-setup/debian/user-setup-udeb.templates:
+    remove 'lxd' from user-default-groups and add 'users' instead,
+    it will let lxd default to unprivileged containers which is better
+    see https://discourse.ubuntu.com/t/easy-multi-user-lxd-setup for details
+    (lp: #1949115)
+
+  [ Dimitri John Ledkov ]
+  * Re-enable zfs encryption
+  * zsys-setup: generate correct zfs-list.cache for target (LP: #1993318)
+
+ -- Dimitri John Ledkov <dimitri.ledkov@canonical.com>  Mon, 28 Nov 2022 16:09:57 +0000
+
+ubiquity (22.10.10) kinetic; urgency=medium
+
+  * Temporarily disable zfs + encryption option (LP: #1993318)
+
+ -- William 'jawn-smith' Wilson <jawn-smith@ubuntu.com>  Tue, 18 Oct 2022 13:35:37 -0500
+
+ubiquity (22.10.9) kinetic; urgency=medium
+
+  * partman/resize: add a margin to the minimal size for partition shrinking
+    (LP: #1991083)
+
+ -- Adrien Nader <adrien.nader@canonical.com>  Wed, 12 Oct 2022 10:14:27 +0000
+
+ubiquity (22.10.8) kinetic; urgency=medium
+
+  *  Increase the window size in the QT/KDE version of the installer dailog so
+     that the keyboard is readable. Thanks to Erich Eickmeyer for the fix.
+     (LP: #1990887)
+
+ -- Brian Murray <brian@ubuntu.com>  Tue, 11 Oct 2022 09:55:08 -0700
+
+ubiquity (22.10.7) kinetic; urgency=medium
+
+  * Updated translations.
+
+ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@ubuntu.com>  Mon, 10 Oct 2022 17:55:04 +0200
+
+ubiquity (22.10.6) kinetic; urgency=medium
+
+  [ Jeremy Bicha ]
+  * gtk: Require gir1.2-soup-2.4 (LP: #1987455)
+  * gtk: Set require_version in more places to better protect against this
+    in the future
+  * Add minimal debian/gbp.conf
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Wed, 24 Aug 2022 09:47:17 -0400
+
+ubiquity (22.10.5) kinetic; urgency=medium
+
+  [ Michał Sawicz ]
+  * Run after cloud-init if installed
+
+  [ Dimitri John Ledkov ]
+  * Ensure minimum available amount of memory available (LP: #1979997)
+
+ -- Dimitri John Ledkov <dimitri.ledkov@canonical.com>  Wed, 13 Jul 2022 14:19:20 +0100
+
+ubiquity (22.10.4) kinetic; urgency=medium
+
+  [ Shih-Yuan Lee (FourDollars) ]
+  * Use dpkg-divert /sbin/start-stop-daemon unconditionally instead of just renaming it conditionally.  (LP: #1978931)
+
+  [ Sebastien Bacher ]
+  * plugin-viewer-gtk.py: specify the gtk version to use and fix a warning
+  * 22.10.3 upload included: Update the ubiquity icons for the brand
+    refresh. Thanks to the Yaru team.
+
+  [ Dimitri John Ledkov ]
+  * zsys-setup: increase minimum bpool partition size to 1792
+
+ -- Dimitri John Ledkov <dimitri.ledkov@canonical.com>  Fri, 01 Jul 2022 11:23:36 +0100
+
+ubiquity (22.10.3) kinetic; urgency=medium
+
+  * Remove lubuntu-default-settings from Ubiquity's alternative depends so the
+    autopkgtest isn't triggered every time we upload it.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Fri, 17 Jun 2022 01:50:45 -0500
+
+ubiquity (22.10.2) kinetic; urgency=medium
+
+  * Fix a typo in the recover key dialog. (LP: #1967281)
+
+ -- Brian Murray <brian@ubuntu.com>  Mon, 16 May 2022 15:57:55 -0700
+
+ubiquity (22.10.1) kinetic; urgency=medium
+
+  *  Update for kinetic.
+
+ -- Brian Murray <brian@ubuntu.com>  Tue, 03 May 2022 09:50:20 -0700
 
 ubiquity (22.04.16) jammy; urgency=medium
 
@@ -926,7 +1109,7 @@ ubiquity (20.04.7) focal; urgency=medium
 ubiquity (20.04.6) focal; urgency=medium
 
   [ Jean-Baptiste Lallement ]
-  [ Didier Roche ] 
+  [ Didier Roche ]
   * Fix ZFS installation on MBR system now that partman-auto always creates an
     ESP.
   * Fix the display of the partition layout on ZFS installation in Ubiquity.
@@ -1702,8 +1885,8 @@ ubiquity (18.04.4) bionic; urgency=medium
   * gui/gtk/stepPrepare.ui: updated the non-free-software text to not
     include the mention to the MP3 fluendo codecs since those have
     been superseeded in the recent gstreamer version.
-  * Rename the "Preparing to install Linux Mint" installer step to "Updates and 
-    other software" according to the design, thanks Matthew for pointing 
+  * Rename the "Preparing to install Linux Mint" installer step to "Updates and
+    other software" according to the design, thanks Matthew for pointing
     out the inconsistency
 
   [ Didier Roche ]
@@ -1725,7 +1908,7 @@ ubiquity (18.04.3) bionic; urgency=medium
 
   [ Sebastien Bacher ]
   * Remove the encrypted userdir option from the gtk installer since
-    ecryptfs is going to move to universe. The keep the base code in case 
+    ecryptfs is going to move to universe. The keep the base code in case
     the option is added back later using another technology.
 
   [ Iain Lane ]
@@ -2126,7 +2309,7 @@ ubiquity (16.10.7) yakkety; urgency=medium
     3.0~rc.4ubuntu63.
   * debian/control: Build-Depends on the right version of gtk too.
   * ubiquity/misc.py: fix regex to match nvme first, otherwise it gets mangled
-    by the rest of the matching. 
+    by the rest of the matching.
 
  -- Mathieu Trudel-Lapierre <cyphermox@ubuntu.com>  Mon, 01 Aug 2016 15:17:03 -0400
 
@@ -2298,7 +2481,7 @@ ubiquity (2.21.55) xenial; urgency=medium
   * autopilot: Merged autopilot tests fixes from Chris Lee. Thanks
 
   [ Timo Jyrinki ]
-  * Fix Kubuntu slideshow not translated, thanks to Lasse Liehu for the 
+  * Fix Kubuntu slideshow not translated, thanks to Lasse Liehu for the
     patch (LP: #1512834)
   * Automatic update of included source packages: netcfg 1.135ubuntu3.
 
@@ -2925,14 +3108,14 @@ ubiquity (2.21.2) vivid; urgency=medium
   * Remove setting translated placeholder text in the usersetup
     plugin. (LP: #1283047)
   * Drop translation messages from ubiquity.templates.
-  
+
   [ Unit 193 ]
   * Enable the ubiquity panel in xfwm4 now since it is functional.
-  
+
   [ Tim Lunn ]
   * scripts/plugininstall.py: Remove obsolete code to generate wallpaper
     cache, unity-settings-daemon/gnome-settings-daemon now run in install
-    mode (LP: #1318621) 
+    mode (LP: #1318621)
 
   [ Martin Wimpress ]
   * Improve support for Mate desktop.
@@ -3395,11 +3578,11 @@ ubiquity (2.17.1) trusty; urgency=low
   [ Brian Murray ]
   * Use the apt cache with with so that we close the cache when we are
     done with it (LP: #1051935)
-  
+
   [ Dan Chapman ]
   * Autopilot tests update.
   * Autopilot tests for Edubuntu's extra install pages
-  
+
   [ Jean-Baptiste Lallement ]
   * Join auto-pilot runner.
   * fix tests to be pep8 compliant
@@ -3566,11 +3749,11 @@ ubiquity (2.15.17) saucy; urgency=low
   * Add 'ubiquity' keyword to .desktop
 
   [ Tim Lunn ]
-  * Update default Linux Mint GNOME Background 
+  * Update default Linux Mint GNOME Background
   * disable g-s-d background plugin for Linux Mint GNOME
   * set gsettings keys before launch g-s-d, helps with clunky transitions
   * Don't set num-workspaces as this carries through the live session
-  
+
 
  -- Dmitrijs Ledkovs <dmitrij.ledkov@ubuntu.com>  Wed, 11 Sep 2013 10:18:46 +0100
 
@@ -3698,13 +3881,13 @@ ubiquity (2.15.9) saucy; urgency=low
 
   [ Iain Lane ]
   * Use ISO-639-2/{B,T} codes when looking up keyboard layout variants since
-    these are what's referred to in xkb-data's xorg.xml file. 
+    these are what's referred to in xkb-data's xorg.xml file.
 
  -- Colin Watson <cjwatson@ubuntu.com>  Tue, 09 Jul 2013 11:50:03 +0100
 
 ubiquity (2.15.8) saucy; urgency=low
 
-  [ Colin Watson ]  
+  [ Colin Watson ]
   * Fix "parition" typo in template names.
 
   [ Dmitrijs Ledkovs ]
@@ -4416,7 +4599,7 @@ ubiquity (2.12.5) quantal; urgency=low
 
   [ Jonathan Riddell ]
   * Change from a KApplication to a QApplication to avoid using DBus, DBus
-    as needed by KApplication no longer works with our multiple user changes 
+    as needed by KApplication no longer works with our multiple user changes
     LP: #1055967
 
   [ Colin Watson ]
@@ -4434,7 +4617,7 @@ ubiquity (2.12.4) quantal; urgency=low
     loop mounted devices. (LP: #1055640)
   * Skip locked partitions when rebuilding cache, in a similar way as
     skipping free disk space, by sniffing locked file in the partman
-    device tree. Remove locked flag, otherwise. (LP: #1055819) 
+    device tree. Remove locked flag, otherwise. (LP: #1055819)
   * Hide mount combo, instead of making it insensitive to reduce clutter
     in the add/edit partition dialog. (LP: #1055815)
   * Automatic update of included source packages: flash-kernel
@@ -4604,7 +4787,7 @@ ubiquity (2.11.28) quantal; urgency=low
   * Fix display of installation medium mounted grid. (LP: #1044717)
     Also used pylint to find check for undefined/missing attributes in the
     ubi-partman.py. Needs integration into build system.
- 
+
  -- Dmitrijs Ledkovs <dmitrij.ledkov@ubuntu.com>  Mon, 03 Sep 2012 12:51:16 +0100
 
 ubiquity (2.11.27) quantal; urgency=low
@@ -6035,7 +6218,7 @@ ubiquity (2.8.0) oneiric; urgency=low
 ubiquity (2.7.38) oneiric; urgency=low
 
   [ Mario Limonciello ]
-  * Preseed a bootloader target if one hasn't been set but running in 
+  * Preseed a bootloader target if one hasn't been set but running in
     automatic mode. (LP: #861465)
 
   [ Adam Conrad ]
@@ -6422,7 +6605,7 @@ ubiquity (2.7.13) oneiric; urgency=low
 
   [ Mario Limonciello ]
   * Don't try to unlink directories during file copy routine that were
-    created by partman (/var/lock, /var/run), rmdir them instead. 
+    created by partman (/var/lock, /var/run), rmdir them instead.
     (LP: #810700)
   * Don't assume that gsettings is on PATH just because gconftool-2 is.
     They come from separate packages.
@@ -6656,7 +6839,7 @@ ubiquity (2.6.6) natty; urgency=low
   * Uninstall the oem-config slideshow after install is done (LP: #759935).
 
   [ Julien Lavergne ]
-  * Disable ubiquity panel for openbox session. 
+  * Disable ubiquity panel for openbox session.
 
   [ Mackenzie Morgan ]
   * Make radio buttons use label wording for screen reader (LP: #749653)
@@ -7603,7 +7786,7 @@ ubiquity (2.3.16) maverick; urgency=low
   * Don't show a minimize option in only-ubiquity mode(s) (LP: #627656)
   * Translate the page_title of the language page when languages are
     swapped.
-  * Restore functionality to set the GTK slideshow size based on a 
+  * Restore functionality to set the GTK slideshow size based on a
     configuration file that was lost in r4123.1.37.
   * Parse the slideshow size when the GTK frontend first starts to
     prevent the window resizing later.
@@ -7654,7 +7837,7 @@ ubiquity (2.3.13) maverick; urgency=low
 
   [ Mario Limonciello ]
   * When using xfsettingsd, set the background to black first.
-  * Set release_notes_found to False initially to prevent a scenario it gets 
+  * Set release_notes_found to False initially to prevent a scenario it gets
     accessed before being set when offline (LP: #628011).
 
   [ Evan Dandrea ]
@@ -7768,7 +7951,7 @@ ubiquity (2.3.6) maverick; urgency=low
   * Redirect console blanking setterm command to /dev/console so it is effective
     with upstart.
   * Show the proper derivative name for prepare_foss_disclaimer on stepPrepare.
-  * Fallback to NM icons if the wifi icons don't load (such as humanity missing).  
+  * Fallback to NM icons if the wifi icons don't load (such as humanity missing).
     If still fail, don't crash, just don't show icons.  (LP: #617696)
   * Pass the output of wget calls into /dev/null to prevent files popping up in ~.
   * If available, run xfsettingsd in ubiquity only mode.
@@ -8078,7 +8261,7 @@ ubiquity (2.2.16) lucid; urgency=low
   * Fix KDE progress bar and skip button too small (LP: #555707)
   * Fix KDE skip button appearing as full-width button at the
     bottom of the window and messing up dialog layout (LP: #540321)
-  * Fix progress bar updated file count out of range (LP: #550147) 
+  * Fix progress bar updated file count out of range (LP: #550147)
   * Fix progress title not shown during some configuration steps
 
   [ Colin Watson ]
@@ -8138,7 +8321,7 @@ ubiquity (2.2.13) lucid; urgency=low
     oem-config/remove_extras to true (LP: #315644, LP: #553184).
 
   [ Roman Shtylman ]
-  * Kde_ui: 
+  * Kde_ui:
     - fixed (LP: #550466) (LP: #550472) using kmessage box for quit dialog
     - fixed (LP: #540202) hide widgets until translated
 
@@ -8873,7 +9056,7 @@ ubiquity (2.1.15) lucid; urgency=low
     type Install methods.
   * Support using pkgsel/install-language-support preseeded to false to
     ignore installation of language packs (just like alternates).
-  * Drop mythbuntu_ui and all references to it.  The (former) Mythbuntu 
+  * Drop mythbuntu_ui and all references to it.  The (former) Mythbuntu
     frontend is now fully pluggable into ubiquity's gtk_ui on it's own.
   * Fix unmount command in chroot_cleanup to actually release /target/dev.
   * In the KDE frontend for ubi-language, use findChildren to find widgets
@@ -9117,7 +9300,7 @@ ubiquity (2.1.4) lucid; urgency=low
   [ Martin Pitt ]
   * scripts/ubi-restart-hal:
     - Restart hal the upstart way.
-    - Do not fail if hal does not exist, and drop hal dependency. 
+    - Do not fail if hal does not exist, and drop hal dependency.
       (LP: #493139)
     - Also trigger an udev change event for key devices, so that the changed
       keyboard settings also apply to an udevified X.org server.
@@ -9333,7 +9516,7 @@ ubiquity (2.0.3) karmic; urgency=low
   * Don't provide the old init scripts, even under a temporary name anymore.
     - It appears that there is a race condition that can exist between when
       the upstart'ified version and the initscript version start that may cause
-      only-ubiquity and automatic-ubiquity to (poorly) fail. (LP: #457858)    
+      only-ubiquity and automatic-ubiquity to (poorly) fail. (LP: #457858)
     - All login managers in use (gdm and kdm) have converted to upstart now.
 
   [ Evan Dandrea ]
@@ -9386,7 +9569,7 @@ ubiquity (2.0.1) karmic; urgency=low
   * Mythbuntu: Don't allow "removing" LIRC as it's not supported with install.
 
   [ Roman Shtylman ]
-  * Fixed India timezone map (LP: #453009) 
+  * Fixed India timezone map (LP: #453009)
 
   [ Michael Casadevall ]
   * Added support for partman-uboot in ubiquity (LP: #455713)
@@ -9479,7 +9662,7 @@ ubiquity (1.99.29) karmic; urgency=low
     (LP: #364649).
 
   [ Roman Shtylman ]
-  * Limit width of side breadcumbs in kde for long translation text. 
+  * Limit width of side breadcumbs in kde for long translation text.
     Using elided text where needed (LP: #438918)
 
  -- Colin Watson <cjwatson@ubuntu.com>  Tue, 06 Oct 2009 18:39:54 +0100
@@ -9568,7 +9751,7 @@ ubiquity (1.99.22) karmic; urgency=low
   [ Roman Shtylman ]
   * Fixed vertical spacer on keyboard page
   * Removed underline from keyboard buttons
-  * Added ability to view shifted keys on keyboard display 
+  * Added ability to view shifted keys on keyboard display
 
   [ Colin Watson ]
   * Mount /sys while running grub-installer, since os-prober needs to look
@@ -9718,7 +9901,7 @@ ubiquity (1.99.15) karmic; urgency=low
 ubiquity (1.99.14) karmic; urgency=low
 
   [ Roman Shtylman ]
-  * Fix for (LP: #419142), could not reproduce so just moved the size 
+  * Fix for (LP: #419142), could not reproduce so just moved the size
     display to the same line as % display
 
   [ Mario Limonciello ]
@@ -9739,7 +9922,7 @@ ubiquity (1.99.13) karmic; urgency=low
   * Update imported translations from gtk+2.0 2.17.7-0ubuntu3.
 
   [ Roman Shtylman ]
-  * fix for (LP: #413159). Acceptable for feature freeze, but still needs 
+  * fix for (LP: #413159). Acceptable for feature freeze, but still needs
    work and further review
   * fix for (LP: #420226)
 
@@ -9752,7 +9935,7 @@ ubiquity (1.99.13) karmic; urgency=low
   * Add Venezuela timezone (UTC-4.30)
   * gtk: Start cycling through cities on the second click, not the third
   * gtk: Don't have clicks on Texas use a Mexican timezone by default
-    LP: #371509 
+    LP: #371509
 
  -- Evan Dandrea <evand@ubuntu.com>  Sat, 29 Aug 2009 13:22:52 +0100
 
@@ -9768,7 +9951,7 @@ ubiquity (1.99.12) karmic; urgency=low
     1.101ubuntu4, user-setup 1.27ubuntu9.
 
   [ Roman Shtylman ]
-  * Added support for encrypted home/swap login in kde installer 
+  * Added support for encrypted home/swap login in kde installer
 
  -- Roman Shtylman <shtylman@gmail.com>  Mon, 24 Aug 2009 22:06:45 -0400
 
@@ -9779,7 +9962,7 @@ ubiquity (1.99.11) karmic; urgency=low
     the files as overrides.
 
   [ Roman Shtylman ]
-  * Merged ~cr3/ubiquity/bug-417417 with fix for (LP: #417417) 
+  * Merged ~cr3/ubiquity/bug-417417 with fix for (LP: #417417)
 
  -- Roman Shtylman <shtylman@gmail.com>  Sun, 23 Aug 2009 09:17:56 -0400
 
@@ -9892,7 +10075,7 @@ ubiquity (1.99.4) karmic; urgency=low
   [ Mario Limonciello ]
   * For automatic mode, don't use an unreferenced local variable.
   * When generating the blacklist, if OEM mode is enabled, explicitly call
-    out ubiquity to be on the list of packages to keep files from. Prevents 
+    out ubiquity to be on the list of packages to keep files from. Prevents
     issues with oem-config missing files after reboot. (LP: #409648)
   * Automatic update of included source packages: partman-base
     133ubuntu1, partman-partitioning 69ubuntu1.
@@ -9910,7 +10093,7 @@ ubiquity (1.99.3) karmic; urgency=low
     doesn't know about that yet (LP: #402969).
 
   [ Roman Shtylman ]
-  * new files for themeing kde gui 
+  * new files for themeing kde gui
   * started work on moving over to the new theme/app.ui file
   * new theme is in place and a simple install can be performed
 
@@ -10119,7 +10302,7 @@ ubiquity (1.13.0) karmic; urgency=low
       automatic mode.  This page is not shown on Non-NVIDIA or AMD systems.
     - Be more specific about packages that are removed in role selection.
       Unfortunately prior to this fix, choosing a Frontend role for example
-      was not cleaning up mysql, apache, or mythtv-backend (completely 
+      was not cleaning up mysql, apache, or mythtv-backend (completely
       defeating the purpose of a frontend role).
 
   [ Evan Dandrea ]
@@ -10225,8 +10408,8 @@ ubiquity (1.12.10) jaunty; urgency=low
 
   [ Mario Limonciello ]
   * Mythbuntu Frontend:
-    - Don't launch GUI applications from within the chroot as this causes 
-      problems when libGL.so.1 and friends are diverted.  Instead bind 
+    - Don't launch GUI applications from within the chroot as this causes
+      problems when libGL.so.1 and friends are diverted.  Instead bind
       mount the necessary files to launch them outside the chroot.
       (LP: #362419)
 
@@ -10593,7 +10776,7 @@ ubiquity (1.11.15) jaunty; urgency=low
     user-setup/allow-password-empty in user-setup 1.23ubuntu14.
   * Remove obsolete ubiquity/text/timezone_country_label and
     ubiquity/text/timezone_time_label templates.
-  
+
   [ Roman Shtylman ]
   * moved common pixmaps to artwork package
 
@@ -10797,7 +10980,7 @@ ubiquity (1.11.5) jaunty; urgency=low
     1.36ubuntu1, localechooser 2.09ubuntu1, user-setup 1.23ubuntu8.
 
   [ Mario Limonciello ]
-  * Adjust logic for detecting incomplete language support.  Just 
+  * Adjust logic for detecting incomplete language support.  Just
     because a package doesn't "exist" doesn't mean that language support
     isn't all there.  Some packages don't yet provide language-support-XY
     packages. (LP: #290398)
@@ -10815,7 +10998,7 @@ ubiquity (1.11.4) jaunty; urgency=low
 
   [ Mario Limonciello ]
   * Mythbuntu specific changes:
-    - Don't reinvent the square with autologin.  It's provided 
+    - Don't reinvent the square with autologin.  It's provided
       by user-setup, so use it there.
     - Eliminate mythbuntu_summary.py, and instead merge it into
       mythbuntu_install.py
@@ -11318,7 +11501,7 @@ ubiquity (1.9.10) intrepid; urgency=low
 ubiquity (1.9.9) intrepid; urgency=low
 
   * Explicitly remove etc/fstab from the list of files to be copied over.
-    It is created from partman prior to file copy, so the recent commit 
+    It is created from partman prior to file copy, so the recent commit
     to unlink files if they exist already is remvoing it. (LP: #257580)
 
  -- Mario Limonciello <superm1@ubuntu.com>  Wed, 13 Aug 2008 14:30:41 -0500
@@ -11420,12 +11603,12 @@ ubiquity (1.9.5) intrepid; urgency=low
     the right time (LP: #251089).
 
   [ Jonathan Riddell ]
-  * language.py: Change string to unicode, fixes crash when using KDE 
+  * language.py: Change string to unicode, fixes crash when using KDE
     frontend, closes LP: #251097
   * KDE frontend
    - comment out dcop code
    - add set_hostname method
-   - temporarily force sudo until we work out why kdesudo stops it passing 
+   - temporarily force sudo until we work out why kdesudo stops it passing
      partitioning stage, bug 251203
 
   [ Evan Dandrea ]
@@ -11925,14 +12108,14 @@ ubiquity (1.7.12) hardy; urgency=low
   * Remove suffix from icon path in .desktop file (LP: #188221).
 
   [ Jonathan Riddell ]
-  * Fix QApplication args in ubiquity/frontend/kde_ui.py 
+  * Fix QApplication args in ubiquity/frontend/kde_ui.py
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 25 Feb 2008 10:13:27 -0500
 
 ubiquity (1.7.11) hardy; urgency=low
 
   [ Jonathan Riddell ]
-  * Add web proxy field to qt frontend.  
+  * Add web proxy field to qt frontend.
     Patch by Richard A. Johnson <nixternal@kubuntu.org>
   * Force kde_ui style to plastique, works around QtDbus/pydbus
     clash when using oxygen style
@@ -15856,4 +16039,3 @@ ubuntu-express (0.4ubuntu1) breezy; urgency=low
   * Initial Release.
 
  -- Javier Carranza <javier.carranza@interactors.coop>  Fri, 29 Jul 2005 17:04:51 +0200
-

@@ -168,6 +168,8 @@ class PageGtk(PageBase):
                 column = Gtk.TreeViewColumn(
                     None, Gtk.CellRendererText(), text=0)
                 column.set_sizing(Gtk.TreeViewColumnSizing.GROW_ONLY)
+                # adjust width to 120 : 필요없는 언어를 지워서 언어 선택 트리 창의 폭이 너무 좁음
+                self.treeview.set_property('width_request', 120)
                 self.treeview.append_column(column)
                 selection = self.treeview.get_selection()
                 selection.connect(

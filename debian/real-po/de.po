@@ -6,22 +6,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: ubiquity@packages.debian.org\n"
-"POT-Creation-Date: 2022-03-28 22:31+0200\n"
-"PO-Revision-Date: 2022-04-10 13:24+0000\n"
-"Last-Translator: Robert Ernst <Unknown>\n"
+"POT-Creation-Date: 2023-09-19 15:58+0200\n"
+"PO-Revision-Date: 2023-10-03 12:22+0000\n"
+"Last-Translator: Torsten Franz <Unknown>\n"
 "Language-Team: Debian German <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-04-13 12:28+0000\n"
-"X-Generator: Launchpad (build 560baff2f814495c0c140fb3d6c66875f2312c96)\n"
+"X-Launchpad-Export-Date: 2023-10-04 09:36+0000\n"
+"X-Generator: Launchpad (build bd6cfd0cfc024dbe1dcd7d5d91165fb4f6a6c596)\n"
 "Language: \n"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:3001
 msgid "Preparing ubuntu-drivers..."
-msgstr "Bereite Linux Mint-Treiber vor …"
+msgstr "Linux Mint-Treiber werden vorbereitet …"
 
 #. Type: text
 #. Description
@@ -1171,7 +1171,7 @@ msgstr ""
 #. Description
 #: ../ubiquity.templates:153001
 msgid "Error setting LUKS recovery key"
-msgstr "Fehler beim Setzen der LUKS-Wiederherstellungsschlüssel"
+msgstr "Fehler beim Festlegen der LUKS-Wiederherstellungsschlüssel"
 
 #. Type: error
 #. Description
@@ -1181,8 +1181,8 @@ msgid ""
 "continue, but you may have to manually add the recovery key in the installed "
 "system with the command:"
 msgstr ""
-"Ein Fehler ist beim Setzen der Wiederherstellungsschlüssel aufgetreten. Die "
-"Installation wird fortgesetzt aber es kann sein, dass Sie die "
+"Ein Fehler ist beim Festlegen der Wiederherstellungsschlüssel aufgetreten. "
+"Die Installation wird fortgesetzt aber es kann sein, dass Sie die "
 "Wiederherstellungsschlüssel manuell dem System mit der Eingabeaufforderung "
 "hinzufügen müssen:"
 
@@ -2461,8 +2461,8 @@ msgstr "Wiederherstellungsschlüssel für LUKS + LVM"
 #. Type: text
 #. Description
 #: ../ubiquity.templates:341001
-msgid "Count not save recovery key:"
-msgstr "Konnte den Wiederherstellungsschlüssel nicht speichern:"
+msgid "Could not save recovery key:"
+msgstr "Wiederherstellungsschlüssel konnte nicht gespeichert werden:"
 
 #. Type: text
 #. Description
@@ -2540,30 +2540,5 @@ msgstr ""
 msgid "Removing packages"
 msgstr "Pakete werden entfernt"
 
-#~ msgid ""
-#~ "Connecting this computer to a wi-fi network allows you to install third-"
-#~ "party software, download updates, automatically detect your timezone, and "
-#~ "install full support for your language."
-#~ msgstr ""
-#~ "Das Verbinden dieses Rechners mit einem Funknetzwerk erlaubt es Ihnen, "
-#~ "Anwendungen von Drittanbietern zu installieren, Aktualisierungen "
-#~ "herunterzuladen, Ihre Zeitzone automatisch zu ermitteln und eine "
-#~ "vollständige Sprachunterstützung zu installieren."
-
-#~ msgid "I don't want to connect to a wi-fi network right now"
-#~ msgstr "Ich möchte mich jetzt nicht mit einem Funknetzwerk verbinden"
-
-#~ msgid "Software selection"
-#~ msgstr "Programmauswahl"
-
-#~ msgid ""
-#~ "You have chosen to enable third-party software as part of your install, "
-#~ "which for this system includes hardware drivers for graphics and/or wi-fi "
-#~ "hardware. Your system also has UEFI Secure Boot enabled. UEFI Secure Boot "
-#~ "needs to be configured to allow the use of these third-party drivers."
-#~ msgstr ""
-#~ "Sie haben sich dafür entschieden, Drittanbietersoftware als Teil Ihrer "
-#~ "Installation zu aktivieren, die für dieses System Hardwaretreiber für "
-#~ "Grafiken und/oder Wi-Fi-Hardware enthält. Auf Ihrem System ist auch UEFI "
-#~ "Secure Boot aktiviert. UEFI Secure Boot muss konfiguriert werden, um die "
-#~ "Verwendung dieser Treiber von Drittanbietern zu ermöglichen."
+#~ msgid "Count not save recovery key:"
+#~ msgstr "Konnte den Wiederherstellungsschlüssel nicht speichern:"

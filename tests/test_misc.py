@@ -4,7 +4,6 @@ import grp
 import io
 import os
 import pwd
-from test.support import run_unittest
 try:
     from test.support import EnvironmentVarGuard
 except ImportError:
@@ -426,7 +425,3 @@ class GrubDefaultTests(unittest.TestCase):
         self.assertEqual('/dev/sda', misc.grub_default())
         self.boot_device = '/dev/sda'
         self.assertEqual('/dev/sda', misc.grub_default())
-
-
-if __name__ == '__main__':
-    run_unittest(MiscTests, PrivilegeTests, GrubDefaultTests)

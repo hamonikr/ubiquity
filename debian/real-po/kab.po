@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity\n"
 "Report-Msgid-Bugs-To: ubiquity@packages.debian.org\n"
-"POT-Creation-Date: 2022-03-28 22:31+0200\n"
-"PO-Revision-Date: 2020-11-29 16:29+0000\n"
+"POT-Creation-Date: 2023-09-19 15:58+0200\n"
+"PO-Revision-Date: 2022-08-26 08:35+0000\n"
 "Last-Translator: tasutlelli17 <Unknown>\n"
 "Language-Team: Kabyle <kab@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-04-13 12:28+0000\n"
-"X-Generator: Launchpad (build 560baff2f814495c0c140fb3d6c66875f2312c96)\n"
+"X-Launchpad-Export-Date: 2023-10-04 09:36+0000\n"
+"X-Generator: Launchpad (build bd6cfd0cfc024dbe1dcd7d5d91165fb4f6a6c596)\n"
 "Language: kab\n"
 
 #. Type: text
@@ -2358,19 +2358,19 @@ msgstr ""
 #. Description
 #: ../ubiquity.templates:333001
 msgid "Recovery key:"
-msgstr ""
+msgstr "Tasarut n tririt"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:334001
 msgid "Confirm recovery key:"
-msgstr ""
+msgstr "Sentem tasarut n tririt:"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:335001
 msgid "Display recovery key:"
-msgstr ""
+msgstr "Sken tasarut n tririt:"
 
 #. Type: text
 #. Description
@@ -2385,7 +2385,7 @@ msgstr ""
 #. Description
 #: ../ubiquity.templates:337001
 msgid "Location:"
-msgstr ""
+msgstr "Adig:"
 
 #. Type: text
 #. Description
@@ -2403,25 +2403,25 @@ msgstr ""
 #. Description
 #: ../ubiquity.templates:340001
 msgid "Recovery key for LUKS + LVM"
-msgstr ""
+msgstr "Tasarut n tririt i LUKS + LVM"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:341001
-msgid "Count not save recovery key:"
+msgid "Could not save recovery key:"
 msgstr ""
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:341001
 msgid "${ERRORMSG}"
-msgstr ""
+msgstr "${ERRORMSG}"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:342001
 msgid "Enter recovery key filename"
-msgstr ""
+msgstr "Sekcem isem n ufaylu n tsarut n tririt"
 
 #. Type: title
 #. Description
@@ -2485,29 +2485,3 @@ msgstr ""
 #: ../oem-config.templates:3001
 msgid "Removing packages"
 msgstr "Tukksa n ikemmusen"
-
-#~ msgid "Software selection"
-#~ msgstr "Tafrayt n iseɣẓanen"
-
-#~ msgid "I don't want to connect to a wi-fi network right now"
-#~ msgstr "Ur bγiγ ara ad qqneγ γer uzeṭṭa n wi-fi akka tura"
-
-#~ msgid ""
-#~ "Connecting this computer to a wi-fi network allows you to install third-"
-#~ "party software, download updates, automatically detect your timezone, and "
-#~ "install full support for your language."
-#~ msgstr ""
-#~ "Ma teqqneḍ aselki-agi ɣer uzeḍḍa wi-fi ad tizmireḍ ad tesbeddeḍ isnasen n "
-#~ "wis kraḍ, ad tsidreḍ ileqman, ad d-tafeḍ s wudem awurman tamennaḍt tasragant "
-#~ "inek, yerna ad tesbeddeḍ tadhelt tummidt i tutlayt-inek."
-
-#~ msgid ""
-#~ "You have chosen to enable third-party software as part of your install, "
-#~ "which for this system includes hardware drivers for graphics and/or wi-fi "
-#~ "hardware. Your system also has UEFI Secure Boot enabled. UEFI Secure Boot "
-#~ "needs to be configured to allow the use of these third-party drivers."
-#~ msgstr ""
-#~ "Tferneḍ ad teremdeḍ iseɣẓanen n wis kraḍ am uḥric n usbeddi-inek, ayen ara "
-#~ "yeseddun i unagraw-agi imeɣriyen i wudlifen akked/neɣ warrum n wi-fi. "
-#~ "Anagraw-inek m yesɛa daɣen Boot UEFI aɣelsan yermed. Boot UEFI aɣelsan yesra "
-#~ "ad yettuswel akken ad isireg aseqdec n yimeɣriyen-agi n wis kraḍ."

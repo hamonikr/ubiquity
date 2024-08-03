@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity\n"
 "Report-Msgid-Bugs-To: ubiquity@packages.debian.org\n"
-"POT-Creation-Date: 2022-03-28 22:31+0200\n"
+"POT-Creation-Date: 2023-09-19 15:58+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1485,8 +1485,8 @@ msgstr ""
 msgid ""
 "This computer uses Windows BitLocker encryption. You need to turn off "
 "BitLocker in Windows before installing Linux Mint. For instructions, open this "
-"page on a phone or other device: <a href=\"https://help.ubuntu.com/bitlocker"
-"\">help.ubuntu.com/bitlocker</a>"
+"page on a phone or other device: <a href=\"https://help.ubuntu.com/"
+"bitlocker\">help.ubuntu.com/bitlocker</a>"
 msgstr ""
 
 #. Type: text
@@ -2256,7 +2256,7 @@ msgstr ""
 #. Type: text
 #. Description
 #: ../ubiquity.templates:341001
-msgid "Count not save recovery key:"
+msgid "Could not save recovery key:"
 msgstr ""
 
 #. Type: text

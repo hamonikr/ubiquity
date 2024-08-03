@@ -6,15 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: ubiquity@packages.debian.org\n"
-"POT-Creation-Date: 2022-03-28 22:31+0200\n"
-"PO-Revision-Date: 2021-05-02 20:36+0000\n"
-"Last-Translator: Amrit Anand <anandamrit174@gmail.com>\n"
+"POT-Creation-Date: 2023-09-19 15:58+0200\n"
+"PO-Revision-Date: 2022-05-19 12:04+0000\n"
+"Last-Translator: bashishtha <Unknown>\n"
 "Language-Team: Hindi <debian-in-workers@lists.alioth.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-04-13 12:28+0000\n"
-"X-Generator: Launchpad (build 560baff2f814495c0c140fb3d6c66875f2312c96)\n"
+"X-Launchpad-Export-Date: 2023-10-04 09:36+0000\n"
+"X-Generator: Launchpad (build bd6cfd0cfc024dbe1dcd7d5d91165fb4f6a6c596)\n"
 "Language: hi\n"
 
 #. Type: text
@@ -2400,7 +2400,7 @@ msgstr ""
 #. Type: text
 #. Description
 #: ../ubiquity.templates:341001
-msgid "Count not save recovery key:"
+msgid "Could not save recovery key:"
 msgstr ""
 
 #. Type: text
@@ -2477,30 +2477,3 @@ msgstr ""
 #: ../oem-config.templates:3001
 msgid "Removing packages"
 msgstr "पैकेज हटा रहा है"
-
-#~ msgid "Software selection"
-#~ msgstr "साँफ्टवेयर चुनाव"
-
-#~ msgid ""
-#~ "Connecting this computer to a wi-fi network allows you to install third-"
-#~ "party software, download updates, automatically detect your timezone, and "
-#~ "install full support for your language."
-#~ msgstr ""
-#~ "वाई - फाई नेटवर्क से इस कंप्यूटर को जोड़ने पर आप तीसरे पक्ष के सॉफ़्टवेयर "
-#~ "संसथापित कर सकते हैं, अद्यतन डाउनलोड करने, स्वचालित रूप से आपके समयक्षेत्र "
-#~ "पता लगाने, और अपनी भाषा के लिए पूर्ण समर्थन स्थापित कर सकते हैं."
-
-#~ msgid "I don't want to connect to a wi-fi network right now"
-#~ msgstr "मैं वाई - फाई नेटवर्क के लिए अभी से कनेक्ट नहीं होना चाहता."
-
-#~ msgid ""
-#~ "You have chosen to enable third-party software as part of your install, "
-#~ "which for this system includes hardware drivers for graphics and/or wi-fi "
-#~ "hardware. Your system also has UEFI Secure Boot enabled. UEFI Secure Boot "
-#~ "needs to be configured to allow the use of these third-party drivers."
-#~ msgstr ""
-#~ "आपने अपनी स्थापना के लिए तृतीय-पक्ष सॉफ़्टवेयर को सक्षम करना चुना है, जिसमें "
-#~ "इस सिस्टम के लिए ग्राफिक्स और/या वाई-फाई हार्डवेयर के लिए हार्डवेयर ड्राइवर "
-#~ "शामिल हैं. आपके सिस्टम में UEFI सुरक्षित बूट भी सक्षम है. UEFI सुरक्षित बूट "
-#~ "को इन तृतीय-पक्ष ड्राइवरों के उपयोग की अनुमति देने के लिए कॉन्फ़िगर करने की "
-#~ "आवश्यकता है."

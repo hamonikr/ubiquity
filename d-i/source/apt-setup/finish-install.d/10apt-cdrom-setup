@@ -28,9 +28,3 @@ EOF
 	fi
 	log-output -t finish-install chroot /target apt-get update
 fi
-
-# Remove locale source
-if ([ -e /target/etc/apt/sources.list.d/locale.list ]); then
-	logger -t finish-install "Removing linuxmint locale source"
-	rm -rf /target/etc/apt/sources.list.d/locale.list
-fi

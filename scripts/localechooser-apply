@@ -115,6 +115,7 @@ if [ "$LOCALE" = "$LOCALE_TRANSLATIONS" ] && \
 		    # but nearly all its native speakers also speak English,
 		    # and migrants are likely to use English.
 		    IE) deflang=en ;;
+		    IR) deflang=fa ;;
 		    IT) deflang=it ;;
 		    MA) deflang=ar ;;
 		    MK) deflang=mk ;;

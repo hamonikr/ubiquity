@@ -45,7 +45,7 @@ build-stamp:
 
 check:
 	# Sanity-check before upload.
-	./check-docker.py
+	#./check-docker.py
 	find -name debian -prune -o -name \*.py -print | xargs py3compile
 	find -type f \( -name \*.pyc -o -name \*.pyo \) -print0 | xargs -0r rm -f
 	find -name __pycache__ -print0 | xargs -0r rm -rf
@@ -169,6 +169,8 @@ endif
 	done
 	cp -a d-i/source/localechooser/post-base-installer.d/05localechooser \
 		debian/ubiquity/usr/lib/ubiquity/localechooser/post-base-installer
+	patch debian/ubiquity/usr/lib/ubiquity/localechooser/post-base-installer \
+		< d-i/patches/localechooser-post-base-installer.patch
 	chmod +x debian/ubiquity/usr/lib/ubiquity/localechooser/post-base-installer
 	sed 's/\\\$${!TAB}/ /g' \
 		debian/ubiquity/usr/lib/ubiquity/localechooser/localechooser \

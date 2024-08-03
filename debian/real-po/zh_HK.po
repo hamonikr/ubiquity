@@ -7,22 +7,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: ubiquity@packages.debian.org\n"
-"POT-Creation-Date: 2022-03-28 22:31+0200\n"
-"PO-Revision-Date: 2020-11-16 20:13+0000\n"
-"Last-Translator: Roy Chan <roy.chan@linux.org.hk>\n"
+"POT-Creation-Date: 2023-09-19 15:58+0200\n"
+"PO-Revision-Date: 2022-05-19 12:14+0000\n"
+"Last-Translator: Walter Cheuk <wwycheuk@gmail.com>\n"
 "Language-Team: Chinese (Hong Kong) <zh_HK@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-04-13 12:28+0000\n"
-"X-Generator: Launchpad (build 560baff2f814495c0c140fb3d6c66875f2312c96)\n"
+"X-Launchpad-Export-Date: 2023-10-04 09:36+0000\n"
+"X-Generator: Launchpad (build bd6cfd0cfc024dbe1dcd7d5d91165fb4f6a6c596)\n"
 "Language: zh_HK\n"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:3001
 msgid "Preparing ubuntu-drivers..."
-msgstr ""
+msgstr "正在準備 ubuntu-drivers…"
 
 #. Type: text
 #. Description
@@ -384,7 +384,7 @@ msgstr "預備分割區"
 #. Omit the [ ... ] from the translation.
 #: ../ubiquity.templates:56001
 msgid "_Restart[ action ]"
-msgstr ""
+msgstr "重新開機(_R)"
 
 #. Type: text
 #. Description
@@ -462,7 +462,7 @@ msgstr "您想要如何處理？"
 #. Description
 #: ../ubiquity.templates:68001
 msgid "_Skip"
-msgstr ""
+msgstr "略過(_S)"
 
 #. Type: title
 #. Description
@@ -938,7 +938,7 @@ msgstr "正在設定開機載入器..."
 #. Description
 #: ../ubiquity.templates:135001
 msgid "Configuring Active Directory..."
-msgstr ""
+msgstr "正在配置 Active Directory……"
 
 #. Type: text
 #. Description
@@ -1090,7 +1090,7 @@ msgstr "複製藍芽設定時發生錯誤。安裝將繼續，但安裝後需重
 #. Description
 #: ../ubiquity.templates:152001
 msgid "Error configuring connection to Active Directory"
-msgstr ""
+msgstr "在配置 Active Directory 連線時發生錯誤"
 
 #. Type: error
 #. Description
@@ -1099,6 +1099,8 @@ msgid ""
 "Sorry, Active Directory can't be set up at the moment. Once your system is "
 "up and running, visit help.ubuntu.com/activedirectory for help."
 msgstr ""
+"很抱歉，現在暫時無法配置 Active Directory。請在您的系統安裝完後訪問 help.ubuntu.com/activedirectory "
+"以尋求幫助。"
 
 #. Type: error
 #. Description
@@ -1371,7 +1373,7 @@ msgid ""
 "Connecting this computer to a Wi-Fi network allows you to install third-"
 "party software, download updates, automatically detect your timezone, and "
 "install full support for your language."
-msgstr ""
+msgstr "將本電腦連上 Wi-Fi 無線網路可讓您安裝第三方軟體、下載更新、自動偵測時區，並安裝閣下語言的完整支援。"
 
 #. Type: text
 #. Description
@@ -1391,7 +1393,7 @@ msgstr "顯示密碼"
 #. Description
 #: ../ubiquity.templates:208001
 msgid "I don't want to connect to a Wi-Fi network right now"
-msgstr ""
+msgstr "現在不想連上 Wi-Fi 無線網路"
 
 #. Type: text
 #. Description
@@ -1474,7 +1476,7 @@ msgstr "抱歉"
 #. RST means "Rapid Storage Technology". Don't translate it.
 #: ../ubiquity.templates:226001
 msgid "Turn off RST"
-msgstr ""
+msgstr "關閉 Rapid Storage Technology (RST)"
 
 #. Type: text
 #. Description
@@ -1485,12 +1487,15 @@ msgid ""
 "phone or other device: <a "
 "href=\"https://help.ubuntu.com/rst\">help.ubuntu.com/rst</a>"
 msgstr ""
+"本電腦使用 Intel RST (Rapid Storage Technology) 技術。必須關閉 RST 才能安裝 "
+"Linux Mint。請在手機或其他裝置打開此網頁，以取得設定指引：<a "
+"href=\"https://help.ubuntu.com/rst\">help.ubuntu.com/rst</a>"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:228001
 msgid "Turn off BitLocker"
-msgstr ""
+msgstr "關閉 BitLocker"
 
 #. Type: text
 #. Description
@@ -1501,6 +1506,9 @@ msgid ""
 "page on a phone or other device: <a "
 "href=\"https://help.ubuntu.com/bitlocker\">help.ubuntu.com/bitlocker</a>"
 msgstr ""
+"本電腦使用 Windows BitLocker 加密技術。必須在 Windows 關閉 BitLocker 才能安裝 "
+"Linux Mint。請在手機或其他裝置打開此網頁，以取得設定指引：<a "
+"href=\"https://help.ubuntu.com/bitlocker\">help.ubuntu.com/bitlocker</a>"
 
 #. Type: text
 #. Description
@@ -1625,7 +1633,7 @@ msgstr "其他選項"
 msgid ""
 "Installing third-party drivers requires configuring Secure Boot. To do this, "
 "you need to choose a security key now, and enter it when the system restarts."
-msgstr ""
+msgstr "安裝第三方驅動程式需要設定 Secure Boot。此舉需現在選擇一把安全金鑰，並在系統重新啟動時輸入它。"
 
 #. Type: text
 #. Description
@@ -1813,7 +1821,7 @@ msgstr "重新安裝 ${CURDISTRO}"
 msgid ""
 "Documents, music, and other personal files will be kept. Installed software "
 "and system-wide settings will be cleared."
-msgstr ""
+msgstr "您的文件、音樂與其他的個人檔案將被保留。安裝的軟體與系統全域設定則會被清除。"
 
 #. Type: text
 #. Description
@@ -1907,7 +1915,7 @@ msgstr "這會設置邏輯儲存區管理。它讓您可以擷取快照，並輕
 #. Description
 #: ../ubiquity.templates:282001
 msgid "Erase disk and use ZFS"
-msgstr ""
+msgstr "清除磁碟並使用 ZFS"
 
 #. Type: text
 #. Description
@@ -1915,13 +1923,13 @@ msgstr ""
 msgid ""
 "<span foreground=\"darkred\">Warning:</span> This will delete all your files "
 "on all operating systems."
-msgstr ""
+msgstr "<span foreground=\"darkred\">警告：</span> 這將會刪除您所有作業系統上的所有檔案。"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:285001
 msgid "Advanced Features"
-msgstr ""
+msgstr "進階功能"
 
 #. Type: text
 #. Description
@@ -1941,31 +1949,31 @@ msgstr ""
 #. Description
 #: ../ubiquity.templates:288001
 msgid "Advanced features..."
-msgstr ""
+msgstr "進階功能…"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:290001
 msgid "LVM selected"
-msgstr ""
+msgstr "已選擇 LVM"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:291001
 msgid "LVM and encryption selected"
-msgstr ""
+msgstr "已選擇 LVM 及加密"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:292001
 msgid "ZFS selected"
-msgstr ""
+msgstr "已選擇 ZFS"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:293001
 msgid "ZFS and encryption selected"
-msgstr ""
+msgstr "已選擇 ZFS 以及加密設定"
 
 #. Type: text
 #. Description
@@ -2135,91 +2143,91 @@ msgstr ""
 #. Description
 #: ../ubiquity.templates:316001
 msgid "Key to secure the keystore on ZFS installations"
-msgstr ""
+msgstr "用以保護 ZFS 金鑰存儲區的金鑰"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:317001
 msgid "Authenticate against a directory"
-msgstr ""
+msgstr "使用既有目錄系統進行身份驗證"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:318001
 msgid "Active Directory domain name"
-msgstr ""
+msgstr "Active Directory 網域"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:319001
 msgid "Administrator to join the domain"
-msgstr ""
+msgstr "用以加入 AD 網域的管理員帳戶"
 
 #. Type: password
 #. Description
 #: ../ubiquity.templates:320001
 msgid "Administrator password to join the domain"
-msgstr ""
+msgstr "用以加入 AD 網域的管理員密碼"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:321001
 msgid "Use Active Directory"
-msgstr ""
+msgstr "使用 Active Directory"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:322001
 msgid " You'll enter domain and other details in the next step."
-msgstr ""
+msgstr " 您將會於下一個步驟中輸入網域以及其他資訊。"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:323001
 msgid "Domain:"
-msgstr ""
+msgstr "網域："
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:324001
 msgid "You must enter a domain name"
-msgstr ""
+msgstr "您必須輸入一個網域名稱"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:325001
 msgid "Test Connection"
-msgstr ""
+msgstr "測試連線"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:326001
 msgid "Domain Administrator:"
-msgstr ""
+msgstr "網域管理者："
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:327001
 msgid "You must enter a user name"
-msgstr ""
+msgstr "您必須輸入一個使用者名稱"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:329001
 msgid "Configure Active Directory"
-msgstr ""
+msgstr "配置 Active Directory"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:330001
 msgid "That name already exists on the network."
-msgstr ""
+msgstr "該名稱已存在網路上。"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:331001
 msgid "Failed to connect to domain."
-msgstr ""
+msgstr "無法連接至網路。"
 
 #. Type: text
 #. Description
@@ -2281,7 +2289,7 @@ msgstr ""
 #. Type: text
 #. Description
 #: ../ubiquity.templates:341001
-msgid "Count not save recovery key:"
+msgid "Could not save recovery key:"
 msgstr ""
 
 #. Type: text
@@ -2355,15 +2363,3 @@ msgstr ""
 #: ../oem-config.templates:3001
 msgid "Removing packages"
 msgstr "移除套件中"
-
-#~ msgid "Software selection"
-#~ msgstr "選擇軟件"
-
-#~ msgid "I don't want to connect to a wi-fi network right now"
-#~ msgstr "現在不想連上 Wi-Fi 無線網絡"
-
-#~ msgid ""
-#~ "Connecting this computer to a wi-fi network allows you to install third-"
-#~ "party software, download updates, automatically detect your timezone, and "
-#~ "install full support for your language."
-#~ msgstr "將這台電腦連接至 Wi-Fi 網絡可讓您安裝第三方軟件、下載更新、自動偵測您的時區、並安裝閣下語言的完整支援。"

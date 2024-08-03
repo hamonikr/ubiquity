@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity\n"
 "Report-Msgid-Bugs-To: ubiquity@packages.debian.org\n"
-"POT-Creation-Date: 2022-03-28 22:31+0200\n"
-"PO-Revision-Date: 2022-03-12 15:11+0000\n"
-"Last-Translator: Umidjon Almasov <umidjon@almasov.uz>\n"
+"POT-Creation-Date: 2023-09-19 15:58+0200\n"
+"PO-Revision-Date: 2022-05-19 12:04+0000\n"
+"Last-Translator: Umidjon Almasov <Unknown>\n"
 "Language-Team: Uzbek <uz@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-04-13 12:28+0000\n"
-"X-Generator: Launchpad (build 560baff2f814495c0c140fb3d6c66875f2312c96)\n"
+"X-Launchpad-Export-Date: 2023-10-04 09:36+0000\n"
+"X-Generator: Launchpad (build bd6cfd0cfc024dbe1dcd7d5d91165fb4f6a6c596)\n"
 "Language: uz\n"
 
 #. Type: text
@@ -2431,7 +2431,7 @@ msgstr ""
 #. Type: text
 #. Description
 #: ../ubiquity.templates:341001
-msgid "Count not save recovery key:"
+msgid "Could not save recovery key:"
 msgstr ""
 
 #. Type: text
@@ -2510,30 +2510,3 @@ msgstr ""
 #: ../oem-config.templates:3001
 msgid "Removing packages"
 msgstr "Paketlarni olib tashlash"
-
-#~ msgid "Software selection"
-#~ msgstr "Dasturiy taʼminot tanlash"
-
-#~ msgid ""
-#~ "Connecting this computer to a wi-fi network allows you to install third-"
-#~ "party software, download updates, automatically detect your timezone, and "
-#~ "install full support for your language."
-#~ msgstr ""
-#~ "Bu kompyuterni wi-fi tarmoqqa ulash uchinchi tomon dasturiy taʼminotini "
-#~ "oʻrnatish, yangilanishlarni yuklab olish, vaqt mintaqangizni avtomatik "
-#~ "aniqlash va tilingiz to'liq qoʻllanishini oʻrnatishga imkon beradi."
-
-#~ msgid "I don't want to connect to a wi-fi network right now"
-#~ msgstr "Men hozir Wi-Fi tarmog'iga ulanishni xohlamayman"
-
-#~ msgid ""
-#~ "You have chosen to enable third-party software as part of your install, "
-#~ "which for this system includes hardware drivers for graphics and/or wi-fi "
-#~ "hardware. Your system also has UEFI Secure Boot enabled. UEFI Secure Boot "
-#~ "needs to be configured to allow the use of these third-party drivers."
-#~ msgstr ""
-#~ "Siz oʻrnatishingizning bir qismi sifatida uchinchi tomon dasturiy "
-#~ "taʼminotini yoqishni tanladingiz, u ushbu tizim uchun grafik va/yoki Wi-Fi "
-#~ "uskunasi uchun apparat drayverlarini oʻz ichiga oladi. Tizimda UEFI Secure "
-#~ "Boot ham yoqilgan. UEFI Secure Boot ushbu uchinchi tomon drayverlaridan "
-#~ "foydalanishga ruxsat berish uchun sozlanishi kerak."

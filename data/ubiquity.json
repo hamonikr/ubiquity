@@ -1,11 +1,10 @@
 {
     "hasWindows": true,
     "components": ["polkitAgent", "networkAgent"],
-    "stylesheetName": "HamoniKR/gnome-shell/gnome-shell.css",
-    "themeResourceName": "theme/HamoniKR/gnome-shell-theme.gresource",
+    "stylesheetName": "HamoniKR-Dark/gnome-shell/gnome-shell.css",
+    "themeResourceName": "theme/HamoniKR-Dark/gnome-shell-theme.gresource",
     "panel": { "left": [],
                "center": ["dateMenu"],
                "right": ["a11y", "keyboard", "aggregateMenu"]
     }
 }
-

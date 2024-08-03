@@ -6,15 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: ubiquity@packages.debian.org\n"
-"POT-Creation-Date: 2022-03-28 22:31+0200\n"
-"PO-Revision-Date: 2022-04-11 19:09+0000\n"
+"POT-Creation-Date: 2023-09-19 15:58+0200\n"
+"PO-Revision-Date: 2023-10-01 19:46+0000\n"
 "Last-Translator: Ivo Xavier <ivofernandes12@gmail.com>\n"
 "Language-Team: Portuguese <traduz@debianpt.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-04-13 12:28+0000\n"
-"X-Generator: Launchpad (build 560baff2f814495c0c140fb3d6c66875f2312c96)\n"
+"X-Launchpad-Export-Date: 2023-10-04 09:36+0000\n"
+"X-Generator: Launchpad (build bd6cfd0cfc024dbe1dcd7d5d91165fb4f6a6c596)\n"
 "Language: pt\n"
 
 #. Type: text
@@ -33,7 +33,7 @@ msgstr "A estabelecer a ligação..."
 #. Description
 #: ../ubiquity.templates:5001
 msgid "Connection failed."
-msgstr "A ligação falhou."
+msgstr "Falha de ligação."
 
 #. Type: text
 #. Description
@@ -1449,9 +1449,9 @@ msgid ""
 "party software, download updates, automatically detect your timezone, and "
 "install full support for your language."
 msgstr ""
-"Conectar este computador a uma rede Wi-Fi permite que você instale software "
-"de terceiros, baixe atualizações, detecte automaticamente seu fuso horário e "
-"instale suporte completo para seu idioma."
+"Ligar este computador a uma rede Wi-Fi permite-lhe instalar software de "
+"terceiros, transferir atualizações, detetar automaticamente o seu fuso "
+"horário e instalar suporte completo para o seu idioma."
 
 #. Type: text
 #. Description
@@ -1471,7 +1471,7 @@ msgstr "Mostrar palavra-passe"
 #. Description
 #: ../ubiquity.templates:208001
 msgid "I don't want to connect to a Wi-Fi network right now"
-msgstr "Não quero me conectar a uma rede Wi-Fi agora"
+msgstr "Não quero me ligar a uma rede Wi-Fi agora"
 
 #. Type: text
 #. Description
@@ -2428,8 +2428,8 @@ msgstr "Chave de recuperação para LUKS + LVM"
 #. Type: text
 #. Description
 #: ../ubiquity.templates:341001
-msgid "Count not save recovery key:"
-msgstr "Contagem não guardou a chave de recuperação:"
+msgid "Could not save recovery key:"
+msgstr "Não foi possível guardar a chave de recuperação:"
 
 #. Type: text
 #. Description
@@ -2508,29 +2508,5 @@ msgstr ""
 msgid "Removing packages"
 msgstr "A remover pacotes"
 
-#~ msgid "I don't want to connect to a wi-fi network right now"
-#~ msgstr "Não pretendo ligar a uma rede wi-fi neste momento"
-
-#~ msgid "Software selection"
-#~ msgstr "Seleção de software"
-
-#~ msgid ""
-#~ "Connecting this computer to a wi-fi network allows you to install third-"
-#~ "party software, download updates, automatically detect your timezone, and "
-#~ "install full support for your language."
-#~ msgstr ""
-#~ "Ligar este computador a uma rede sem fios permite-lhe instalar software de "
-#~ "terceiros, transferir atualizações, detetar automaticamente o seu fuso "
-#~ "horário e instalar o suporte completo para o seu idioma."
-
-#~ msgid ""
-#~ "You have chosen to enable third-party software as part of your install, "
-#~ "which for this system includes hardware drivers for graphics and/or wi-fi "
-#~ "hardware. Your system also has UEFI Secure Boot enabled. UEFI Secure Boot "
-#~ "needs to be configured to allow the use of these third-party drivers."
-#~ msgstr ""
-#~ "Optou por ativar o software de terceiros como parte de sua instalação, que "
-#~ "para este sistema inclui controladores de hardware para gráficos e/ou "
-#~ "hardware wi-fi. O sistema também possui o UEFI Secure Boot ativado. O UEFI "
-#~ "Secure Boot precisa de ser configurado para permitir o uso desses "
-#~ "controladores de terceiros."
+#~ msgid "Count not save recovery key:"
+#~ msgstr "Contagem não guardou a chave de recuperação:"

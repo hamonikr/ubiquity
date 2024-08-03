@@ -6,15 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: ubiquity@packages.debian.org\n"
-"POT-Creation-Date: 2022-03-28 22:31+0200\n"
-"PO-Revision-Date: 2020-11-16 20:12+0000\n"
+"POT-Creation-Date: 2023-09-19 15:58+0200\n"
+"PO-Revision-Date: 2022-05-19 12:14+0000\n"
 "Last-Translator: Bikarhêner <kaya6491@gmail.com>\n"
 "Language-Team: ku <ubuntu-l10n-kur@lists.ubuntu.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-04-13 12:28+0000\n"
-"X-Generator: Launchpad (build 560baff2f814495c0c140fb3d6c66875f2312c96)\n"
+"X-Launchpad-Export-Date: 2023-10-04 09:36+0000\n"
+"X-Generator: Launchpad (build bd6cfd0cfc024dbe1dcd7d5d91165fb4f6a6c596)\n"
 "Language: \n"
 
 #. Type: text
@@ -2382,7 +2382,7 @@ msgstr ""
 #. Type: text
 #. Description
 #: ../ubiquity.templates:341001
-msgid "Count not save recovery key:"
+msgid "Could not save recovery key:"
 msgstr ""
 
 #. Type: text
@@ -2460,18 +2460,3 @@ msgstr ""
 #: ../oem-config.templates:3001
 msgid "Removing packages"
 msgstr "Pakêt tên rakirin"
-
-#~ msgid "Software selection"
-#~ msgstr "Bijartina nivîsbariyê"
-
-#~ msgid ""
-#~ "Connecting this computer to a wi-fi network allows you to install third-"
-#~ "party software, download updates, automatically detect your timezone, and "
-#~ "install full support for your language."
-#~ msgstr ""
-#~ "Eger kompûtera xwe girê bidî wi-fi'yek, wê ev ji bo te îmkanên sazkirina "
-#~ "sepanên kesên-sêyem, dazistina rojanekirinan, tesbîtkirina qada demê ya bi "
-#~ "otomatîkî, û piştgirya tam yê ji bo zimanê te bide."
-
-#~ msgid "I don't want to connect to a wi-fi network right now"
-#~ msgstr "Ez vê gavê naxwazim ji torek wifi'yê re bêm girêdan"

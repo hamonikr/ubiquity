@@ -7,22 +7,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: ubiquity@packages.debian.org\n"
-"POT-Creation-Date: 2022-03-28 22:31+0200\n"
-"PO-Revision-Date: 2020-11-16 20:10+0000\n"
-"Last-Translator: Yuri Chornoivan <yurchor@gmail.com>\n"
+"POT-Creation-Date: 2023-09-19 15:58+0200\n"
+"PO-Revision-Date: 2023-02-22 12:36+0000\n"
+"Last-Translator: artemp <Unknown>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-04-13 12:28+0000\n"
-"X-Generator: Launchpad (build 560baff2f814495c0c140fb3d6c66875f2312c96)\n"
+"X-Launchpad-Export-Date: 2023-10-04 09:36+0000\n"
+"X-Generator: Launchpad (build bd6cfd0cfc024dbe1dcd7d5d91165fb4f6a6c596)\n"
 "Language: uk\n"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:3001
 msgid "Preparing ubuntu-drivers..."
-msgstr ""
+msgstr "Підготовка драйверів Linux Mint..."
 
 #. Type: text
 #. Description
@@ -1158,7 +1158,7 @@ msgstr ""
 #. Description
 #: ../ubiquity.templates:153001
 msgid "Error setting LUKS recovery key"
-msgstr ""
+msgstr "Помилка встановлення ключа відновлення LUKS"
 
 #. Type: error
 #. Description
@@ -1168,12 +1168,15 @@ msgid ""
 "continue, but you may have to manually add the recovery key in the installed "
 "system with the command:"
 msgstr ""
+"Під час налаштування ключа відновлення сталася помилка. Встановлення "
+"продовжиться, але вам, можливо, доведеться вручну додати ключ відновлення у "
+"встановлену систему за допомогою команди:"
 
 #. Type: error
 #. Description
 #: ../ubiquity.templates:153001
 msgid "cryptsetup luksAddKey device_name"
-msgstr ""
+msgstr "cryptsetup luksAddKey device_name"
 
 #. Type: text
 #. Description
@@ -1444,6 +1447,9 @@ msgid ""
 "party software, download updates, automatically detect your timezone, and "
 "install full support for your language."
 msgstr ""
+"Підключення цього комп’ютера до мережі Wi-Fi дає змогу інсталювати програмне "
+"забезпечення сторонніх розробників, завантажувати оновлення, автоматично "
+"визначати часовий пояс та інсталювати повну підтримку вашої мови."
 
 #. Type: text
 #. Description
@@ -1463,7 +1469,7 @@ msgstr "Показувати пароль"
 #. Description
 #: ../ubiquity.templates:208001
 msgid "I don't want to connect to a Wi-Fi network right now"
-msgstr ""
+msgstr "Я не хочу підключатися до мережі Wi-Fi зараз"
 
 #. Type: text
 #. Description
@@ -2225,6 +2231,10 @@ msgid ""
 "hardware. Your system also has UEFI Secure Boot enabled. UEFI Secure Boot "
 "needs to be configured to allow the use of these third-party drivers."
 msgstr ""
+"У цьому встановленні ви вирішили увімкнути стороннє програмне забезпечення, "
+"яке включає драйвери обладнання, як-от графічний адаптер та WiFi. У вашій "
+"системі також активовано UEFI Secure Boot. UEFI Secure Boot потребує "
+"налаштування для можливості використання драйверів стороннього обладнання."
 
 #. Type: text
 #. Description
@@ -2364,25 +2374,25 @@ msgstr "Не вдалося встановити з'єднання із доме
 #. Description
 #: ../ubiquity.templates:332001
 msgid "Enable recovery key:"
-msgstr ""
+msgstr "Увімкнути ключ відновлення:"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:333001
 msgid "Recovery key:"
-msgstr ""
+msgstr "Ключ відновлення:"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:334001
 msgid "Confirm recovery key:"
-msgstr ""
+msgstr "Підтвердити ключ відновлення:"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:335001
 msgid "Display recovery key:"
-msgstr ""
+msgstr "Показати ключ відновлення:"
 
 #. Type: text
 #. Description
@@ -2392,48 +2402,51 @@ msgid ""
 "system. You can select an alternate location. Save this file and keep it in "
 "a safe place elsewhere before rebooting."
 msgstr ""
+"Ключ відновлення згенерований і буде тимчасово збережений в живій системі. "
+"Ви можете вибрати альтернативне розташування. Збережіть цей файл у надійному "
+"місці, перш ніж перезавантажити систему."
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:337001
 msgid "Location:"
-msgstr ""
+msgstr "Розташування:"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:338001
 msgid "It is not recommended to store the key on a non removable device."
-msgstr ""
+msgstr "Не рекомендовано зберігати ключ на вбудованому носії."
 
 #. Type: password
 #. Description
 #: ../ubiquity.templates:339001
 msgid "Crypto key for LUKS + LVM"
-msgstr ""
+msgstr "Криптографічний ключ для LUKS + LVM"
 
 #. Type: password
 #. Description
 #: ../ubiquity.templates:340001
 msgid "Recovery key for LUKS + LVM"
-msgstr ""
+msgstr "Ключ відновлення для LUKS + LVM"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:341001
-msgid "Count not save recovery key:"
+msgid "Could not save recovery key:"
 msgstr ""
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:341001
 msgid "${ERRORMSG}"
-msgstr ""
+msgstr "${ERRORMSG}"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:342001
 msgid "Enter recovery key filename"
-msgstr ""
+msgstr "Введіть назву файлу для ключа відновлення"
 
 #. Type: title
 #. Description
@@ -2499,29 +2512,5 @@ msgstr ""
 msgid "Removing packages"
 msgstr "Вилучення пакунків"
 
-#~ msgid "Software selection"
-#~ msgstr "Вибір програм"
-
-#~ msgid ""
-#~ "Connecting this computer to a wi-fi network allows you to install third-"
-#~ "party software, download updates, automatically detect your timezone, and "
-#~ "install full support for your language."
-#~ msgstr ""
-#~ "Під’єднання цього комп’ютера до мережі wi-fi допускає встановлення "
-#~ "стороннього програмного забезпечення, завантаження оновлень, автоматичне "
-#~ "визначення Вашого часового поясу та встановлення повної підтримки Вашої мови."
-
-#~ msgid "I don't want to connect to a wi-fi network right now"
-#~ msgstr "Я не волію під'єднуватися до wi-fi мережі зараз"
-
-#~ msgid ""
-#~ "You have chosen to enable third-party software as part of your install, "
-#~ "which for this system includes hardware drivers for graphics and/or wi-fi "
-#~ "hardware. Your system also has UEFI Secure Boot enabled. UEFI Secure Boot "
-#~ "needs to be configured to allow the use of these third-party drivers."
-#~ msgstr ""
-#~ "Як частину встановлення, вами увімкнено стороннє програмне забезпечення, яке "
-#~ "для цієї системи складається із драйверів для графічної картки та/або "
-#~ "мікросхем wi-fi. Крім того, у вашій системі увімкнено UEFI Secure Boot. Щоб "
-#~ "ви могли скористатися сторонніми драйверами, слід налаштувати UEFI Secure "
-#~ "Boot належним чином."
+#~ msgid "Count not save recovery key:"
+#~ msgstr "Не вдається зберегти ключ відновлення:"

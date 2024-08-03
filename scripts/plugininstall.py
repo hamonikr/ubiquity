@@ -19,6 +19,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+import glob
 import grp
 import gzip
 import io
@@ -183,6 +184,15 @@ class Install(install_misc.InstallBase):
         self.configure_network()
 
         self.configure_locale()
+        # Fix locale
+        # Starting with Ubuntu 24.04 systemd deletes /etc/default/locale at boot time
+        # and turns it into a symlink to /etc/locale.conf.
+        # ubiquity and d-i write to /etc/default/locale though so the call
+        # below copies the content written by the installer into /etc/locale.conf
+        if 'UBIQUITY_OEM_USER_CONFIG' in os.environ:
+            os.system("cp /etc/default/locale /etc/locale.conf")
+        else:
+            os.system("cp /target/etc/default/locale /target/etc/locale.conf")
 
         self.next_region()
         self.db.progress('INFO', 'ubiquity/install/apt')
@@ -1357,7 +1367,7 @@ class Install(install_misc.InstallBase):
                     apps_dir = 'usr/share/applications'
                     for desktop_file in (
                             apps_dir + '/oem-config-prepare-gtk.desktop',
-                            apps_dir + '/kde4/oem-config-prepare-kde.desktop'):
+                            apps_dir + '/kde/oem-config-prepare-kde.desktop'):
                         if os.path.exists(self.target_file(desktop_file)):
                             desktop_base = os.path.basename(desktop_file)
                             install_misc.chrex(
@@ -1657,6 +1667,18 @@ class Install(install_misc.InstallBase):
                     continue
 
                 shutil.copy(source_network, target_network)
+
+        source_netplan = "/etc/netplan"
+        target_netplan = "/target" + source_netplan
+        if os.path.exists(source_netplan) and os.path.exists(target_netplan):
+            for cfg in glob.glob("90-NM-*", root_dir=source_netplan):
+                source_cfg = os.path.join(source_netplan, cfg)
+                target_cfg = os.path.join(target_netplan, cfg)
+
+                if os.path.exists(target_cfg):
+                    continue
+
+                shutil.copy(source_cfg, target_cfg)
 
     def copy_bluetooth_config(self):
         if 'UBIQUITY_OEM_USER_CONFIG' in os.environ:

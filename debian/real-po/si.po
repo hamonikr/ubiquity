@@ -8,15 +8,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity\n"
 "Report-Msgid-Bugs-To: ubiquity@packages.debian.org\n"
-"POT-Creation-Date: 2022-03-28 22:31+0200\n"
-"PO-Revision-Date: 2020-11-16 20:12+0000\n"
-"Last-Translator: Danishka Navin <Unknown>\n"
+"POT-Creation-Date: 2023-09-19 15:58+0200\n"
+"PO-Revision-Date: 2022-05-19 12:14+0000\n"
+"Last-Translator: පසිඳු කාවින්ද <pkavinda@gmail.com>\n"
 "Language-Team: Sinhala <info@hanthana.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-04-13 12:28+0000\n"
-"X-Generator: Launchpad (build 560baff2f814495c0c140fb3d6c66875f2312c96)\n"
+"X-Launchpad-Export-Date: 2023-10-04 09:36+0000\n"
+"X-Generator: Launchpad (build bd6cfd0cfc024dbe1dcd7d5d91165fb4f6a6c596)\n"
 "Language: \n"
 
 #. Type: text
@@ -2344,7 +2344,7 @@ msgstr ""
 #. Type: text
 #. Description
 #: ../ubiquity.templates:341001
-msgid "Count not save recovery key:"
+msgid "Could not save recovery key:"
 msgstr ""
 
 #. Type: text
@@ -2420,18 +2420,3 @@ msgstr ""
 #: ../oem-config.templates:3001
 msgid "Removing packages"
 msgstr "පැකේජ ඉවත්කරමින්"
-
-#~ msgid "Software selection"
-#~ msgstr "මෘදුකාංග තේරීම"
-
-#~ msgid "I don't want to connect to a wi-fi network right now"
-#~ msgstr "මට දැන් වයි-ෆයි ජාලයකට සම්බන්ධ වීමට අවශ්‍ය නැහැ"
-
-#~ msgid ""
-#~ "Connecting this computer to a wi-fi network allows you to install third-"
-#~ "party software, download updates, automatically detect your timezone, and "
-#~ "install full support for your language."
-#~ msgstr ""
-#~ "මෙම පරිගණකය වයි-ෆයි ජාලයකට සම්බන්ධ කිරීමෙන් ඔබ හට තුන්වන-පාර්ශවයේ මෘදුකාංග "
-#~ "ස්ථාපනය කිරීම, යාවත්කාලීන බාගත කිරීම, ස්වයංක්‍රීයව ඔබේ වේලා කලාපය හදුනා "
-#~ "ගැනීම, සහ ඔබේ භාෂාව සඳහා සම්පූර්ණ සහය ස්ථාපනය කිරීමට ඉඩ ලබා දේ."

@@ -6,15 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: ubiquity@packages.debian.org\n"
-"POT-Creation-Date: 2022-03-28 22:31+0200\n"
-"PO-Revision-Date: 2022-04-09 18:30+0000\n"
-"Last-Translator: Adolfo Jayme <fitoschido@gmail.com>\n"
+"POT-Creation-Date: 2023-09-19 15:58+0200\n"
+"PO-Revision-Date: 2023-10-02 05:36+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitoschido@gmail.com>\n"
 "Language-Team: Debian Spanish <debian-l10n-spanish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-04-13 12:28+0000\n"
-"X-Generator: Launchpad (build 560baff2f814495c0c140fb3d6c66875f2312c96)\n"
+"X-Launchpad-Export-Date: 2023-10-04 09:36+0000\n"
+"X-Generator: Launchpad (build bd6cfd0cfc024dbe1dcd7d5d91165fb4f6a6c596)\n"
 "Language: \n"
 
 #. Type: text
@@ -118,16 +118,16 @@ msgid ""
 "You may wish to read the <a href=\"release-notes\">release notes</a> or <a "
 "href=\"update\">update this installer</a>."
 msgstr ""
-"Es posible que quiera leer las <a href=\"release-notes\">notas de "
-"publicación</a> o <a href=\"update\">actualizar este instalador</a>."
+"Es posible que quiera leer las <a href=\"release-notes\">novedades de la "
+"versión</a> o <a href=\"update\">actualizar este instalador</a>."
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:15001
 msgid "You may wish to read the <a href=\"release-notes\">release notes</a>."
 msgstr ""
-"Es posible que quiera leer las <a href=\"release-notes\">notas de "
-"publicación</a>."
+"Es posible que quiera leer las <a href=\"release-notes\">novedades de la "
+"versión</a>."
 
 #. Type: text
 #. Description
@@ -1298,7 +1298,7 @@ msgstr "Software"
 #. Description
 #: ../ubiquity.templates:182001
 msgid "Timezone"
-msgstr "Zona horaria"
+msgstr "Huso horario"
 
 #. Type: text
 #. Description
@@ -2429,8 +2429,8 @@ msgstr "Clave de recuperación de LUKS + LVM"
 #. Type: text
 #. Description
 #: ../ubiquity.templates:341001
-msgid "Count not save recovery key:"
-msgstr "No se pudo guardar la clave de recuperación"
+msgid "Could not save recovery key:"
+msgstr "No se ha podido guardar la clave de recuperación:"
 
 #. Type: text
 #. Description
@@ -2508,28 +2508,5 @@ msgstr ""
 msgid "Removing packages"
 msgstr "Desinstalando paquetes"
 
-#~ msgid "Software selection"
-#~ msgstr "Selección de software"
-
-#~ msgid ""
-#~ "Connecting this computer to a wi-fi network allows you to install third-"
-#~ "party software, download updates, automatically detect your timezone, and "
-#~ "install full support for your language."
-#~ msgstr ""
-#~ "Si conecta el equipo a una red inalámbrica podrá instalar software de "
-#~ "terceros, descargar actualizaciones, detectar automáticamente su huso "
-#~ "horario e instalar la compatibilidad completa con su idioma."
-
-#~ msgid "I don't want to connect to a wi-fi network right now"
-#~ msgstr "Prefiero no conectar con una red inalámbrica en este momento"
-
-#~ msgid ""
-#~ "You have chosen to enable third-party software as part of your install, "
-#~ "which for this system includes hardware drivers for graphics and/or wi-fi "
-#~ "hardware. Your system also has UEFI Secure Boot enabled. UEFI Secure Boot "
-#~ "needs to be configured to allow the use of these third-party drivers."
-#~ msgstr ""
-#~ "Ha elegido activar software de terceros como parte de su instalación, lo que "
-#~ "para este sistema incluye controladores de hardware para gráficos y/o WiFi. "
-#~ "Su sistema también tiene UEFI Secure Boot activado. Necesita configurar UEFI "
-#~ "Secure Boot para permitir el uso de estos controladores de terceros."
+#~ msgid "Count not save recovery key:"
+#~ msgstr "No se pudo guardar la clave de recuperación"

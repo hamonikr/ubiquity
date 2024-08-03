@@ -115,13 +115,6 @@ if [ "$LOCALE_TRANSLATIONS" != "$LOCALE" ]; then
 		LC_TELEPHONE LC_MEASUREMENT LC_IDENTIFICATION; do
 		set_field /target/etc/default/locale "$category" "$LOCALE"
 	done
-else
-	# 선택한 언어와 설치 환경의 로케일이 같아도 선택한 언어로 로케일 관련 변수 재 설정
-	for category in \
-		LC_NUMERIC LC_TIME LC_MONETARY LC_PAPER LC_NAME LC_ADDRESS \
-		LC_TELEPHONE LC_MEASUREMENT LC_IDENTIFICATION; do
-		set_field /target/etc/default/locale "$category" "$LOCALE_TRANSLATIONS"
-	done	
 fi
 
 # For languages that have no chance to be displayed at the Linux console

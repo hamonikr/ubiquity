@@ -12,6 +12,10 @@ import syslog
 import json
 
 from ubiquity import osextras
+import gi
+gi.require_version('Gio', '2.0')
+gi.require_version('GLib', '2.0')
+gi.require_version('GObject', '2.0')
 from gi.repository import Gio, GLib, GObject
 
 
@@ -536,7 +540,7 @@ def get_release():
             syslog.syslog(syslog.LOG_ERR, 'Unable to determine the release.')
 
         if not get_release.release_info:
-            get_release.release_info = ReleaseInfo(name='Linux Mint', version='')
+            get_release.release_info = ReleaseInfo(name='HamoniKR', version='')
     return get_release.release_info
 
 
@@ -565,7 +569,7 @@ def get_release_name():
                 "Unable to determine the distribution name from "
                 "/cdrom/.disk/info")
         if not get_release_name.release_name:
-            get_release_name.release_name = 'Linux Mint'
+            get_release_name.release_name = 'HamoniKR'
     return get_release_name.release_name
 
 
@@ -703,6 +707,9 @@ def dmimodel():
 
 def set_indicator_keymaps(lang):
     import xml.etree.cElementTree as ElementTree
+    import gi
+    gi.require_version('GdkX11', '3.0')
+    gi.require_version('Xkl', '1.0')
     from gi.repository import Xkl, GdkX11
     # GdkX11.x11_get_default_xdisplay() segfaults if Gtk hasn't been
     # imported; possibly finer-grained than this, but anything using this
@@ -934,8 +941,8 @@ def install_size():
     # Fallback size to 8 GB
     size = 8 * 1024 * 1024 * 1024
 
-    # Maximal size to 15 GB
-    max_size = 15 * 1024 * 1024 * 1024
+    # Maximal size to 18 GB
+    max_size = 18 * 1024 * 1024 * 1024
 
     try:
         with open('/cdrom/casper/filesystem.size') as fp:

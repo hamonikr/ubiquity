@@ -6,22 +6,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: ubiquity@packages.debian.org\n"
-"POT-Creation-Date: 2022-03-28 22:31+0200\n"
-"PO-Revision-Date: 2020-11-16 20:13+0000\n"
-"Last-Translator: Llwyd <Unknown>\n"
+"POT-Creation-Date: 2023-09-19 15:58+0200\n"
+"PO-Revision-Date: 2022-09-21 11:36+0000\n"
+"Last-Translator: Rhoslyn Prys <Unknown>\n"
 "Language-Team: Welsh <>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-04-13 12:28+0000\n"
-"X-Generator: Launchpad (build 560baff2f814495c0c140fb3d6c66875f2312c96)\n"
+"X-Launchpad-Export-Date: 2023-10-04 09:36+0000\n"
+"X-Generator: Launchpad (build bd6cfd0cfc024dbe1dcd7d5d91165fb4f6a6c596)\n"
 "Language: cy\n"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:3001
 msgid "Preparing ubuntu-drivers..."
-msgstr ""
+msgstr "Wrthi'n paratoi ubuntu-drivers..."
 
 #. Type: text
 #. Description
@@ -1154,7 +1154,7 @@ msgstr ""
 #. Description
 #: ../ubiquity.templates:153001
 msgid "Error setting LUKS recovery key"
-msgstr ""
+msgstr "Gwall wrth osod allwedd adfer LUKS"
 
 #. Type: error
 #. Description
@@ -1164,12 +1164,15 @@ msgid ""
 "continue, but you may have to manually add the recovery key in the installed "
 "system with the command:"
 msgstr ""
+"Digwyddodd gwall wrth osod yr allwedd adfer. Bydd y gosodiad yn parhau, ond "
+"efallai y bydd yn rhaid i chi ychwanegu'r allwedd adfer â llaw yn y system "
+"osod gyda'r gorchymyn:"
 
 #. Type: error
 #. Description
 #: ../ubiquity.templates:153001
 msgid "cryptsetup luksAddKey device_name"
-msgstr ""
+msgstr "cryptsetup luksAddKey device_name"
 
 #. Type: text
 #. Description
@@ -1434,6 +1437,9 @@ msgid ""
 "party software, download updates, automatically detect your timezone, and "
 "install full support for your language."
 msgstr ""
+"Mae cysylltu'r cyfrifiadur hwn i rwydwaith di-wifr yn eich galluogi i osod "
+"meddalwedd allanol, llwytho diweddariadau i lawr, canfod eich cylchfa amser "
+"yn awtomatig, a gosod cefnogaeth lawn i'ch iaith."
 
 #. Type: text
 #. Description
@@ -1453,7 +1459,7 @@ msgstr "Dangos y cyfrinair"
 #. Description
 #: ../ubiquity.templates:208001
 msgid "I don't want to connect to a Wi-Fi network right now"
-msgstr ""
+msgstr "Dydw i ddim am gysylltu i rwydwaith di-wifr ar hyn o bryd"
 
 #. Type: text
 #. Description
@@ -2215,6 +2221,11 @@ msgid ""
 "hardware. Your system also has UEFI Secure Boot enabled. UEFI Secure Boot "
 "needs to be configured to allow the use of these third-party drivers."
 msgstr ""
+"Rydych wedi dewis galluogi meddalwedd trydydd parti fel rhan o'ch gosodiad, "
+"sydd ar gyfer y system hon yn cynnwys gyrwyr caledwedd ar gyfer graffeg "
+"a/neu galedwedd wi-fi. Mae gan eich system hefyd Cychwyn Ddiogel UEFI wedi'i "
+"alluogi. Mae angen ffurfweddu Cychwyn Ddiogel UEFI i ganiatáu defnyddio'r "
+"gyrwyr trydydd parti hyn."
 
 #. Type: text
 #. Description
@@ -2352,25 +2363,25 @@ msgstr "Wedi methu cysylltu â'r parth."
 #. Description
 #: ../ubiquity.templates:332001
 msgid "Enable recovery key:"
-msgstr ""
+msgstr "Galluogi allwedd adfer:"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:333001
 msgid "Recovery key:"
-msgstr ""
+msgstr "Allwedd adfer:"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:334001
 msgid "Confirm recovery key:"
-msgstr ""
+msgstr "Cadarnhau'r allwedd adfer:"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:335001
 msgid "Display recovery key:"
-msgstr ""
+msgstr "Dangos yr allwedd adfer:"
 
 #. Type: text
 #. Description
@@ -2380,48 +2391,52 @@ msgid ""
 "system. You can select an alternate location. Save this file and keep it in "
 "a safe place elsewhere before rebooting."
 msgstr ""
+"Cynhyrchir allwedd adfer a bydd yn cael ei chadw dros dro ar y system fyw. "
+"Gallwch ddewis lleoliad arall. Cadwch y ffeil hon mewn man diogel yn rhywle "
+"arall cyn ailgychwyn."
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:337001
 msgid "Location:"
-msgstr ""
+msgstr "Lleoliad:"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:338001
 msgid "It is not recommended to store the key on a non removable device."
 msgstr ""
+"Nid ydym yn argymell cadw'r allwedd ar ddyfais nad oes modd ei thynnu."
 
 #. Type: password
 #. Description
 #: ../ubiquity.templates:339001
 msgid "Crypto key for LUKS + LVM"
-msgstr ""
+msgstr "Allwedd crypto ar gyfer LUKS + LVM"
 
 #. Type: password
 #. Description
 #: ../ubiquity.templates:340001
 msgid "Recovery key for LUKS + LVM"
-msgstr ""
+msgstr "Allwedd adfer ar gyfer LUKS + LVM"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:341001
-msgid "Count not save recovery key:"
+msgid "Could not save recovery key:"
 msgstr ""
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:341001
 msgid "${ERRORMSG}"
-msgstr ""
+msgstr "${ERRORMSG}"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:342001
 msgid "Enter recovery key filename"
-msgstr ""
+msgstr "Rhowch enw ffeil allwedd adfer"
 
 #. Type: title
 #. Description
@@ -2486,29 +2501,5 @@ msgstr ""
 msgid "Removing packages"
 msgstr "Dileu pecynnau"
 
-#~ msgid "Software selection"
-#~ msgstr "Dewisiad meddalwedd"
-
-#~ msgid "I don't want to connect to a wi-fi network right now"
-#~ msgstr "Dydw i ddim am gysylltu i rwydwaith di-wifr ar hyn o bryd"
-
-#~ msgid ""
-#~ "Connecting this computer to a wi-fi network allows you to install third-"
-#~ "party software, download updates, automatically detect your timezone, and "
-#~ "install full support for your language."
-#~ msgstr ""
-#~ "Mae cysylltu'r cyfrifiadur hwn i rwydwaith di-wifr yn eich galluogi i osod "
-#~ "meddalwedd allanol, llwytho diweddariadau i lawr, canfod eich cylchfa amser "
-#~ "yn awtomatig, a gosod cefnogaeth lawn i'ch iaith."
-
-#~ msgid ""
-#~ "You have chosen to enable third-party software as part of your install, "
-#~ "which for this system includes hardware drivers for graphics and/or wi-fi "
-#~ "hardware. Your system also has UEFI Secure Boot enabled. UEFI Secure Boot "
-#~ "needs to be configured to allow the use of these third-party drivers."
-#~ msgstr ""
-#~ "Rydych wedi dewis galluogi meddalwedd trydydd parti fel rhan o'ch gosodiad, "
-#~ "sydd ar gyfer y system hon yn cynnwys gyrwyr caledwedd ar gyfer graffeg a / "
-#~ "neu galedwedd diwifr. Mae gan eich system hefyd Cychwyn Ddiogel UEFI wedi'i "
-#~ "alluogi. Mae angen ffurfweddu Cychwyn Ddiogel UEFI i ganiatáu defnyddio'r "
-#~ "gyrwyr trydydd parti hyn."
+#~ msgid "Count not save recovery key:"
+#~ msgstr "Methu cadw'r allwedd adfer:"

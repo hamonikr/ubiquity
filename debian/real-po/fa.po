@@ -6,22 +6,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: ubiquity@packages.debian.org\n"
-"POT-Creation-Date: 2022-03-28 22:31+0200\n"
-"PO-Revision-Date: 2020-12-23 13:17+0000\n"
-"Last-Translator: Danial Behzadi <dani.behzi@gmail.com>\n"
+"POT-Creation-Date: 2023-09-19 15:58+0200\n"
+"PO-Revision-Date: 2023-05-03 10:29+0000\n"
+"Last-Translator: Danial Behzadi <danialbehzadi@riseup.net>\n"
 "Language-Team: <fa@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-04-13 12:28+0000\n"
-"X-Generator: Launchpad (build 560baff2f814495c0c140fb3d6c66875f2312c96)\n"
+"X-Launchpad-Export-Date: 2023-10-04 09:36+0000\n"
+"X-Generator: Launchpad (build bd6cfd0cfc024dbe1dcd7d5d91165fb4f6a6c596)\n"
 "Language: \n"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:3001
 msgid "Preparing ubuntu-drivers..."
-msgstr ""
+msgstr "آماده کردن راه‌اندازهای اوبونتو…"
 
 #. Type: text
 #. Description
@@ -1143,7 +1143,7 @@ msgstr ""
 #. Description
 #: ../ubiquity.templates:153001
 msgid "Error setting LUKS recovery key"
-msgstr ""
+msgstr "خطا در تنظیم کلید بازیابی لوکس"
 
 #. Type: error
 #. Description
@@ -1425,6 +1425,9 @@ msgid ""
 "party software, download updates, automatically detect your timezone, and "
 "install full support for your language."
 msgstr ""
+"وصل کردن این رایانه به شبکهٔ وای‌فای می‌گذارد نرم‌افزارهای سوم را نصب کنید، "
+"به‌روز رسانی‌ها را بگیرید، منطقهٔ زمانیتان به صورت خودکار تشخیص داده شده و "
+"پشتیبانی کامل زبانتان نصب شود."
 
 #. Type: text
 #. Description
@@ -1444,7 +1447,7 @@ msgstr "نمایش گذرواژه"
 #. Description
 #: ../ubiquity.templates:208001
 msgid "I don't want to connect to a Wi-Fi network right now"
-msgstr ""
+msgstr "نمی‌خواهم اکنون به شبکهٔ وای‌فای وصل شوم"
 
 #. Type: text
 #. Description
@@ -2331,25 +2334,25 @@ msgstr "اتصال به دامنه ناموفق بود."
 #. Description
 #: ../ubiquity.templates:332001
 msgid "Enable recovery key:"
-msgstr ""
+msgstr "به کار انداختن کلید بازیابی:"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:333001
 msgid "Recovery key:"
-msgstr ""
+msgstr "کلید بازیابی:"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:334001
 msgid "Confirm recovery key:"
-msgstr ""
+msgstr "تأیید کلید بازیابی:"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:335001
 msgid "Display recovery key:"
-msgstr ""
+msgstr "نمایش کلید بازیابی:"
 
 #. Type: text
 #. Description
@@ -2364,43 +2367,43 @@ msgstr ""
 #. Description
 #: ../ubiquity.templates:337001
 msgid "Location:"
-msgstr ""
+msgstr "مکان:"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:338001
 msgid "It is not recommended to store the key on a non removable device."
-msgstr ""
+msgstr "توصیه نمی‌شود کلید را روی افزاره‌ای غیر قابل برداشتن ذخیره کنید."
 
 #. Type: password
 #. Description
 #: ../ubiquity.templates:339001
 msgid "Crypto key for LUKS + LVM"
-msgstr ""
+msgstr "کلیدهای رمزنگاری برای لوکس + LVM"
 
 #. Type: password
 #. Description
 #: ../ubiquity.templates:340001
 msgid "Recovery key for LUKS + LVM"
-msgstr ""
+msgstr "کلیدهای بازیابی برای لوکس + LVM"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:341001
-msgid "Count not save recovery key:"
+msgid "Could not save recovery key:"
 msgstr ""
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:341001
 msgid "${ERRORMSG}"
-msgstr ""
+msgstr "${ERRORMSG}"
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:342001
 msgid "Enter recovery key filename"
-msgstr ""
+msgstr "نام پروندهٔ کلید بازیابی را وارد کنید"
 
 #. Type: title
 #. Description
@@ -2465,29 +2468,5 @@ msgstr ""
 msgid "Removing packages"
 msgstr "در حال برداشتن بسته‌ها"
 
-#~ msgid "Software selection"
-#~ msgstr "انتخاب نرم افزار"
-
-#~ msgid ""
-#~ "Connecting this computer to a wi-fi network allows you to install third-"
-#~ "party software, download updates, automatically detect your timezone, and "
-#~ "install full support for your language."
-#~ msgstr ""
-#~ "اتّصال این رایانه به یک شبکهٔ وای‌فای اجازهٔ نصب نرم‌افزارهای خارجی و "
-#~ "بارگیری به‌روزرسانی را داده، ناحیهٔ زمانیتان را به صورت خودکار یافته و "
-#~ "پشتیبانی کامل را برای زبانتان نصب می‌کند."
-
-#~ msgid "I don't want to connect to a wi-fi network right now"
-#~ msgstr "نمی‌خواهم هم‌اکنون به شبکهٔ وای‌فای وصل شوم."
-
-#~ msgid ""
-#~ "You have chosen to enable third-party software as part of your install, "
-#~ "which for this system includes hardware drivers for graphics and/or wi-fi "
-#~ "hardware. Your system also has UEFI Secure Boot enabled. UEFI Secure Boot "
-#~ "needs to be configured to allow the use of these third-party drivers."
-#~ msgstr ""
-#~ "برگزیدید که نرم‌افزارهای سوم‌شخص را به عنوان بخشی از نصبتان به کار بیندازید "
-#~ "که برای این سامانه شامل راه‌اندازی سخت‌افزاری برای گرافیک و/یا وای‌فای "
-#~ "می‌شود. هم‌چنین راه‌اندازی امن UEFI سامانه‌تان به کار افتاده است. راه‌اندازی "
-#~ "امن UEFI نیاز به پیکربندی برای دادن اجازهٔ استفاده از این راه‌اندازهای "
-#~ "سوم‌شخص دارد."
+#~ msgid "Count not save recovery key:"
+#~ msgstr "نتوانست کلید بازیابی را ذخیره کند:"
