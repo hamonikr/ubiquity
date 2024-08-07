@@ -1,3 +1,11 @@
+ubiquity (24.04.9+h2) paektu; urgency=medium
+
+  [ Kevin Kim ]
+  * Fix plugin_translate mint part in ubi-prepare.py
+  * PluginUI: Update plugin_title in ubiquity/plugins/ubi-prepare.py
+
+ -- HamoniKR <pkg@hamonikr.org>  Thu, 08 Aug 2024 01:50:37 +0900
+
 ubiquity (24.04.9+h1) paektu; urgency=medium
 
   [ Kevin Kim ]
