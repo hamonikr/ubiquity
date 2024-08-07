@@ -54,8 +54,17 @@ sub sort_C_first {
     return @new_list;
 }
 
+sub sort_K_first {
+    my @full_list = @_;
+    my @K_locale = grep /^K/, @full_list;
+    my @languages = grep !/^K/, @full_list;
+    my @new_list = sort order_trans @languages;
+    unshift @new_list, @K_locale;
+    return @new_list;
+}
+
 open(TOUT, "> $outfile") || die "Unable to write $outfile";
-for my $name (sort_C_first @languagenames) {
+for my $name (sort_K_first @languagenames) {
     my $line;
     if (exists $translations{$name}) {
 	$line = $levels{$name}.
