@@ -1577,7 +1577,7 @@ msgstr "인터넷에 연결함"
 msgid ""
 "This software is subject to license terms included with its documentation. "
 "Some is proprietary."
-msgstr "이 소프트웨어는 문서에 포함된 라이선스 조항을 적용받습니다. 일부는 독점적입니다."
+msgstr "이 소프트웨어들은 문서에 포함된 라이선스를 적용받습니다. 일부는 독점적입니다."
 
 #. Type: text
 #. Description
@@ -1586,8 +1586,8 @@ msgid ""
 "Install third-party software for graphics and Wi-Fi hardware and additional "
 "media formats"
 msgstr ""
-"V3 백신, 알집, 텔레그램, 디스코드, 옵시디언, 메가드라이브, MS 엣지, 구글 크롬, 파이어폭스, 미디어 코덱, 줌, 슬랙, 루트리스 등 "
-"유용한 소프트웨어를 추가로 설치합니다."
+"V3 백신, 알집, 슬랙, 텔레그램, 디스코드, Zoom, MS 엣지, 구글 크롬, 파이어폭스, 미디어 코덱 등 "
+"유용한 소프트웨어 추가 설치."
 
 #. Type: text
 #. Description
