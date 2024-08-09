@@ -1586,8 +1586,8 @@ msgid ""
 "Install third-party software for graphics and Wi-Fi hardware and additional "
 "media formats"
 msgstr ""
-"멀티미디어 코덱, 비주얼 스튜디오 코드, 줌, 슬랙, 크롬, 알약, 루트리스 등 서드"
-"파티 소프트웨어 설치 (인터넷 속도에 따라 시간이 다소 소요됩니다.)"
+"V3 백신, 알집, 텔레그램, 디스코드, 옵시디언, 메가드라이브, MS 엣지, 구글 크롬, 파이어폭스, 미디어 코덱, 줌, 슬랙, 루트리스 등 "
+"유용한 소프트웨어를 추가로 설치합니다."
 
 #. Type: text
 #. Description

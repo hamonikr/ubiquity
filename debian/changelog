@@ -1,3 +1,11 @@
+ubiquity (24.04.9+h3) paektu; urgency=medium
+
+  [ Kevin Kim ]
+  * Installation Support Language list Modification
+  * Update Korean translation
+
+ -- HamoniKR <pkg@hamonikr.org>  Fri, 09 Aug 2024 16:29:39 +0900
+
 ubiquity (24.04.9+h2) paektu; urgency=medium
 
   [ Kevin Kim ]
