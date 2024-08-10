@@ -6,7 +6,6 @@ ja;Japanese;日本語;3;JP;ja_JP.UTF-8;;
 ko;Korean;한국어;3;KR;ko_KR.UTF-8;;
 pt_BR;Portuguese (Brazil);Português do Brasil;1;BR;pt_BR.UTF-8;pt_BR:pt:en;console-setup
 ru;Russian;Русский;2;RU;ru_RU.UTF-8;;console-setup
-th;Thai;ภาษาไทย;3;TH;th_TH.UTF-8;;console-setup
 tl;Tagalog;Tagalog;1;PH;tl_PH.UTF-8;;console-setup
 tr;Turkish;Türkçe;2;TR;tr_TR.UTF-8;;console-setup
 zh_CN;Chinese (Simplified);中文(简体);3;CN;zh_CN.UTF-8;zh_CN:zh;
