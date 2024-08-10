@@ -934,11 +934,11 @@ def install_size():
     if min_install_size:
         return min_install_size
 
-    # Fallback size to 8 GB
-    size = 8 * 1024 * 1024 * 1024
+    # Fallback size to 10 GB
+    size = 10 * 1024 * 1024 * 1024
 
-    # Maximal size to 18 GB
-    max_size = 18 * 1024 * 1024 * 1024
+    # Maximal size to 20 GB
+    max_size = 20 * 1024 * 1024 * 1024
 
     try:
         with open('/cdrom/casper/filesystem.size') as fp:
