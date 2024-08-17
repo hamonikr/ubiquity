@@ -1586,8 +1586,8 @@ msgid ""
 "Install third-party software for graphics and Wi-Fi hardware and additional "
 "media formats"
 msgstr ""
-"V3 백신, 알집, 슬랙, 텔레그램, 디스코드, Zoom, MS 엣지, 구글 크롬, 파이어폭스, 미디어 코덱 등 "
-"유용한 소프트웨어 추가 설치."
+"구글 크롬, MS 엣지, 파이어폭스, 알집, 슬랙, 텔레그램, 디스코드, Zoom, 미디어 코덱 등 "
+"유용한 소프트웨어 추가 설치. (약 3GB 디스크가 더 사용됩니다.)"
 
 #. Type: text
 #. Description
